@@ -136,6 +136,7 @@ Partial Class Form1
         Me.Guna2BorderlessForm1.DragStartTransparencyValue = 1.0R
         Me.Guna2BorderlessForm1.HasFormShadow = False
         Me.Guna2BorderlessForm1.ResizeForm = False
+        Me.Guna2BorderlessForm1.TransparentWhileDrag = True
         '
         'Form1
         '
