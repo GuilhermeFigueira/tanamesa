@@ -32,7 +32,7 @@ Namespace My
         
         <Global.System.Diagnostics.DebuggerStepThroughAttribute()>  _
         Protected Overrides Sub OnCreateMainForm()
-            Me.MainForm = Global.tanamesa.form_base
+            Me.MainForm = Global.tanamesa.home
         End Sub
         
         <Global.System.Diagnostics.DebuggerStepThroughAttribute()>  _
