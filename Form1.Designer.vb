@@ -1,5 +1,5 @@
 ﻿<Global.Microsoft.VisualBasic.CompilerServices.DesignerGenerated()>
-Partial Class Form1
+Partial Class login
     Inherits System.Windows.Forms.Form
 
     'Descartar substituições de formulário para limpar a lista de componentes.
@@ -23,6 +23,7 @@ Partial Class Form1
     <System.Diagnostics.DebuggerStepThrough()>
     Private Sub InitializeComponent()
         Me.components = New System.ComponentModel.Container()
+        Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(login))
         Me.GunaLabel1 = New Guna.UI.WinForms.GunaLabel()
         Me.GunaLabel2 = New Guna.UI.WinForms.GunaLabel()
         Me.GunaLabel3 = New Guna.UI.WinForms.GunaLabel()
@@ -30,6 +31,10 @@ Partial Class Form1
         Me.txt_senha = New Guna.UI.WinForms.GunaTextBox()
         Me.btn_entrar = New Guna.UI.WinForms.GunaButton()
         Me.Guna2BorderlessForm1 = New Guna.UI2.WinForms.Guna2BorderlessForm(Me.components)
+        Me.Guna2ContainerControl1 = New Guna.UI2.WinForms.Guna2ContainerControl()
+        Me.btn_fechar = New Guna.UI2.WinForms.Guna2ImageButton()
+        Me.btn_minimizar = New Guna.UI2.WinForms.Guna2ImageButton()
+        Me.Guna2ContainerControl1.SuspendLayout()
         Me.SuspendLayout()
         '
         'GunaLabel1
@@ -129,7 +134,6 @@ Partial Class Form1
         '
         'Guna2BorderlessForm1
         '
-        Me.Guna2BorderlessForm1.AnimateWindow = True
         Me.Guna2BorderlessForm1.BorderRadius = 12
         Me.Guna2BorderlessForm1.ContainerControl = Me
         Me.Guna2BorderlessForm1.DockIndicatorTransparencyValue = 0.6R
@@ -138,12 +142,60 @@ Partial Class Form1
         Me.Guna2BorderlessForm1.ResizeForm = False
         Me.Guna2BorderlessForm1.TransparentWhileDrag = True
         '
-        'Form1
+        'Guna2ContainerControl1
+        '
+        Me.Guna2ContainerControl1.Anchor = CType((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
+        Me.Guna2ContainerControl1.BackColor = System.Drawing.Color.FromArgb(CType(CType(244, Byte), Integer), CType(CType(187, Byte), Integer), CType(CType(108, Byte), Integer))
+        Me.Guna2ContainerControl1.Controls.Add(Me.btn_fechar)
+        Me.Guna2ContainerControl1.Controls.Add(Me.btn_minimizar)
+        Me.Guna2ContainerControl1.FillColor = System.Drawing.Color.FromArgb(CType(CType(244, Byte), Integer), CType(CType(187, Byte), Integer), CType(CType(108, Byte), Integer))
+        Me.Guna2ContainerControl1.Location = New System.Drawing.Point(891, 2)
+        Me.Guna2ContainerControl1.Name = "Guna2ContainerControl1"
+        Me.Guna2ContainerControl1.Size = New System.Drawing.Size(60, 30)
+        Me.Guna2ContainerControl1.TabIndex = 6
+        Me.Guna2ContainerControl1.Text = "Guna2ContainerControl1"
+        '
+        'btn_fechar
+        '
+        Me.btn_fechar.Anchor = CType((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
+        Me.btn_fechar.BackColor = System.Drawing.Color.Transparent
+        Me.btn_fechar.CheckedState.ImageSize = New System.Drawing.Size(64, 64)
+        Me.btn_fechar.Cursor = System.Windows.Forms.Cursors.Hand
+        Me.btn_fechar.HoverState.ImageSize = New System.Drawing.Size(18, 18)
+        Me.btn_fechar.Image = CType(resources.GetObject("btn_fechar.Image"), System.Drawing.Image)
+        Me.btn_fechar.ImageOffset = New System.Drawing.Point(0, 0)
+        Me.btn_fechar.ImageRotate = 0!
+        Me.btn_fechar.ImageSize = New System.Drawing.Size(16, 16)
+        Me.btn_fechar.Location = New System.Drawing.Point(30, 0)
+        Me.btn_fechar.Name = "btn_fechar"
+        Me.btn_fechar.PressedState.ImageSize = New System.Drawing.Size(24, 24)
+        Me.btn_fechar.Size = New System.Drawing.Size(30, 30)
+        Me.btn_fechar.TabIndex = 0
+        '
+        'btn_minimizar
+        '
+        Me.btn_minimizar.Anchor = CType((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
+        Me.btn_minimizar.BackColor = System.Drawing.Color.Transparent
+        Me.btn_minimizar.CheckedState.ImageSize = New System.Drawing.Size(64, 64)
+        Me.btn_minimizar.Cursor = System.Windows.Forms.Cursors.Hand
+        Me.btn_minimizar.HoverState.ImageSize = New System.Drawing.Size(18, 18)
+        Me.btn_minimizar.Image = CType(resources.GetObject("btn_minimizar.Image"), System.Drawing.Image)
+        Me.btn_minimizar.ImageOffset = New System.Drawing.Point(0, 0)
+        Me.btn_minimizar.ImageRotate = 0!
+        Me.btn_minimizar.ImageSize = New System.Drawing.Size(16, 16)
+        Me.btn_minimizar.Location = New System.Drawing.Point(6, 0)
+        Me.btn_minimizar.Name = "btn_minimizar"
+        Me.btn_minimizar.PressedState.ImageSize = New System.Drawing.Size(24, 24)
+        Me.btn_minimizar.Size = New System.Drawing.Size(30, 30)
+        Me.btn_minimizar.TabIndex = 1
+        '
+        'login
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.BackColor = System.Drawing.Color.FromArgb(CType(CType(244, Byte), Integer), CType(CType(187, Byte), Integer), CType(CType(108, Byte), Integer))
         Me.ClientSize = New System.Drawing.Size(963, 454)
+        Me.Controls.Add(Me.Guna2ContainerControl1)
         Me.Controls.Add(Me.btn_entrar)
         Me.Controls.Add(Me.txt_senha)
         Me.Controls.Add(Me.txt_cpf)
@@ -153,8 +205,10 @@ Partial Class Form1
         Me.Cursor = System.Windows.Forms.Cursors.Default
         Me.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!)
         Me.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None
-        Me.Name = "Form1"
+        Me.Name = "login"
+        Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen
         Me.Text = "Form1"
+        Me.Guna2ContainerControl1.ResumeLayout(False)
         Me.ResumeLayout(False)
         Me.PerformLayout()
 
@@ -167,4 +221,7 @@ Partial Class Form1
     Friend WithEvents txt_senha As Guna.UI.WinForms.GunaTextBox
     Friend WithEvents btn_entrar As Guna.UI.WinForms.GunaButton
     Friend WithEvents Guna2BorderlessForm1 As Guna.UI2.WinForms.Guna2BorderlessForm
+    Friend WithEvents Guna2ContainerControl1 As Guna.UI2.WinForms.Guna2ContainerControl
+    Friend WithEvents btn_fechar As Guna.UI2.WinForms.Guna2ImageButton
+    Friend WithEvents btn_minimizar As Guna.UI2.WinForms.Guna2ImageButton
 End Class
