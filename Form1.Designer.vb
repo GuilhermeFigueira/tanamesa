@@ -29,11 +29,11 @@ Partial Class login
         Me.GunaLabel3 = New Guna.UI.WinForms.GunaLabel()
         Me.txt_cpf = New Guna.UI.WinForms.GunaTextBox()
         Me.txt_senha = New Guna.UI.WinForms.GunaTextBox()
-        Me.btn_entrar = New Guna.UI.WinForms.GunaButton()
         Me.Guna2BorderlessForm1 = New Guna.UI2.WinForms.Guna2BorderlessForm(Me.components)
         Me.Guna2ContainerControl1 = New Guna.UI2.WinForms.Guna2ContainerControl()
         Me.btn_fechar = New Guna.UI2.WinForms.Guna2ImageButton()
         Me.btn_minimizar = New Guna.UI2.WinForms.Guna2ImageButton()
+        Me.btn_entrar = New Guna.UI2.WinForms.Guna2Button()
         Me.Guna2ContainerControl1.SuspendLayout()
         Me.SuspendLayout()
         '
@@ -104,34 +104,6 @@ Partial Class login
         Me.txt_senha.Size = New System.Drawing.Size(534, 60)
         Me.txt_senha.TabIndex = 4
         '
-        'btn_entrar
-        '
-        Me.btn_entrar.AnimationHoverSpeed = 0.07!
-        Me.btn_entrar.AnimationSpeed = 0.03!
-        Me.btn_entrar.BackColor = System.Drawing.Color.Transparent
-        Me.btn_entrar.BaseColor = System.Drawing.Color.FromArgb(CType(CType(133, Byte), Integer), CType(CType(77, Byte), Integer), CType(CType(39, Byte), Integer))
-        Me.btn_entrar.BorderColor = System.Drawing.Color.Black
-        Me.btn_entrar.Cursor = System.Windows.Forms.Cursors.Hand
-        Me.btn_entrar.DialogResult = System.Windows.Forms.DialogResult.None
-        Me.btn_entrar.FocusedColor = System.Drawing.Color.Empty
-        Me.btn_entrar.Font = New System.Drawing.Font("Libre Caslon Display", 36.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.btn_entrar.ForeColor = System.Drawing.Color.White
-        Me.btn_entrar.Image = Nothing
-        Me.btn_entrar.ImageSize = New System.Drawing.Size(20, 20)
-        Me.btn_entrar.Location = New System.Drawing.Point(553, 330)
-        Me.btn_entrar.Name = "btn_entrar"
-        Me.btn_entrar.OnHoverBaseColor = System.Drawing.Color.FromArgb(CType(CType(151, Byte), Integer), CType(CType(143, Byte), Integer), CType(CType(255, Byte), Integer))
-        Me.btn_entrar.OnHoverBorderColor = System.Drawing.Color.Black
-        Me.btn_entrar.OnHoverForeColor = System.Drawing.Color.White
-        Me.btn_entrar.OnHoverImage = Nothing
-        Me.btn_entrar.OnPressedColor = System.Drawing.Color.Black
-        Me.btn_entrar.Radius = 8
-        Me.btn_entrar.Size = New System.Drawing.Size(364, 88)
-        Me.btn_entrar.TabIndex = 5
-        Me.btn_entrar.TabStop = False
-        Me.btn_entrar.Text = "ENTRAR"
-        Me.btn_entrar.TextAlign = System.Windows.Forms.HorizontalAlignment.Center
-        '
         'Guna2BorderlessForm1
         '
         Me.Guna2BorderlessForm1.BorderRadius = 12
@@ -189,14 +161,32 @@ Partial Class login
         Me.btn_minimizar.Size = New System.Drawing.Size(30, 30)
         Me.btn_minimizar.TabIndex = 1
         '
+        'btn_entrar
+        '
+        Me.btn_entrar.BackColor = System.Drawing.Color.Transparent
+        Me.btn_entrar.BorderRadius = 8
+        Me.btn_entrar.Cursor = System.Windows.Forms.Cursors.Hand
+        Me.btn_entrar.DisabledState.BorderColor = System.Drawing.Color.DarkGray
+        Me.btn_entrar.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray
+        Me.btn_entrar.DisabledState.FillColor = System.Drawing.Color.FromArgb(CType(CType(169, Byte), Integer), CType(CType(169, Byte), Integer), CType(CType(169, Byte), Integer))
+        Me.btn_entrar.DisabledState.ForeColor = System.Drawing.Color.FromArgb(CType(CType(141, Byte), Integer), CType(CType(141, Byte), Integer), CType(CType(141, Byte), Integer))
+        Me.btn_entrar.FillColor = System.Drawing.Color.FromArgb(CType(CType(133, Byte), Integer), CType(CType(77, Byte), Integer), CType(CType(39, Byte), Integer))
+        Me.btn_entrar.Font = New System.Drawing.Font("Libre Caslon Display", 36.0!)
+        Me.btn_entrar.ForeColor = System.Drawing.Color.White
+        Me.btn_entrar.Location = New System.Drawing.Point(553, 334)
+        Me.btn_entrar.Name = "btn_entrar"
+        Me.btn_entrar.Size = New System.Drawing.Size(364, 88)
+        Me.btn_entrar.TabIndex = 31
+        Me.btn_entrar.Text = "ENTRAR"
+        '
         'login
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.BackColor = System.Drawing.Color.FromArgb(CType(CType(244, Byte), Integer), CType(CType(187, Byte), Integer), CType(CType(108, Byte), Integer))
         Me.ClientSize = New System.Drawing.Size(963, 454)
-        Me.Controls.Add(Me.Guna2ContainerControl1)
         Me.Controls.Add(Me.btn_entrar)
+        Me.Controls.Add(Me.Guna2ContainerControl1)
         Me.Controls.Add(Me.txt_senha)
         Me.Controls.Add(Me.txt_cpf)
         Me.Controls.Add(Me.GunaLabel3)
@@ -219,9 +209,9 @@ Partial Class login
     Friend WithEvents GunaLabel3 As Guna.UI.WinForms.GunaLabel
     Friend WithEvents txt_cpf As Guna.UI.WinForms.GunaTextBox
     Friend WithEvents txt_senha As Guna.UI.WinForms.GunaTextBox
-    Friend WithEvents btn_entrar As Guna.UI.WinForms.GunaButton
     Friend WithEvents Guna2BorderlessForm1 As Guna.UI2.WinForms.Guna2BorderlessForm
     Friend WithEvents Guna2ContainerControl1 As Guna.UI2.WinForms.Guna2ContainerControl
     Friend WithEvents btn_fechar As Guna.UI2.WinForms.Guna2ImageButton
     Friend WithEvents btn_minimizar As Guna.UI2.WinForms.Guna2ImageButton
+    Friend WithEvents btn_entrar As Guna.UI2.WinForms.Guna2Button
 End Class

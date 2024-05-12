@@ -1,9 +1,9 @@
-﻿<Global.Microsoft.VisualBasic.CompilerServices.DesignerGenerated()> _
+﻿<Global.Microsoft.VisualBasic.CompilerServices.DesignerGenerated()>
 Partial Class form_base
     Inherits System.Windows.Forms.Form
 
     'Descartar substituições de formulário para limpar a lista de componentes.
-    <System.Diagnostics.DebuggerNonUserCode()> _
+    <System.Diagnostics.DebuggerNonUserCode()>
     Protected Overrides Sub Dispose(ByVal disposing As Boolean)
         Try
             If disposing AndAlso components IsNot Nothing Then
@@ -20,7 +20,7 @@ Partial Class form_base
     'OBSERVAÇÃO: o procedimento a seguir é exigido pelo Windows Form Designer
     'Pode ser modificado usando o Windows Form Designer.  
     'Não o modifique usando o editor de códigos.
-    <System.Diagnostics.DebuggerStepThrough()> _
+    <System.Diagnostics.DebuggerStepThrough()>
     Private Sub InitializeComponent()
         Me.components = New System.ComponentModel.Container()
         Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(form_base))
@@ -125,6 +125,7 @@ Partial Class form_base
         '
         Me.txt_.AutoRoundedCorners = True
         Me.txt_.BorderColor = System.Drawing.Color.FromArgb(CType(CType(239, Byte), Integer), CType(CType(239, Byte), Integer), CType(CType(239, Byte), Integer))
+        Me.txt_.BorderRadius = 17
         Me.txt_.Cursor = System.Windows.Forms.Cursors.IBeam
         Me.txt_.DefaultText = "textbox"
         Me.txt_.DisabledState.BorderColor = System.Drawing.Color.FromArgb(CType(CType(208, Byte), Integer), CType(CType(208, Byte), Integer), CType(CType(208, Byte), Integer))
@@ -200,6 +201,7 @@ Partial Class form_base
         Me.cmb_.AutoRoundedCorners = True
         Me.cmb_.BackColor = System.Drawing.Color.Transparent
         Me.cmb_.BorderColor = System.Drawing.Color.FromArgb(CType(CType(239, Byte), Integer), CType(CType(239, Byte), Integer), CType(CType(239, Byte), Integer))
+        Me.cmb_.BorderRadius = 17
         Me.cmb_.Cursor = System.Windows.Forms.Cursors.Hand
         Me.cmb_.DrawMode = System.Windows.Forms.DrawMode.OwnerDrawFixed
         Me.cmb_.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList
@@ -366,6 +368,7 @@ Partial Class form_base
         '
         Me.Guna2TextBox1.AutoRoundedCorners = True
         Me.Guna2TextBox1.BorderColor = System.Drawing.Color.FromArgb(CType(CType(239, Byte), Integer), CType(CType(239, Byte), Integer), CType(CType(239, Byte), Integer))
+        Me.Guna2TextBox1.BorderRadius = 17
         Me.Guna2TextBox1.Cursor = System.Windows.Forms.Cursors.IBeam
         Me.Guna2TextBox1.DefaultText = "textbox"
         Me.Guna2TextBox1.DisabledState.BorderColor = System.Drawing.Color.FromArgb(CType(CType(208, Byte), Integer), CType(CType(208, Byte), Integer), CType(CType(208, Byte), Integer))

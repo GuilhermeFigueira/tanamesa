@@ -16,4 +16,8 @@ Public Class form_base
     Private Sub form_base_Load(sender As Object, e As EventArgs) Handles MyBase.Load
 
     End Sub
+
+    Private Sub TreeView1_AfterSelect(sender As Object, e As TreeViewEventArgs)
+
+    End Sub
 End Class
