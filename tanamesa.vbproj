@@ -126,6 +126,12 @@
     <Compile Include="infoUsuario.vb">
       <SubType>Form</SubType>
     </Compile>
+    <Compile Include="mesas.Designer.vb">
+      <DependentUpon>mesas.vb</DependentUpon>
+    </Compile>
+    <Compile Include="mesas.vb">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="sair.Designer.vb">
       <DependentUpon>sair.vb</DependentUpon>
     </Compile>
@@ -154,6 +160,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="infoUsuario.resx">
       <DependentUpon>infoUsuario.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="mesas.resx">
+      <DependentUpon>mesas.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="sair.resx">
       <DependentUpon>sair.vb</DependentUpon>

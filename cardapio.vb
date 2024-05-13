@@ -30,7 +30,7 @@ Public Class cardapio
     ' Private Sub btn_mesas_Click(sender As Object, e As EventArgs) Handles btn_mesas.Click
     '    mesas.Show()
     ' Me.Hide()
-    'End Sub
+    'End Sub 
 
     'Private Sub btn_estoque_Click(sender As Object, e As EventArgs) Handles btn_estoque.Click
     '   estoque.Show()
@@ -49,7 +49,6 @@ Public Class cardapio
 
     Private Sub btn_info_Click(sender As Object, e As EventArgs) Handles btn_info.Click
         infoUsuario.Show()
-
     End Sub
 End Class
 Public Class criarCardapio
