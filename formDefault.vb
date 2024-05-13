@@ -20,4 +20,8 @@ Public Class form_base
     Private Sub TreeView1_AfterSelect(sender As Object, e As TreeViewEventArgs)
 
     End Sub
+
+    Private Sub btn__Click(sender As Object, e As EventArgs) Handles btn_.Click
+
+    End Sub
 End Class

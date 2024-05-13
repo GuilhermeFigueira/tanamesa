@@ -1,7 +1,7 @@
 ﻿Imports System.Runtime.CompilerServices
 Imports Guna.UI2.WinForms
 
-Public Class sair
+Public Class infoUsuario
     Private Sub btn_fechar_Click(sender As Object, e As EventArgs) Handles btn_fechar.Click
         Close()
     End Sub
@@ -10,11 +10,15 @@ Public Class sair
         Me.WindowState = FormWindowState.Minimized
     End Sub
 
-    Private Sub btn__Click(sender As Object, e As EventArgs) Handles btn_sim.Click
+    Private Sub btn__Click(sender As Object, e As EventArgs)
         Application.Exit()
     End Sub
 
-    Private Sub btn_nao_Click(sender As Object, e As EventArgs) Handles btn_nao.Click
+    Private Sub btn_nao_Click(sender As Object, e As EventArgs)
         Close()
+    End Sub
+
+    Private Sub Guna2HtmlLabel2_Click(sender As Object, e As EventArgs) Handles Guna2HtmlLabel2.Click
+
     End Sub
 End Class

@@ -1,5 +1,5 @@
 ﻿<Global.Microsoft.VisualBasic.CompilerServices.DesignerGenerated()>
-Partial Class home
+Partial Class cardapio
     Inherits System.Windows.Forms.Form
 
     'Descartar substituições de formulário para limpar a lista de componentes.
@@ -23,7 +23,7 @@ Partial Class home
     <System.Diagnostics.DebuggerStepThrough()>
     Private Sub InitializeComponent()
         Me.components = New System.ComponentModel.Container()
-        Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(home))
+        Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(cardapio))
         Me.Guna2BorderlessForm1 = New Guna.UI2.WinForms.Guna2BorderlessForm(Me.components)
         Me.btn_minimizar = New Guna.UI2.WinForms.Guna2ImageButton()
         Me.btn_fechar = New Guna.UI2.WinForms.Guna2ImageButton()
@@ -34,8 +34,8 @@ Partial Class home
         Me.Guna2HtmlLabel3 = New Guna.UI2.WinForms.Guna2HtmlLabel()
         Me.Guna2HtmlLabel4 = New Guna.UI2.WinForms.Guna2HtmlLabel()
         Me.Guna2Panel3 = New Guna.UI2.WinForms.Guna2Panel()
+        Me.btn_info = New Guna.UI2.WinForms.Guna2Button()
         Me.Guna2CirclePictureBox1 = New Guna.UI2.WinForms.Guna2CirclePictureBox()
-        Me.Guna2HtmlLabel6 = New Guna.UI2.WinForms.Guna2HtmlLabel()
         Me.Guna2Panel2 = New Guna.UI2.WinForms.Guna2Panel()
         Me.btn_estoque = New Guna.UI2.WinForms.Guna2Button()
         Me.btn_gerencia = New Guna.UI2.WinForms.Guna2Button()
@@ -59,7 +59,7 @@ Partial Class home
         Me.Guna2PictureBox2 = New Guna.UI2.WinForms.Guna2PictureBox()
         Me.Guna2PictureBox1 = New Guna.UI2.WinForms.Guna2PictureBox()
         Me.Guna2Panel7 = New Guna.UI2.WinForms.Guna2Panel()
-        Me.cmb_ = New Guna.UI2.WinForms.Guna2ComboBox()
+        Me.cmb_ordenar = New Guna.UI2.WinForms.Guna2ComboBox()
         Me.Guna2HtmlLabel1 = New Guna.UI2.WinForms.Guna2HtmlLabel()
         Me.Guna2HtmlLabel2 = New Guna.UI2.WinForms.Guna2HtmlLabel()
         Me.Guna2Panel5 = New Guna.UI2.WinForms.Guna2Panel()
@@ -218,8 +218,8 @@ Partial Class home
         '
         'Guna2Panel3
         '
+        Me.Guna2Panel3.Controls.Add(Me.btn_info)
         Me.Guna2Panel3.Controls.Add(Me.Guna2CirclePictureBox1)
-        Me.Guna2Panel3.Controls.Add(Me.Guna2HtmlLabel6)
         Me.Guna2Panel3.Controls.Add(Me.btn_sair)
         Me.Guna2Panel3.Dock = System.Windows.Forms.DockStyle.Bottom
         Me.Guna2Panel3.Location = New System.Drawing.Point(0, 630)
@@ -227,25 +227,32 @@ Partial Class home
         Me.Guna2Panel3.Size = New System.Drawing.Size(220, 139)
         Me.Guna2Panel3.TabIndex = 34
         '
+        'btn_info
+        '
+        Me.btn_info.AutoRoundedCorners = True
+        Me.btn_info.BorderRadius = 11
+        Me.btn_info.DisabledState.BorderColor = System.Drawing.Color.DarkGray
+        Me.btn_info.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray
+        Me.btn_info.DisabledState.FillColor = System.Drawing.Color.FromArgb(CType(CType(169, Byte), Integer), CType(CType(169, Byte), Integer), CType(CType(169, Byte), Integer))
+        Me.btn_info.DisabledState.ForeColor = System.Drawing.Color.FromArgb(CType(CType(141, Byte), Integer), CType(CType(141, Byte), Integer), CType(CType(141, Byte), Integer))
+        Me.btn_info.FillColor = System.Drawing.Color.FromArgb(CType(CType(244, Byte), Integer), CType(CType(187, Byte), Integer), CType(CType(108, Byte), Integer))
+        Me.btn_info.Font = New System.Drawing.Font("Julius Sans One", 16.0!)
+        Me.btn_info.ForeColor = System.Drawing.Color.Black
+        Me.btn_info.Location = New System.Drawing.Point(90, 14)
+        Me.btn_info.Name = "btn_info"
+        Me.btn_info.Size = New System.Drawing.Size(105, 25)
+        Me.btn_info.TabIndex = 33
+        Me.btn_info.Text = "NOME"
+        '
         'Guna2CirclePictureBox1
         '
         Me.Guna2CirclePictureBox1.ImageRotate = 0!
-        Me.Guna2CirclePictureBox1.Location = New System.Drawing.Point(45, 3)
+        Me.Guna2CirclePictureBox1.Location = New System.Drawing.Point(34, 3)
         Me.Guna2CirclePictureBox1.Name = "Guna2CirclePictureBox1"
         Me.Guna2CirclePictureBox1.ShadowDecoration.Mode = Guna.UI2.WinForms.Enums.ShadowMode.Circle
         Me.Guna2CirclePictureBox1.Size = New System.Drawing.Size(50, 50)
         Me.Guna2CirclePictureBox1.TabIndex = 32
         Me.Guna2CirclePictureBox1.TabStop = False
-        '
-        'Guna2HtmlLabel6
-        '
-        Me.Guna2HtmlLabel6.BackColor = System.Drawing.Color.Transparent
-        Me.Guna2HtmlLabel6.Font = New System.Drawing.Font("Julius Sans One", 16.0!)
-        Me.Guna2HtmlLabel6.Location = New System.Drawing.Point(101, 14)
-        Me.Guna2HtmlLabel6.Name = "Guna2HtmlLabel6"
-        Me.Guna2HtmlLabel6.Size = New System.Drawing.Size(65, 25)
-        Me.Guna2HtmlLabel6.TabIndex = 31
-        Me.Guna2HtmlLabel6.Text = "nome"
         '
         'Guna2Panel2
         '
@@ -294,7 +301,7 @@ Partial Class home
         Me.btn_gerencia.Image = CType(resources.GetObject("btn_gerencia.Image"), System.Drawing.Image)
         Me.btn_gerencia.ImageAlign = System.Windows.Forms.HorizontalAlignment.Left
         Me.btn_gerencia.ImageSize = New System.Drawing.Size(25, 25)
-        Me.btn_gerencia.Location = New System.Drawing.Point(3, 482)
+        Me.btn_gerencia.Location = New System.Drawing.Point(3, 476)
         Me.btn_gerencia.Name = "btn_gerencia"
         Me.btn_gerencia.Size = New System.Drawing.Size(217, 54)
         Me.btn_gerencia.TabIndex = 32
@@ -314,7 +321,7 @@ Partial Class home
         Me.btn_mesas.Image = CType(resources.GetObject("btn_mesas.Image"), System.Drawing.Image)
         Me.btn_mesas.ImageAlign = System.Windows.Forms.HorizontalAlignment.Left
         Me.btn_mesas.ImageSize = New System.Drawing.Size(25, 25)
-        Me.btn_mesas.Location = New System.Drawing.Point(3, 350)
+        Me.btn_mesas.Location = New System.Drawing.Point(3, 236)
         Me.btn_mesas.Name = "btn_mesas"
         Me.btn_mesas.Size = New System.Drawing.Size(217, 54)
         Me.btn_mesas.TabIndex = 32
@@ -334,7 +341,7 @@ Partial Class home
         Me.btn_pedidos.Image = CType(resources.GetObject("btn_pedidos.Image"), System.Drawing.Image)
         Me.btn_pedidos.ImageAlign = System.Windows.Forms.HorizontalAlignment.Left
         Me.btn_pedidos.ImageSize = New System.Drawing.Size(25, 25)
-        Me.btn_pedidos.Location = New System.Drawing.Point(3, 284)
+        Me.btn_pedidos.Location = New System.Drawing.Point(3, 356)
         Me.btn_pedidos.Name = "btn_pedidos"
         Me.btn_pedidos.Size = New System.Drawing.Size(217, 54)
         Me.btn_pedidos.TabIndex = 32
@@ -355,7 +362,7 @@ Partial Class home
         Me.btn_cardapio.Image = CType(resources.GetObject("btn_cardapio.Image"), System.Drawing.Image)
         Me.btn_cardapio.ImageAlign = System.Windows.Forms.HorizontalAlignment.Left
         Me.btn_cardapio.ImageSize = New System.Drawing.Size(25, 25)
-        Me.btn_cardapio.Location = New System.Drawing.Point(1, 218)
+        Me.btn_cardapio.Location = New System.Drawing.Point(1, 296)
         Me.btn_cardapio.Name = "btn_cardapio"
         Me.btn_cardapio.Size = New System.Drawing.Size(219, 54)
         Me.btn_cardapio.TabIndex = 32
@@ -462,6 +469,7 @@ Partial Class home
         Me.flp_itemsCard.Name = "flp_itemsCard"
         Me.flp_itemsCard.Size = New System.Drawing.Size(595, 575)
         Me.flp_itemsCard.TabIndex = 8
+        Me.flp_itemsCard.Tag = "ew8if0oui"
         '
         'Guna2Panel8
         '
@@ -573,7 +581,7 @@ Partial Class home
         Me.Guna2Panel7.AutoSize = True
         Me.Guna2Panel7.BackColor = System.Drawing.SystemColors.Control
         Me.Guna2Panel7.BorderRadius = 23
-        Me.Guna2Panel7.Controls.Add(Me.cmb_)
+        Me.Guna2Panel7.Controls.Add(Me.cmb_ordenar)
         Me.Guna2Panel7.Controls.Add(Me.Guna2HtmlLabel1)
         Me.Guna2Panel7.FillColor = System.Drawing.Color.White
         Me.Guna2Panel7.Location = New System.Drawing.Point(386, 20)
@@ -582,27 +590,27 @@ Partial Class home
         Me.Guna2Panel7.Size = New System.Drawing.Size(223, 49)
         Me.Guna2Panel7.TabIndex = 7
         '
-        'cmb_
+        'cmb_ordenar
         '
-        Me.cmb_.Anchor = CType((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Bottom), System.Windows.Forms.AnchorStyles)
-        Me.cmb_.AutoRoundedCorners = True
-        Me.cmb_.BackColor = System.Drawing.Color.Transparent
-        Me.cmb_.BorderColor = System.Drawing.Color.FromArgb(CType(CType(46, Byte), Integer), CType(CType(31, Byte), Integer), CType(CType(39, Byte), Integer))
-        Me.cmb_.BorderRadius = 17
-        Me.cmb_.Cursor = System.Windows.Forms.Cursors.Hand
-        Me.cmb_.DrawMode = System.Windows.Forms.DrawMode.OwnerDrawFixed
-        Me.cmb_.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList
-        Me.cmb_.FocusedColor = System.Drawing.Color.FromArgb(CType(CType(239, Byte), Integer), CType(CType(239, Byte), Integer), CType(CType(239, Byte), Integer))
-        Me.cmb_.FocusedState.BorderColor = System.Drawing.Color.FromArgb(CType(CType(239, Byte), Integer), CType(CType(239, Byte), Integer), CType(CType(239, Byte), Integer))
-        Me.cmb_.Font = New System.Drawing.Font("Libre Caslon Display", 9.749999!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.cmb_.ForeColor = System.Drawing.Color.FromArgb(CType(CType(68, Byte), Integer), CType(CType(88, Byte), Integer), CType(CType(112, Byte), Integer))
-        Me.cmb_.HoverState.BorderColor = System.Drawing.Color.FromArgb(CType(CType(239, Byte), Integer), CType(CType(239, Byte), Integer), CType(CType(239, Byte), Integer))
-        Me.cmb_.ItemHeight = 30
-        Me.cmb_.Location = New System.Drawing.Point(83, 6)
-        Me.cmb_.Name = "cmb_"
-        Me.cmb_.Size = New System.Drawing.Size(121, 36)
-        Me.cmb_.TabIndex = 11
-        Me.cmb_.TextAlign = System.Windows.Forms.HorizontalAlignment.Right
+        Me.cmb_ordenar.Anchor = CType((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Bottom), System.Windows.Forms.AnchorStyles)
+        Me.cmb_ordenar.AutoRoundedCorners = True
+        Me.cmb_ordenar.BackColor = System.Drawing.Color.Transparent
+        Me.cmb_ordenar.BorderColor = System.Drawing.Color.FromArgb(CType(CType(46, Byte), Integer), CType(CType(31, Byte), Integer), CType(CType(39, Byte), Integer))
+        Me.cmb_ordenar.BorderRadius = 17
+        Me.cmb_ordenar.Cursor = System.Windows.Forms.Cursors.Hand
+        Me.cmb_ordenar.DrawMode = System.Windows.Forms.DrawMode.OwnerDrawFixed
+        Me.cmb_ordenar.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList
+        Me.cmb_ordenar.FocusedColor = System.Drawing.Color.FromArgb(CType(CType(239, Byte), Integer), CType(CType(239, Byte), Integer), CType(CType(239, Byte), Integer))
+        Me.cmb_ordenar.FocusedState.BorderColor = System.Drawing.Color.FromArgb(CType(CType(239, Byte), Integer), CType(CType(239, Byte), Integer), CType(CType(239, Byte), Integer))
+        Me.cmb_ordenar.Font = New System.Drawing.Font("Libre Caslon Display", 9.749999!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.cmb_ordenar.ForeColor = System.Drawing.Color.FromArgb(CType(CType(68, Byte), Integer), CType(CType(88, Byte), Integer), CType(CType(112, Byte), Integer))
+        Me.cmb_ordenar.HoverState.BorderColor = System.Drawing.Color.FromArgb(CType(CType(239, Byte), Integer), CType(CType(239, Byte), Integer), CType(CType(239, Byte), Integer))
+        Me.cmb_ordenar.ItemHeight = 30
+        Me.cmb_ordenar.Location = New System.Drawing.Point(83, 6)
+        Me.cmb_ordenar.Name = "cmb_ordenar"
+        Me.cmb_ordenar.Size = New System.Drawing.Size(121, 36)
+        Me.cmb_ordenar.TabIndex = 11
+        Me.cmb_ordenar.TextAlign = System.Windows.Forms.HorizontalAlignment.Right
         '
         'Guna2HtmlLabel1
         '
@@ -848,7 +856,7 @@ Partial Class home
         Me.Guna2DragControl2.TargetControl = Me.pnl_controls
         Me.Guna2DragControl2.TransparentWhileDrag = False
         '
-        'home
+        'cardapio
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
@@ -859,14 +867,13 @@ Partial Class home
         Me.Controls.Add(Me.Guna2ContainerControl1)
         Me.Controls.Add(Me.pnl_controls)
         Me.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None
-        Me.Name = "home"
+        Me.Name = "cardapio"
         Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen
         Me.Text = "formDefault1"
         Me.pnl_controls.ResumeLayout(False)
         Me.pnl_logo.ResumeLayout(False)
         Me.pnl_logo.PerformLayout()
         Me.Guna2Panel3.ResumeLayout(False)
-        Me.Guna2Panel3.PerformLayout()
         CType(Me.Guna2CirclePictureBox1, System.ComponentModel.ISupportInitialize).EndInit()
         Me.Guna2Panel2.ResumeLayout(False)
         Me.Guna2ContainerControl1.ResumeLayout(False)
@@ -910,7 +917,6 @@ Partial Class home
     Friend WithEvents Guna2HtmlLabel5 As Guna.UI2.WinForms.Guna2HtmlLabel
     Friend WithEvents Guna2HtmlLabel3 As Guna.UI2.WinForms.Guna2HtmlLabel
     Friend WithEvents Guna2HtmlLabel4 As Guna.UI2.WinForms.Guna2HtmlLabel
-    Friend WithEvents Guna2HtmlLabel6 As Guna.UI2.WinForms.Guna2HtmlLabel
     Friend WithEvents Guna2CirclePictureBox1 As Guna.UI2.WinForms.Guna2CirclePictureBox
     Friend WithEvents pnl_title As Guna.UI2.WinForms.Guna2Panel
     Friend WithEvents Guna2TextBox2 As Guna.UI2.WinForms.Guna2TextBox
@@ -922,7 +928,7 @@ Partial Class home
     Friend WithEvents Guna2HtmlLabel2 As Guna.UI2.WinForms.Guna2HtmlLabel
     Friend WithEvents Guna2HtmlLabel1 As Guna.UI2.WinForms.Guna2HtmlLabel
     Friend WithEvents Guna2Panel7 As Guna.UI2.WinForms.Guna2Panel
-    Friend WithEvents cmb_ As Guna.UI2.WinForms.Guna2ComboBox
+    Friend WithEvents cmb_ordenar As Guna.UI2.WinForms.Guna2ComboBox
     Friend WithEvents flp_itemsCard As FlowLayoutPanel
     Friend WithEvents Guna2Panel8 As Guna.UI2.WinForms.Guna2Panel
     Friend WithEvents Guna2DragControl1 As Guna.UI2.WinForms.Guna2DragControl
@@ -948,4 +954,5 @@ Partial Class home
     Friend WithEvents Guna2HtmlLabel17 As Guna.UI2.WinForms.Guna2HtmlLabel
     Friend WithEvents Guna2HtmlLabel16 As Guna.UI2.WinForms.Guna2HtmlLabel
     Friend WithEvents btn_1 As Guna.UI2.WinForms.Guna2ImageButton
+    Friend WithEvents btn_info As Guna.UI2.WinForms.Guna2Button
 End Class

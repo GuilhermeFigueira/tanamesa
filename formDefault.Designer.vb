@@ -124,6 +124,7 @@ Partial Class form_base
         'txt_
         '
         Me.txt_.AutoRoundedCorners = True
+        Me.txt_.BackColor = System.Drawing.Color.Transparent
         Me.txt_.BorderColor = System.Drawing.Color.FromArgb(CType(CType(239, Byte), Integer), CType(CType(239, Byte), Integer), CType(CType(239, Byte), Integer))
         Me.txt_.BorderRadius = 17
         Me.txt_.Cursor = System.Windows.Forms.Cursors.IBeam
@@ -149,6 +150,7 @@ Partial Class form_base
         'btn_
         '
         Me.btn_.AutoRoundedCorners = True
+        Me.btn_.BackColor = System.Drawing.Color.Transparent
         Me.btn_.BorderRadius = 22
         Me.btn_.Cursor = System.Windows.Forms.Cursors.Hand
         Me.btn_.DisabledState.BorderColor = System.Drawing.Color.DarkGray
@@ -167,6 +169,7 @@ Partial Class form_base
         'btn_1
         '
         Me.btn_1.Anchor = CType((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
+        Me.btn_1.BackColor = System.Drawing.Color.Transparent
         Me.btn_1.CheckedState.ImageSize = New System.Drawing.Size(64, 64)
         Me.btn_1.Cursor = System.Windows.Forms.Cursors.Hand
         Me.btn_1.HoverState.ImageSize = New System.Drawing.Size(24, 24)
@@ -183,6 +186,7 @@ Partial Class form_base
         'btn_2
         '
         Me.btn_2.Anchor = CType((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
+        Me.btn_2.BackColor = System.Drawing.Color.Transparent
         Me.btn_2.CheckedState.ImageSize = New System.Drawing.Size(64, 64)
         Me.btn_2.Cursor = System.Windows.Forms.Cursors.Hand
         Me.btn_2.HoverState.ImageSize = New System.Drawing.Size(24, 24)
@@ -367,6 +371,7 @@ Partial Class form_base
         'Guna2TextBox1
         '
         Me.Guna2TextBox1.AutoRoundedCorners = True
+        Me.Guna2TextBox1.BackColor = System.Drawing.Color.Transparent
         Me.Guna2TextBox1.BorderColor = System.Drawing.Color.FromArgb(CType(CType(239, Byte), Integer), CType(CType(239, Byte), Integer), CType(CType(239, Byte), Integer))
         Me.Guna2TextBox1.BorderRadius = 17
         Me.Guna2TextBox1.Cursor = System.Windows.Forms.Cursors.IBeam

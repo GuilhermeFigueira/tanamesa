@@ -24,11 +24,11 @@ Partial Class login
     Private Sub InitializeComponent()
         Me.components = New System.ComponentModel.Container()
         Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(login))
-        Me.GunaLabel1 = New Guna.UI.WinForms.GunaLabel()
-        Me.GunaLabel2 = New Guna.UI.WinForms.GunaLabel()
-        Me.GunaLabel3 = New Guna.UI.WinForms.GunaLabel()
-        Me.txt_cpf = New Guna.UI.WinForms.GunaTextBox()
-        Me.txt_senha = New Guna.UI.WinForms.GunaTextBox()
+        Me.GunaLabel1 = New Guna.UI2.WinForms.Guna2HtmlLabel()
+        Me.GunaLabel2 = New Guna.UI2.WinForms.Guna2HtmlLabel()
+        Me.GunaLabel3 = New Guna.UI2.WinForms.Guna2HtmlLabel()
+        Me.txt_cpf = New Guna.UI2.WinForms.Guna2TextBox()
+        Me.txt_senha = New Guna.UI2.WinForms.Guna2TextBox()
         Me.Guna2BorderlessForm1 = New Guna.UI2.WinForms.Guna2BorderlessForm(Me.components)
         Me.Guna2ContainerControl1 = New Guna.UI2.WinForms.Guna2ContainerControl()
         Me.btn_fechar = New Guna.UI2.WinForms.Guna2ImageButton()
@@ -39,49 +39,52 @@ Partial Class login
         '
         'GunaLabel1
         '
-        Me.GunaLabel1.AutoSize = True
+        Me.GunaLabel1.BackColor = System.Drawing.Color.Transparent
         Me.GunaLabel1.Font = New System.Drawing.Font("Julius Sans One", 48.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.GunaLabel1.ForeColor = System.Drawing.Color.FromArgb(CType(CType(46, Byte), Integer), CType(CType(31, Byte), Integer), CType(CType(39, Byte), Integer))
         Me.GunaLabel1.Location = New System.Drawing.Point(70, 26)
         Me.GunaLabel1.Name = "GunaLabel1"
-        Me.GunaLabel1.Size = New System.Drawing.Size(396, 70)
+        Me.GunaLabel1.Size = New System.Drawing.Size(369, 72)
         Me.GunaLabel1.TabIndex = 0
         Me.GunaLabel1.Text = "TÁNAMESA!"
         '
         'GunaLabel2
         '
-        Me.GunaLabel2.AutoSize = True
+        Me.GunaLabel2.BackColor = System.Drawing.Color.Transparent
         Me.GunaLabel2.Font = New System.Drawing.Font("Libre Caslon Display", 36.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.GunaLabel2.Location = New System.Drawing.Point(32, 234)
         Me.GunaLabel2.Name = "GunaLabel2"
-        Me.GunaLabel2.Size = New System.Drawing.Size(182, 58)
+        Me.GunaLabel2.Size = New System.Drawing.Size(160, 60)
         Me.GunaLabel2.TabIndex = 1
         Me.GunaLabel2.Text = "SENHA"
         '
         'GunaLabel3
         '
-        Me.GunaLabel3.AutoSize = True
+        Me.GunaLabel3.BackColor = System.Drawing.Color.Transparent
         Me.GunaLabel3.Font = New System.Drawing.Font("Libre Caslon Display", 36.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.GunaLabel3.Location = New System.Drawing.Point(32, 138)
         Me.GunaLabel3.Name = "GunaLabel3"
-        Me.GunaLabel3.Size = New System.Drawing.Size(111, 58)
+        Me.GunaLabel3.Size = New System.Drawing.Size(89, 60)
         Me.GunaLabel3.TabIndex = 2
         Me.GunaLabel3.Text = "CPF"
         '
         'txt_cpf
         '
         Me.txt_cpf.BackColor = System.Drawing.Color.Transparent
-        Me.txt_cpf.BaseColor = System.Drawing.Color.FromArgb(CType(CType(251, Byte), Integer), CType(CType(228, Byte), Integer), CType(CType(196, Byte), Integer))
         Me.txt_cpf.BorderColor = System.Drawing.Color.FromArgb(CType(CType(133, Byte), Integer), CType(CType(77, Byte), Integer), CType(CType(39, Byte), Integer))
+        Me.txt_cpf.BorderRadius = 12
         Me.txt_cpf.Cursor = System.Windows.Forms.Cursors.IBeam
-        Me.txt_cpf.FocusedBaseColor = System.Drawing.Color.FromArgb(CType(CType(251, Byte), Integer), CType(CType(228, Byte), Integer), CType(CType(196, Byte), Integer))
-        Me.txt_cpf.FocusedBorderColor = System.Drawing.Color.FromArgb(CType(CType(133, Byte), Integer), CType(CType(77, Byte), Integer), CType(CType(39, Byte), Integer))
-        Me.txt_cpf.FocusedForeColor = System.Drawing.SystemColors.ControlText
+        Me.txt_cpf.DefaultText = ""
+        Me.txt_cpf.FillColor = System.Drawing.Color.FromArgb(CType(CType(251, Byte), Integer), CType(CType(228, Byte), Integer), CType(CType(196, Byte), Integer))
+        Me.txt_cpf.FocusedState.BorderColor = System.Drawing.Color.FromArgb(CType(CType(133, Byte), Integer), CType(CType(77, Byte), Integer), CType(CType(39, Byte), Integer))
+        Me.txt_cpf.FocusedState.FillColor = System.Drawing.Color.FromArgb(CType(CType(251, Byte), Integer), CType(CType(228, Byte), Integer), CType(CType(196, Byte), Integer))
+        Me.txt_cpf.FocusedState.ForeColor = System.Drawing.SystemColors.ControlText
         Me.txt_cpf.Font = New System.Drawing.Font("Libre Caslon Display", 30.0!)
         Me.txt_cpf.Location = New System.Drawing.Point(217, 138)
+        Me.txt_cpf.Margin = New System.Windows.Forms.Padding(9, 10, 9, 10)
         Me.txt_cpf.Name = "txt_cpf"
         Me.txt_cpf.PasswordChar = Global.Microsoft.VisualBasic.ChrW(0)
-        Me.txt_cpf.Radius = 12
+        Me.txt_cpf.PlaceholderText = ""
         Me.txt_cpf.SelectedText = ""
         Me.txt_cpf.Size = New System.Drawing.Size(700, 60)
         Me.txt_cpf.TabIndex = 3
@@ -89,17 +92,20 @@ Partial Class login
         'txt_senha
         '
         Me.txt_senha.BackColor = System.Drawing.Color.Transparent
-        Me.txt_senha.BaseColor = System.Drawing.Color.FromArgb(CType(CType(251, Byte), Integer), CType(CType(228, Byte), Integer), CType(CType(196, Byte), Integer))
         Me.txt_senha.BorderColor = System.Drawing.Color.FromArgb(CType(CType(133, Byte), Integer), CType(CType(77, Byte), Integer), CType(CType(39, Byte), Integer))
+        Me.txt_senha.BorderRadius = 12
         Me.txt_senha.Cursor = System.Windows.Forms.Cursors.IBeam
-        Me.txt_senha.FocusedBaseColor = System.Drawing.Color.FromArgb(CType(CType(251, Byte), Integer), CType(CType(228, Byte), Integer), CType(CType(196, Byte), Integer))
-        Me.txt_senha.FocusedBorderColor = System.Drawing.Color.FromArgb(CType(CType(133, Byte), Integer), CType(CType(77, Byte), Integer), CType(CType(39, Byte), Integer))
-        Me.txt_senha.FocusedForeColor = System.Drawing.SystemColors.ControlText
+        Me.txt_senha.DefaultText = ""
+        Me.txt_senha.FillColor = System.Drawing.Color.FromArgb(CType(CType(251, Byte), Integer), CType(CType(228, Byte), Integer), CType(CType(196, Byte), Integer))
+        Me.txt_senha.FocusedState.BorderColor = System.Drawing.Color.FromArgb(CType(CType(133, Byte), Integer), CType(CType(77, Byte), Integer), CType(CType(39, Byte), Integer))
+        Me.txt_senha.FocusedState.FillColor = System.Drawing.Color.FromArgb(CType(CType(251, Byte), Integer), CType(CType(228, Byte), Integer), CType(CType(196, Byte), Integer))
+        Me.txt_senha.FocusedState.ForeColor = System.Drawing.SystemColors.ControlText
         Me.txt_senha.Font = New System.Drawing.Font("Libre Caslon Display", 30.0!)
         Me.txt_senha.Location = New System.Drawing.Point(383, 234)
+        Me.txt_senha.Margin = New System.Windows.Forms.Padding(9, 10, 9, 10)
         Me.txt_senha.Name = "txt_senha"
         Me.txt_senha.PasswordChar = Global.Microsoft.VisualBasic.ChrW(0)
-        Me.txt_senha.Radius = 12
+        Me.txt_senha.PlaceholderText = ""
         Me.txt_senha.SelectedText = ""
         Me.txt_senha.Size = New System.Drawing.Size(534, 60)
         Me.txt_senha.TabIndex = 4
@@ -204,11 +210,11 @@ Partial Class login
 
     End Sub
 
-    Friend WithEvents GunaLabel1 As Guna.UI.WinForms.GunaLabel
-    Friend WithEvents GunaLabel2 As Guna.UI.WinForms.GunaLabel
-    Friend WithEvents GunaLabel3 As Guna.UI.WinForms.GunaLabel
-    Friend WithEvents txt_cpf As Guna.UI.WinForms.GunaTextBox
-    Friend WithEvents txt_senha As Guna.UI.WinForms.GunaTextBox
+    Friend WithEvents GunaLabel1 As Guna.UI2.WinForms.Guna2HtmlLabel
+    Friend WithEvents GunaLabel2 As Guna.UI2.WinForms.Guna2HtmlLabel
+    Friend WithEvents GunaLabel3 As Guna.UI2.WinForms.Guna2HtmlLabel
+    Friend WithEvents txt_cpf As Guna.UI2.WinForms.Guna2TextBox
+    Friend WithEvents txt_senha As Guna.UI2.WinForms.Guna2TextBox
     Friend WithEvents Guna2BorderlessForm1 As Guna.UI2.WinForms.Guna2BorderlessForm
     Friend WithEvents Guna2ContainerControl1 As Guna.UI2.WinForms.Guna2ContainerControl
     Friend WithEvents btn_fechar As Guna.UI2.WinForms.Guna2ImageButton

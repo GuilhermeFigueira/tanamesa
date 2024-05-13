@@ -48,12 +48,6 @@
     <OptionInfer>On</OptionInfer>
   </PropertyGroup>
   <ItemGroup>
-    <Reference Include="Bunifu_UI_v1.52">
-      <HintPath>..\FRAMEWORK VB.NET\Bunifu_UI_v1.52.dll</HintPath>
-    </Reference>
-    <Reference Include="Guna.UI">
-      <HintPath>..\FRAMEWORK VB.NET\Guna.UI-Framework-Lib-master\Guna.UI WinForms\.net 4.0\Guna.UI.dll</HintPath>
-    </Reference>
     <Reference Include="Guna.UI2, Version=2.0.4.6, Culture=neutral, PublicKeyToken=8b9d14aa5142e261, processorArchitecture=MSIL">
       <HintPath>packages\Guna.UI2.WinForms.2.0.4.6\lib\net472\Guna.UI2.dll</HintPath>
     </Reference>
@@ -85,32 +79,31 @@
     <Import Include="System.Threading.Tasks" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Component1.Designer.vb">
-      <DependentUpon>Component1.vb</DependentUpon>
-    </Compile>
-    <Compile Include="Component1.vb">
-      <SubType>Component</SubType>
-    </Compile>
-    <Compile Include="Form1.vb">
+    <Compile Include="login.vb">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Form1.Designer.vb">
-      <DependentUpon>Form1.vb</DependentUpon>
+    <Compile Include="login.Designer.vb">
+      <DependentUpon>login.vb</DependentUpon>
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Form2.Designer.vb">
-      <DependentUpon>Form2.vb</DependentUpon>
+    <Compile Include="formDefault.Designer.vb">
+      <DependentUpon>formDefault.vb</DependentUpon>
     </Compile>
-    <Compile Include="Form2.vb">
+    <Compile Include="formDefault.vb">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="home.Designer.vb">
-      <DependentUpon>home.vb</DependentUpon>
+    <Compile Include="deslogar.Designer.vb">
+      <DependentUpon>deslogar.vb</DependentUpon>
     </Compile>
-    <Compile Include="home.vb">
+    <Compile Include="deslogar.vb">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Module1.vb" />
+    <Compile Include="cardapio.Designer.vb">
+      <DependentUpon>cardapio.vb</DependentUpon>
+    </Compile>
+    <Compile Include="cardapio.vb">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="My Project\AssemblyInfo.vb" />
     <Compile Include="My Project\Application.Designer.vb">
       <AutoGen>True</AutoGen>
@@ -127,6 +120,12 @@
       <DependentUpon>Settings.settings</DependentUpon>
       <DesignTimeSharedInput>True</DesignTimeSharedInput>
     </Compile>
+    <Compile Include="infoUsuario.Designer.vb">
+      <DependentUpon>infoUsuario.vb</DependentUpon>
+    </Compile>
+    <Compile Include="infoUsuario.vb">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="sair.Designer.vb">
       <DependentUpon>sair.vb</DependentUpon>
     </Compile>
@@ -135,23 +134,26 @@
     </Compile>
   </ItemGroup>
   <ItemGroup>
-    <EmbeddedResource Include="Component1.resx">
-      <DependentUpon>Component1.vb</DependentUpon>
+    <EmbeddedResource Include="login.resx">
+      <DependentUpon>login.vb</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Form1.resx">
-      <DependentUpon>Form1.vb</DependentUpon>
+    <EmbeddedResource Include="formDefault.resx">
+      <DependentUpon>formDefault.vb</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Form2.resx">
-      <DependentUpon>Form2.vb</DependentUpon>
+    <EmbeddedResource Include="deslogar.resx">
+      <DependentUpon>deslogar.vb</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="home.resx">
-      <DependentUpon>home.vb</DependentUpon>
+    <EmbeddedResource Include="cardapio.resx">
+      <DependentUpon>cardapio.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="My Project\Resources.resx">
       <Generator>VbMyResourcesResXFileCodeGenerator</Generator>
       <LastGenOutput>Resources.Designer.vb</LastGenOutput>
       <CustomToolNamespace>My.Resources</CustomToolNamespace>
       <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="infoUsuario.resx">
+      <DependentUpon>infoUsuario.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="sair.resx">
       <DependentUpon>sair.vb</DependentUpon>
