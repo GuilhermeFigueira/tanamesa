@@ -65,15 +65,15 @@ Public Class mesas
 
     End Sub
 
-    Private Sub Guna2Panel15_Paint(sender As Object, e As PaintEventArgs) Handles Guna2Panel15.Paint
+    Private Sub Guna2Panel15_Paint(sender As Object, e As PaintEventArgs)
 
     End Sub
 
-    Private Sub Guna2Panel31_Paint(sender As Object, e As PaintEventArgs) Handles Guna2Panel31.Paint
+    Private Sub Guna2Panel31_Paint(sender As Object, e As PaintEventArgs)
 
     End Sub
 
-    Private Sub Guna2Panel37_Paint(sender As Object, e As PaintEventArgs) Handles Guna2Panel37.Paint
+    Private Sub Guna2Panel37_Paint(sender As Object, e As PaintEventArgs)
 
     End Sub
 End Class

@@ -464,6 +464,7 @@ Partial Class cardapio
         'flp_itemsCard
         '
         Me.flp_itemsCard.AutoScroll = True
+        Me.flp_itemsCard.AutoSize = True
         Me.flp_itemsCard.Controls.Add(Me.Guna2Panel8)
         Me.flp_itemsCard.Location = New System.Drawing.Point(23, 85)
         Me.flp_itemsCard.Name = "flp_itemsCard"

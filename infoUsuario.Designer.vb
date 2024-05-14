@@ -51,6 +51,7 @@ Partial Class infoUsuario
         Me.Guna2BorderlessForm1.DockIndicatorTransparencyValue = 0.6R
         Me.Guna2BorderlessForm1.DragStartTransparencyValue = 1.0R
         Me.Guna2BorderlessForm1.ResizeForm = False
+        Me.Guna2BorderlessForm1.TransparentWhileDrag = True
         '
         'btn_minimizar
         '

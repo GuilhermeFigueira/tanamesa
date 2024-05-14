@@ -53,46 +53,10 @@ Partial Class mesas
         Me.FlowLayoutPanel1 = New System.Windows.Forms.FlowLayoutPanel()
         Me.Guna2Panel45 = New Guna.UI2.WinForms.Guna2Panel()
         Me.Guna2Panel46 = New Guna.UI2.WinForms.Guna2Panel()
+        Me.Guna2HtmlLabel2 = New Guna.UI2.WinForms.Guna2HtmlLabel()
+        Me.Guna2HtmlLabel1 = New Guna.UI2.WinForms.Guna2HtmlLabel()
+        Me.Guna2BorderlessForm2 = New Guna.UI2.WinForms.Guna2BorderlessForm(Me.components)
         Me.Guna2Panel5 = New Guna.UI2.WinForms.Guna2Panel()
-        Me.Guna2Panel6 = New Guna.UI2.WinForms.Guna2Panel()
-        Me.Guna2Panel7 = New Guna.UI2.WinForms.Guna2Panel()
-        Me.Guna2Panel8 = New Guna.UI2.WinForms.Guna2Panel()
-        Me.Guna2Panel9 = New Guna.UI2.WinForms.Guna2Panel()
-        Me.Guna2Panel10 = New Guna.UI2.WinForms.Guna2Panel()
-        Me.Guna2Panel11 = New Guna.UI2.WinForms.Guna2Panel()
-        Me.Guna2Panel12 = New Guna.UI2.WinForms.Guna2Panel()
-        Me.Guna2Panel13 = New Guna.UI2.WinForms.Guna2Panel()
-        Me.Guna2Panel14 = New Guna.UI2.WinForms.Guna2Panel()
-        Me.Guna2Panel15 = New Guna.UI2.WinForms.Guna2Panel()
-        Me.Guna2Panel16 = New Guna.UI2.WinForms.Guna2Panel()
-        Me.Guna2Panel17 = New Guna.UI2.WinForms.Guna2Panel()
-        Me.Guna2Panel18 = New Guna.UI2.WinForms.Guna2Panel()
-        Me.Guna2Panel19 = New Guna.UI2.WinForms.Guna2Panel()
-        Me.Guna2Panel20 = New Guna.UI2.WinForms.Guna2Panel()
-        Me.Guna2Panel21 = New Guna.UI2.WinForms.Guna2Panel()
-        Me.Guna2Panel22 = New Guna.UI2.WinForms.Guna2Panel()
-        Me.Guna2Panel23 = New Guna.UI2.WinForms.Guna2Panel()
-        Me.Guna2Panel24 = New Guna.UI2.WinForms.Guna2Panel()
-        Me.Guna2Panel25 = New Guna.UI2.WinForms.Guna2Panel()
-        Me.Guna2Panel26 = New Guna.UI2.WinForms.Guna2Panel()
-        Me.Guna2Panel27 = New Guna.UI2.WinForms.Guna2Panel()
-        Me.Guna2Panel28 = New Guna.UI2.WinForms.Guna2Panel()
-        Me.Guna2Panel29 = New Guna.UI2.WinForms.Guna2Panel()
-        Me.Guna2Panel30 = New Guna.UI2.WinForms.Guna2Panel()
-        Me.Guna2Panel31 = New Guna.UI2.WinForms.Guna2Panel()
-        Me.Guna2Panel32 = New Guna.UI2.WinForms.Guna2Panel()
-        Me.Guna2Panel33 = New Guna.UI2.WinForms.Guna2Panel()
-        Me.Guna2Panel34 = New Guna.UI2.WinForms.Guna2Panel()
-        Me.Guna2Panel35 = New Guna.UI2.WinForms.Guna2Panel()
-        Me.Guna2Panel36 = New Guna.UI2.WinForms.Guna2Panel()
-        Me.Guna2Panel37 = New Guna.UI2.WinForms.Guna2Panel()
-        Me.Guna2Panel38 = New Guna.UI2.WinForms.Guna2Panel()
-        Me.Guna2Panel39 = New Guna.UI2.WinForms.Guna2Panel()
-        Me.Guna2Panel40 = New Guna.UI2.WinForms.Guna2Panel()
-        Me.Guna2Panel41 = New Guna.UI2.WinForms.Guna2Panel()
-        Me.Guna2Panel42 = New Guna.UI2.WinForms.Guna2Panel()
-        Me.Guna2Panel43 = New Guna.UI2.WinForms.Guna2Panel()
-        Me.Guna2Panel44 = New Guna.UI2.WinForms.Guna2Panel()
         Me.pnl_controls.SuspendLayout()
         Me.pnl_logo.SuspendLayout()
         Me.Guna2Panel3.SuspendLayout()
@@ -103,26 +67,6 @@ Partial Class mesas
         Me.Guna2Panel4.SuspendLayout()
         Me.FlowLayoutPanel1.SuspendLayout()
         Me.Guna2Panel45.SuspendLayout()
-        Me.Guna2Panel5.SuspendLayout()
-        Me.Guna2Panel7.SuspendLayout()
-        Me.Guna2Panel9.SuspendLayout()
-        Me.Guna2Panel11.SuspendLayout()
-        Me.Guna2Panel13.SuspendLayout()
-        Me.Guna2Panel15.SuspendLayout()
-        Me.Guna2Panel17.SuspendLayout()
-        Me.Guna2Panel19.SuspendLayout()
-        Me.Guna2Panel21.SuspendLayout()
-        Me.Guna2Panel23.SuspendLayout()
-        Me.Guna2Panel25.SuspendLayout()
-        Me.Guna2Panel27.SuspendLayout()
-        Me.Guna2Panel29.SuspendLayout()
-        Me.Guna2Panel31.SuspendLayout()
-        Me.Guna2Panel33.SuspendLayout()
-        Me.Guna2Panel35.SuspendLayout()
-        Me.Guna2Panel37.SuspendLayout()
-        Me.Guna2Panel39.SuspendLayout()
-        Me.Guna2Panel41.SuspendLayout()
-        Me.Guna2Panel43.SuspendLayout()
         Me.SuspendLayout()
         '
         'Guna2BorderlessForm1
@@ -465,6 +409,8 @@ Partial Class mesas
         '
         'Guna2Panel4
         '
+        Me.Guna2Panel4.BackColor = System.Drawing.Color.Transparent
+        Me.Guna2Panel4.Controls.Add(Me.Guna2Panel5)
         Me.Guna2Panel4.Controls.Add(Me.FlowLayoutPanel1)
         Me.Guna2Panel4.Dock = System.Windows.Forms.DockStyle.Fill
         Me.Guna2Panel4.Location = New System.Drawing.Point(0, 80)
@@ -489,37 +435,22 @@ Partial Class mesas
         '
         Me.FlowLayoutPanel1.AutoScroll = True
         Me.FlowLayoutPanel1.Controls.Add(Me.Guna2Panel45)
-        Me.FlowLayoutPanel1.Controls.Add(Me.Guna2Panel5)
-        Me.FlowLayoutPanel1.Controls.Add(Me.Guna2Panel7)
-        Me.FlowLayoutPanel1.Controls.Add(Me.Guna2Panel9)
-        Me.FlowLayoutPanel1.Controls.Add(Me.Guna2Panel11)
-        Me.FlowLayoutPanel1.Controls.Add(Me.Guna2Panel13)
-        Me.FlowLayoutPanel1.Controls.Add(Me.Guna2Panel15)
-        Me.FlowLayoutPanel1.Controls.Add(Me.Guna2Panel17)
-        Me.FlowLayoutPanel1.Controls.Add(Me.Guna2Panel19)
-        Me.FlowLayoutPanel1.Controls.Add(Me.Guna2Panel21)
-        Me.FlowLayoutPanel1.Controls.Add(Me.Guna2Panel23)
-        Me.FlowLayoutPanel1.Controls.Add(Me.Guna2Panel25)
-        Me.FlowLayoutPanel1.Controls.Add(Me.Guna2Panel27)
-        Me.FlowLayoutPanel1.Controls.Add(Me.Guna2Panel29)
-        Me.FlowLayoutPanel1.Controls.Add(Me.Guna2Panel31)
-        Me.FlowLayoutPanel1.Controls.Add(Me.Guna2Panel33)
-        Me.FlowLayoutPanel1.Controls.Add(Me.Guna2Panel35)
-        Me.FlowLayoutPanel1.Controls.Add(Me.Guna2Panel37)
-        Me.FlowLayoutPanel1.Controls.Add(Me.Guna2Panel39)
-        Me.FlowLayoutPanel1.Controls.Add(Me.Guna2Panel41)
-        Me.FlowLayoutPanel1.Controls.Add(Me.Guna2Panel43)
         Me.FlowLayoutPanel1.Dock = System.Windows.Forms.DockStyle.Right
-        Me.FlowLayoutPanel1.Location = New System.Drawing.Point(400, 24)
+        Me.FlowLayoutPanel1.ForeColor = System.Drawing.Color.Black
+        Me.FlowLayoutPanel1.Location = New System.Drawing.Point(402, 24)
         Me.FlowLayoutPanel1.Name = "FlowLayoutPanel1"
-        Me.FlowLayoutPanel1.Padding = New System.Windows.Forms.Padding(12)
-        Me.FlowLayoutPanel1.Size = New System.Drawing.Size(556, 672)
+        Me.FlowLayoutPanel1.Padding = New System.Windows.Forms.Padding(16, 12, 16, 12)
+        Me.FlowLayoutPanel1.Size = New System.Drawing.Size(554, 672)
         Me.FlowLayoutPanel1.TabIndex = 0
         '
         'Guna2Panel45
         '
+        Me.Guna2Panel45.BackColor = System.Drawing.Color.Transparent
+        Me.Guna2Panel45.Controls.Add(Me.Guna2HtmlLabel1)
+        Me.Guna2Panel45.Controls.Add(Me.Guna2HtmlLabel2)
         Me.Guna2Panel45.Controls.Add(Me.Guna2Panel46)
-        Me.Guna2Panel45.Location = New System.Drawing.Point(28, 24)
+        Me.Guna2Panel45.FillColor = System.Drawing.Color.White
+        Me.Guna2Panel45.Location = New System.Drawing.Point(32, 24)
         Me.Guna2Panel45.Margin = New System.Windows.Forms.Padding(16, 12, 16, 12)
         Me.Guna2Panel45.Name = "Guna2Panel45"
         Me.Guna2Panel45.Size = New System.Drawing.Size(135, 70)
@@ -527,351 +458,50 @@ Partial Class mesas
         '
         'Guna2Panel46
         '
+        Me.Guna2Panel46.BackColor = System.Drawing.Color.Transparent
         Me.Guna2Panel46.Dock = System.Windows.Forms.DockStyle.Right
+        Me.Guna2Panel46.FillColor = System.Drawing.Color.FromArgb(CType(CType(48, Byte), Integer), CType(CType(107, Byte), Integer), CType(CType(52, Byte), Integer))
+        Me.Guna2Panel46.ForeColor = System.Drawing.Color.Black
         Me.Guna2Panel46.Location = New System.Drawing.Point(111, 0)
         Me.Guna2Panel46.Name = "Guna2Panel46"
         Me.Guna2Panel46.Size = New System.Drawing.Size(24, 70)
         Me.Guna2Panel46.TabIndex = 0
         '
+        'Guna2HtmlLabel2
+        '
+        Me.Guna2HtmlLabel2.BackColor = System.Drawing.Color.Transparent
+        Me.Guna2HtmlLabel2.Font = New System.Drawing.Font("Libre Caslon Display", 12.75!)
+        Me.Guna2HtmlLabel2.ForeColor = System.Drawing.Color.FromArgb(CType(CType(127, Byte), Integer), CType(CType(127, Byte), Integer), CType(CType(127, Byte), Integer))
+        Me.Guna2HtmlLabel2.Location = New System.Drawing.Point(3, 3)
+        Me.Guna2HtmlLabel2.Name = "Guna2HtmlLabel2"
+        Me.Guna2HtmlLabel2.Size = New System.Drawing.Size(59, 22)
+        Me.Guna2HtmlLabel2.TabIndex = 5
+        Me.Guna2HtmlLabel2.Text = "Mesa 01"
+        '
+        'Guna2HtmlLabel1
+        '
+        Me.Guna2HtmlLabel1.BackColor = System.Drawing.Color.Transparent
+        Me.Guna2HtmlLabel1.Font = New System.Drawing.Font("Libre Caslon Display", 12.75!)
+        Me.Guna2HtmlLabel1.ForeColor = System.Drawing.Color.FromArgb(CType(CType(46, Byte), Integer), CType(CType(31, Byte), Integer), CType(CType(39, Byte), Integer))
+        Me.Guna2HtmlLabel1.Location = New System.Drawing.Point(3, 45)
+        Me.Guna2HtmlLabel1.Name = "Guna2HtmlLabel1"
+        Me.Guna2HtmlLabel1.Size = New System.Drawing.Size(59, 22)
+        Me.Guna2HtmlLabel1.TabIndex = 6
+        Me.Guna2HtmlLabel1.Text = "Mesa 01"
+        '
+        'Guna2BorderlessForm2
+        '
+        Me.Guna2BorderlessForm2.ContainerControl = Me
+        Me.Guna2BorderlessForm2.DockIndicatorTransparencyValue = 0.6R
+        Me.Guna2BorderlessForm2.TransparentWhileDrag = True
+        '
         'Guna2Panel5
         '
-        Me.Guna2Panel5.Controls.Add(Me.Guna2Panel6)
-        Me.Guna2Panel5.Location = New System.Drawing.Point(195, 24)
-        Me.Guna2Panel5.Margin = New System.Windows.Forms.Padding(16, 12, 16, 12)
+        Me.Guna2Panel5.Dock = System.Windows.Forms.DockStyle.Fill
+        Me.Guna2Panel5.Location = New System.Drawing.Point(24, 24)
         Me.Guna2Panel5.Name = "Guna2Panel5"
-        Me.Guna2Panel5.Size = New System.Drawing.Size(135, 70)
-        Me.Guna2Panel5.TabIndex = 21
-        '
-        'Guna2Panel6
-        '
-        Me.Guna2Panel6.Dock = System.Windows.Forms.DockStyle.Right
-        Me.Guna2Panel6.Location = New System.Drawing.Point(111, 0)
-        Me.Guna2Panel6.Name = "Guna2Panel6"
-        Me.Guna2Panel6.Size = New System.Drawing.Size(24, 70)
-        Me.Guna2Panel6.TabIndex = 0
-        '
-        'Guna2Panel7
-        '
-        Me.Guna2Panel7.Controls.Add(Me.Guna2Panel8)
-        Me.Guna2Panel7.Location = New System.Drawing.Point(362, 24)
-        Me.Guna2Panel7.Margin = New System.Windows.Forms.Padding(16, 12, 16, 12)
-        Me.Guna2Panel7.Name = "Guna2Panel7"
-        Me.Guna2Panel7.Size = New System.Drawing.Size(135, 70)
-        Me.Guna2Panel7.TabIndex = 22
-        '
-        'Guna2Panel8
-        '
-        Me.Guna2Panel8.Dock = System.Windows.Forms.DockStyle.Right
-        Me.Guna2Panel8.Location = New System.Drawing.Point(111, 0)
-        Me.Guna2Panel8.Name = "Guna2Panel8"
-        Me.Guna2Panel8.Size = New System.Drawing.Size(24, 70)
-        Me.Guna2Panel8.TabIndex = 0
-        '
-        'Guna2Panel9
-        '
-        Me.Guna2Panel9.Controls.Add(Me.Guna2Panel10)
-        Me.Guna2Panel9.Location = New System.Drawing.Point(28, 118)
-        Me.Guna2Panel9.Margin = New System.Windows.Forms.Padding(16, 12, 16, 12)
-        Me.Guna2Panel9.Name = "Guna2Panel9"
-        Me.Guna2Panel9.Size = New System.Drawing.Size(135, 70)
-        Me.Guna2Panel9.TabIndex = 23
-        '
-        'Guna2Panel10
-        '
-        Me.Guna2Panel10.Dock = System.Windows.Forms.DockStyle.Right
-        Me.Guna2Panel10.Location = New System.Drawing.Point(111, 0)
-        Me.Guna2Panel10.Name = "Guna2Panel10"
-        Me.Guna2Panel10.Size = New System.Drawing.Size(24, 70)
-        Me.Guna2Panel10.TabIndex = 0
-        '
-        'Guna2Panel11
-        '
-        Me.Guna2Panel11.Controls.Add(Me.Guna2Panel12)
-        Me.Guna2Panel11.Location = New System.Drawing.Point(195, 118)
-        Me.Guna2Panel11.Margin = New System.Windows.Forms.Padding(16, 12, 16, 12)
-        Me.Guna2Panel11.Name = "Guna2Panel11"
-        Me.Guna2Panel11.Size = New System.Drawing.Size(135, 70)
-        Me.Guna2Panel11.TabIndex = 24
-        '
-        'Guna2Panel12
-        '
-        Me.Guna2Panel12.Dock = System.Windows.Forms.DockStyle.Right
-        Me.Guna2Panel12.Location = New System.Drawing.Point(111, 0)
-        Me.Guna2Panel12.Name = "Guna2Panel12"
-        Me.Guna2Panel12.Size = New System.Drawing.Size(24, 70)
-        Me.Guna2Panel12.TabIndex = 0
-        '
-        'Guna2Panel13
-        '
-        Me.Guna2Panel13.Controls.Add(Me.Guna2Panel14)
-        Me.Guna2Panel13.Location = New System.Drawing.Point(362, 118)
-        Me.Guna2Panel13.Margin = New System.Windows.Forms.Padding(16, 12, 16, 12)
-        Me.Guna2Panel13.Name = "Guna2Panel13"
-        Me.Guna2Panel13.Size = New System.Drawing.Size(135, 70)
-        Me.Guna2Panel13.TabIndex = 25
-        '
-        'Guna2Panel14
-        '
-        Me.Guna2Panel14.Dock = System.Windows.Forms.DockStyle.Right
-        Me.Guna2Panel14.Location = New System.Drawing.Point(111, 0)
-        Me.Guna2Panel14.Name = "Guna2Panel14"
-        Me.Guna2Panel14.Size = New System.Drawing.Size(24, 70)
-        Me.Guna2Panel14.TabIndex = 0
-        '
-        'Guna2Panel15
-        '
-        Me.Guna2Panel15.Controls.Add(Me.Guna2Panel16)
-        Me.Guna2Panel15.Location = New System.Drawing.Point(28, 212)
-        Me.Guna2Panel15.Margin = New System.Windows.Forms.Padding(16, 12, 16, 12)
-        Me.Guna2Panel15.Name = "Guna2Panel15"
-        Me.Guna2Panel15.Size = New System.Drawing.Size(135, 70)
-        Me.Guna2Panel15.TabIndex = 26
-        '
-        'Guna2Panel16
-        '
-        Me.Guna2Panel16.Dock = System.Windows.Forms.DockStyle.Right
-        Me.Guna2Panel16.Location = New System.Drawing.Point(111, 0)
-        Me.Guna2Panel16.Name = "Guna2Panel16"
-        Me.Guna2Panel16.Size = New System.Drawing.Size(24, 70)
-        Me.Guna2Panel16.TabIndex = 0
-        '
-        'Guna2Panel17
-        '
-        Me.Guna2Panel17.Controls.Add(Me.Guna2Panel18)
-        Me.Guna2Panel17.Location = New System.Drawing.Point(195, 212)
-        Me.Guna2Panel17.Margin = New System.Windows.Forms.Padding(16, 12, 16, 12)
-        Me.Guna2Panel17.Name = "Guna2Panel17"
-        Me.Guna2Panel17.Size = New System.Drawing.Size(135, 70)
-        Me.Guna2Panel17.TabIndex = 27
-        '
-        'Guna2Panel18
-        '
-        Me.Guna2Panel18.Dock = System.Windows.Forms.DockStyle.Right
-        Me.Guna2Panel18.Location = New System.Drawing.Point(111, 0)
-        Me.Guna2Panel18.Name = "Guna2Panel18"
-        Me.Guna2Panel18.Size = New System.Drawing.Size(24, 70)
-        Me.Guna2Panel18.TabIndex = 0
-        '
-        'Guna2Panel19
-        '
-        Me.Guna2Panel19.Controls.Add(Me.Guna2Panel20)
-        Me.Guna2Panel19.Location = New System.Drawing.Point(362, 212)
-        Me.Guna2Panel19.Margin = New System.Windows.Forms.Padding(16, 12, 16, 12)
-        Me.Guna2Panel19.Name = "Guna2Panel19"
-        Me.Guna2Panel19.Size = New System.Drawing.Size(135, 70)
-        Me.Guna2Panel19.TabIndex = 28
-        '
-        'Guna2Panel20
-        '
-        Me.Guna2Panel20.Dock = System.Windows.Forms.DockStyle.Right
-        Me.Guna2Panel20.Location = New System.Drawing.Point(111, 0)
-        Me.Guna2Panel20.Name = "Guna2Panel20"
-        Me.Guna2Panel20.Size = New System.Drawing.Size(24, 70)
-        Me.Guna2Panel20.TabIndex = 0
-        '
-        'Guna2Panel21
-        '
-        Me.Guna2Panel21.Controls.Add(Me.Guna2Panel22)
-        Me.Guna2Panel21.Location = New System.Drawing.Point(28, 306)
-        Me.Guna2Panel21.Margin = New System.Windows.Forms.Padding(16, 12, 16, 12)
-        Me.Guna2Panel21.Name = "Guna2Panel21"
-        Me.Guna2Panel21.Size = New System.Drawing.Size(135, 70)
-        Me.Guna2Panel21.TabIndex = 29
-        '
-        'Guna2Panel22
-        '
-        Me.Guna2Panel22.Dock = System.Windows.Forms.DockStyle.Right
-        Me.Guna2Panel22.Location = New System.Drawing.Point(111, 0)
-        Me.Guna2Panel22.Name = "Guna2Panel22"
-        Me.Guna2Panel22.Size = New System.Drawing.Size(24, 70)
-        Me.Guna2Panel22.TabIndex = 0
-        '
-        'Guna2Panel23
-        '
-        Me.Guna2Panel23.Controls.Add(Me.Guna2Panel24)
-        Me.Guna2Panel23.Location = New System.Drawing.Point(195, 306)
-        Me.Guna2Panel23.Margin = New System.Windows.Forms.Padding(16, 12, 16, 12)
-        Me.Guna2Panel23.Name = "Guna2Panel23"
-        Me.Guna2Panel23.Size = New System.Drawing.Size(135, 70)
-        Me.Guna2Panel23.TabIndex = 30
-        '
-        'Guna2Panel24
-        '
-        Me.Guna2Panel24.Dock = System.Windows.Forms.DockStyle.Right
-        Me.Guna2Panel24.Location = New System.Drawing.Point(111, 0)
-        Me.Guna2Panel24.Name = "Guna2Panel24"
-        Me.Guna2Panel24.Size = New System.Drawing.Size(24, 70)
-        Me.Guna2Panel24.TabIndex = 0
-        '
-        'Guna2Panel25
-        '
-        Me.Guna2Panel25.Controls.Add(Me.Guna2Panel26)
-        Me.Guna2Panel25.Location = New System.Drawing.Point(362, 306)
-        Me.Guna2Panel25.Margin = New System.Windows.Forms.Padding(16, 12, 16, 12)
-        Me.Guna2Panel25.Name = "Guna2Panel25"
-        Me.Guna2Panel25.Size = New System.Drawing.Size(135, 70)
-        Me.Guna2Panel25.TabIndex = 31
-        '
-        'Guna2Panel26
-        '
-        Me.Guna2Panel26.Dock = System.Windows.Forms.DockStyle.Right
-        Me.Guna2Panel26.Location = New System.Drawing.Point(111, 0)
-        Me.Guna2Panel26.Name = "Guna2Panel26"
-        Me.Guna2Panel26.Size = New System.Drawing.Size(24, 70)
-        Me.Guna2Panel26.TabIndex = 0
-        '
-        'Guna2Panel27
-        '
-        Me.Guna2Panel27.Controls.Add(Me.Guna2Panel28)
-        Me.Guna2Panel27.Location = New System.Drawing.Point(28, 400)
-        Me.Guna2Panel27.Margin = New System.Windows.Forms.Padding(16, 12, 16, 12)
-        Me.Guna2Panel27.Name = "Guna2Panel27"
-        Me.Guna2Panel27.Size = New System.Drawing.Size(135, 70)
-        Me.Guna2Panel27.TabIndex = 32
-        '
-        'Guna2Panel28
-        '
-        Me.Guna2Panel28.Dock = System.Windows.Forms.DockStyle.Right
-        Me.Guna2Panel28.Location = New System.Drawing.Point(111, 0)
-        Me.Guna2Panel28.Name = "Guna2Panel28"
-        Me.Guna2Panel28.Size = New System.Drawing.Size(24, 70)
-        Me.Guna2Panel28.TabIndex = 0
-        '
-        'Guna2Panel29
-        '
-        Me.Guna2Panel29.Controls.Add(Me.Guna2Panel30)
-        Me.Guna2Panel29.Location = New System.Drawing.Point(195, 400)
-        Me.Guna2Panel29.Margin = New System.Windows.Forms.Padding(16, 12, 16, 12)
-        Me.Guna2Panel29.Name = "Guna2Panel29"
-        Me.Guna2Panel29.Size = New System.Drawing.Size(135, 70)
-        Me.Guna2Panel29.TabIndex = 33
-        '
-        'Guna2Panel30
-        '
-        Me.Guna2Panel30.Dock = System.Windows.Forms.DockStyle.Right
-        Me.Guna2Panel30.Location = New System.Drawing.Point(111, 0)
-        Me.Guna2Panel30.Name = "Guna2Panel30"
-        Me.Guna2Panel30.Size = New System.Drawing.Size(24, 70)
-        Me.Guna2Panel30.TabIndex = 0
-        '
-        'Guna2Panel31
-        '
-        Me.Guna2Panel31.Controls.Add(Me.Guna2Panel32)
-        Me.Guna2Panel31.Location = New System.Drawing.Point(362, 400)
-        Me.Guna2Panel31.Margin = New System.Windows.Forms.Padding(16, 12, 16, 12)
-        Me.Guna2Panel31.Name = "Guna2Panel31"
-        Me.Guna2Panel31.Size = New System.Drawing.Size(135, 70)
-        Me.Guna2Panel31.TabIndex = 34
-        '
-        'Guna2Panel32
-        '
-        Me.Guna2Panel32.Dock = System.Windows.Forms.DockStyle.Right
-        Me.Guna2Panel32.Location = New System.Drawing.Point(111, 0)
-        Me.Guna2Panel32.Name = "Guna2Panel32"
-        Me.Guna2Panel32.Size = New System.Drawing.Size(24, 70)
-        Me.Guna2Panel32.TabIndex = 0
-        '
-        'Guna2Panel33
-        '
-        Me.Guna2Panel33.Controls.Add(Me.Guna2Panel34)
-        Me.Guna2Panel33.Location = New System.Drawing.Point(28, 494)
-        Me.Guna2Panel33.Margin = New System.Windows.Forms.Padding(16, 12, 16, 12)
-        Me.Guna2Panel33.Name = "Guna2Panel33"
-        Me.Guna2Panel33.Size = New System.Drawing.Size(135, 70)
-        Me.Guna2Panel33.TabIndex = 35
-        '
-        'Guna2Panel34
-        '
-        Me.Guna2Panel34.Dock = System.Windows.Forms.DockStyle.Right
-        Me.Guna2Panel34.Location = New System.Drawing.Point(111, 0)
-        Me.Guna2Panel34.Name = "Guna2Panel34"
-        Me.Guna2Panel34.Size = New System.Drawing.Size(24, 70)
-        Me.Guna2Panel34.TabIndex = 0
-        '
-        'Guna2Panel35
-        '
-        Me.Guna2Panel35.Controls.Add(Me.Guna2Panel36)
-        Me.Guna2Panel35.Location = New System.Drawing.Point(195, 494)
-        Me.Guna2Panel35.Margin = New System.Windows.Forms.Padding(16, 12, 16, 12)
-        Me.Guna2Panel35.Name = "Guna2Panel35"
-        Me.Guna2Panel35.Size = New System.Drawing.Size(135, 70)
-        Me.Guna2Panel35.TabIndex = 36
-        '
-        'Guna2Panel36
-        '
-        Me.Guna2Panel36.Dock = System.Windows.Forms.DockStyle.Right
-        Me.Guna2Panel36.Location = New System.Drawing.Point(111, 0)
-        Me.Guna2Panel36.Name = "Guna2Panel36"
-        Me.Guna2Panel36.Size = New System.Drawing.Size(24, 70)
-        Me.Guna2Panel36.TabIndex = 0
-        '
-        'Guna2Panel37
-        '
-        Me.Guna2Panel37.Controls.Add(Me.Guna2Panel38)
-        Me.Guna2Panel37.Location = New System.Drawing.Point(362, 494)
-        Me.Guna2Panel37.Margin = New System.Windows.Forms.Padding(16, 12, 16, 12)
-        Me.Guna2Panel37.Name = "Guna2Panel37"
-        Me.Guna2Panel37.Size = New System.Drawing.Size(135, 70)
-        Me.Guna2Panel37.TabIndex = 37
-        '
-        'Guna2Panel38
-        '
-        Me.Guna2Panel38.Dock = System.Windows.Forms.DockStyle.Right
-        Me.Guna2Panel38.Location = New System.Drawing.Point(111, 0)
-        Me.Guna2Panel38.Name = "Guna2Panel38"
-        Me.Guna2Panel38.Size = New System.Drawing.Size(24, 70)
-        Me.Guna2Panel38.TabIndex = 0
-        '
-        'Guna2Panel39
-        '
-        Me.Guna2Panel39.Controls.Add(Me.Guna2Panel40)
-        Me.Guna2Panel39.Location = New System.Drawing.Point(28, 588)
-        Me.Guna2Panel39.Margin = New System.Windows.Forms.Padding(16, 12, 16, 12)
-        Me.Guna2Panel39.Name = "Guna2Panel39"
-        Me.Guna2Panel39.Size = New System.Drawing.Size(135, 70)
-        Me.Guna2Panel39.TabIndex = 38
-        '
-        'Guna2Panel40
-        '
-        Me.Guna2Panel40.Dock = System.Windows.Forms.DockStyle.Right
-        Me.Guna2Panel40.Location = New System.Drawing.Point(111, 0)
-        Me.Guna2Panel40.Name = "Guna2Panel40"
-        Me.Guna2Panel40.Size = New System.Drawing.Size(24, 70)
-        Me.Guna2Panel40.TabIndex = 0
-        '
-        'Guna2Panel41
-        '
-        Me.Guna2Panel41.Controls.Add(Me.Guna2Panel42)
-        Me.Guna2Panel41.Location = New System.Drawing.Point(195, 588)
-        Me.Guna2Panel41.Margin = New System.Windows.Forms.Padding(16, 12, 16, 12)
-        Me.Guna2Panel41.Name = "Guna2Panel41"
-        Me.Guna2Panel41.Size = New System.Drawing.Size(135, 70)
-        Me.Guna2Panel41.TabIndex = 39
-        '
-        'Guna2Panel42
-        '
-        Me.Guna2Panel42.Dock = System.Windows.Forms.DockStyle.Right
-        Me.Guna2Panel42.Location = New System.Drawing.Point(111, 0)
-        Me.Guna2Panel42.Name = "Guna2Panel42"
-        Me.Guna2Panel42.Size = New System.Drawing.Size(24, 70)
-        Me.Guna2Panel42.TabIndex = 0
-        '
-        'Guna2Panel43
-        '
-        Me.Guna2Panel43.Controls.Add(Me.Guna2Panel44)
-        Me.Guna2Panel43.Location = New System.Drawing.Point(362, 588)
-        Me.Guna2Panel43.Margin = New System.Windows.Forms.Padding(16, 12, 16, 12)
-        Me.Guna2Panel43.Name = "Guna2Panel43"
-        Me.Guna2Panel43.Size = New System.Drawing.Size(135, 70)
-        Me.Guna2Panel43.TabIndex = 40
-        '
-        'Guna2Panel44
-        '
-        Me.Guna2Panel44.Dock = System.Windows.Forms.DockStyle.Right
-        Me.Guna2Panel44.Location = New System.Drawing.Point(111, 0)
-        Me.Guna2Panel44.Name = "Guna2Panel44"
-        Me.Guna2Panel44.Size = New System.Drawing.Size(24, 70)
-        Me.Guna2Panel44.TabIndex = 0
+        Me.Guna2Panel5.Size = New System.Drawing.Size(378, 672)
+        Me.Guna2Panel5.TabIndex = 1
         '
         'mesas
         '
@@ -899,26 +529,7 @@ Partial Class mesas
         Me.Guna2Panel4.ResumeLayout(False)
         Me.FlowLayoutPanel1.ResumeLayout(False)
         Me.Guna2Panel45.ResumeLayout(False)
-        Me.Guna2Panel5.ResumeLayout(False)
-        Me.Guna2Panel7.ResumeLayout(False)
-        Me.Guna2Panel9.ResumeLayout(False)
-        Me.Guna2Panel11.ResumeLayout(False)
-        Me.Guna2Panel13.ResumeLayout(False)
-        Me.Guna2Panel15.ResumeLayout(False)
-        Me.Guna2Panel17.ResumeLayout(False)
-        Me.Guna2Panel19.ResumeLayout(False)
-        Me.Guna2Panel21.ResumeLayout(False)
-        Me.Guna2Panel23.ResumeLayout(False)
-        Me.Guna2Panel25.ResumeLayout(False)
-        Me.Guna2Panel27.ResumeLayout(False)
-        Me.Guna2Panel29.ResumeLayout(False)
-        Me.Guna2Panel31.ResumeLayout(False)
-        Me.Guna2Panel33.ResumeLayout(False)
-        Me.Guna2Panel35.ResumeLayout(False)
-        Me.Guna2Panel37.ResumeLayout(False)
-        Me.Guna2Panel39.ResumeLayout(False)
-        Me.Guna2Panel41.ResumeLayout(False)
-        Me.Guna2Panel43.ResumeLayout(False)
+        Me.Guna2Panel45.PerformLayout()
         Me.ResumeLayout(False)
 
     End Sub
@@ -952,44 +563,8 @@ Partial Class mesas
     Friend WithEvents FlowLayoutPanel1 As FlowLayoutPanel
     Friend WithEvents Guna2Panel45 As Guna.UI2.WinForms.Guna2Panel
     Friend WithEvents Guna2Panel46 As Guna.UI2.WinForms.Guna2Panel
+    Friend WithEvents Guna2HtmlLabel2 As Guna.UI2.WinForms.Guna2HtmlLabel
+    Friend WithEvents Guna2HtmlLabel1 As Guna.UI2.WinForms.Guna2HtmlLabel
     Friend WithEvents Guna2Panel5 As Guna.UI2.WinForms.Guna2Panel
-    Friend WithEvents Guna2Panel6 As Guna.UI2.WinForms.Guna2Panel
-    Friend WithEvents Guna2Panel7 As Guna.UI2.WinForms.Guna2Panel
-    Friend WithEvents Guna2Panel8 As Guna.UI2.WinForms.Guna2Panel
-    Friend WithEvents Guna2Panel9 As Guna.UI2.WinForms.Guna2Panel
-    Friend WithEvents Guna2Panel10 As Guna.UI2.WinForms.Guna2Panel
-    Friend WithEvents Guna2Panel11 As Guna.UI2.WinForms.Guna2Panel
-    Friend WithEvents Guna2Panel12 As Guna.UI2.WinForms.Guna2Panel
-    Friend WithEvents Guna2Panel13 As Guna.UI2.WinForms.Guna2Panel
-    Friend WithEvents Guna2Panel14 As Guna.UI2.WinForms.Guna2Panel
-    Friend WithEvents Guna2Panel15 As Guna.UI2.WinForms.Guna2Panel
-    Friend WithEvents Guna2Panel16 As Guna.UI2.WinForms.Guna2Panel
-    Friend WithEvents Guna2Panel17 As Guna.UI2.WinForms.Guna2Panel
-    Friend WithEvents Guna2Panel18 As Guna.UI2.WinForms.Guna2Panel
-    Friend WithEvents Guna2Panel19 As Guna.UI2.WinForms.Guna2Panel
-    Friend WithEvents Guna2Panel20 As Guna.UI2.WinForms.Guna2Panel
-    Friend WithEvents Guna2Panel21 As Guna.UI2.WinForms.Guna2Panel
-    Friend WithEvents Guna2Panel22 As Guna.UI2.WinForms.Guna2Panel
-    Friend WithEvents Guna2Panel23 As Guna.UI2.WinForms.Guna2Panel
-    Friend WithEvents Guna2Panel24 As Guna.UI2.WinForms.Guna2Panel
-    Friend WithEvents Guna2Panel25 As Guna.UI2.WinForms.Guna2Panel
-    Friend WithEvents Guna2Panel26 As Guna.UI2.WinForms.Guna2Panel
-    Friend WithEvents Guna2Panel27 As Guna.UI2.WinForms.Guna2Panel
-    Friend WithEvents Guna2Panel28 As Guna.UI2.WinForms.Guna2Panel
-    Friend WithEvents Guna2Panel29 As Guna.UI2.WinForms.Guna2Panel
-    Friend WithEvents Guna2Panel30 As Guna.UI2.WinForms.Guna2Panel
-    Friend WithEvents Guna2Panel31 As Guna.UI2.WinForms.Guna2Panel
-    Friend WithEvents Guna2Panel32 As Guna.UI2.WinForms.Guna2Panel
-    Friend WithEvents Guna2Panel33 As Guna.UI2.WinForms.Guna2Panel
-    Friend WithEvents Guna2Panel34 As Guna.UI2.WinForms.Guna2Panel
-    Friend WithEvents Guna2Panel35 As Guna.UI2.WinForms.Guna2Panel
-    Friend WithEvents Guna2Panel36 As Guna.UI2.WinForms.Guna2Panel
-    Friend WithEvents Guna2Panel37 As Guna.UI2.WinForms.Guna2Panel
-    Friend WithEvents Guna2Panel38 As Guna.UI2.WinForms.Guna2Panel
-    Friend WithEvents Guna2Panel39 As Guna.UI2.WinForms.Guna2Panel
-    Friend WithEvents Guna2Panel40 As Guna.UI2.WinForms.Guna2Panel
-    Friend WithEvents Guna2Panel41 As Guna.UI2.WinForms.Guna2Panel
-    Friend WithEvents Guna2Panel42 As Guna.UI2.WinForms.Guna2Panel
-    Friend WithEvents Guna2Panel43 As Guna.UI2.WinForms.Guna2Panel
-    Friend WithEvents Guna2Panel44 As Guna.UI2.WinForms.Guna2Panel
+    Friend WithEvents Guna2BorderlessForm2 As Guna.UI2.WinForms.Guna2BorderlessForm
 End Class

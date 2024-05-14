@@ -121,14 +121,10 @@
     <value>17, 17</value>
   </metadata>
   <assembly alias="System.Drawing" name="System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
-  <data name="Guna2TextBox2.IconLeft" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+  <data name="btn_minimizar.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
-        iVBORw0KGgoAAAANSUhEUgAAABgAAAAYCAYAAADgdz34AAAABGdBTUEAALGPC/xhBQAAAPhJREFUSEvd
-        1E0KwjAQBeBuvIKXcOkZ3HocD+PWa7hw7SEEzyGo80EHpJCaFOLCB4+mycybn0w7/D32wVPwFnyMtLbn
-        bDG2wUvw9YVs2DZBZjIlcA8egpvgaqS1PWds2FZXI5sUPwYJluCMTQapqiTbwrEWGYTvLJTJUOlzmU/B
-        Nts12yqTwUh/W8GHL40ijB8jl9gKPnxpFJGX29KeBB++NIroHqB7i7pfcvcxhSUf2jnI5+uHBq2/ihR/
-        BnfBKigzgyhdf10iQbS2l20h7nkNroNVaPldy5y496YgoBqTYfxUhdb2Pi+U6OIgtZgG6YIM0i3ArzEM
-        b5sbb7fIDL0qAAAAAElFTkSuQmCC
+        iVBORw0KGgoAAAANSUhEUgAAABgAAAAYCAYAAADgdz34AAAABGdBTUEAALGPC/xhBQAAACdJREFUSEtj
+        GAWjYBSMAvLAKSD+TyYG6SUIaG7BKBgFo2AUoAAGBgANWR8NNYGFqQAAAABJRU5ErkJggg==
 </value>
   </data>
   <data name="btn_fechar.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
@@ -137,12 +133,6 @@
         kkEKgDAMBPsUf+5TPPoMDz5Es+JAkRIjza0OBGtpdmKx/IzLYrVZTdebj85wPowaDqs3CeE6q2cYNSrc
         k9Thn6YHT9IdDi1JWjjUkt1qvdcp4SCJwhWMKBUJmJzptZdCfeeanOtKkdTh3Ln2UiStcOiWeOHQJYn+
         509JmNkq2sDXqn7Go5QTxtVGtdrIK+AAAAAASUVORK5CYII=
-</value>
-  </data>
-  <data name="btn_minimizar.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
-    <value>
-        iVBORw0KGgoAAAANSUhEUgAAABgAAAAYCAYAAADgdz34AAAABGdBTUEAALGPC/xhBQAAACdJREFUSEtj
-        GAWjYBSMAvLAKSD+TyYG6SUIaG7BKBgFo2AUoAAGBgANWR8NNYGFqQAAAABJRU5ErkJggg==
 </value>
   </data>
   <data name="btn_estoque.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
@@ -189,10 +179,23 @@
         tAH3bZarTa1NJwAAAABJRU5ErkJggg==
 </value>
   </data>
+  <data name="Guna2TextBox2.IconLeft" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+    <value>
+        iVBORw0KGgoAAAANSUhEUgAAABgAAAAYCAYAAADgdz34AAAABGdBTUEAALGPC/xhBQAAAPhJREFUSEvd
+        1E0KwjAQBeBuvIKXcOkZ3HocD+PWa7hw7SEEzyGo80EHpJCaFOLCB4+mycybn0w7/D32wVPwFnyMtLbn
+        bDG2wUvw9YVs2DZBZjIlcA8egpvgaqS1PWds2FZXI5sUPwYJluCMTQapqiTbwrEWGYTvLJTJUOlzmU/B
+        Nts12yqTwUh/W8GHL40ijB8jl9gKPnxpFJGX29KeBB++NIroHqB7i7pfcvcxhSUf2jnI5+uHBq2/ihR/
+        BnfBKigzgyhdf10iQbS2l20h7nkNroNVaPldy5y496YgoBqTYfxUhdb2Pi+U6OIgtZgG6YIM0i3ArzEM
+        b5sbb7fIDL0qAAAAAElFTkSuQmCC
+</value>
+  </data>
   <metadata name="Guna2DragControl1.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
     <value>193, 17</value>
   </metadata>
   <metadata name="Guna2DragControl2.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
     <value>353, 18</value>
+  </metadata>
+  <metadata name="Guna2BorderlessForm2.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
+    <value>512, 18</value>
   </metadata>
 </root>

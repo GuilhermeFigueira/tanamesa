@@ -11,6 +11,9 @@
     Private Sub btn_sim_Click(sender As Object, e As EventArgs) Handles btn_sim.Click
         login.Show()
         cardapio.Hide()
+        mesas.Hide()
+        sair.Hide()
+        infoUsuario.Hide()
         Me.Hide()
     End Sub
 End Class
