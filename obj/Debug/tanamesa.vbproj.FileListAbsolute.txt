@@ -1,9 +1,7 @@
 D:\FATEC\Tanamesa\tanamesa\obj\Debug\tanamesa.vbproj.AssemblyReference.cache
 D:\FATEC\Tanamesa\tanamesa\obj\Debug\tanamesa.vbproj.SuggestedBindingRedirects.cache
-D:\FATEC\Tanamesa\tanamesa\obj\Debug\tanamesa.Component1.resources
 D:\FATEC\Tanamesa\tanamesa\obj\Debug\tanamesa.login.resources
 D:\FATEC\Tanamesa\tanamesa\obj\Debug\tanamesa.form_base.resources
-D:\FATEC\Tanamesa\tanamesa\obj\Debug\tanamesa.home.resources
 D:\FATEC\Tanamesa\tanamesa\obj\Debug\tanamesa.Resources.resources
 D:\FATEC\Tanamesa\tanamesa\obj\Debug\tanamesa.sair.resources
 D:\FATEC\Tanamesa\tanamesa\obj\Debug\tanamesa.vbproj.GenerateResource.cache
@@ -77,3 +75,9 @@ C:\Users\guibf\www\fatec\tanamesa\obj\Debug\tanamesa.vbproj.Up2Date
 C:\Users\guibf\www\fatec\tanamesa\obj\Debug\tanamesa.exe
 C:\Users\guibf\www\fatec\tanamesa\obj\Debug\tanamesa.xml
 C:\Users\guibf\www\fatec\tanamesa\obj\Debug\tanamesa.pdb
+D:\FATEC\Tanamesa\tanamesa\obj\Debug\tanamesa.deslogar.resources
+D:\FATEC\Tanamesa\tanamesa\obj\Debug\tanamesa.cardapio.resources
+D:\FATEC\Tanamesa\tanamesa\obj\Debug\tanamesa.infoUsuario.resources
+D:\FATEC\Tanamesa\tanamesa\obj\Debug\tanamesa.mesas.resources
+D:\FATEC\Tanamesa\tanamesa\obj\Debug\tanamesa.pedidos.resources
+C:\Users\guibf\www\fatec\tanamesa\obj\Debug\tanamesa.pedidos.resources

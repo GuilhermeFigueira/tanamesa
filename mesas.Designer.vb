@@ -43,20 +43,36 @@ Partial Class mesas
         Me.btn_pedidos = New Guna.UI2.WinForms.Guna2Button()
         Me.btn_cardapio = New Guna.UI2.WinForms.Guna2Button()
         Me.Guna2ContainerControl1 = New Guna.UI2.WinForms.Guna2ContainerControl()
-        Me.pnl_title = New Guna.UI2.WinForms.Guna2Panel()
+        Me.pnl_title = New Guna.UI2.WinForms.Guna2ShadowPanel()
         Me.Guna2Panel1 = New Guna.UI2.WinForms.Guna2Panel()
         Me.Guna2TextBox2 = New Guna.UI2.WinForms.Guna2TextBox()
         Me.Guna2HtmlLabel7 = New Guna.UI2.WinForms.Guna2HtmlLabel()
         Me.Guna2Panel4 = New Guna.UI2.WinForms.Guna2Panel()
+        Me.Guna2Panel5 = New Guna.UI2.WinForms.Guna2Panel()
+        Me.pnl_info = New Guna.UI2.WinForms.Guna2ShadowPanel()
+        Me.Guna2HtmlLabel6 = New Guna.UI2.WinForms.Guna2HtmlLabel()
+        Me.Guna2HtmlLabel12 = New Guna.UI2.WinForms.Guna2HtmlLabel()
+        Me.cmb_ = New Guna.UI2.WinForms.Guna2ComboBox()
+        Me.btn_efetuarPedido = New Guna.UI2.WinForms.Guna2Button()
+        Me.Guna2HtmlLabel19 = New Guna.UI2.WinForms.Guna2HtmlLabel()
+        Me.Guna2HtmlLabel18 = New Guna.UI2.WinForms.Guna2HtmlLabel()
+        Me.Guna2Panel9 = New Guna.UI2.WinForms.Guna2Panel()
+        Me.flp_itemsPedido = New System.Windows.Forms.FlowLayoutPanel()
+        Me.Guna2Panel13 = New Guna.UI2.WinForms.Guna2Panel()
+        Me.Guna2HtmlLabel17 = New Guna.UI2.WinForms.Guna2HtmlLabel()
+        Me.Guna2HtmlLabel16 = New Guna.UI2.WinForms.Guna2HtmlLabel()
+        Me.Guna2HtmlLabel11 = New Guna.UI2.WinForms.Guna2HtmlLabel()
+        Me.txt_nomeCliente = New Guna.UI2.WinForms.Guna2TextBox()
+        Me.Guna2HtmlLabel10 = New Guna.UI2.WinForms.Guna2HtmlLabel()
+        Me.cmb_numeroMesa = New Guna.UI2.WinForms.Guna2ComboBox()
+        Me.Guna2HtmlLabel9 = New Guna.UI2.WinForms.Guna2HtmlLabel()
+        Me.Guna2HtmlLabel8 = New Guna.UI2.WinForms.Guna2HtmlLabel()
+        Me.flp_mesas = New System.Windows.Forms.FlowLayoutPanel()
+        Me.Guna2Panel45 = New Guna.UI2.WinForms.Guna2Panel()
+        Me.Guna2HtmlLabel1 = New Guna.UI2.WinForms.Guna2HtmlLabel()
+        Me.Guna2HtmlLabel2 = New Guna.UI2.WinForms.Guna2HtmlLabel()
         Me.Guna2DragControl1 = New Guna.UI2.WinForms.Guna2DragControl(Me.components)
         Me.Guna2DragControl2 = New Guna.UI2.WinForms.Guna2DragControl(Me.components)
-        Me.FlowLayoutPanel1 = New System.Windows.Forms.FlowLayoutPanel()
-        Me.Guna2Panel45 = New Guna.UI2.WinForms.Guna2Panel()
-        Me.Guna2Panel46 = New Guna.UI2.WinForms.Guna2Panel()
-        Me.Guna2HtmlLabel2 = New Guna.UI2.WinForms.Guna2HtmlLabel()
-        Me.Guna2HtmlLabel1 = New Guna.UI2.WinForms.Guna2HtmlLabel()
-        Me.Guna2BorderlessForm2 = New Guna.UI2.WinForms.Guna2BorderlessForm(Me.components)
-        Me.Guna2Panel5 = New Guna.UI2.WinForms.Guna2Panel()
         Me.pnl_controls.SuspendLayout()
         Me.pnl_logo.SuspendLayout()
         Me.Guna2Panel3.SuspendLayout()
@@ -65,7 +81,12 @@ Partial Class mesas
         Me.Guna2ContainerControl1.SuspendLayout()
         Me.pnl_title.SuspendLayout()
         Me.Guna2Panel4.SuspendLayout()
-        Me.FlowLayoutPanel1.SuspendLayout()
+        Me.Guna2Panel5.SuspendLayout()
+        Me.pnl_info.SuspendLayout()
+        Me.Guna2Panel9.SuspendLayout()
+        Me.flp_itemsPedido.SuspendLayout()
+        Me.Guna2Panel13.SuspendLayout()
+        Me.flp_mesas.SuspendLayout()
         Me.Guna2Panel45.SuspendLayout()
         Me.SuspendLayout()
         '
@@ -351,6 +372,7 @@ Partial Class mesas
         '
         'pnl_title
         '
+        Me.pnl_title.BackColor = System.Drawing.Color.Transparent
         Me.pnl_title.Controls.Add(Me.Guna2Panel1)
         Me.pnl_title.Controls.Add(Me.Guna2TextBox2)
         Me.pnl_title.Controls.Add(Me.Guna2HtmlLabel7)
@@ -359,6 +381,9 @@ Partial Class mesas
         Me.pnl_title.Location = New System.Drawing.Point(0, 0)
         Me.pnl_title.Name = "pnl_title"
         Me.pnl_title.Padding = New System.Windows.Forms.Padding(46, 0, 46, 0)
+        Me.pnl_title.ShadowColor = System.Drawing.Color.FromArgb(CType(CType(200, Byte), Integer), CType(CType(200, Byte), Integer), CType(CType(200, Byte), Integer))
+        Me.pnl_title.ShadowDepth = 30
+        Me.pnl_title.ShadowShift = 0
         Me.pnl_title.Size = New System.Drawing.Size(980, 80)
         Me.pnl_title.TabIndex = 32
         '
@@ -411,13 +436,340 @@ Partial Class mesas
         '
         Me.Guna2Panel4.BackColor = System.Drawing.Color.Transparent
         Me.Guna2Panel4.Controls.Add(Me.Guna2Panel5)
-        Me.Guna2Panel4.Controls.Add(Me.FlowLayoutPanel1)
+        Me.Guna2Panel4.Controls.Add(Me.flp_mesas)
         Me.Guna2Panel4.Dock = System.Windows.Forms.DockStyle.Fill
         Me.Guna2Panel4.Location = New System.Drawing.Point(0, 80)
         Me.Guna2Panel4.Name = "Guna2Panel4"
         Me.Guna2Panel4.Padding = New System.Windows.Forms.Padding(24)
         Me.Guna2Panel4.Size = New System.Drawing.Size(980, 720)
         Me.Guna2Panel4.TabIndex = 33
+        '
+        'Guna2Panel5
+        '
+        Me.Guna2Panel5.Controls.Add(Me.pnl_info)
+        Me.Guna2Panel5.Dock = System.Windows.Forms.DockStyle.Fill
+        Me.Guna2Panel5.Location = New System.Drawing.Point(24, 24)
+        Me.Guna2Panel5.Name = "Guna2Panel5"
+        Me.Guna2Panel5.Size = New System.Drawing.Size(378, 672)
+        Me.Guna2Panel5.TabIndex = 1
+        '
+        'pnl_info
+        '
+        Me.pnl_info.BackColor = System.Drawing.Color.Transparent
+        Me.pnl_info.Controls.Add(Me.Guna2HtmlLabel6)
+        Me.pnl_info.Controls.Add(Me.Guna2HtmlLabel12)
+        Me.pnl_info.Controls.Add(Me.cmb_)
+        Me.pnl_info.Controls.Add(Me.btn_efetuarPedido)
+        Me.pnl_info.Controls.Add(Me.Guna2HtmlLabel19)
+        Me.pnl_info.Controls.Add(Me.Guna2HtmlLabel18)
+        Me.pnl_info.Controls.Add(Me.Guna2Panel9)
+        Me.pnl_info.Controls.Add(Me.Guna2HtmlLabel11)
+        Me.pnl_info.Controls.Add(Me.txt_nomeCliente)
+        Me.pnl_info.Controls.Add(Me.Guna2HtmlLabel10)
+        Me.pnl_info.Controls.Add(Me.cmb_numeroMesa)
+        Me.pnl_info.Controls.Add(Me.Guna2HtmlLabel9)
+        Me.pnl_info.Controls.Add(Me.Guna2HtmlLabel8)
+        Me.pnl_info.Dock = System.Windows.Forms.DockStyle.Left
+        Me.pnl_info.FillColor = System.Drawing.Color.White
+        Me.pnl_info.Location = New System.Drawing.Point(0, 0)
+        Me.pnl_info.Name = "pnl_info"
+        Me.pnl_info.Padding = New System.Windows.Forms.Padding(12)
+        Me.pnl_info.Radius = 16
+        Me.pnl_info.ShadowColor = System.Drawing.Color.FromArgb(CType(CType(200, Byte), Integer), CType(CType(200, Byte), Integer), CType(CType(200, Byte), Integer))
+        Me.pnl_info.ShadowDepth = 30
+        Me.pnl_info.Size = New System.Drawing.Size(348, 672)
+        Me.pnl_info.TabIndex = 1
+        '
+        'Guna2HtmlLabel6
+        '
+        Me.Guna2HtmlLabel6.BackColor = System.Drawing.Color.Transparent
+        Me.Guna2HtmlLabel6.Font = New System.Drawing.Font("Libre Caslon Display", 16.0!)
+        Me.Guna2HtmlLabel6.ForeColor = System.Drawing.Color.FromArgb(CType(CType(46, Byte), Integer), CType(CType(31, Byte), Integer), CType(CType(39, Byte), Integer))
+        Me.Guna2HtmlLabel6.Location = New System.Drawing.Point(258, 538)
+        Me.Guna2HtmlLabel6.Name = "Guna2HtmlLabel6"
+        Me.Guna2HtmlLabel6.Size = New System.Drawing.Size(56, 27)
+        Me.Guna2HtmlLabel6.TabIndex = 25
+        Me.Guna2HtmlLabel6.Text = "07:00"
+        '
+        'Guna2HtmlLabel12
+        '
+        Me.Guna2HtmlLabel12.BackColor = System.Drawing.Color.Transparent
+        Me.Guna2HtmlLabel12.Font = New System.Drawing.Font("Libre Caslon Display", 14.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Guna2HtmlLabel12.Location = New System.Drawing.Point(32, 538)
+        Me.Guna2HtmlLabel12.Name = "Guna2HtmlLabel12"
+        Me.Guna2HtmlLabel12.Size = New System.Drawing.Size(140, 25)
+        Me.Guna2HtmlLabel12.TabIndex = 24
+        Me.Guna2HtmlLabel12.Text = "Horário de Entrada"
+        '
+        'cmb_
+        '
+        Me.cmb_.AutoRoundedCorners = True
+        Me.cmb_.BackColor = System.Drawing.Color.Transparent
+        Me.cmb_.BorderColor = System.Drawing.Color.White
+        Me.cmb_.BorderRadius = 17
+        Me.cmb_.Cursor = System.Windows.Forms.Cursors.Hand
+        Me.cmb_.DrawMode = System.Windows.Forms.DrawMode.OwnerDrawFixed
+        Me.cmb_.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList
+        Me.cmb_.FocusedColor = System.Drawing.Color.FromArgb(CType(CType(239, Byte), Integer), CType(CType(239, Byte), Integer), CType(CType(239, Byte), Integer))
+        Me.cmb_.FocusedState.BorderColor = System.Drawing.Color.FromArgb(CType(CType(239, Byte), Integer), CType(CType(239, Byte), Integer), CType(CType(239, Byte), Integer))
+        Me.cmb_.Font = New System.Drawing.Font("Libre Caslon Display", 20.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.cmb_.ForeColor = System.Drawing.Color.FromArgb(CType(CType(127, Byte), Integer), CType(CType(127, Byte), Integer), CType(CType(127, Byte), Integer))
+        Me.cmb_.HoverState.BorderColor = System.Drawing.Color.FromArgb(CType(CType(239, Byte), Integer), CType(CType(239, Byte), Integer), CType(CType(239, Byte), Integer))
+        Me.cmb_.ItemHeight = 30
+        Me.cmb_.Location = New System.Drawing.Point(259, 231)
+        Me.cmb_.Name = "cmb_"
+        Me.cmb_.Size = New System.Drawing.Size(74, 36)
+        Me.cmb_.TabIndex = 23
+        Me.cmb_.TextAlign = System.Windows.Forms.HorizontalAlignment.Right
+        '
+        'btn_efetuarPedido
+        '
+        Me.btn_efetuarPedido.AutoRoundedCorners = True
+        Me.btn_efetuarPedido.BackColor = System.Drawing.Color.Transparent
+        Me.btn_efetuarPedido.BorderRadius = 21
+        Me.btn_efetuarPedido.Cursor = System.Windows.Forms.Cursors.Hand
+        Me.btn_efetuarPedido.DisabledState.BorderColor = System.Drawing.Color.DarkGray
+        Me.btn_efetuarPedido.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray
+        Me.btn_efetuarPedido.DisabledState.FillColor = System.Drawing.Color.FromArgb(CType(CType(169, Byte), Integer), CType(CType(169, Byte), Integer), CType(CType(169, Byte), Integer))
+        Me.btn_efetuarPedido.DisabledState.ForeColor = System.Drawing.Color.FromArgb(CType(CType(141, Byte), Integer), CType(CType(141, Byte), Integer), CType(CType(141, Byte), Integer))
+        Me.btn_efetuarPedido.Dock = System.Windows.Forms.DockStyle.Bottom
+        Me.btn_efetuarPedido.FillColor = System.Drawing.Color.FromArgb(CType(CType(46, Byte), Integer), CType(CType(31, Byte), Integer), CType(CType(39, Byte), Integer))
+        Me.btn_efetuarPedido.Font = New System.Drawing.Font("Libre Caslon Display", 15.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.btn_efetuarPedido.ForeColor = System.Drawing.Color.White
+        Me.btn_efetuarPedido.Location = New System.Drawing.Point(12, 615)
+        Me.btn_efetuarPedido.Margin = New System.Windows.Forms.Padding(0)
+        Me.btn_efetuarPedido.Name = "btn_efetuarPedido"
+        Me.btn_efetuarPedido.Size = New System.Drawing.Size(324, 45)
+        Me.btn_efetuarPedido.TabIndex = 22
+        Me.btn_efetuarPedido.Text = "Abrir Mesa"
+        '
+        'Guna2HtmlLabel19
+        '
+        Me.Guna2HtmlLabel19.BackColor = System.Drawing.Color.Transparent
+        Me.Guna2HtmlLabel19.Font = New System.Drawing.Font("Libre Caslon Display", 16.0!)
+        Me.Guna2HtmlLabel19.ForeColor = System.Drawing.Color.FromArgb(CType(CType(48, Byte), Integer), CType(CType(107, Byte), Integer), CType(CType(52, Byte), Integer))
+        Me.Guna2HtmlLabel19.Location = New System.Drawing.Point(261, 575)
+        Me.Guna2HtmlLabel19.Name = "Guna2HtmlLabel19"
+        Me.Guna2HtmlLabel19.Size = New System.Drawing.Size(51, 27)
+        Me.Guna2HtmlLabel19.TabIndex = 21
+        Me.Guna2HtmlLabel19.Text = "R$40"
+        '
+        'Guna2HtmlLabel18
+        '
+        Me.Guna2HtmlLabel18.BackColor = System.Drawing.Color.Transparent
+        Me.Guna2HtmlLabel18.Font = New System.Drawing.Font("Libre Caslon Display", 14.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Guna2HtmlLabel18.Location = New System.Drawing.Point(32, 575)
+        Me.Guna2HtmlLabel18.Name = "Guna2HtmlLabel18"
+        Me.Guna2HtmlLabel18.Size = New System.Drawing.Size(41, 25)
+        Me.Guna2HtmlLabel18.TabIndex = 20
+        Me.Guna2HtmlLabel18.Text = "Total"
+        '
+        'Guna2Panel9
+        '
+        Me.Guna2Panel9.BackColor = System.Drawing.Color.Transparent
+        Me.Guna2Panel9.BorderRadius = 16
+        Me.Guna2Panel9.Controls.Add(Me.flp_itemsPedido)
+        Me.Guna2Panel9.FillColor = System.Drawing.Color.FromArgb(CType(CType(239, Byte), Integer), CType(CType(239, Byte), Integer), CType(CType(239, Byte), Integer))
+        Me.Guna2Panel9.Location = New System.Drawing.Point(32, 283)
+        Me.Guna2Panel9.Name = "Guna2Panel9"
+        Me.Guna2Panel9.Size = New System.Drawing.Size(283, 237)
+        Me.Guna2Panel9.TabIndex = 18
+        '
+        'flp_itemsPedido
+        '
+        Me.flp_itemsPedido.Anchor = CType((((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Bottom) _
+            Or System.Windows.Forms.AnchorStyles.Left) _
+            Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
+        Me.flp_itemsPedido.AutoScroll = True
+        Me.flp_itemsPedido.Controls.Add(Me.Guna2Panel13)
+        Me.flp_itemsPedido.FlowDirection = System.Windows.Forms.FlowDirection.TopDown
+        Me.flp_itemsPedido.Location = New System.Drawing.Point(3, 3)
+        Me.flp_itemsPedido.Name = "flp_itemsPedido"
+        Me.flp_itemsPedido.Padding = New System.Windows.Forms.Padding(4)
+        Me.flp_itemsPedido.Size = New System.Drawing.Size(277, 230)
+        Me.flp_itemsPedido.TabIndex = 17
+        Me.flp_itemsPedido.WrapContents = False
+        '
+        'Guna2Panel13
+        '
+        Me.Guna2Panel13.BackColor = System.Drawing.SystemColors.Control
+        Me.Guna2Panel13.BorderRadius = 8
+        Me.Guna2Panel13.Controls.Add(Me.Guna2HtmlLabel17)
+        Me.Guna2Panel13.Controls.Add(Me.Guna2HtmlLabel16)
+        Me.Guna2Panel13.FillColor = System.Drawing.Color.White
+        Me.Guna2Panel13.Location = New System.Drawing.Point(8, 8)
+        Me.Guna2Panel13.Margin = New System.Windows.Forms.Padding(4)
+        Me.Guna2Panel13.Name = "Guna2Panel13"
+        Me.Guna2Panel13.Padding = New System.Windows.Forms.Padding(16)
+        Me.Guna2Panel13.Size = New System.Drawing.Size(250, 40)
+        Me.Guna2Panel13.TabIndex = 1
+        Me.Guna2Panel13.Visible = False
+        '
+        'Guna2HtmlLabel17
+        '
+        Me.Guna2HtmlLabel17.BackColor = System.Drawing.Color.Transparent
+        Me.Guna2HtmlLabel17.Font = New System.Drawing.Font("Libre Caslon Display", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Guna2HtmlLabel17.ForeColor = System.Drawing.Color.FromArgb(CType(CType(127, Byte), Integer), CType(CType(127, Byte), Integer), CType(CType(127, Byte), Integer))
+        Me.Guna2HtmlLabel17.Location = New System.Drawing.Point(163, 9)
+        Me.Guna2HtmlLabel17.Name = "Guna2HtmlLabel17"
+        Me.Guna2HtmlLabel17.Size = New System.Drawing.Size(63, 21)
+        Me.Guna2HtmlLabel17.TabIndex = 13
+        Me.Guna2HtmlLabel17.Text = "R$ 24,30"
+        '
+        'Guna2HtmlLabel16
+        '
+        Me.Guna2HtmlLabel16.BackColor = System.Drawing.Color.Transparent
+        Me.Guna2HtmlLabel16.Font = New System.Drawing.Font("Libre Caslon Display", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Guna2HtmlLabel16.ForeColor = System.Drawing.Color.FromArgb(CType(CType(127, Byte), Integer), CType(CType(127, Byte), Integer), CType(CType(127, Byte), Integer))
+        Me.Guna2HtmlLabel16.Location = New System.Drawing.Point(19, 9)
+        Me.Guna2HtmlLabel16.Name = "Guna2HtmlLabel16"
+        Me.Guna2HtmlLabel16.Size = New System.Drawing.Size(96, 21)
+        Me.Guna2HtmlLabel16.TabIndex = 12
+        Me.Guna2HtmlLabel16.Text = "Nome do Prato"
+        '
+        'Guna2HtmlLabel11
+        '
+        Me.Guna2HtmlLabel11.BackColor = System.Drawing.Color.Transparent
+        Me.Guna2HtmlLabel11.Font = New System.Drawing.Font("Libre Caslon Display", 20.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Guna2HtmlLabel11.Location = New System.Drawing.Point(20, 231)
+        Me.Guna2HtmlLabel11.Name = "Guna2HtmlLabel11"
+        Me.Guna2HtmlLabel11.Size = New System.Drawing.Size(74, 35)
+        Me.Guna2HtmlLabel11.TabIndex = 15
+        Me.Guna2HtmlLabel11.Text = "Pedido"
+        '
+        'txt_nomeCliente
+        '
+        Me.txt_nomeCliente.AutoRoundedCorners = True
+        Me.txt_nomeCliente.BackColor = System.Drawing.Color.Transparent
+        Me.txt_nomeCliente.BorderColor = System.Drawing.Color.FromArgb(CType(CType(239, Byte), Integer), CType(CType(239, Byte), Integer), CType(CType(239, Byte), Integer))
+        Me.txt_nomeCliente.BorderRadius = 17
+        Me.txt_nomeCliente.Cursor = System.Windows.Forms.Cursors.IBeam
+        Me.txt_nomeCliente.DefaultText = ""
+        Me.txt_nomeCliente.DisabledState.BorderColor = System.Drawing.Color.FromArgb(CType(CType(208, Byte), Integer), CType(CType(208, Byte), Integer), CType(CType(208, Byte), Integer))
+        Me.txt_nomeCliente.DisabledState.FillColor = System.Drawing.Color.FromArgb(CType(CType(226, Byte), Integer), CType(CType(226, Byte), Integer), CType(CType(226, Byte), Integer))
+        Me.txt_nomeCliente.DisabledState.ForeColor = System.Drawing.Color.FromArgb(CType(CType(138, Byte), Integer), CType(CType(138, Byte), Integer), CType(CType(138, Byte), Integer))
+        Me.txt_nomeCliente.DisabledState.PlaceholderForeColor = System.Drawing.Color.FromArgb(CType(CType(138, Byte), Integer), CType(CType(138, Byte), Integer), CType(CType(138, Byte), Integer))
+        Me.txt_nomeCliente.FillColor = System.Drawing.Color.FromArgb(CType(CType(239, Byte), Integer), CType(CType(239, Byte), Integer), CType(CType(239, Byte), Integer))
+        Me.txt_nomeCliente.FocusedState.BorderColor = System.Drawing.Color.FromArgb(CType(CType(250, Byte), Integer), CType(CType(250, Byte), Integer), CType(CType(250, Byte), Integer))
+        Me.txt_nomeCliente.Font = New System.Drawing.Font("Libre Caslon Display", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.txt_nomeCliente.ForeColor = System.Drawing.Color.Black
+        Me.txt_nomeCliente.HoverState.BorderColor = System.Drawing.Color.FromArgb(CType(CType(250, Byte), Integer), CType(CType(250, Byte), Integer), CType(CType(250, Byte), Integer))
+        Me.txt_nomeCliente.Location = New System.Drawing.Point(32, 181)
+        Me.txt_nomeCliente.Margin = New System.Windows.Forms.Padding(3, 4, 3, 4)
+        Me.txt_nomeCliente.Name = "txt_nomeCliente"
+        Me.txt_nomeCliente.PasswordChar = Global.Microsoft.VisualBasic.ChrW(0)
+        Me.txt_nomeCliente.PlaceholderText = ""
+        Me.txt_nomeCliente.SelectedText = ""
+        Me.txt_nomeCliente.Size = New System.Drawing.Size(283, 36)
+        Me.txt_nomeCliente.TabIndex = 14
+        '
+        'Guna2HtmlLabel10
+        '
+        Me.Guna2HtmlLabel10.BackColor = System.Drawing.Color.Transparent
+        Me.Guna2HtmlLabel10.Font = New System.Drawing.Font("Libre Caslon Display", 15.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Guna2HtmlLabel10.Location = New System.Drawing.Point(28, 147)
+        Me.Guna2HtmlLabel10.Name = "Guna2HtmlLabel10"
+        Me.Guna2HtmlLabel10.Size = New System.Drawing.Size(144, 27)
+        Me.Guna2HtmlLabel10.TabIndex = 13
+        Me.Guna2HtmlLabel10.Text = "Nome do Cliente:"
+        '
+        'cmb_numeroMesa
+        '
+        Me.cmb_numeroMesa.AutoRoundedCorners = True
+        Me.cmb_numeroMesa.BackColor = System.Drawing.Color.Transparent
+        Me.cmb_numeroMesa.BorderColor = System.Drawing.Color.FromArgb(CType(CType(239, Byte), Integer), CType(CType(239, Byte), Integer), CType(CType(239, Byte), Integer))
+        Me.cmb_numeroMesa.BorderRadius = 17
+        Me.cmb_numeroMesa.Cursor = System.Windows.Forms.Cursors.Hand
+        Me.cmb_numeroMesa.DrawMode = System.Windows.Forms.DrawMode.OwnerDrawFixed
+        Me.cmb_numeroMesa.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList
+        Me.cmb_numeroMesa.FillColor = System.Drawing.Color.FromArgb(CType(CType(239, Byte), Integer), CType(CType(239, Byte), Integer), CType(CType(239, Byte), Integer))
+        Me.cmb_numeroMesa.FocusedColor = System.Drawing.Color.FromArgb(CType(CType(239, Byte), Integer), CType(CType(239, Byte), Integer), CType(CType(239, Byte), Integer))
+        Me.cmb_numeroMesa.FocusedState.BorderColor = System.Drawing.Color.FromArgb(CType(CType(239, Byte), Integer), CType(CType(239, Byte), Integer), CType(CType(239, Byte), Integer))
+        Me.cmb_numeroMesa.Font = New System.Drawing.Font("Libre Caslon Display", 12.0!)
+        Me.cmb_numeroMesa.ForeColor = System.Drawing.Color.FromArgb(CType(CType(68, Byte), Integer), CType(CType(88, Byte), Integer), CType(CType(112, Byte), Integer))
+        Me.cmb_numeroMesa.HoverState.BorderColor = System.Drawing.Color.FromArgb(CType(CType(239, Byte), Integer), CType(CType(239, Byte), Integer), CType(CType(239, Byte), Integer))
+        Me.cmb_numeroMesa.ItemHeight = 30
+        Me.cmb_numeroMesa.Location = New System.Drawing.Point(32, 99)
+        Me.cmb_numeroMesa.Name = "cmb_numeroMesa"
+        Me.cmb_numeroMesa.Size = New System.Drawing.Size(283, 36)
+        Me.cmb_numeroMesa.TabIndex = 12
+        Me.cmb_numeroMesa.TextAlign = System.Windows.Forms.HorizontalAlignment.Right
+        '
+        'Guna2HtmlLabel9
+        '
+        Me.Guna2HtmlLabel9.BackColor = System.Drawing.Color.Transparent
+        Me.Guna2HtmlLabel9.Font = New System.Drawing.Font("Libre Caslon Display", 15.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Guna2HtmlLabel9.Location = New System.Drawing.Point(28, 66)
+        Me.Guna2HtmlLabel9.Name = "Guna2HtmlLabel9"
+        Me.Guna2HtmlLabel9.Size = New System.Drawing.Size(142, 27)
+        Me.Guna2HtmlLabel9.TabIndex = 10
+        Me.Guna2HtmlLabel9.Text = "Número da Mesa:"
+        '
+        'Guna2HtmlLabel8
+        '
+        Me.Guna2HtmlLabel8.BackColor = System.Drawing.Color.Transparent
+        Me.Guna2HtmlLabel8.Font = New System.Drawing.Font("Libre Caslon Display", 20.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Guna2HtmlLabel8.Location = New System.Drawing.Point(22, 26)
+        Me.Guna2HtmlLabel8.Name = "Guna2HtmlLabel8"
+        Me.Guna2HtmlLabel8.Size = New System.Drawing.Size(235, 35)
+        Me.Guna2HtmlLabel8.TabIndex = 9
+        Me.Guna2HtmlLabel8.Text = "Informações do Cliente"
+        '
+        'flp_mesas
+        '
+        Me.flp_mesas.AutoScroll = True
+        Me.flp_mesas.Controls.Add(Me.Guna2Panel45)
+        Me.flp_mesas.Dock = System.Windows.Forms.DockStyle.Right
+        Me.flp_mesas.ForeColor = System.Drawing.Color.Black
+        Me.flp_mesas.Location = New System.Drawing.Point(402, 24)
+        Me.flp_mesas.Margin = New System.Windows.Forms.Padding(0)
+        Me.flp_mesas.Name = "flp_mesas"
+        Me.flp_mesas.Padding = New System.Windows.Forms.Padding(16, 12, 16, 12)
+        Me.flp_mesas.Size = New System.Drawing.Size(554, 672)
+        Me.flp_mesas.TabIndex = 0
+        '
+        'Guna2Panel45
+        '
+        Me.Guna2Panel45.BackColor = System.Drawing.Color.Transparent
+        Me.Guna2Panel45.BorderColor = System.Drawing.Color.Transparent
+        Me.Guna2Panel45.BorderRadius = 8
+        Me.Guna2Panel45.Controls.Add(Me.Guna2HtmlLabel1)
+        Me.Guna2Panel45.Controls.Add(Me.Guna2HtmlLabel2)
+        Me.Guna2Panel45.CustomBorderColor = System.Drawing.Color.FromArgb(CType(CType(48, Byte), Integer), CType(CType(107, Byte), Integer), CType(CType(52, Byte), Integer))
+        Me.Guna2Panel45.CustomBorderThickness = New System.Windows.Forms.Padding(10, 0, 0, 0)
+        Me.Guna2Panel45.FillColor = System.Drawing.Color.White
+        Me.Guna2Panel45.Location = New System.Drawing.Point(24, 18)
+        Me.Guna2Panel45.Margin = New System.Windows.Forms.Padding(8, 6, 8, 6)
+        Me.Guna2Panel45.Name = "Guna2Panel45"
+        Me.Guna2Panel45.ShadowDecoration.BorderRadius = 8
+        Me.Guna2Panel45.ShadowDecoration.Color = System.Drawing.Color.FromArgb(CType(CType(200, Byte), Integer), CType(CType(200, Byte), Integer), CType(CType(200, Byte), Integer))
+        Me.Guna2Panel45.ShadowDecoration.Depth = 20
+        Me.Guna2Panel45.ShadowDecoration.Enabled = True
+        Me.Guna2Panel45.Size = New System.Drawing.Size(155, 80)
+        Me.Guna2Panel45.TabIndex = 20
+        Me.Guna2Panel45.Visible = False
+        '
+        'Guna2HtmlLabel1
+        '
+        Me.Guna2HtmlLabel1.BackColor = System.Drawing.Color.Transparent
+        Me.Guna2HtmlLabel1.Font = New System.Drawing.Font("Libre Caslon Display", 12.75!)
+        Me.Guna2HtmlLabel1.ForeColor = System.Drawing.Color.FromArgb(CType(CType(46, Byte), Integer), CType(CType(31, Byte), Integer), CType(CType(39, Byte), Integer))
+        Me.Guna2HtmlLabel1.Location = New System.Drawing.Point(19, 48)
+        Me.Guna2HtmlLabel1.Name = "Guna2HtmlLabel1"
+        Me.Guna2HtmlLabel1.Size = New System.Drawing.Size(37, 22)
+        Me.Guna2HtmlLabel1.TabIndex = 6
+        Me.Guna2HtmlLabel1.Text = "Livre"
+        '
+        'Guna2HtmlLabel2
+        '
+        Me.Guna2HtmlLabel2.BackColor = System.Drawing.Color.Transparent
+        Me.Guna2HtmlLabel2.Font = New System.Drawing.Font("Libre Caslon Display", 16.75!)
+        Me.Guna2HtmlLabel2.ForeColor = System.Drawing.Color.FromArgb(CType(CType(127, Byte), Integer), CType(CType(127, Byte), Integer), CType(CType(127, Byte), Integer))
+        Me.Guna2HtmlLabel2.Location = New System.Drawing.Point(19, 3)
+        Me.Guna2HtmlLabel2.Name = "Guna2HtmlLabel2"
+        Me.Guna2HtmlLabel2.Size = New System.Drawing.Size(75, 29)
+        Me.Guna2HtmlLabel2.TabIndex = 5
+        Me.Guna2HtmlLabel2.Text = "Mesa 01"
         '
         'Guna2DragControl1
         '
@@ -430,78 +782,6 @@ Partial Class mesas
         Me.Guna2DragControl2.DockIndicatorTransparencyValue = 0.6R
         Me.Guna2DragControl2.TargetControl = Me.pnl_controls
         Me.Guna2DragControl2.TransparentWhileDrag = False
-        '
-        'FlowLayoutPanel1
-        '
-        Me.FlowLayoutPanel1.AutoScroll = True
-        Me.FlowLayoutPanel1.Controls.Add(Me.Guna2Panel45)
-        Me.FlowLayoutPanel1.Dock = System.Windows.Forms.DockStyle.Right
-        Me.FlowLayoutPanel1.ForeColor = System.Drawing.Color.Black
-        Me.FlowLayoutPanel1.Location = New System.Drawing.Point(402, 24)
-        Me.FlowLayoutPanel1.Name = "FlowLayoutPanel1"
-        Me.FlowLayoutPanel1.Padding = New System.Windows.Forms.Padding(16, 12, 16, 12)
-        Me.FlowLayoutPanel1.Size = New System.Drawing.Size(554, 672)
-        Me.FlowLayoutPanel1.TabIndex = 0
-        '
-        'Guna2Panel45
-        '
-        Me.Guna2Panel45.BackColor = System.Drawing.Color.Transparent
-        Me.Guna2Panel45.Controls.Add(Me.Guna2HtmlLabel1)
-        Me.Guna2Panel45.Controls.Add(Me.Guna2HtmlLabel2)
-        Me.Guna2Panel45.Controls.Add(Me.Guna2Panel46)
-        Me.Guna2Panel45.FillColor = System.Drawing.Color.White
-        Me.Guna2Panel45.Location = New System.Drawing.Point(32, 24)
-        Me.Guna2Panel45.Margin = New System.Windows.Forms.Padding(16, 12, 16, 12)
-        Me.Guna2Panel45.Name = "Guna2Panel45"
-        Me.Guna2Panel45.Size = New System.Drawing.Size(135, 70)
-        Me.Guna2Panel45.TabIndex = 20
-        '
-        'Guna2Panel46
-        '
-        Me.Guna2Panel46.BackColor = System.Drawing.Color.Transparent
-        Me.Guna2Panel46.Dock = System.Windows.Forms.DockStyle.Right
-        Me.Guna2Panel46.FillColor = System.Drawing.Color.FromArgb(CType(CType(48, Byte), Integer), CType(CType(107, Byte), Integer), CType(CType(52, Byte), Integer))
-        Me.Guna2Panel46.ForeColor = System.Drawing.Color.Black
-        Me.Guna2Panel46.Location = New System.Drawing.Point(111, 0)
-        Me.Guna2Panel46.Name = "Guna2Panel46"
-        Me.Guna2Panel46.Size = New System.Drawing.Size(24, 70)
-        Me.Guna2Panel46.TabIndex = 0
-        '
-        'Guna2HtmlLabel2
-        '
-        Me.Guna2HtmlLabel2.BackColor = System.Drawing.Color.Transparent
-        Me.Guna2HtmlLabel2.Font = New System.Drawing.Font("Libre Caslon Display", 12.75!)
-        Me.Guna2HtmlLabel2.ForeColor = System.Drawing.Color.FromArgb(CType(CType(127, Byte), Integer), CType(CType(127, Byte), Integer), CType(CType(127, Byte), Integer))
-        Me.Guna2HtmlLabel2.Location = New System.Drawing.Point(3, 3)
-        Me.Guna2HtmlLabel2.Name = "Guna2HtmlLabel2"
-        Me.Guna2HtmlLabel2.Size = New System.Drawing.Size(59, 22)
-        Me.Guna2HtmlLabel2.TabIndex = 5
-        Me.Guna2HtmlLabel2.Text = "Mesa 01"
-        '
-        'Guna2HtmlLabel1
-        '
-        Me.Guna2HtmlLabel1.BackColor = System.Drawing.Color.Transparent
-        Me.Guna2HtmlLabel1.Font = New System.Drawing.Font("Libre Caslon Display", 12.75!)
-        Me.Guna2HtmlLabel1.ForeColor = System.Drawing.Color.FromArgb(CType(CType(46, Byte), Integer), CType(CType(31, Byte), Integer), CType(CType(39, Byte), Integer))
-        Me.Guna2HtmlLabel1.Location = New System.Drawing.Point(3, 45)
-        Me.Guna2HtmlLabel1.Name = "Guna2HtmlLabel1"
-        Me.Guna2HtmlLabel1.Size = New System.Drawing.Size(59, 22)
-        Me.Guna2HtmlLabel1.TabIndex = 6
-        Me.Guna2HtmlLabel1.Text = "Mesa 01"
-        '
-        'Guna2BorderlessForm2
-        '
-        Me.Guna2BorderlessForm2.ContainerControl = Me
-        Me.Guna2BorderlessForm2.DockIndicatorTransparencyValue = 0.6R
-        Me.Guna2BorderlessForm2.TransparentWhileDrag = True
-        '
-        'Guna2Panel5
-        '
-        Me.Guna2Panel5.Dock = System.Windows.Forms.DockStyle.Fill
-        Me.Guna2Panel5.Location = New System.Drawing.Point(24, 24)
-        Me.Guna2Panel5.Name = "Guna2Panel5"
-        Me.Guna2Panel5.Size = New System.Drawing.Size(378, 672)
-        Me.Guna2Panel5.TabIndex = 1
         '
         'mesas
         '
@@ -527,7 +807,14 @@ Partial Class mesas
         Me.pnl_title.ResumeLayout(False)
         Me.pnl_title.PerformLayout()
         Me.Guna2Panel4.ResumeLayout(False)
-        Me.FlowLayoutPanel1.ResumeLayout(False)
+        Me.Guna2Panel5.ResumeLayout(False)
+        Me.pnl_info.ResumeLayout(False)
+        Me.pnl_info.PerformLayout()
+        Me.Guna2Panel9.ResumeLayout(False)
+        Me.flp_itemsPedido.ResumeLayout(False)
+        Me.Guna2Panel13.ResumeLayout(False)
+        Me.Guna2Panel13.PerformLayout()
+        Me.flp_mesas.ResumeLayout(False)
         Me.Guna2Panel45.ResumeLayout(False)
         Me.Guna2Panel45.PerformLayout()
         Me.ResumeLayout(False)
@@ -552,7 +839,7 @@ Partial Class mesas
     Friend WithEvents Guna2HtmlLabel3 As Guna.UI2.WinForms.Guna2HtmlLabel
     Friend WithEvents Guna2HtmlLabel4 As Guna.UI2.WinForms.Guna2HtmlLabel
     Friend WithEvents Guna2CirclePictureBox1 As Guna.UI2.WinForms.Guna2CirclePictureBox
-    Friend WithEvents pnl_title As Guna.UI2.WinForms.Guna2Panel
+    Friend WithEvents pnl_title As Guna.UI2.WinForms.Guna2ShadowPanel
     Friend WithEvents Guna2TextBox2 As Guna.UI2.WinForms.Guna2TextBox
     Friend WithEvents Guna2HtmlLabel7 As Guna.UI2.WinForms.Guna2HtmlLabel
     Friend WithEvents Guna2Panel1 As Guna.UI2.WinForms.Guna2Panel
@@ -560,11 +847,27 @@ Partial Class mesas
     Friend WithEvents Guna2DragControl1 As Guna.UI2.WinForms.Guna2DragControl
     Friend WithEvents Guna2DragControl2 As Guna.UI2.WinForms.Guna2DragControl
     Friend WithEvents btn_info As Guna.UI2.WinForms.Guna2Button
-    Friend WithEvents FlowLayoutPanel1 As FlowLayoutPanel
+    Friend WithEvents flp_mesas As FlowLayoutPanel
     Friend WithEvents Guna2Panel45 As Guna.UI2.WinForms.Guna2Panel
-    Friend WithEvents Guna2Panel46 As Guna.UI2.WinForms.Guna2Panel
     Friend WithEvents Guna2HtmlLabel2 As Guna.UI2.WinForms.Guna2HtmlLabel
     Friend WithEvents Guna2HtmlLabel1 As Guna.UI2.WinForms.Guna2HtmlLabel
     Friend WithEvents Guna2Panel5 As Guna.UI2.WinForms.Guna2Panel
-    Friend WithEvents Guna2BorderlessForm2 As Guna.UI2.WinForms.Guna2BorderlessForm
+    Friend WithEvents pnl_info As Guna.UI2.WinForms.Guna2ShadowPanel
+    Friend WithEvents btn_efetuarPedido As Guna.UI2.WinForms.Guna2Button
+    Friend WithEvents Guna2HtmlLabel19 As Guna.UI2.WinForms.Guna2HtmlLabel
+    Friend WithEvents Guna2HtmlLabel18 As Guna.UI2.WinForms.Guna2HtmlLabel
+    Friend WithEvents Guna2Panel9 As Guna.UI2.WinForms.Guna2Panel
+    Friend WithEvents flp_itemsPedido As FlowLayoutPanel
+    Friend WithEvents Guna2Panel13 As Guna.UI2.WinForms.Guna2Panel
+    Friend WithEvents Guna2HtmlLabel17 As Guna.UI2.WinForms.Guna2HtmlLabel
+    Friend WithEvents Guna2HtmlLabel16 As Guna.UI2.WinForms.Guna2HtmlLabel
+    Friend WithEvents Guna2HtmlLabel11 As Guna.UI2.WinForms.Guna2HtmlLabel
+    Friend WithEvents txt_nomeCliente As Guna.UI2.WinForms.Guna2TextBox
+    Friend WithEvents Guna2HtmlLabel10 As Guna.UI2.WinForms.Guna2HtmlLabel
+    Friend WithEvents cmb_numeroMesa As Guna.UI2.WinForms.Guna2ComboBox
+    Friend WithEvents Guna2HtmlLabel9 As Guna.UI2.WinForms.Guna2HtmlLabel
+    Friend WithEvents Guna2HtmlLabel8 As Guna.UI2.WinForms.Guna2HtmlLabel
+    Friend WithEvents Guna2HtmlLabel6 As Guna.UI2.WinForms.Guna2HtmlLabel
+    Friend WithEvents Guna2HtmlLabel12 As Guna.UI2.WinForms.Guna2HtmlLabel
+    Friend WithEvents cmb_ As Guna.UI2.WinForms.Guna2ComboBox
 End Class

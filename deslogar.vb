@@ -10,10 +10,11 @@
     End Sub
     Private Sub btn_sim_Click(sender As Object, e As EventArgs) Handles btn_sim.Click
         login.Show()
-        cardapio.Hide()
-        mesas.Hide()
-        sair.Hide()
-        infoUsuario.Hide()
-        Me.Hide()
+        Dim frm As Form
+        For Each frm In Application.OpenForms
+            If frm.Name <> "login" Then
+                frm.Visible = False
+            End If
+        Next
     End Sub
 End Class

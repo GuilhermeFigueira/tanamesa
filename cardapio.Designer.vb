@@ -43,15 +43,14 @@ Partial Class cardapio
         Me.btn_pedidos = New Guna.UI2.WinForms.Guna2Button()
         Me.btn_cardapio = New Guna.UI2.WinForms.Guna2Button()
         Me.Guna2ContainerControl1 = New Guna.UI2.WinForms.Guna2ContainerControl()
-        Me.pnl_title = New Guna.UI2.WinForms.Guna2Panel()
+        Me.pnl_title = New Guna.UI2.WinForms.Guna2ShadowPanel()
         Me.Guna2Panel1 = New Guna.UI2.WinForms.Guna2Panel()
         Me.Guna2TextBox2 = New Guna.UI2.WinForms.Guna2TextBox()
         Me.Guna2HtmlLabel7 = New Guna.UI2.WinForms.Guna2HtmlLabel()
         Me.Guna2Panel4 = New Guna.UI2.WinForms.Guna2Panel()
         Me.Guna2Panel6 = New Guna.UI2.WinForms.Guna2Panel()
         Me.flp_itemsCard = New System.Windows.Forms.FlowLayoutPanel()
-        Me.Guna2Panel8 = New Guna.UI2.WinForms.Guna2Panel()
-        Me.btn_ = New Guna.UI2.WinForms.Guna2Button()
+        Me.Guna2Panel8 = New Guna.UI2.WinForms.Guna2ShadowPanel()
         Me.Guna2HtmlLabel15 = New Guna.UI2.WinForms.Guna2HtmlLabel()
         Me.Guna2HtmlLabel14 = New Guna.UI2.WinForms.Guna2HtmlLabel()
         Me.Guna2HtmlLabel13 = New Guna.UI2.WinForms.Guna2HtmlLabel()
@@ -62,7 +61,11 @@ Partial Class cardapio
         Me.cmb_ordenar = New Guna.UI2.WinForms.Guna2ComboBox()
         Me.Guna2HtmlLabel1 = New Guna.UI2.WinForms.Guna2HtmlLabel()
         Me.Guna2HtmlLabel2 = New Guna.UI2.WinForms.Guna2HtmlLabel()
-        Me.Guna2Panel5 = New Guna.UI2.WinForms.Guna2Panel()
+        Me.pnl_info = New Guna.UI2.WinForms.Guna2ShadowPanel()
+        Me.btn_efetuarPedido = New Guna.UI2.WinForms.Guna2Button()
+        Me.Guna2HtmlLabel19 = New Guna.UI2.WinForms.Guna2HtmlLabel()
+        Me.Guna2HtmlLabel18 = New Guna.UI2.WinForms.Guna2HtmlLabel()
+        Me.Guna2HtmlLabel6 = New Guna.UI2.WinForms.Guna2HtmlLabel()
         Me.Guna2Panel9 = New Guna.UI2.WinForms.Guna2Panel()
         Me.flp_itemsPedido = New System.Windows.Forms.FlowLayoutPanel()
         Me.Guna2Panel13 = New Guna.UI2.WinForms.Guna2Panel()
@@ -79,6 +82,27 @@ Partial Class cardapio
         Me.Guna2HtmlLabel8 = New Guna.UI2.WinForms.Guna2HtmlLabel()
         Me.Guna2DragControl1 = New Guna.UI2.WinForms.Guna2DragControl(Me.components)
         Me.Guna2DragControl2 = New Guna.UI2.WinForms.Guna2DragControl(Me.components)
+        Me.Guna2HtmlLabel29 = New Guna.UI2.WinForms.Guna2HtmlLabel()
+        Me.Guna2HtmlLabel28 = New Guna.UI2.WinForms.Guna2HtmlLabel()
+        Me.Guna2HtmlLabel27 = New Guna.UI2.WinForms.Guna2HtmlLabel()
+        Me.Guna2HtmlLabel26 = New Guna.UI2.WinForms.Guna2HtmlLabel()
+        Me.btn_ = New Guna.UI2.WinForms.Guna2Button()
+        Me.Guna2ShadowPanel1 = New Guna.UI2.WinForms.Guna2ShadowPanel()
+        Me.Guna2Button1 = New Guna.UI2.WinForms.Guna2Button()
+        Me.Guna2HtmlLabel20 = New Guna.UI2.WinForms.Guna2HtmlLabel()
+        Me.Guna2HtmlLabel21 = New Guna.UI2.WinForms.Guna2HtmlLabel()
+        Me.Guna2HtmlLabel22 = New Guna.UI2.WinForms.Guna2HtmlLabel()
+        Me.Guna2HtmlLabel23 = New Guna.UI2.WinForms.Guna2HtmlLabel()
+        Me.Guna2PictureBox4 = New Guna.UI2.WinForms.Guna2PictureBox()
+        Me.Guna2PictureBox5 = New Guna.UI2.WinForms.Guna2PictureBox()
+        Me.Guna2ShadowPanel2 = New Guna.UI2.WinForms.Guna2ShadowPanel()
+        Me.Guna2Button2 = New Guna.UI2.WinForms.Guna2Button()
+        Me.Guna2HtmlLabel24 = New Guna.UI2.WinForms.Guna2HtmlLabel()
+        Me.Guna2HtmlLabel25 = New Guna.UI2.WinForms.Guna2HtmlLabel()
+        Me.Guna2HtmlLabel30 = New Guna.UI2.WinForms.Guna2HtmlLabel()
+        Me.Guna2HtmlLabel31 = New Guna.UI2.WinForms.Guna2HtmlLabel()
+        Me.Guna2PictureBox6 = New Guna.UI2.WinForms.Guna2PictureBox()
+        Me.Guna2PictureBox7 = New Guna.UI2.WinForms.Guna2PictureBox()
         Me.pnl_controls.SuspendLayout()
         Me.pnl_logo.SuspendLayout()
         Me.Guna2Panel3.SuspendLayout()
@@ -93,11 +117,17 @@ Partial Class cardapio
         CType(Me.Guna2PictureBox2, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.Guna2PictureBox1, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.Guna2Panel7.SuspendLayout()
-        Me.Guna2Panel5.SuspendLayout()
+        Me.pnl_info.SuspendLayout()
         Me.Guna2Panel9.SuspendLayout()
         Me.flp_itemsPedido.SuspendLayout()
         Me.Guna2Panel13.SuspendLayout()
         CType(Me.Guna2PictureBox3, System.ComponentModel.ISupportInitialize).BeginInit()
+        Me.Guna2ShadowPanel1.SuspendLayout()
+        CType(Me.Guna2PictureBox4, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.Guna2PictureBox5, System.ComponentModel.ISupportInitialize).BeginInit()
+        Me.Guna2ShadowPanel2.SuspendLayout()
+        CType(Me.Guna2PictureBox6, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.Guna2PictureBox7, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
         'Guna2BorderlessForm1
@@ -382,6 +412,7 @@ Partial Class cardapio
         '
         'pnl_title
         '
+        Me.pnl_title.BackColor = System.Drawing.Color.Transparent
         Me.pnl_title.Controls.Add(Me.Guna2Panel1)
         Me.pnl_title.Controls.Add(Me.Guna2TextBox2)
         Me.pnl_title.Controls.Add(Me.Guna2HtmlLabel7)
@@ -390,6 +421,9 @@ Partial Class cardapio
         Me.pnl_title.Location = New System.Drawing.Point(0, 0)
         Me.pnl_title.Name = "pnl_title"
         Me.pnl_title.Padding = New System.Windows.Forms.Padding(46, 0, 46, 0)
+        Me.pnl_title.ShadowColor = System.Drawing.Color.FromArgb(CType(CType(200, Byte), Integer), CType(CType(200, Byte), Integer), CType(CType(200, Byte), Integer))
+        Me.pnl_title.ShadowDepth = 30
+        Me.pnl_title.ShadowShift = 0
         Me.pnl_title.Size = New System.Drawing.Size(980, 80)
         Me.pnl_title.TabIndex = 32
         '
@@ -441,11 +475,11 @@ Partial Class cardapio
         'Guna2Panel4
         '
         Me.Guna2Panel4.Controls.Add(Me.Guna2Panel6)
-        Me.Guna2Panel4.Controls.Add(Me.Guna2Panel5)
+        Me.Guna2Panel4.Controls.Add(Me.pnl_info)
         Me.Guna2Panel4.Dock = System.Windows.Forms.DockStyle.Fill
         Me.Guna2Panel4.Location = New System.Drawing.Point(0, 80)
         Me.Guna2Panel4.Name = "Guna2Panel4"
-        Me.Guna2Panel4.Padding = New System.Windows.Forms.Padding(30)
+        Me.Guna2Panel4.Padding = New System.Windows.Forms.Padding(16)
         Me.Guna2Panel4.Size = New System.Drawing.Size(980, 720)
         Me.Guna2Panel4.TabIndex = 33
         '
@@ -455,27 +489,29 @@ Partial Class cardapio
         Me.Guna2Panel6.Controls.Add(Me.Guna2Panel7)
         Me.Guna2Panel6.Controls.Add(Me.Guna2HtmlLabel2)
         Me.Guna2Panel6.Dock = System.Windows.Forms.DockStyle.Fill
-        Me.Guna2Panel6.Location = New System.Drawing.Point(313, 30)
+        Me.Guna2Panel6.Location = New System.Drawing.Point(324, 16)
         Me.Guna2Panel6.Name = "Guna2Panel6"
         Me.Guna2Panel6.Padding = New System.Windows.Forms.Padding(10, 0, 0, 0)
-        Me.Guna2Panel6.Size = New System.Drawing.Size(637, 660)
+        Me.Guna2Panel6.Size = New System.Drawing.Size(640, 688)
         Me.Guna2Panel6.TabIndex = 1
         '
         'flp_itemsCard
         '
         Me.flp_itemsCard.AutoScroll = True
-        Me.flp_itemsCard.AutoSize = True
         Me.flp_itemsCard.Controls.Add(Me.Guna2Panel8)
-        Me.flp_itemsCard.Location = New System.Drawing.Point(23, 85)
+        Me.flp_itemsCard.Controls.Add(Me.Guna2ShadowPanel1)
+        Me.flp_itemsCard.Controls.Add(Me.Guna2ShadowPanel2)
+        Me.flp_itemsCard.Location = New System.Drawing.Point(10, 67)
+        Me.flp_itemsCard.Margin = New System.Windows.Forms.Padding(0)
         Me.flp_itemsCard.Name = "flp_itemsCard"
-        Me.flp_itemsCard.Size = New System.Drawing.Size(595, 575)
+        Me.flp_itemsCard.Padding = New System.Windows.Forms.Padding(8)
+        Me.flp_itemsCard.Size = New System.Drawing.Size(621, 593)
         Me.flp_itemsCard.TabIndex = 8
         Me.flp_itemsCard.Tag = "ew8if0oui"
         '
         'Guna2Panel8
         '
-        Me.Guna2Panel8.BackColor = System.Drawing.SystemColors.Control
-        Me.Guna2Panel8.BorderRadius = 32
+        Me.Guna2Panel8.BackColor = System.Drawing.Color.Transparent
         Me.Guna2Panel8.Controls.Add(Me.btn_)
         Me.Guna2Panel8.Controls.Add(Me.Guna2HtmlLabel15)
         Me.Guna2Panel8.Controls.Add(Me.Guna2HtmlLabel14)
@@ -484,38 +520,23 @@ Partial Class cardapio
         Me.Guna2Panel8.Controls.Add(Me.Guna2PictureBox2)
         Me.Guna2Panel8.Controls.Add(Me.Guna2PictureBox1)
         Me.Guna2Panel8.FillColor = System.Drawing.Color.White
-        Me.Guna2Panel8.Location = New System.Drawing.Point(8, 8)
-        Me.Guna2Panel8.Margin = New System.Windows.Forms.Padding(8)
+        Me.Guna2Panel8.Location = New System.Drawing.Point(14, 14)
+        Me.Guna2Panel8.Margin = New System.Windows.Forms.Padding(6)
         Me.Guna2Panel8.Name = "Guna2Panel8"
-        Me.Guna2Panel8.Padding = New System.Windows.Forms.Padding(16)
-        Me.Guna2Panel8.Size = New System.Drawing.Size(270, 285)
+        Me.Guna2Panel8.Padding = New System.Windows.Forms.Padding(16, 24, 16, 24)
+        Me.Guna2Panel8.Radius = 10
+        Me.Guna2Panel8.ShadowColor = System.Drawing.Color.FromArgb(CType(CType(200, Byte), Integer), CType(CType(200, Byte), Integer), CType(CType(200, Byte), Integer))
+        Me.Guna2Panel8.ShadowDepth = 30
+        Me.Guna2Panel8.ShadowShift = 4
+        Me.Guna2Panel8.Size = New System.Drawing.Size(280, 300)
         Me.Guna2Panel8.TabIndex = 0
         Me.Guna2Panel8.Visible = False
-        '
-        'btn_
-        '
-        Me.btn_.AutoRoundedCorners = True
-        Me.btn_.BackColor = System.Drawing.Color.Transparent
-        Me.btn_.BorderRadius = 19
-        Me.btn_.Cursor = System.Windows.Forms.Cursors.Hand
-        Me.btn_.DisabledState.BorderColor = System.Drawing.Color.DarkGray
-        Me.btn_.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray
-        Me.btn_.DisabledState.FillColor = System.Drawing.Color.FromArgb(CType(CType(169, Byte), Integer), CType(CType(169, Byte), Integer), CType(CType(169, Byte), Integer))
-        Me.btn_.DisabledState.ForeColor = System.Drawing.Color.FromArgb(CType(CType(141, Byte), Integer), CType(CType(141, Byte), Integer), CType(CType(141, Byte), Integer))
-        Me.btn_.FillColor = System.Drawing.Color.FromArgb(CType(CType(46, Byte), Integer), CType(CType(31, Byte), Integer), CType(CType(39, Byte), Integer))
-        Me.btn_.Font = New System.Drawing.Font("Libre Caslon Display", 18.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.btn_.ForeColor = System.Drawing.Color.White
-        Me.btn_.Location = New System.Drawing.Point(122, 228)
-        Me.btn_.Name = "btn_"
-        Me.btn_.Size = New System.Drawing.Size(129, 40)
-        Me.btn_.TabIndex = 15
-        Me.btn_.Text = "Pedir"
         '
         'Guna2HtmlLabel15
         '
         Me.Guna2HtmlLabel15.BackColor = System.Drawing.Color.Transparent
         Me.Guna2HtmlLabel15.Font = New System.Drawing.Font("Libre Caslon Display", 18.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Guna2HtmlLabel15.Location = New System.Drawing.Point(19, 235)
+        Me.Guna2HtmlLabel15.Location = New System.Drawing.Point(16, 230)
         Me.Guna2HtmlLabel15.Name = "Guna2HtmlLabel15"
         Me.Guna2HtmlLabel15.Size = New System.Drawing.Size(57, 31)
         Me.Guna2HtmlLabel15.TabIndex = 14
@@ -526,7 +547,7 @@ Partial Class cardapio
         Me.Guna2HtmlLabel14.BackColor = System.Drawing.Color.Transparent
         Me.Guna2HtmlLabel14.Font = New System.Drawing.Font("Libre Caslon Display", 11.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Guna2HtmlLabel14.ForeColor = System.Drawing.Color.FromArgb(CType(CType(127, Byte), Integer), CType(CType(127, Byte), Integer), CType(CType(127, Byte), Integer))
-        Me.Guna2HtmlLabel14.Location = New System.Drawing.Point(19, 197)
+        Me.Guna2HtmlLabel14.Location = New System.Drawing.Point(19, 198)
         Me.Guna2HtmlLabel14.Name = "Guna2HtmlLabel14"
         Me.Guna2HtmlLabel14.Size = New System.Drawing.Size(154, 20)
         Me.Guna2HtmlLabel14.TabIndex = 13
@@ -537,7 +558,7 @@ Partial Class cardapio
         Me.Guna2HtmlLabel13.BackColor = System.Drawing.Color.Transparent
         Me.Guna2HtmlLabel13.Font = New System.Drawing.Font("Libre Caslon Display", 11.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Guna2HtmlLabel13.ForeColor = System.Drawing.Color.FromArgb(CType(CType(127, Byte), Integer), CType(CType(127, Byte), Integer), CType(CType(127, Byte), Integer))
-        Me.Guna2HtmlLabel13.Location = New System.Drawing.Point(19, 170)
+        Me.Guna2HtmlLabel13.Location = New System.Drawing.Point(19, 171)
         Me.Guna2HtmlLabel13.Name = "Guna2HtmlLabel13"
         Me.Guna2HtmlLabel13.Size = New System.Drawing.Size(160, 20)
         Me.Guna2HtmlLabel13.TabIndex = 12
@@ -547,7 +568,7 @@ Partial Class cardapio
         '
         Me.Guna2HtmlLabel12.BackColor = System.Drawing.Color.Transparent
         Me.Guna2HtmlLabel12.Font = New System.Drawing.Font("Libre Caslon Display", 18.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Guna2HtmlLabel12.Location = New System.Drawing.Point(19, 136)
+        Me.Guna2HtmlLabel12.Location = New System.Drawing.Point(19, 138)
         Me.Guna2HtmlLabel12.Name = "Guna2HtmlLabel12"
         Me.Guna2HtmlLabel12.Size = New System.Drawing.Size(140, 31)
         Me.Guna2HtmlLabel12.TabIndex = 11
@@ -557,12 +578,13 @@ Partial Class cardapio
         '
         Me.Guna2PictureBox2.BackColor = System.Drawing.Color.Transparent
         Me.Guna2PictureBox2.BorderRadius = 12
+        Me.Guna2PictureBox2.Dock = System.Windows.Forms.DockStyle.Top
         Me.Guna2PictureBox2.FillColor = System.Drawing.Color.Transparent
         Me.Guna2PictureBox2.Image = CType(resources.GetObject("Guna2PictureBox2.Image"), System.Drawing.Image)
         Me.Guna2PictureBox2.ImageRotate = 0!
-        Me.Guna2PictureBox2.Location = New System.Drawing.Point(19, 19)
+        Me.Guna2PictureBox2.Location = New System.Drawing.Point(16, 24)
         Me.Guna2PictureBox2.Name = "Guna2PictureBox2"
-        Me.Guna2PictureBox2.Size = New System.Drawing.Size(232, 107)
+        Me.Guna2PictureBox2.Size = New System.Drawing.Size(248, 107)
         Me.Guna2PictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
         Me.Guna2PictureBox2.TabIndex = 1
         Me.Guna2PictureBox2.TabStop = False
@@ -585,7 +607,7 @@ Partial Class cardapio
         Me.Guna2Panel7.Controls.Add(Me.cmb_ordenar)
         Me.Guna2Panel7.Controls.Add(Me.Guna2HtmlLabel1)
         Me.Guna2Panel7.FillColor = System.Drawing.Color.White
-        Me.Guna2Panel7.Location = New System.Drawing.Point(386, 20)
+        Me.Guna2Panel7.Location = New System.Drawing.Point(407, 15)
         Me.Guna2Panel7.Name = "Guna2Panel7"
         Me.Guna2Panel7.Padding = New System.Windows.Forms.Padding(8)
         Me.Guna2Panel7.Size = New System.Drawing.Size(223, 49)
@@ -627,30 +649,89 @@ Partial Class cardapio
         '
         Me.Guna2HtmlLabel2.BackColor = System.Drawing.Color.Transparent
         Me.Guna2HtmlLabel2.Font = New System.Drawing.Font("Libre Caslon Display", 24.75!)
-        Me.Guna2HtmlLabel2.Location = New System.Drawing.Point(31, 20)
+        Me.Guna2HtmlLabel2.Location = New System.Drawing.Point(31, 15)
         Me.Guna2HtmlLabel2.Name = "Guna2HtmlLabel2"
         Me.Guna2HtmlLabel2.Size = New System.Drawing.Size(328, 42)
         Me.Guna2HtmlLabel2.TabIndex = 5
         Me.Guna2HtmlLabel2.Text = "Explorar itens do cardápio"
         '
-        'Guna2Panel5
+        'pnl_info
         '
-        Me.Guna2Panel5.BorderRadius = 32
-        Me.Guna2Panel5.Controls.Add(Me.Guna2Panel9)
-        Me.Guna2Panel5.Controls.Add(Me.lbl_numeroPedido)
-        Me.Guna2Panel5.Controls.Add(Me.Guna2HtmlLabel11)
-        Me.Guna2Panel5.Controls.Add(Me.txt_nomeCliente)
-        Me.Guna2Panel5.Controls.Add(Me.Guna2HtmlLabel10)
-        Me.Guna2Panel5.Controls.Add(Me.cmb_numeroMesa)
-        Me.Guna2Panel5.Controls.Add(Me.Guna2HtmlLabel9)
-        Me.Guna2Panel5.Controls.Add(Me.Guna2HtmlLabel8)
-        Me.Guna2Panel5.Dock = System.Windows.Forms.DockStyle.Left
-        Me.Guna2Panel5.FillColor = System.Drawing.Color.White
-        Me.Guna2Panel5.Location = New System.Drawing.Point(30, 30)
-        Me.Guna2Panel5.Name = "Guna2Panel5"
-        Me.Guna2Panel5.Padding = New System.Windows.Forms.Padding(16, 12, 16, 12)
-        Me.Guna2Panel5.Size = New System.Drawing.Size(283, 660)
-        Me.Guna2Panel5.TabIndex = 0
+        Me.pnl_info.BackColor = System.Drawing.Color.Transparent
+        Me.pnl_info.Controls.Add(Me.btn_efetuarPedido)
+        Me.pnl_info.Controls.Add(Me.Guna2HtmlLabel19)
+        Me.pnl_info.Controls.Add(Me.Guna2HtmlLabel18)
+        Me.pnl_info.Controls.Add(Me.Guna2HtmlLabel6)
+        Me.pnl_info.Controls.Add(Me.Guna2Panel9)
+        Me.pnl_info.Controls.Add(Me.lbl_numeroPedido)
+        Me.pnl_info.Controls.Add(Me.Guna2HtmlLabel11)
+        Me.pnl_info.Controls.Add(Me.txt_nomeCliente)
+        Me.pnl_info.Controls.Add(Me.Guna2HtmlLabel10)
+        Me.pnl_info.Controls.Add(Me.cmb_numeroMesa)
+        Me.pnl_info.Controls.Add(Me.Guna2HtmlLabel9)
+        Me.pnl_info.Controls.Add(Me.Guna2HtmlLabel8)
+        Me.pnl_info.Dock = System.Windows.Forms.DockStyle.Left
+        Me.pnl_info.FillColor = System.Drawing.Color.White
+        Me.pnl_info.Location = New System.Drawing.Point(16, 16)
+        Me.pnl_info.Name = "pnl_info"
+        Me.pnl_info.Padding = New System.Windows.Forms.Padding(16)
+        Me.pnl_info.Radius = 16
+        Me.pnl_info.ShadowColor = System.Drawing.Color.FromArgb(CType(CType(200, Byte), Integer), CType(CType(200, Byte), Integer), CType(CType(200, Byte), Integer))
+        Me.pnl_info.ShadowDepth = 30
+        Me.pnl_info.Size = New System.Drawing.Size(308, 688)
+        Me.pnl_info.TabIndex = 0
+        '
+        'btn_efetuarPedido
+        '
+        Me.btn_efetuarPedido.AutoRoundedCorners = True
+        Me.btn_efetuarPedido.BackColor = System.Drawing.Color.Transparent
+        Me.btn_efetuarPedido.BorderRadius = 17
+        Me.btn_efetuarPedido.Cursor = System.Windows.Forms.Cursors.Hand
+        Me.btn_efetuarPedido.DisabledState.BorderColor = System.Drawing.Color.DarkGray
+        Me.btn_efetuarPedido.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray
+        Me.btn_efetuarPedido.DisabledState.FillColor = System.Drawing.Color.FromArgb(CType(CType(169, Byte), Integer), CType(CType(169, Byte), Integer), CType(CType(169, Byte), Integer))
+        Me.btn_efetuarPedido.DisabledState.ForeColor = System.Drawing.Color.FromArgb(CType(CType(141, Byte), Integer), CType(CType(141, Byte), Integer), CType(CType(141, Byte), Integer))
+        Me.btn_efetuarPedido.Dock = System.Windows.Forms.DockStyle.Bottom
+        Me.btn_efetuarPedido.FillColor = System.Drawing.Color.FromArgb(CType(CType(46, Byte), Integer), CType(CType(31, Byte), Integer), CType(CType(39, Byte), Integer))
+        Me.btn_efetuarPedido.Font = New System.Drawing.Font("Libre Caslon Display", 15.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.btn_efetuarPedido.ForeColor = System.Drawing.Color.White
+        Me.btn_efetuarPedido.Location = New System.Drawing.Point(16, 635)
+        Me.btn_efetuarPedido.Margin = New System.Windows.Forms.Padding(0)
+        Me.btn_efetuarPedido.Name = "btn_efetuarPedido"
+        Me.btn_efetuarPedido.Size = New System.Drawing.Size(276, 37)
+        Me.btn_efetuarPedido.TabIndex = 22
+        Me.btn_efetuarPedido.Text = "Efetuar Pedido"
+        '
+        'Guna2HtmlLabel19
+        '
+        Me.Guna2HtmlLabel19.BackColor = System.Drawing.Color.Transparent
+        Me.Guna2HtmlLabel19.Font = New System.Drawing.Font("Libre Caslon Display", 14.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Guna2HtmlLabel19.ForeColor = System.Drawing.Color.FromArgb(CType(CType(48, Byte), Integer), CType(CType(107, Byte), Integer), CType(CType(52, Byte), Integer))
+        Me.Guna2HtmlLabel19.Location = New System.Drawing.Point(233, 586)
+        Me.Guna2HtmlLabel19.Name = "Guna2HtmlLabel19"
+        Me.Guna2HtmlLabel19.Size = New System.Drawing.Size(47, 25)
+        Me.Guna2HtmlLabel19.TabIndex = 21
+        Me.Guna2HtmlLabel19.Text = "R$40"
+        '
+        'Guna2HtmlLabel18
+        '
+        Me.Guna2HtmlLabel18.BackColor = System.Drawing.Color.Transparent
+        Me.Guna2HtmlLabel18.Font = New System.Drawing.Font("Libre Caslon Display", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Guna2HtmlLabel18.Location = New System.Drawing.Point(35, 586)
+        Me.Guna2HtmlLabel18.Name = "Guna2HtmlLabel18"
+        Me.Guna2HtmlLabel18.Size = New System.Drawing.Size(36, 21)
+        Me.Guna2HtmlLabel18.TabIndex = 20
+        Me.Guna2HtmlLabel18.Text = "Total"
+        '
+        'Guna2HtmlLabel6
+        '
+        Me.Guna2HtmlLabel6.BackColor = System.Drawing.Color.Transparent
+        Me.Guna2HtmlLabel6.Font = New System.Drawing.Font("Libre Caslon Display", 20.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Guna2HtmlLabel6.Location = New System.Drawing.Point(26, 545)
+        Me.Guna2HtmlLabel6.Name = "Guna2HtmlLabel6"
+        Me.Guna2HtmlLabel6.Size = New System.Drawing.Size(112, 35)
+        Me.Guna2HtmlLabel6.TabIndex = 19
+        Me.Guna2HtmlLabel6.Text = "Pagamento"
         '
         'Guna2Panel9
         '
@@ -658,9 +739,9 @@ Partial Class cardapio
         Me.Guna2Panel9.BorderRadius = 16
         Me.Guna2Panel9.Controls.Add(Me.flp_itemsPedido)
         Me.Guna2Panel9.FillColor = System.Drawing.Color.FromArgb(CType(CType(239, Byte), Integer), CType(CType(239, Byte), Integer), CType(CType(239, Byte), Integer))
-        Me.Guna2Panel9.Location = New System.Drawing.Point(16, 279)
+        Me.Guna2Panel9.Location = New System.Drawing.Point(32, 258)
         Me.Guna2Panel9.Name = "Guna2Panel9"
-        Me.Guna2Panel9.Size = New System.Drawing.Size(238, 307)
+        Me.Guna2Panel9.Size = New System.Drawing.Size(244, 274)
         Me.Guna2Panel9.TabIndex = 18
         '
         'flp_itemsPedido
@@ -671,9 +752,10 @@ Partial Class cardapio
         Me.flp_itemsPedido.AutoScroll = True
         Me.flp_itemsPedido.Controls.Add(Me.Guna2Panel13)
         Me.flp_itemsPedido.FlowDirection = System.Windows.Forms.FlowDirection.TopDown
-        Me.flp_itemsPedido.Location = New System.Drawing.Point(11, 12)
+        Me.flp_itemsPedido.Location = New System.Drawing.Point(3, 3)
         Me.flp_itemsPedido.Name = "flp_itemsPedido"
-        Me.flp_itemsPedido.Size = New System.Drawing.Size(226, 291)
+        Me.flp_itemsPedido.Padding = New System.Windows.Forms.Padding(4)
+        Me.flp_itemsPedido.Size = New System.Drawing.Size(238, 267)
         Me.flp_itemsPedido.TabIndex = 17
         Me.flp_itemsPedido.WrapContents = False
         '
@@ -687,12 +769,11 @@ Partial Class cardapio
         Me.Guna2Panel13.Controls.Add(Me.Guna2PictureBox3)
         Me.Guna2Panel13.FillColor = System.Drawing.Color.White
         Me.Guna2Panel13.Location = New System.Drawing.Point(8, 8)
-        Me.Guna2Panel13.Margin = New System.Windows.Forms.Padding(8)
+        Me.Guna2Panel13.Margin = New System.Windows.Forms.Padding(4)
         Me.Guna2Panel13.Name = "Guna2Panel13"
         Me.Guna2Panel13.Padding = New System.Windows.Forms.Padding(16)
-        Me.Guna2Panel13.Size = New System.Drawing.Size(193, 80)
+        Me.Guna2Panel13.Size = New System.Drawing.Size(210, 80)
         Me.Guna2Panel13.TabIndex = 1
-        Me.Guna2Panel13.Visible = False
         '
         'btn_1
         '
@@ -704,18 +785,18 @@ Partial Class cardapio
         Me.btn_1.Image = CType(resources.GetObject("btn_1.Image"), System.Drawing.Image)
         Me.btn_1.ImageOffset = New System.Drawing.Point(0, 0)
         Me.btn_1.ImageRotate = 0!
-        Me.btn_1.ImageSize = New System.Drawing.Size(18, 18)
-        Me.btn_1.Location = New System.Drawing.Point(144, 33)
+        Me.btn_1.ImageSize = New System.Drawing.Size(26, 26)
+        Me.btn_1.Location = New System.Drawing.Point(169, 30)
         Me.btn_1.Name = "btn_1"
         Me.btn_1.PressedState.ImageSize = New System.Drawing.Size(28, 28)
-        Me.btn_1.Size = New System.Drawing.Size(36, 38)
+        Me.btn_1.Size = New System.Drawing.Size(38, 38)
         Me.btn_1.TabIndex = 14
         '
         'Guna2HtmlLabel17
         '
         Me.Guna2HtmlLabel17.BackColor = System.Drawing.Color.Transparent
         Me.Guna2HtmlLabel17.Font = New System.Drawing.Font("Libre Caslon Display", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Guna2HtmlLabel17.Location = New System.Drawing.Point(84, 42)
+        Me.Guna2HtmlLabel17.Location = New System.Drawing.Point(70, 45)
         Me.Guna2HtmlLabel17.Name = "Guna2HtmlLabel17"
         Me.Guna2HtmlLabel17.Size = New System.Drawing.Size(41, 21)
         Me.Guna2HtmlLabel17.TabIndex = 13
@@ -725,7 +806,7 @@ Partial Class cardapio
         '
         Me.Guna2HtmlLabel16.BackColor = System.Drawing.Color.Transparent
         Me.Guna2HtmlLabel16.Font = New System.Drawing.Font("Libre Caslon Display", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Guna2HtmlLabel16.Location = New System.Drawing.Point(84, 15)
+        Me.Guna2HtmlLabel16.Location = New System.Drawing.Point(70, 18)
         Me.Guna2HtmlLabel16.Name = "Guna2HtmlLabel16"
         Me.Guna2HtmlLabel16.Size = New System.Drawing.Size(96, 21)
         Me.Guna2HtmlLabel16.TabIndex = 12
@@ -735,12 +816,12 @@ Partial Class cardapio
         '
         Me.Guna2PictureBox3.AutoRoundedCorners = True
         Me.Guna2PictureBox3.BackColor = System.Drawing.Color.Transparent
-        Me.Guna2PictureBox3.BorderRadius = 30
+        Me.Guna2PictureBox3.BorderRadius = 27
         Me.Guna2PictureBox3.Image = CType(resources.GetObject("Guna2PictureBox3.Image"), System.Drawing.Image)
         Me.Guna2PictureBox3.ImageRotate = 0!
-        Me.Guna2PictureBox3.Location = New System.Drawing.Point(12, 9)
+        Me.Guna2PictureBox3.Location = New System.Drawing.Point(8, 12)
         Me.Guna2PictureBox3.Name = "Guna2PictureBox3"
-        Me.Guna2PictureBox3.Size = New System.Drawing.Size(62, 62)
+        Me.Guna2PictureBox3.Size = New System.Drawing.Size(56, 56)
         Me.Guna2PictureBox3.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
         Me.Guna2PictureBox3.TabIndex = 1
         Me.Guna2PictureBox3.TabStop = False
@@ -750,7 +831,7 @@ Partial Class cardapio
         Me.lbl_numeroPedido.BackColor = System.Drawing.Color.Transparent
         Me.lbl_numeroPedido.Font = New System.Drawing.Font("Libre Caslon Display", 20.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.lbl_numeroPedido.ForeColor = System.Drawing.Color.FromArgb(CType(CType(127, Byte), Integer), CType(CType(127, Byte), Integer), CType(CType(127, Byte), Integer))
-        Me.lbl_numeroPedido.Location = New System.Drawing.Point(232, 244)
+        Me.lbl_numeroPedido.Location = New System.Drawing.Point(258, 221)
         Me.lbl_numeroPedido.Name = "lbl_numeroPedido"
         Me.lbl_numeroPedido.Size = New System.Drawing.Size(19, 35)
         Me.lbl_numeroPedido.TabIndex = 16
@@ -760,7 +841,7 @@ Partial Class cardapio
         '
         Me.Guna2HtmlLabel11.BackColor = System.Drawing.Color.Transparent
         Me.Guna2HtmlLabel11.Font = New System.Drawing.Font("Libre Caslon Display", 20.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Guna2HtmlLabel11.Location = New System.Drawing.Point(24, 244)
+        Me.Guna2HtmlLabel11.Location = New System.Drawing.Point(24, 221)
         Me.Guna2HtmlLabel11.Name = "Guna2HtmlLabel11"
         Me.Guna2HtmlLabel11.Size = New System.Drawing.Size(134, 35)
         Me.Guna2HtmlLabel11.TabIndex = 15
@@ -784,20 +865,20 @@ Partial Class cardapio
         Me.txt_nomeCliente.Font = New System.Drawing.Font("Libre Caslon Display", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.txt_nomeCliente.ForeColor = System.Drawing.Color.Black
         Me.txt_nomeCliente.HoverState.BorderColor = System.Drawing.Color.FromArgb(CType(CType(250, Byte), Integer), CType(CType(250, Byte), Integer), CType(CType(250, Byte), Integer))
-        Me.txt_nomeCliente.Location = New System.Drawing.Point(32, 183)
+        Me.txt_nomeCliente.Location = New System.Drawing.Point(32, 170)
         Me.txt_nomeCliente.Margin = New System.Windows.Forms.Padding(3, 4, 3, 4)
         Me.txt_nomeCliente.Name = "txt_nomeCliente"
         Me.txt_nomeCliente.PasswordChar = Global.Microsoft.VisualBasic.ChrW(0)
         Me.txt_nomeCliente.PlaceholderText = ""
         Me.txt_nomeCliente.SelectedText = ""
-        Me.txt_nomeCliente.Size = New System.Drawing.Size(219, 36)
+        Me.txt_nomeCliente.Size = New System.Drawing.Size(244, 36)
         Me.txt_nomeCliente.TabIndex = 14
         '
         'Guna2HtmlLabel10
         '
         Me.Guna2HtmlLabel10.BackColor = System.Drawing.Color.Transparent
         Me.Guna2HtmlLabel10.Font = New System.Drawing.Font("Libre Caslon Display", 15.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Guna2HtmlLabel10.Location = New System.Drawing.Point(32, 149)
+        Me.Guna2HtmlLabel10.Location = New System.Drawing.Point(32, 140)
         Me.Guna2HtmlLabel10.Name = "Guna2HtmlLabel10"
         Me.Guna2HtmlLabel10.Size = New System.Drawing.Size(144, 27)
         Me.Guna2HtmlLabel10.TabIndex = 13
@@ -819,9 +900,9 @@ Partial Class cardapio
         Me.cmb_numeroMesa.ForeColor = System.Drawing.Color.FromArgb(CType(CType(68, Byte), Integer), CType(CType(88, Byte), Integer), CType(CType(112, Byte), Integer))
         Me.cmb_numeroMesa.HoverState.BorderColor = System.Drawing.Color.FromArgb(CType(CType(239, Byte), Integer), CType(CType(239, Byte), Integer), CType(CType(239, Byte), Integer))
         Me.cmb_numeroMesa.ItemHeight = 30
-        Me.cmb_numeroMesa.Location = New System.Drawing.Point(32, 101)
+        Me.cmb_numeroMesa.Location = New System.Drawing.Point(32, 88)
         Me.cmb_numeroMesa.Name = "cmb_numeroMesa"
-        Me.cmb_numeroMesa.Size = New System.Drawing.Size(219, 36)
+        Me.cmb_numeroMesa.Size = New System.Drawing.Size(244, 36)
         Me.cmb_numeroMesa.TabIndex = 12
         Me.cmb_numeroMesa.TextAlign = System.Windows.Forms.HorizontalAlignment.Right
         '
@@ -829,7 +910,7 @@ Partial Class cardapio
         '
         Me.Guna2HtmlLabel9.BackColor = System.Drawing.Color.Transparent
         Me.Guna2HtmlLabel9.Font = New System.Drawing.Font("Libre Caslon Display", 15.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Guna2HtmlLabel9.Location = New System.Drawing.Point(32, 68)
+        Me.Guna2HtmlLabel9.Location = New System.Drawing.Point(32, 59)
         Me.Guna2HtmlLabel9.Name = "Guna2HtmlLabel9"
         Me.Guna2HtmlLabel9.Size = New System.Drawing.Size(142, 27)
         Me.Guna2HtmlLabel9.TabIndex = 10
@@ -839,7 +920,7 @@ Partial Class cardapio
         '
         Me.Guna2HtmlLabel8.BackColor = System.Drawing.Color.Transparent
         Me.Guna2HtmlLabel8.Font = New System.Drawing.Font("Libre Caslon Display", 20.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Guna2HtmlLabel8.Location = New System.Drawing.Point(19, 27)
+        Me.Guna2HtmlLabel8.Location = New System.Drawing.Point(26, 19)
         Me.Guna2HtmlLabel8.Name = "Guna2HtmlLabel8"
         Me.Guna2HtmlLabel8.Size = New System.Drawing.Size(235, 35)
         Me.Guna2HtmlLabel8.TabIndex = 9
@@ -856,6 +937,283 @@ Partial Class cardapio
         Me.Guna2DragControl2.DockIndicatorTransparencyValue = 0.6R
         Me.Guna2DragControl2.TargetControl = Me.pnl_controls
         Me.Guna2DragControl2.TransparentWhileDrag = False
+        '
+        'Guna2HtmlLabel29
+        '
+        Me.Guna2HtmlLabel29.BackColor = System.Drawing.Color.Transparent
+        Me.Guna2HtmlLabel29.Font = New System.Drawing.Font("Libre Caslon Display", 18.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Guna2HtmlLabel29.Location = New System.Drawing.Point(19, 136)
+        Me.Guna2HtmlLabel29.Name = "Guna2HtmlLabel29"
+        Me.Guna2HtmlLabel29.Size = New System.Drawing.Size(140, 31)
+        Me.Guna2HtmlLabel29.TabIndex = 11
+        Me.Guna2HtmlLabel29.Text = "Nome do Prato"
+        '
+        'Guna2HtmlLabel28
+        '
+        Me.Guna2HtmlLabel28.BackColor = System.Drawing.Color.Transparent
+        Me.Guna2HtmlLabel28.Font = New System.Drawing.Font("Libre Caslon Display", 11.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Guna2HtmlLabel28.ForeColor = System.Drawing.Color.FromArgb(CType(CType(127, Byte), Integer), CType(CType(127, Byte), Integer), CType(CType(127, Byte), Integer))
+        Me.Guna2HtmlLabel28.Location = New System.Drawing.Point(19, 170)
+        Me.Guna2HtmlLabel28.Name = "Guna2HtmlLabel28"
+        Me.Guna2HtmlLabel28.Size = New System.Drawing.Size(160, 20)
+        Me.Guna2HtmlLabel28.TabIndex = 12
+        Me.Guna2HtmlLabel28.Text = "Vezes pedido na semana: 10"
+        '
+        'Guna2HtmlLabel27
+        '
+        Me.Guna2HtmlLabel27.BackColor = System.Drawing.Color.Transparent
+        Me.Guna2HtmlLabel27.Font = New System.Drawing.Font("Libre Caslon Display", 11.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Guna2HtmlLabel27.ForeColor = System.Drawing.Color.FromArgb(CType(CType(127, Byte), Integer), CType(CType(127, Byte), Integer), CType(CType(127, Byte), Integer))
+        Me.Guna2HtmlLabel27.Location = New System.Drawing.Point(19, 197)
+        Me.Guna2HtmlLabel27.Name = "Guna2HtmlLabel27"
+        Me.Guna2HtmlLabel27.Size = New System.Drawing.Size(154, 20)
+        Me.Guna2HtmlLabel27.TabIndex = 13
+        Me.Guna2HtmlLabel27.Text = "Porcentagem do total: 48%"
+        '
+        'Guna2HtmlLabel26
+        '
+        Me.Guna2HtmlLabel26.BackColor = System.Drawing.Color.Transparent
+        Me.Guna2HtmlLabel26.Font = New System.Drawing.Font("Libre Caslon Display", 18.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Guna2HtmlLabel26.Location = New System.Drawing.Point(19, 235)
+        Me.Guna2HtmlLabel26.Name = "Guna2HtmlLabel26"
+        Me.Guna2HtmlLabel26.Size = New System.Drawing.Size(57, 31)
+        Me.Guna2HtmlLabel26.TabIndex = 14
+        Me.Guna2HtmlLabel26.Text = "24,35"
+        '
+        'btn_
+        '
+        Me.btn_.AutoRoundedCorners = True
+        Me.btn_.BackColor = System.Drawing.Color.Transparent
+        Me.btn_.BorderRadius = 16
+        Me.btn_.Cursor = System.Windows.Forms.Cursors.Hand
+        Me.btn_.DisabledState.BorderColor = System.Drawing.Color.DarkGray
+        Me.btn_.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray
+        Me.btn_.DisabledState.FillColor = System.Drawing.Color.FromArgb(CType(CType(169, Byte), Integer), CType(CType(169, Byte), Integer), CType(CType(169, Byte), Integer))
+        Me.btn_.DisabledState.ForeColor = System.Drawing.Color.FromArgb(CType(CType(141, Byte), Integer), CType(CType(141, Byte), Integer), CType(CType(141, Byte), Integer))
+        Me.btn_.FillColor = System.Drawing.Color.FromArgb(CType(CType(46, Byte), Integer), CType(CType(31, Byte), Integer), CType(CType(39, Byte), Integer))
+        Me.btn_.Font = New System.Drawing.Font("Libre Caslon Display", 16.0!, System.Drawing.FontStyle.Bold)
+        Me.btn_.ForeColor = System.Drawing.Color.White
+        Me.btn_.Location = New System.Drawing.Point(134, 228)
+        Me.btn_.Name = "btn_"
+        Me.btn_.Size = New System.Drawing.Size(115, 35)
+        Me.btn_.TabIndex = 15
+        Me.btn_.Text = "Pedir"
+        '
+        'Guna2ShadowPanel1
+        '
+        Me.Guna2ShadowPanel1.BackColor = System.Drawing.Color.Transparent
+        Me.Guna2ShadowPanel1.Controls.Add(Me.Guna2Button1)
+        Me.Guna2ShadowPanel1.Controls.Add(Me.Guna2HtmlLabel20)
+        Me.Guna2ShadowPanel1.Controls.Add(Me.Guna2HtmlLabel21)
+        Me.Guna2ShadowPanel1.Controls.Add(Me.Guna2HtmlLabel22)
+        Me.Guna2ShadowPanel1.Controls.Add(Me.Guna2HtmlLabel23)
+        Me.Guna2ShadowPanel1.Controls.Add(Me.Guna2PictureBox4)
+        Me.Guna2ShadowPanel1.Controls.Add(Me.Guna2PictureBox5)
+        Me.Guna2ShadowPanel1.FillColor = System.Drawing.Color.White
+        Me.Guna2ShadowPanel1.Location = New System.Drawing.Point(306, 14)
+        Me.Guna2ShadowPanel1.Margin = New System.Windows.Forms.Padding(6)
+        Me.Guna2ShadowPanel1.Name = "Guna2ShadowPanel1"
+        Me.Guna2ShadowPanel1.Padding = New System.Windows.Forms.Padding(16, 24, 16, 24)
+        Me.Guna2ShadowPanel1.Radius = 10
+        Me.Guna2ShadowPanel1.ShadowColor = System.Drawing.Color.FromArgb(CType(CType(200, Byte), Integer), CType(CType(200, Byte), Integer), CType(CType(200, Byte), Integer))
+        Me.Guna2ShadowPanel1.ShadowDepth = 30
+        Me.Guna2ShadowPanel1.ShadowShift = 4
+        Me.Guna2ShadowPanel1.Size = New System.Drawing.Size(280, 300)
+        Me.Guna2ShadowPanel1.TabIndex = 1
+        Me.Guna2ShadowPanel1.Visible = False
+        '
+        'Guna2Button1
+        '
+        Me.Guna2Button1.AutoRoundedCorners = True
+        Me.Guna2Button1.BackColor = System.Drawing.Color.Transparent
+        Me.Guna2Button1.BorderRadius = 16
+        Me.Guna2Button1.Cursor = System.Windows.Forms.Cursors.Hand
+        Me.Guna2Button1.DisabledState.BorderColor = System.Drawing.Color.DarkGray
+        Me.Guna2Button1.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray
+        Me.Guna2Button1.DisabledState.FillColor = System.Drawing.Color.FromArgb(CType(CType(169, Byte), Integer), CType(CType(169, Byte), Integer), CType(CType(169, Byte), Integer))
+        Me.Guna2Button1.DisabledState.ForeColor = System.Drawing.Color.FromArgb(CType(CType(141, Byte), Integer), CType(CType(141, Byte), Integer), CType(CType(141, Byte), Integer))
+        Me.Guna2Button1.FillColor = System.Drawing.Color.FromArgb(CType(CType(46, Byte), Integer), CType(CType(31, Byte), Integer), CType(CType(39, Byte), Integer))
+        Me.Guna2Button1.Font = New System.Drawing.Font("Libre Caslon Display", 16.0!, System.Drawing.FontStyle.Bold)
+        Me.Guna2Button1.ForeColor = System.Drawing.Color.White
+        Me.Guna2Button1.Location = New System.Drawing.Point(134, 228)
+        Me.Guna2Button1.Name = "Guna2Button1"
+        Me.Guna2Button1.Size = New System.Drawing.Size(115, 35)
+        Me.Guna2Button1.TabIndex = 15
+        Me.Guna2Button1.Text = "Pedir"
+        '
+        'Guna2HtmlLabel20
+        '
+        Me.Guna2HtmlLabel20.BackColor = System.Drawing.Color.Transparent
+        Me.Guna2HtmlLabel20.Font = New System.Drawing.Font("Libre Caslon Display", 18.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Guna2HtmlLabel20.Location = New System.Drawing.Point(19, 232)
+        Me.Guna2HtmlLabel20.Name = "Guna2HtmlLabel20"
+        Me.Guna2HtmlLabel20.Size = New System.Drawing.Size(57, 31)
+        Me.Guna2HtmlLabel20.TabIndex = 14
+        Me.Guna2HtmlLabel20.Text = "24,35"
+        '
+        'Guna2HtmlLabel21
+        '
+        Me.Guna2HtmlLabel21.BackColor = System.Drawing.Color.Transparent
+        Me.Guna2HtmlLabel21.Font = New System.Drawing.Font("Libre Caslon Display", 11.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Guna2HtmlLabel21.ForeColor = System.Drawing.Color.FromArgb(CType(CType(127, Byte), Integer), CType(CType(127, Byte), Integer), CType(CType(127, Byte), Integer))
+        Me.Guna2HtmlLabel21.Location = New System.Drawing.Point(19, 198)
+        Me.Guna2HtmlLabel21.Name = "Guna2HtmlLabel21"
+        Me.Guna2HtmlLabel21.Size = New System.Drawing.Size(154, 20)
+        Me.Guna2HtmlLabel21.TabIndex = 13
+        Me.Guna2HtmlLabel21.Text = "Porcentagem do total: 48%"
+        '
+        'Guna2HtmlLabel22
+        '
+        Me.Guna2HtmlLabel22.BackColor = System.Drawing.Color.Transparent
+        Me.Guna2HtmlLabel22.Font = New System.Drawing.Font("Libre Caslon Display", 11.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Guna2HtmlLabel22.ForeColor = System.Drawing.Color.FromArgb(CType(CType(127, Byte), Integer), CType(CType(127, Byte), Integer), CType(CType(127, Byte), Integer))
+        Me.Guna2HtmlLabel22.Location = New System.Drawing.Point(19, 171)
+        Me.Guna2HtmlLabel22.Name = "Guna2HtmlLabel22"
+        Me.Guna2HtmlLabel22.Size = New System.Drawing.Size(160, 20)
+        Me.Guna2HtmlLabel22.TabIndex = 12
+        Me.Guna2HtmlLabel22.Text = "Vezes pedido na semana: 10"
+        '
+        'Guna2HtmlLabel23
+        '
+        Me.Guna2HtmlLabel23.BackColor = System.Drawing.Color.Transparent
+        Me.Guna2HtmlLabel23.Font = New System.Drawing.Font("Libre Caslon Display", 18.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Guna2HtmlLabel23.Location = New System.Drawing.Point(19, 138)
+        Me.Guna2HtmlLabel23.Name = "Guna2HtmlLabel23"
+        Me.Guna2HtmlLabel23.Size = New System.Drawing.Size(140, 31)
+        Me.Guna2HtmlLabel23.TabIndex = 11
+        Me.Guna2HtmlLabel23.Text = "Nome do Prato"
+        '
+        'Guna2PictureBox4
+        '
+        Me.Guna2PictureBox4.BackColor = System.Drawing.Color.Transparent
+        Me.Guna2PictureBox4.BorderRadius = 12
+        Me.Guna2PictureBox4.Dock = System.Windows.Forms.DockStyle.Top
+        Me.Guna2PictureBox4.FillColor = System.Drawing.Color.Transparent
+        Me.Guna2PictureBox4.Image = CType(resources.GetObject("Guna2PictureBox4.Image"), System.Drawing.Image)
+        Me.Guna2PictureBox4.ImageRotate = 0!
+        Me.Guna2PictureBox4.Location = New System.Drawing.Point(16, 24)
+        Me.Guna2PictureBox4.Name = "Guna2PictureBox4"
+        Me.Guna2PictureBox4.Size = New System.Drawing.Size(248, 107)
+        Me.Guna2PictureBox4.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
+        Me.Guna2PictureBox4.TabIndex = 1
+        Me.Guna2PictureBox4.TabStop = False
+        '
+        'Guna2PictureBox5
+        '
+        Me.Guna2PictureBox5.ImageRotate = 0!
+        Me.Guna2PictureBox5.Location = New System.Drawing.Point(28, 26)
+        Me.Guna2PictureBox5.Name = "Guna2PictureBox5"
+        Me.Guna2PictureBox5.Size = New System.Drawing.Size(216, 100)
+        Me.Guna2PictureBox5.TabIndex = 0
+        Me.Guna2PictureBox5.TabStop = False
+        '
+        'Guna2ShadowPanel2
+        '
+        Me.Guna2ShadowPanel2.BackColor = System.Drawing.Color.Transparent
+        Me.Guna2ShadowPanel2.Controls.Add(Me.Guna2Button2)
+        Me.Guna2ShadowPanel2.Controls.Add(Me.Guna2HtmlLabel24)
+        Me.Guna2ShadowPanel2.Controls.Add(Me.Guna2HtmlLabel25)
+        Me.Guna2ShadowPanel2.Controls.Add(Me.Guna2HtmlLabel30)
+        Me.Guna2ShadowPanel2.Controls.Add(Me.Guna2HtmlLabel31)
+        Me.Guna2ShadowPanel2.Controls.Add(Me.Guna2PictureBox6)
+        Me.Guna2ShadowPanel2.Controls.Add(Me.Guna2PictureBox7)
+        Me.Guna2ShadowPanel2.FillColor = System.Drawing.Color.White
+        Me.Guna2ShadowPanel2.Location = New System.Drawing.Point(12, 324)
+        Me.Guna2ShadowPanel2.Margin = New System.Windows.Forms.Padding(4)
+        Me.Guna2ShadowPanel2.Name = "Guna2ShadowPanel2"
+        Me.Guna2ShadowPanel2.Padding = New System.Windows.Forms.Padding(16, 24, 16, 24)
+        Me.Guna2ShadowPanel2.Radius = 10
+        Me.Guna2ShadowPanel2.ShadowColor = System.Drawing.Color.FromArgb(CType(CType(200, Byte), Integer), CType(CType(200, Byte), Integer), CType(CType(200, Byte), Integer))
+        Me.Guna2ShadowPanel2.ShadowDepth = 30
+        Me.Guna2ShadowPanel2.ShadowShift = 4
+        Me.Guna2ShadowPanel2.Size = New System.Drawing.Size(265, 285)
+        Me.Guna2ShadowPanel2.TabIndex = 2
+        Me.Guna2ShadowPanel2.Visible = False
+        '
+        'Guna2Button2
+        '
+        Me.Guna2Button2.AutoRoundedCorners = True
+        Me.Guna2Button2.BackColor = System.Drawing.Color.Transparent
+        Me.Guna2Button2.BorderRadius = 16
+        Me.Guna2Button2.Cursor = System.Windows.Forms.Cursors.Hand
+        Me.Guna2Button2.DisabledState.BorderColor = System.Drawing.Color.DarkGray
+        Me.Guna2Button2.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray
+        Me.Guna2Button2.DisabledState.FillColor = System.Drawing.Color.FromArgb(CType(CType(169, Byte), Integer), CType(CType(169, Byte), Integer), CType(CType(169, Byte), Integer))
+        Me.Guna2Button2.DisabledState.ForeColor = System.Drawing.Color.FromArgb(CType(CType(141, Byte), Integer), CType(CType(141, Byte), Integer), CType(CType(141, Byte), Integer))
+        Me.Guna2Button2.FillColor = System.Drawing.Color.FromArgb(CType(CType(46, Byte), Integer), CType(CType(31, Byte), Integer), CType(CType(39, Byte), Integer))
+        Me.Guna2Button2.Font = New System.Drawing.Font("Libre Caslon Display", 16.0!, System.Drawing.FontStyle.Bold)
+        Me.Guna2Button2.ForeColor = System.Drawing.Color.White
+        Me.Guna2Button2.Location = New System.Drawing.Point(134, 228)
+        Me.Guna2Button2.Name = "Guna2Button2"
+        Me.Guna2Button2.Size = New System.Drawing.Size(115, 35)
+        Me.Guna2Button2.TabIndex = 15
+        Me.Guna2Button2.Text = "Pedir"
+        '
+        'Guna2HtmlLabel24
+        '
+        Me.Guna2HtmlLabel24.BackColor = System.Drawing.Color.Transparent
+        Me.Guna2HtmlLabel24.Font = New System.Drawing.Font("Libre Caslon Display", 18.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Guna2HtmlLabel24.Location = New System.Drawing.Point(19, 232)
+        Me.Guna2HtmlLabel24.Name = "Guna2HtmlLabel24"
+        Me.Guna2HtmlLabel24.Size = New System.Drawing.Size(57, 31)
+        Me.Guna2HtmlLabel24.TabIndex = 14
+        Me.Guna2HtmlLabel24.Text = "24,35"
+        '
+        'Guna2HtmlLabel25
+        '
+        Me.Guna2HtmlLabel25.BackColor = System.Drawing.Color.Transparent
+        Me.Guna2HtmlLabel25.Font = New System.Drawing.Font("Libre Caslon Display", 11.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Guna2HtmlLabel25.ForeColor = System.Drawing.Color.FromArgb(CType(CType(127, Byte), Integer), CType(CType(127, Byte), Integer), CType(CType(127, Byte), Integer))
+        Me.Guna2HtmlLabel25.Location = New System.Drawing.Point(19, 198)
+        Me.Guna2HtmlLabel25.Name = "Guna2HtmlLabel25"
+        Me.Guna2HtmlLabel25.Size = New System.Drawing.Size(154, 20)
+        Me.Guna2HtmlLabel25.TabIndex = 13
+        Me.Guna2HtmlLabel25.Text = "Porcentagem do total: 48%"
+        '
+        'Guna2HtmlLabel30
+        '
+        Me.Guna2HtmlLabel30.BackColor = System.Drawing.Color.Transparent
+        Me.Guna2HtmlLabel30.Font = New System.Drawing.Font("Libre Caslon Display", 11.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Guna2HtmlLabel30.ForeColor = System.Drawing.Color.FromArgb(CType(CType(127, Byte), Integer), CType(CType(127, Byte), Integer), CType(CType(127, Byte), Integer))
+        Me.Guna2HtmlLabel30.Location = New System.Drawing.Point(19, 171)
+        Me.Guna2HtmlLabel30.Name = "Guna2HtmlLabel30"
+        Me.Guna2HtmlLabel30.Size = New System.Drawing.Size(160, 20)
+        Me.Guna2HtmlLabel30.TabIndex = 12
+        Me.Guna2HtmlLabel30.Text = "Vezes pedido na semana: 10"
+        '
+        'Guna2HtmlLabel31
+        '
+        Me.Guna2HtmlLabel31.BackColor = System.Drawing.Color.Transparent
+        Me.Guna2HtmlLabel31.Font = New System.Drawing.Font("Libre Caslon Display", 18.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Guna2HtmlLabel31.Location = New System.Drawing.Point(19, 138)
+        Me.Guna2HtmlLabel31.Name = "Guna2HtmlLabel31"
+        Me.Guna2HtmlLabel31.Size = New System.Drawing.Size(140, 31)
+        Me.Guna2HtmlLabel31.TabIndex = 11
+        Me.Guna2HtmlLabel31.Text = "Nome do Prato"
+        '
+        'Guna2PictureBox6
+        '
+        Me.Guna2PictureBox6.BackColor = System.Drawing.Color.Transparent
+        Me.Guna2PictureBox6.BorderRadius = 12
+        Me.Guna2PictureBox6.Dock = System.Windows.Forms.DockStyle.Top
+        Me.Guna2PictureBox6.FillColor = System.Drawing.Color.Transparent
+        Me.Guna2PictureBox6.Image = CType(resources.GetObject("Guna2PictureBox6.Image"), System.Drawing.Image)
+        Me.Guna2PictureBox6.ImageRotate = 0!
+        Me.Guna2PictureBox6.Location = New System.Drawing.Point(16, 24)
+        Me.Guna2PictureBox6.Name = "Guna2PictureBox6"
+        Me.Guna2PictureBox6.Size = New System.Drawing.Size(233, 107)
+        Me.Guna2PictureBox6.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
+        Me.Guna2PictureBox6.TabIndex = 1
+        Me.Guna2PictureBox6.TabStop = False
+        '
+        'Guna2PictureBox7
+        '
+        Me.Guna2PictureBox7.ImageRotate = 0!
+        Me.Guna2PictureBox7.Location = New System.Drawing.Point(28, 26)
+        Me.Guna2PictureBox7.Name = "Guna2PictureBox7"
+        Me.Guna2PictureBox7.Size = New System.Drawing.Size(216, 100)
+        Me.Guna2PictureBox7.TabIndex = 0
+        Me.Guna2PictureBox7.TabStop = False
         '
         'cardapio
         '
@@ -890,13 +1248,21 @@ Partial Class cardapio
         CType(Me.Guna2PictureBox1, System.ComponentModel.ISupportInitialize).EndInit()
         Me.Guna2Panel7.ResumeLayout(False)
         Me.Guna2Panel7.PerformLayout()
-        Me.Guna2Panel5.ResumeLayout(False)
-        Me.Guna2Panel5.PerformLayout()
+        Me.pnl_info.ResumeLayout(False)
+        Me.pnl_info.PerformLayout()
         Me.Guna2Panel9.ResumeLayout(False)
         Me.flp_itemsPedido.ResumeLayout(False)
         Me.Guna2Panel13.ResumeLayout(False)
         Me.Guna2Panel13.PerformLayout()
         CType(Me.Guna2PictureBox3, System.ComponentModel.ISupportInitialize).EndInit()
+        Me.Guna2ShadowPanel1.ResumeLayout(False)
+        Me.Guna2ShadowPanel1.PerformLayout()
+        CType(Me.Guna2PictureBox4, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.Guna2PictureBox5, System.ComponentModel.ISupportInitialize).EndInit()
+        Me.Guna2ShadowPanel2.ResumeLayout(False)
+        Me.Guna2ShadowPanel2.PerformLayout()
+        CType(Me.Guna2PictureBox6, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.Guna2PictureBox7, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)
 
     End Sub
@@ -919,19 +1285,19 @@ Partial Class cardapio
     Friend WithEvents Guna2HtmlLabel3 As Guna.UI2.WinForms.Guna2HtmlLabel
     Friend WithEvents Guna2HtmlLabel4 As Guna.UI2.WinForms.Guna2HtmlLabel
     Friend WithEvents Guna2CirclePictureBox1 As Guna.UI2.WinForms.Guna2CirclePictureBox
-    Friend WithEvents pnl_title As Guna.UI2.WinForms.Guna2Panel
+    Friend WithEvents pnl_title As Guna.UI2.WinForms.Guna2ShadowPanel
     Friend WithEvents Guna2TextBox2 As Guna.UI2.WinForms.Guna2TextBox
     Friend WithEvents Guna2HtmlLabel7 As Guna.UI2.WinForms.Guna2HtmlLabel
     Friend WithEvents Guna2Panel1 As Guna.UI2.WinForms.Guna2Panel
     Friend WithEvents Guna2Panel4 As Guna.UI2.WinForms.Guna2Panel
     Friend WithEvents Guna2Panel6 As Guna.UI2.WinForms.Guna2Panel
-    Friend WithEvents Guna2Panel5 As Guna.UI2.WinForms.Guna2Panel
+    Friend WithEvents pnl_info As Guna.UI2.WinForms.Guna2ShadowPanel
     Friend WithEvents Guna2HtmlLabel2 As Guna.UI2.WinForms.Guna2HtmlLabel
     Friend WithEvents Guna2HtmlLabel1 As Guna.UI2.WinForms.Guna2HtmlLabel
     Friend WithEvents Guna2Panel7 As Guna.UI2.WinForms.Guna2Panel
     Friend WithEvents cmb_ordenar As Guna.UI2.WinForms.Guna2ComboBox
     Friend WithEvents flp_itemsCard As FlowLayoutPanel
-    Friend WithEvents Guna2Panel8 As Guna.UI2.WinForms.Guna2Panel
+    Friend WithEvents Guna2Panel8 As Guna.UI2.WinForms.Guna2ShadowPanel
     Friend WithEvents Guna2DragControl1 As Guna.UI2.WinForms.Guna2DragControl
     Friend WithEvents Guna2DragControl2 As Guna.UI2.WinForms.Guna2DragControl
     Friend WithEvents Guna2PictureBox2 As Guna.UI2.WinForms.Guna2PictureBox
@@ -949,11 +1315,35 @@ Partial Class cardapio
     Friend WithEvents Guna2HtmlLabel12 As Guna.UI2.WinForms.Guna2HtmlLabel
     Friend WithEvents Guna2HtmlLabel15 As Guna.UI2.WinForms.Guna2HtmlLabel
     Friend WithEvents Guna2HtmlLabel14 As Guna.UI2.WinForms.Guna2HtmlLabel
-    Friend WithEvents btn_ As Guna.UI2.WinForms.Guna2Button
     Friend WithEvents Guna2Panel9 As Guna.UI2.WinForms.Guna2Panel
     Friend WithEvents Guna2PictureBox3 As Guna.UI2.WinForms.Guna2PictureBox
     Friend WithEvents Guna2HtmlLabel17 As Guna.UI2.WinForms.Guna2HtmlLabel
     Friend WithEvents Guna2HtmlLabel16 As Guna.UI2.WinForms.Guna2HtmlLabel
     Friend WithEvents btn_1 As Guna.UI2.WinForms.Guna2ImageButton
     Friend WithEvents btn_info As Guna.UI2.WinForms.Guna2Button
+    Friend WithEvents Guna2HtmlLabel19 As Guna.UI2.WinForms.Guna2HtmlLabel
+    Friend WithEvents Guna2HtmlLabel18 As Guna.UI2.WinForms.Guna2HtmlLabel
+    Friend WithEvents Guna2HtmlLabel6 As Guna.UI2.WinForms.Guna2HtmlLabel
+    Friend WithEvents btn_efetuarPedido As Guna.UI2.WinForms.Guna2Button
+    Friend WithEvents Guna2HtmlLabel29 As Guna.UI2.WinForms.Guna2HtmlLabel
+    Friend WithEvents Guna2HtmlLabel28 As Guna.UI2.WinForms.Guna2HtmlLabel
+    Friend WithEvents Guna2HtmlLabel27 As Guna.UI2.WinForms.Guna2HtmlLabel
+    Friend WithEvents Guna2HtmlLabel26 As Guna.UI2.WinForms.Guna2HtmlLabel
+    Friend WithEvents btn_ As Guna.UI2.WinForms.Guna2Button
+    Friend WithEvents Guna2ShadowPanel1 As Guna.UI2.WinForms.Guna2ShadowPanel
+    Friend WithEvents Guna2Button1 As Guna.UI2.WinForms.Guna2Button
+    Friend WithEvents Guna2HtmlLabel20 As Guna.UI2.WinForms.Guna2HtmlLabel
+    Friend WithEvents Guna2HtmlLabel21 As Guna.UI2.WinForms.Guna2HtmlLabel
+    Friend WithEvents Guna2HtmlLabel22 As Guna.UI2.WinForms.Guna2HtmlLabel
+    Friend WithEvents Guna2HtmlLabel23 As Guna.UI2.WinForms.Guna2HtmlLabel
+    Friend WithEvents Guna2PictureBox4 As Guna.UI2.WinForms.Guna2PictureBox
+    Friend WithEvents Guna2PictureBox5 As Guna.UI2.WinForms.Guna2PictureBox
+    Friend WithEvents Guna2ShadowPanel2 As Guna.UI2.WinForms.Guna2ShadowPanel
+    Friend WithEvents Guna2Button2 As Guna.UI2.WinForms.Guna2Button
+    Friend WithEvents Guna2HtmlLabel24 As Guna.UI2.WinForms.Guna2HtmlLabel
+    Friend WithEvents Guna2HtmlLabel25 As Guna.UI2.WinForms.Guna2HtmlLabel
+    Friend WithEvents Guna2HtmlLabel30 As Guna.UI2.WinForms.Guna2HtmlLabel
+    Friend WithEvents Guna2HtmlLabel31 As Guna.UI2.WinForms.Guna2HtmlLabel
+    Friend WithEvents Guna2PictureBox6 As Guna.UI2.WinForms.Guna2PictureBox
+    Friend WithEvents Guna2PictureBox7 As Guna.UI2.WinForms.Guna2PictureBox
 End Class

@@ -10,7 +10,7 @@ Public Class sair
         Me.WindowState = FormWindowState.Minimized
     End Sub
 
-    Private Sub btn__Click(sender As Object, e As EventArgs) Handles btn_sim.Click
+    Private Sub btn_sim_Click(sender As Object, e As EventArgs) Handles btn_sim.Click
         Application.Exit()
     End Sub
 

@@ -15,32 +15,29 @@ Public Class cardapio
         Me.WindowState = FormWindowState.Minimized
     End Sub
 
-    'Private Sub btn_pedidos_Click(sender As Object, e As EventArgs) Handles btn_pedidos.Click
-    '  pedidos.Show()
-    'Me.Hide()
-    'End Sub
+    Private Sub btn_pedidos_Click(sender As Object, e As EventArgs) Handles btn_pedidos.Click
+        pedidos.Show()
+        Me.Hide()
+    End Sub
 
     Private Sub btn_sair_Click(sender As Object, e As EventArgs) Handles btn_sair.Click
         deslogar.Show()
     End Sub
 
-    ' Private Sub btn_cardapio_Click(sender As Object, e As EventArgs) Handles btn_cardapio.Click
-    '    form_base.Show()
-    ' End Sub
-    ' Private Sub btn_mesas_Click(sender As Object, e As EventArgs) Handles btn_mesas.Click
-    '    mesas.Show()
-    ' Me.Hide()
-    'End Sub 
+    Private Sub btn_mesas_Click(sender As Object, e As EventArgs) Handles btn_mesas.Click
+        mesas.Show()
+        Me.Hide()
+    End Sub
 
-    'Private Sub btn_estoque_Click(sender As Object, e As EventArgs) Handles btn_estoque.Click
-    '   estoque.Show()
-    'Me.Hide()
-    'End Sub
+    Private Sub btn_estoque_Click(sender As Object, e As EventArgs) Handles btn_estoque.Click
+        'estoque.Show()
+        Me.Hide()
+    End Sub
 
-    'Private Sub btn_gerencia_Click(sender As Object, e As EventArgs) Handles btn_gerencia.Click
-    '    gerencia.Show()
-    '  Me.Hide()
-    'End Sub
+    Private Sub btn_gerencia_Click(sender As Object, e As EventArgs) Handles btn_gerencia.Click
+        'gerencia.Show()
+        Me.Hide()
+    End Sub
 
     Private Sub home_Load(sender As Object, e As EventArgs) Handles Me.Load
         cardapio.carregarCardapio()
@@ -55,33 +52,35 @@ Public Class criarCardapio
     Public Sub carregarCardapio()
         Dim count As Integer
         Do While count < 5
-            Dim pnl_prato As New Guna2Panel() With {
+            Dim pnl_prato As New Guna2ShadowPanel() With {
                 .Name = "pnl_prato",
                 .FillColor = Color.White,
-                .Size = New Size(270, 285),
-                .Padding = New Padding(16, 16, 16, 16),
+                .Size = New Size(280, 300),
+                .Margin = New Padding(6, 3, 6, 3),
                 .BackColor = Control.DefaultBackColor,
-                .BorderRadius = 32,
-                .Margin = New Padding(8, 8, 8, 8)
+                .Radius = 10,
+                .ShadowShift = 4,
+                .Padding = New Padding(16, 24, 16, 24),
+                .ShadowColor = Color.FromArgb(200, 200, 200)
             }
 
             Dim pbx_fotoPrato As New Guna2PictureBox() With {
                 .Name = "pbx_fotoPrato",
                 .BackColor = Color.Transparent,
                 .FillColor = Color.Transparent,
-                .Size = New Size(232, 107),
                 .BorderRadius = 12,
-                .Location = New Point(19, 19),
+                .Size = New Size(233, 107),
                 .Parent = pnl_prato,
                 .SizeMode = PictureBoxSizeMode.StretchImage,
-                .Image = Image.FromFile("C:\Users\guibf\Desktop\Minhas Coisas\Fotos\cachoro sus.png")
+                .Image = Image.FromFile(Application.StartupPath & "/imgs/download.jpg"),
+                .Dock = DockStyle.Top
             }
 
             Dim lbl_nomePrato As New Guna2HtmlLabel() With {
                 .Name = "lbl_nomePrato",
                 .Text = "Arros e feijan",
                 .Font = New Font("Libre Caslon Display", 18),
-                .Location = New Point(19, 136),
+                .Location = New Point(19, 143),
                 .ForeColor = Color.Black,
                 .Parent = pnl_prato
             }
@@ -89,7 +88,7 @@ Public Class criarCardapio
             Dim lbl_vezesPedido As New Guna2HtmlLabel() With {
                 .Text = "Vezes pedido na semana: 10",
                 .Font = New Font("Libre Caslon Display", 12),
-                .Location = New Point(19, 170),
+                .Location = New Point(19, 176),
                 .ForeColor = Color.FromArgb(127, 127, 127),
                 .Parent = pnl_prato
             }
@@ -97,7 +96,7 @@ Public Class criarCardapio
             Dim lbl_porcentagem As New Guna2HtmlLabel() With {
                 .Text = "Porcentagem do total: 48%",
                 .Font = New Font("Libre Caslon Display", 12),
-                .Location = New Point(19, 197),
+                .Location = New Point(19, 203),
                 .ForeColor = Color.FromArgb(127, 127, 127),
                 .Parent = pnl_prato
             }
@@ -106,7 +105,7 @@ Public Class criarCardapio
                 .Name = "lbl_preco",
                 .Text = "24,30",
                 .Font = New Font("Libre Caslon Display", 18),
-                .Location = New Point(19, 235),
+                .Location = New Point(19, 245),
                 .ForeColor = Color.Black,
                 .Parent = pnl_prato
             }
@@ -114,11 +113,11 @@ Public Class criarCardapio
             Dim btn_pedir As New Guna2Button() With {
                 .Name = "btn_pedir",
                 .Text = "Pedir",
-                .Font = New Font("Libre Caslon Display", 18),
+                .Font = New Font("Libre Caslon Display", 16),
                 .AutoRoundedCorners = True,
-                .Location = New Point(122, 228),
+                .Location = New Point(150, 245),
                 .ForeColor = Color.White,
-                .Size = New Size(129, 40),
+                .Size = New Size(115, 35),
                 .BackColor = Color.Transparent,
                 .FillColor = Color.FromArgb(46, 31, 39),
                 .Cursor = Cursors.Hand,
@@ -137,28 +136,27 @@ Public Class criarCardapio
         Dim pnl_itemPedido As New Guna2Panel() With {
             .Name = "pnl_itemPedido",
             .FillColor = Color.White,
-            .Size = New Size(193, 80),
+            .Size = New Size(210, 80),
             .Padding = New Padding(16, 16, 16, 16),
             .BackColor = Control.DefaultBackColor,
             .BorderRadius = 8,
-            .Margin = New Padding(8, 8, 8, 8)
+            .Margin = New Padding(4, 4, 4, 4)
         }
         Dim pbx_fotoPrato As New Guna2PictureBox() With {
             .Name = "pbx_fotoPrato",
             .BackColor = Color.Transparent,
             .FillColor = Color.Transparent,
-            .Size = New Size(62, 62),
+            .Size = New Size(56, 56),
             .AutoRoundedCorners = True,
-            .Location = New Point(12, 9),
+            .Location = New Point(8, 12),
             .Parent = pnl_itemPedido,
-            .SizeMode = PictureBoxSizeMode.StretchImage,
-            .Image = Image.FromFile("C:\Users\guibf\Desktop\Minhas Coisas\Fotos\cachoro sus.png")
+            .SizeMode = PictureBoxSizeMode.StretchImage
         }
         Dim lbl_nomePrato As New Guna2HtmlLabel() With {
             .Name = "lbl_nomePrato",
             .Text = "Arros e feijan",
             .Font = New Font("Libre Caslon Display", 12),
-            .Location = New Point(84, 15),
+            .Location = New Point(70, 18),
             .ForeColor = Color.Black,
             .Parent = pnl_itemPedido
         }
@@ -167,16 +165,16 @@ Public Class criarCardapio
             .Name = "lbl_preco",
             .Text = "24,30",
             .Font = New Font("Libre Caslon Display", 12),
-            .Location = New Point(84, 42),
+            .Location = New Point(70, 45),
             .ForeColor = Color.Black,
             .Parent = pnl_itemPedido
         }
 
         Dim btn_removerItem As New Guna2ImageButton() With {
             .Name = "btn_removerItem",
-            .Location = New Point(144, 33),
+            .Location = New Point(169, 30),
             .Size = New Size(36, 38),
-            .ImageSize = New Size(18, 18),
+            .ImageSize = New Size(26, 26),
             .BackColor = Color.Transparent,
             .Cursor = Cursors.Hand,
             .Parent = pnl_itemPedido,
@@ -190,7 +188,9 @@ Public Class criarCardapio
         For Each ctrl As Control In itemPrato.Controls
             Select Case ctrl.Name
                 Case "pbx_fotoPrato"
-                    pbx_fotoPrato = ctrl
+                    Dim image As Guna2PictureBox
+                    image = ctrl
+                    pbx_fotoPrato.Image = image.Image
                 Case "lbl_nomePrato"
                     lbl_nomePrato.Text = ctrl.Text
                 Case "lbl_preco"
