@@ -382,7 +382,6 @@ Partial Class mesas
         Me.pnl_title.Name = "pnl_title"
         Me.pnl_title.Padding = New System.Windows.Forms.Padding(46, 0, 46, 0)
         Me.pnl_title.ShadowColor = System.Drawing.Color.FromArgb(CType(CType(200, Byte), Integer), CType(CType(200, Byte), Integer), CType(CType(200, Byte), Integer))
-        Me.pnl_title.ShadowDepth = 30
         Me.pnl_title.ShadowShift = 0
         Me.pnl_title.Size = New System.Drawing.Size(980, 80)
         Me.pnl_title.TabIndex = 32
@@ -476,7 +475,6 @@ Partial Class mesas
         Me.pnl_info.Padding = New System.Windows.Forms.Padding(12)
         Me.pnl_info.Radius = 16
         Me.pnl_info.ShadowColor = System.Drawing.Color.FromArgb(CType(CType(200, Byte), Integer), CType(CType(200, Byte), Integer), CType(CType(200, Byte), Integer))
-        Me.pnl_info.ShadowDepth = 30
         Me.pnl_info.Size = New System.Drawing.Size(348, 672)
         Me.pnl_info.TabIndex = 1
         '

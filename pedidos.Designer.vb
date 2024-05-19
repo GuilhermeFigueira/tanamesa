@@ -49,36 +49,40 @@ Partial Class pedidos
         Me.Guna2HtmlLabel7 = New Guna.UI2.WinForms.Guna2HtmlLabel()
         Me.Guna2Panel4 = New Guna.UI2.WinForms.Guna2Panel()
         Me.Panel1 = New System.Windows.Forms.Panel()
-        Me.FlowLayoutPanel2 = New System.Windows.Forms.FlowLayoutPanel()
-        Me.Guna2Panel9 = New Guna.UI2.WinForms.Guna2Panel()
+        Me.flp_pedidos = New System.Windows.Forms.FlowLayoutPanel()
+        Me.Guna2Panel9 = New Guna.UI2.WinForms.Guna2ShadowPanel()
         Me.FlowLayoutPanel3 = New System.Windows.Forms.FlowLayoutPanel()
         Me.Guna2Panel14 = New Guna.UI2.WinForms.Guna2Panel()
         Me.Guna2CheckBox1 = New Guna.UI2.WinForms.Guna2CheckBox()
         Me.Guna2ImageButton1 = New Guna.UI2.WinForms.Guna2ImageButton()
         Me.Guna2HtmlLabel29 = New Guna.UI2.WinForms.Guna2HtmlLabel()
-        Me.Guna2Panel15 = New Guna.UI2.WinForms.Guna2Panel()
+        Me.Guna2Panel8 = New Guna.UI2.WinForms.Guna2Panel()
         Me.Guna2CheckBox2 = New Guna.UI2.WinForms.Guna2CheckBox()
         Me.Guna2ImageButton2 = New Guna.UI2.WinForms.Guna2ImageButton()
-        Me.Guna2HtmlLabel28 = New Guna.UI2.WinForms.Guna2HtmlLabel()
-        Me.Guna2Panel16 = New Guna.UI2.WinForms.Guna2Panel()
+        Me.Guna2HtmlLabel10 = New Guna.UI2.WinForms.Guna2HtmlLabel()
+        Me.Guna2Panel10 = New Guna.UI2.WinForms.Guna2Panel()
         Me.Guna2CheckBox3 = New Guna.UI2.WinForms.Guna2CheckBox()
         Me.Guna2ImageButton3 = New Guna.UI2.WinForms.Guna2ImageButton()
-        Me.Guna2HtmlLabel30 = New Guna.UI2.WinForms.Guna2HtmlLabel()
-        Me.Guna2Panel17 = New Guna.UI2.WinForms.Guna2Panel()
+        Me.Guna2HtmlLabel11 = New Guna.UI2.WinForms.Guna2HtmlLabel()
+        Me.Guna2Panel11 = New Guna.UI2.WinForms.Guna2Panel()
         Me.Guna2CheckBox4 = New Guna.UI2.WinForms.Guna2CheckBox()
         Me.Guna2ImageButton4 = New Guna.UI2.WinForms.Guna2ImageButton()
-        Me.Guna2HtmlLabel31 = New Guna.UI2.WinForms.Guna2HtmlLabel()
-        Me.btn_1 = New Guna.UI2.WinForms.Guna2ImageButton()
+        Me.Guna2HtmlLabel12 = New Guna.UI2.WinForms.Guna2HtmlLabel()
+        Me.Guna2Panel12 = New Guna.UI2.WinForms.Guna2Panel()
+        Me.Guna2CheckBox5 = New Guna.UI2.WinForms.Guna2CheckBox()
+        Me.Guna2ImageButton5 = New Guna.UI2.WinForms.Guna2ImageButton()
+        Me.Guna2HtmlLabel13 = New Guna.UI2.WinForms.Guna2HtmlLabel()
+        Me.btn_entregar = New Guna.UI2.WinForms.Guna2Button()
+        Me.Guna2Panel7 = New Guna.UI2.WinForms.Guna2Panel()
         Me.Guna2HtmlLabel18 = New Guna.UI2.WinForms.Guna2HtmlLabel()
         Me.Guna2HtmlLabel17 = New Guna.UI2.WinForms.Guna2HtmlLabel()
+        Me.btn_1 = New Guna.UI2.WinForms.Guna2ImageButton()
         Me.Guna2HtmlLabel16 = New Guna.UI2.WinForms.Guna2HtmlLabel()
-        Me.Guna2Panel13 = New Guna.UI2.WinForms.Guna2Panel()
-        Me.btn_entregar = New Guna.UI2.WinForms.Guna2Button()
         Me.Guna2HtmlLabel1 = New Guna.UI2.WinForms.Guna2HtmlLabel()
         Me.cmb_progs = New Guna.UI2.WinForms.Guna2ComboBox()
         Me.Guna2Panel5 = New Guna.UI2.WinForms.Guna2Panel()
         Me.flp_progressoPedidos = New System.Windows.Forms.FlowLayoutPanel()
-        Me.Guna2Panel6 = New Guna.UI2.WinForms.Guna2Panel()
+        Me.Guna2Panel6 = New Guna.UI2.WinForms.Guna2ShadowPanel()
         Me.Guna2HtmlLabel8 = New Guna.UI2.WinForms.Guna2HtmlLabel()
         Me.Guna2HtmlLabel9 = New Guna.UI2.WinForms.Guna2HtmlLabel()
         Me.Guna2HtmlLabel6 = New Guna.UI2.WinForms.Guna2HtmlLabel()
@@ -94,14 +98,15 @@ Partial Class pedidos
         Me.pnl_title.SuspendLayout()
         Me.Guna2Panel4.SuspendLayout()
         Me.Panel1.SuspendLayout()
-        Me.FlowLayoutPanel2.SuspendLayout()
+        Me.flp_pedidos.SuspendLayout()
         Me.Guna2Panel9.SuspendLayout()
         Me.FlowLayoutPanel3.SuspendLayout()
         Me.Guna2Panel14.SuspendLayout()
-        Me.Guna2Panel15.SuspendLayout()
-        Me.Guna2Panel16.SuspendLayout()
-        Me.Guna2Panel17.SuspendLayout()
-        Me.Guna2Panel13.SuspendLayout()
+        Me.Guna2Panel8.SuspendLayout()
+        Me.Guna2Panel10.SuspendLayout()
+        Me.Guna2Panel11.SuspendLayout()
+        Me.Guna2Panel12.SuspendLayout()
+        Me.Guna2Panel7.SuspendLayout()
         Me.Guna2Panel5.SuspendLayout()
         Me.flp_progressoPedidos.SuspendLayout()
         Me.Guna2Panel6.SuspendLayout()
@@ -399,7 +404,6 @@ Partial Class pedidos
         Me.pnl_title.Name = "pnl_title"
         Me.pnl_title.Padding = New System.Windows.Forms.Padding(46, 0, 46, 0)
         Me.pnl_title.ShadowColor = System.Drawing.Color.FromArgb(CType(CType(200, Byte), Integer), CType(CType(200, Byte), Integer), CType(CType(200, Byte), Integer))
-        Me.pnl_title.ShadowDepth = 30
         Me.pnl_title.ShadowShift = 0
         Me.pnl_title.Size = New System.Drawing.Size(980, 80)
         Me.pnl_title.TabIndex = 32
@@ -461,7 +465,7 @@ Partial Class pedidos
         '
         'Panel1
         '
-        Me.Panel1.Controls.Add(Me.FlowLayoutPanel2)
+        Me.Panel1.Controls.Add(Me.flp_pedidos)
         Me.Panel1.Controls.Add(Me.Guna2HtmlLabel1)
         Me.Panel1.Controls.Add(Me.cmb_progs)
         Me.Panel1.Dock = System.Windows.Forms.DockStyle.Fill
@@ -470,29 +474,29 @@ Partial Class pedidos
         Me.Panel1.Size = New System.Drawing.Size(932, 529)
         Me.Panel1.TabIndex = 7
         '
-        'FlowLayoutPanel2
+        'flp_pedidos
         '
-        Me.FlowLayoutPanel2.Controls.Add(Me.Guna2Panel9)
-        Me.FlowLayoutPanel2.Location = New System.Drawing.Point(3, 48)
-        Me.FlowLayoutPanel2.Name = "FlowLayoutPanel2"
-        Me.FlowLayoutPanel2.Padding = New System.Windows.Forms.Padding(16)
-        Me.FlowLayoutPanel2.Size = New System.Drawing.Size(925, 461)
-        Me.FlowLayoutPanel2.TabIndex = 13
+        Me.flp_pedidos.Controls.Add(Me.Guna2Panel9)
+        Me.flp_pedidos.Location = New System.Drawing.Point(3, 48)
+        Me.flp_pedidos.Name = "flp_pedidos"
+        Me.flp_pedidos.Padding = New System.Windows.Forms.Padding(16)
+        Me.flp_pedidos.Size = New System.Drawing.Size(925, 461)
+        Me.flp_pedidos.TabIndex = 13
         '
         'Guna2Panel9
         '
-        Me.Guna2Panel9.BorderRadius = 12
+        Me.Guna2Panel9.BackColor = System.Drawing.Color.Transparent
         Me.Guna2Panel9.Controls.Add(Me.FlowLayoutPanel3)
-        Me.Guna2Panel9.Controls.Add(Me.btn_1)
-        Me.Guna2Panel9.Controls.Add(Me.Guna2HtmlLabel18)
-        Me.Guna2Panel9.Controls.Add(Me.Guna2HtmlLabel17)
-        Me.Guna2Panel9.Controls.Add(Me.Guna2HtmlLabel16)
-        Me.Guna2Panel9.Controls.Add(Me.Guna2Panel13)
+        Me.Guna2Panel9.Controls.Add(Me.btn_entregar)
+        Me.Guna2Panel9.Controls.Add(Me.Guna2Panel7)
         Me.Guna2Panel9.FillColor = System.Drawing.Color.White
         Me.Guna2Panel9.Location = New System.Drawing.Point(19, 19)
         Me.Guna2Panel9.Name = "Guna2Panel9"
-        Me.Guna2Panel9.Padding = New System.Windows.Forms.Padding(12)
-        Me.Guna2Panel9.Size = New System.Drawing.Size(249, 329)
+        Me.Guna2Panel9.Padding = New System.Windows.Forms.Padding(16)
+        Me.Guna2Panel9.Radius = 6
+        Me.Guna2Panel9.ShadowColor = System.Drawing.Color.FromArgb(CType(CType(200, Byte), Integer), CType(CType(200, Byte), Integer), CType(CType(200, Byte), Integer))
+        Me.Guna2Panel9.ShadowShift = 2
+        Me.Guna2Panel9.Size = New System.Drawing.Size(273, 329)
         Me.Guna2Panel9.TabIndex = 0
         '
         'FlowLayoutPanel3
@@ -500,13 +504,16 @@ Partial Class pedidos
         Me.FlowLayoutPanel3.AutoScroll = True
         Me.FlowLayoutPanel3.BackColor = System.Drawing.Color.White
         Me.FlowLayoutPanel3.Controls.Add(Me.Guna2Panel14)
-        Me.FlowLayoutPanel3.Controls.Add(Me.Guna2Panel15)
-        Me.FlowLayoutPanel3.Controls.Add(Me.Guna2Panel16)
-        Me.FlowLayoutPanel3.Controls.Add(Me.Guna2Panel17)
-        Me.FlowLayoutPanel3.Location = New System.Drawing.Point(13, 73)
+        Me.FlowLayoutPanel3.Controls.Add(Me.Guna2Panel8)
+        Me.FlowLayoutPanel3.Controls.Add(Me.Guna2Panel10)
+        Me.FlowLayoutPanel3.Controls.Add(Me.Guna2Panel11)
+        Me.FlowLayoutPanel3.Controls.Add(Me.Guna2Panel12)
+        Me.FlowLayoutPanel3.Dock = System.Windows.Forms.DockStyle.Fill
+        Me.FlowLayoutPanel3.Location = New System.Drawing.Point(16, 78)
+        Me.FlowLayoutPanel3.Margin = New System.Windows.Forms.Padding(0)
         Me.FlowLayoutPanel3.Name = "FlowLayoutPanel3"
         Me.FlowLayoutPanel3.Padding = New System.Windows.Forms.Padding(8)
-        Me.FlowLayoutPanel3.Size = New System.Drawing.Size(225, 185)
+        Me.FlowLayoutPanel3.Size = New System.Drawing.Size(241, 198)
         Me.FlowLayoutPanel3.TabIndex = 24
         '
         'Guna2Panel14
@@ -521,7 +528,7 @@ Partial Class pedidos
         Me.Guna2Panel14.Margin = New System.Windows.Forms.Padding(4)
         Me.Guna2Panel14.Name = "Guna2Panel14"
         Me.Guna2Panel14.Padding = New System.Windows.Forms.Padding(16)
-        Me.Guna2Panel14.Size = New System.Drawing.Size(195, 40)
+        Me.Guna2Panel14.Size = New System.Drawing.Size(210, 40)
         Me.Guna2Panel14.TabIndex = 2
         '
         'Guna2CheckBox1
@@ -532,11 +539,11 @@ Partial Class pedidos
         Me.Guna2CheckBox1.CheckedState.FillColor = System.Drawing.Color.FromArgb(CType(CType(239, Byte), Integer), CType(CType(239, Byte), Integer), CType(CType(239, Byte), Integer))
         Me.Guna2CheckBox1.CheckMarkColor = System.Drawing.Color.FromArgb(CType(CType(127, Byte), Integer), CType(CType(127, Byte), Integer), CType(CType(127, Byte), Integer))
         Me.Guna2CheckBox1.Font = New System.Drawing.Font("Microsoft Sans Serif", 21.75!)
-        Me.Guna2CheckBox1.Location = New System.Drawing.Point(142, 12)
+        Me.Guna2CheckBox1.Location = New System.Drawing.Point(155, 12)
         Me.Guna2CheckBox1.Name = "Guna2CheckBox1"
         Me.Guna2CheckBox1.Size = New System.Drawing.Size(15, 17)
         Me.Guna2CheckBox1.TabIndex = 14
-        Me.Guna2CheckBox1.UncheckedState.BorderColor = System.Drawing.Color.FromArgb(CType(CType(125, Byte), Integer), CType(CType(137, Byte), Integer), CType(CType(149, Byte), Integer))
+        Me.Guna2CheckBox1.UncheckedState.BorderColor = System.Drawing.Color.FromArgb(CType(CType(127, Byte), Integer), CType(CType(127, Byte), Integer), CType(CType(127, Byte), Integer))
         Me.Guna2CheckBox1.UncheckedState.BorderRadius = 2
         Me.Guna2CheckBox1.UncheckedState.BorderThickness = 1
         Me.Guna2CheckBox1.UncheckedState.FillColor = System.Drawing.Color.FromArgb(CType(CType(239, Byte), Integer), CType(CType(239, Byte), Integer), CType(CType(239, Byte), Integer))
@@ -552,7 +559,7 @@ Partial Class pedidos
         Me.Guna2ImageButton1.ImageOffset = New System.Drawing.Point(0, 0)
         Me.Guna2ImageButton1.ImageRotate = 0!
         Me.Guna2ImageButton1.ImageSize = New System.Drawing.Size(20, 20)
-        Me.Guna2ImageButton1.Location = New System.Drawing.Point(161, 7)
+        Me.Guna2ImageButton1.Location = New System.Drawing.Point(176, 7)
         Me.Guna2ImageButton1.Name = "Guna2ImageButton1"
         Me.Guna2ImageButton1.PressedState.ImageSize = New System.Drawing.Size(28, 28)
         Me.Guna2ImageButton1.Size = New System.Drawing.Size(25, 25)
@@ -569,20 +576,20 @@ Partial Class pedidos
         Me.Guna2HtmlLabel29.TabIndex = 12
         Me.Guna2HtmlLabel29.Text = "Nome do Prato"
         '
-        'Guna2Panel15
+        'Guna2Panel8
         '
-        Me.Guna2Panel15.BackColor = System.Drawing.Color.White
-        Me.Guna2Panel15.BorderRadius = 12
-        Me.Guna2Panel15.Controls.Add(Me.Guna2CheckBox2)
-        Me.Guna2Panel15.Controls.Add(Me.Guna2ImageButton2)
-        Me.Guna2Panel15.Controls.Add(Me.Guna2HtmlLabel28)
-        Me.Guna2Panel15.FillColor = System.Drawing.Color.FromArgb(CType(CType(239, Byte), Integer), CType(CType(239, Byte), Integer), CType(CType(239, Byte), Integer))
-        Me.Guna2Panel15.Location = New System.Drawing.Point(12, 60)
-        Me.Guna2Panel15.Margin = New System.Windows.Forms.Padding(4)
-        Me.Guna2Panel15.Name = "Guna2Panel15"
-        Me.Guna2Panel15.Padding = New System.Windows.Forms.Padding(16)
-        Me.Guna2Panel15.Size = New System.Drawing.Size(195, 40)
-        Me.Guna2Panel15.TabIndex = 3
+        Me.Guna2Panel8.BackColor = System.Drawing.Color.White
+        Me.Guna2Panel8.BorderRadius = 12
+        Me.Guna2Panel8.Controls.Add(Me.Guna2CheckBox2)
+        Me.Guna2Panel8.Controls.Add(Me.Guna2ImageButton2)
+        Me.Guna2Panel8.Controls.Add(Me.Guna2HtmlLabel10)
+        Me.Guna2Panel8.FillColor = System.Drawing.Color.FromArgb(CType(CType(239, Byte), Integer), CType(CType(239, Byte), Integer), CType(CType(239, Byte), Integer))
+        Me.Guna2Panel8.Location = New System.Drawing.Point(12, 60)
+        Me.Guna2Panel8.Margin = New System.Windows.Forms.Padding(4)
+        Me.Guna2Panel8.Name = "Guna2Panel8"
+        Me.Guna2Panel8.Padding = New System.Windows.Forms.Padding(16)
+        Me.Guna2Panel8.Size = New System.Drawing.Size(210, 40)
+        Me.Guna2Panel8.TabIndex = 3
         '
         'Guna2CheckBox2
         '
@@ -592,7 +599,7 @@ Partial Class pedidos
         Me.Guna2CheckBox2.CheckedState.FillColor = System.Drawing.Color.FromArgb(CType(CType(239, Byte), Integer), CType(CType(239, Byte), Integer), CType(CType(239, Byte), Integer))
         Me.Guna2CheckBox2.CheckMarkColor = System.Drawing.Color.FromArgb(CType(CType(127, Byte), Integer), CType(CType(127, Byte), Integer), CType(CType(127, Byte), Integer))
         Me.Guna2CheckBox2.Font = New System.Drawing.Font("Microsoft Sans Serif", 21.75!)
-        Me.Guna2CheckBox2.Location = New System.Drawing.Point(142, 12)
+        Me.Guna2CheckBox2.Location = New System.Drawing.Point(155, 12)
         Me.Guna2CheckBox2.Name = "Guna2CheckBox2"
         Me.Guna2CheckBox2.Size = New System.Drawing.Size(15, 17)
         Me.Guna2CheckBox2.TabIndex = 14
@@ -612,37 +619,37 @@ Partial Class pedidos
         Me.Guna2ImageButton2.ImageOffset = New System.Drawing.Point(0, 0)
         Me.Guna2ImageButton2.ImageRotate = 0!
         Me.Guna2ImageButton2.ImageSize = New System.Drawing.Size(20, 20)
-        Me.Guna2ImageButton2.Location = New System.Drawing.Point(161, 7)
+        Me.Guna2ImageButton2.Location = New System.Drawing.Point(176, 7)
         Me.Guna2ImageButton2.Name = "Guna2ImageButton2"
         Me.Guna2ImageButton2.PressedState.ImageSize = New System.Drawing.Size(28, 28)
         Me.Guna2ImageButton2.Size = New System.Drawing.Size(25, 25)
         Me.Guna2ImageButton2.TabIndex = 13
         '
-        'Guna2HtmlLabel28
+        'Guna2HtmlLabel10
         '
-        Me.Guna2HtmlLabel28.BackColor = System.Drawing.Color.Transparent
-        Me.Guna2HtmlLabel28.Font = New System.Drawing.Font("Libre Caslon Display", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Guna2HtmlLabel28.ForeColor = System.Drawing.Color.FromArgb(CType(CType(127, Byte), Integer), CType(CType(127, Byte), Integer), CType(CType(127, Byte), Integer))
-        Me.Guna2HtmlLabel28.Location = New System.Drawing.Point(11, 9)
-        Me.Guna2HtmlLabel28.Name = "Guna2HtmlLabel28"
-        Me.Guna2HtmlLabel28.Size = New System.Drawing.Size(96, 21)
-        Me.Guna2HtmlLabel28.TabIndex = 12
-        Me.Guna2HtmlLabel28.Text = "Nome do Prato"
+        Me.Guna2HtmlLabel10.BackColor = System.Drawing.Color.Transparent
+        Me.Guna2HtmlLabel10.Font = New System.Drawing.Font("Libre Caslon Display", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Guna2HtmlLabel10.ForeColor = System.Drawing.Color.FromArgb(CType(CType(127, Byte), Integer), CType(CType(127, Byte), Integer), CType(CType(127, Byte), Integer))
+        Me.Guna2HtmlLabel10.Location = New System.Drawing.Point(11, 9)
+        Me.Guna2HtmlLabel10.Name = "Guna2HtmlLabel10"
+        Me.Guna2HtmlLabel10.Size = New System.Drawing.Size(96, 21)
+        Me.Guna2HtmlLabel10.TabIndex = 12
+        Me.Guna2HtmlLabel10.Text = "Nome do Prato"
         '
-        'Guna2Panel16
+        'Guna2Panel10
         '
-        Me.Guna2Panel16.BackColor = System.Drawing.Color.White
-        Me.Guna2Panel16.BorderRadius = 12
-        Me.Guna2Panel16.Controls.Add(Me.Guna2CheckBox3)
-        Me.Guna2Panel16.Controls.Add(Me.Guna2ImageButton3)
-        Me.Guna2Panel16.Controls.Add(Me.Guna2HtmlLabel30)
-        Me.Guna2Panel16.FillColor = System.Drawing.Color.FromArgb(CType(CType(239, Byte), Integer), CType(CType(239, Byte), Integer), CType(CType(239, Byte), Integer))
-        Me.Guna2Panel16.Location = New System.Drawing.Point(12, 108)
-        Me.Guna2Panel16.Margin = New System.Windows.Forms.Padding(4)
-        Me.Guna2Panel16.Name = "Guna2Panel16"
-        Me.Guna2Panel16.Padding = New System.Windows.Forms.Padding(16)
-        Me.Guna2Panel16.Size = New System.Drawing.Size(195, 40)
-        Me.Guna2Panel16.TabIndex = 4
+        Me.Guna2Panel10.BackColor = System.Drawing.Color.White
+        Me.Guna2Panel10.BorderRadius = 12
+        Me.Guna2Panel10.Controls.Add(Me.Guna2CheckBox3)
+        Me.Guna2Panel10.Controls.Add(Me.Guna2ImageButton3)
+        Me.Guna2Panel10.Controls.Add(Me.Guna2HtmlLabel11)
+        Me.Guna2Panel10.FillColor = System.Drawing.Color.FromArgb(CType(CType(239, Byte), Integer), CType(CType(239, Byte), Integer), CType(CType(239, Byte), Integer))
+        Me.Guna2Panel10.Location = New System.Drawing.Point(12, 108)
+        Me.Guna2Panel10.Margin = New System.Windows.Forms.Padding(4)
+        Me.Guna2Panel10.Name = "Guna2Panel10"
+        Me.Guna2Panel10.Padding = New System.Windows.Forms.Padding(16)
+        Me.Guna2Panel10.Size = New System.Drawing.Size(210, 40)
+        Me.Guna2Panel10.TabIndex = 4
         '
         'Guna2CheckBox3
         '
@@ -652,7 +659,7 @@ Partial Class pedidos
         Me.Guna2CheckBox3.CheckedState.FillColor = System.Drawing.Color.FromArgb(CType(CType(239, Byte), Integer), CType(CType(239, Byte), Integer), CType(CType(239, Byte), Integer))
         Me.Guna2CheckBox3.CheckMarkColor = System.Drawing.Color.FromArgb(CType(CType(127, Byte), Integer), CType(CType(127, Byte), Integer), CType(CType(127, Byte), Integer))
         Me.Guna2CheckBox3.Font = New System.Drawing.Font("Microsoft Sans Serif", 21.75!)
-        Me.Guna2CheckBox3.Location = New System.Drawing.Point(142, 12)
+        Me.Guna2CheckBox3.Location = New System.Drawing.Point(155, 12)
         Me.Guna2CheckBox3.Name = "Guna2CheckBox3"
         Me.Guna2CheckBox3.Size = New System.Drawing.Size(15, 17)
         Me.Guna2CheckBox3.TabIndex = 14
@@ -672,37 +679,37 @@ Partial Class pedidos
         Me.Guna2ImageButton3.ImageOffset = New System.Drawing.Point(0, 0)
         Me.Guna2ImageButton3.ImageRotate = 0!
         Me.Guna2ImageButton3.ImageSize = New System.Drawing.Size(20, 20)
-        Me.Guna2ImageButton3.Location = New System.Drawing.Point(161, 7)
+        Me.Guna2ImageButton3.Location = New System.Drawing.Point(176, 7)
         Me.Guna2ImageButton3.Name = "Guna2ImageButton3"
         Me.Guna2ImageButton3.PressedState.ImageSize = New System.Drawing.Size(28, 28)
         Me.Guna2ImageButton3.Size = New System.Drawing.Size(25, 25)
         Me.Guna2ImageButton3.TabIndex = 13
         '
-        'Guna2HtmlLabel30
+        'Guna2HtmlLabel11
         '
-        Me.Guna2HtmlLabel30.BackColor = System.Drawing.Color.Transparent
-        Me.Guna2HtmlLabel30.Font = New System.Drawing.Font("Libre Caslon Display", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Guna2HtmlLabel30.ForeColor = System.Drawing.Color.FromArgb(CType(CType(127, Byte), Integer), CType(CType(127, Byte), Integer), CType(CType(127, Byte), Integer))
-        Me.Guna2HtmlLabel30.Location = New System.Drawing.Point(11, 9)
-        Me.Guna2HtmlLabel30.Name = "Guna2HtmlLabel30"
-        Me.Guna2HtmlLabel30.Size = New System.Drawing.Size(96, 21)
-        Me.Guna2HtmlLabel30.TabIndex = 12
-        Me.Guna2HtmlLabel30.Text = "Nome do Prato"
+        Me.Guna2HtmlLabel11.BackColor = System.Drawing.Color.Transparent
+        Me.Guna2HtmlLabel11.Font = New System.Drawing.Font("Libre Caslon Display", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Guna2HtmlLabel11.ForeColor = System.Drawing.Color.FromArgb(CType(CType(127, Byte), Integer), CType(CType(127, Byte), Integer), CType(CType(127, Byte), Integer))
+        Me.Guna2HtmlLabel11.Location = New System.Drawing.Point(11, 9)
+        Me.Guna2HtmlLabel11.Name = "Guna2HtmlLabel11"
+        Me.Guna2HtmlLabel11.Size = New System.Drawing.Size(96, 21)
+        Me.Guna2HtmlLabel11.TabIndex = 12
+        Me.Guna2HtmlLabel11.Text = "Nome do Prato"
         '
-        'Guna2Panel17
+        'Guna2Panel11
         '
-        Me.Guna2Panel17.BackColor = System.Drawing.Color.White
-        Me.Guna2Panel17.BorderRadius = 12
-        Me.Guna2Panel17.Controls.Add(Me.Guna2CheckBox4)
-        Me.Guna2Panel17.Controls.Add(Me.Guna2ImageButton4)
-        Me.Guna2Panel17.Controls.Add(Me.Guna2HtmlLabel31)
-        Me.Guna2Panel17.FillColor = System.Drawing.Color.FromArgb(CType(CType(239, Byte), Integer), CType(CType(239, Byte), Integer), CType(CType(239, Byte), Integer))
-        Me.Guna2Panel17.Location = New System.Drawing.Point(12, 156)
-        Me.Guna2Panel17.Margin = New System.Windows.Forms.Padding(4)
-        Me.Guna2Panel17.Name = "Guna2Panel17"
-        Me.Guna2Panel17.Padding = New System.Windows.Forms.Padding(16)
-        Me.Guna2Panel17.Size = New System.Drawing.Size(195, 40)
-        Me.Guna2Panel17.TabIndex = 5
+        Me.Guna2Panel11.BackColor = System.Drawing.Color.White
+        Me.Guna2Panel11.BorderRadius = 12
+        Me.Guna2Panel11.Controls.Add(Me.Guna2CheckBox4)
+        Me.Guna2Panel11.Controls.Add(Me.Guna2ImageButton4)
+        Me.Guna2Panel11.Controls.Add(Me.Guna2HtmlLabel12)
+        Me.Guna2Panel11.FillColor = System.Drawing.Color.FromArgb(CType(CType(239, Byte), Integer), CType(CType(239, Byte), Integer), CType(CType(239, Byte), Integer))
+        Me.Guna2Panel11.Location = New System.Drawing.Point(12, 156)
+        Me.Guna2Panel11.Margin = New System.Windows.Forms.Padding(4)
+        Me.Guna2Panel11.Name = "Guna2Panel11"
+        Me.Guna2Panel11.Padding = New System.Windows.Forms.Padding(16)
+        Me.Guna2Panel11.Size = New System.Drawing.Size(210, 40)
+        Me.Guna2Panel11.TabIndex = 5
         '
         'Guna2CheckBox4
         '
@@ -712,7 +719,7 @@ Partial Class pedidos
         Me.Guna2CheckBox4.CheckedState.FillColor = System.Drawing.Color.FromArgb(CType(CType(239, Byte), Integer), CType(CType(239, Byte), Integer), CType(CType(239, Byte), Integer))
         Me.Guna2CheckBox4.CheckMarkColor = System.Drawing.Color.FromArgb(CType(CType(127, Byte), Integer), CType(CType(127, Byte), Integer), CType(CType(127, Byte), Integer))
         Me.Guna2CheckBox4.Font = New System.Drawing.Font("Microsoft Sans Serif", 21.75!)
-        Me.Guna2CheckBox4.Location = New System.Drawing.Point(142, 12)
+        Me.Guna2CheckBox4.Location = New System.Drawing.Point(155, 12)
         Me.Guna2CheckBox4.Name = "Guna2CheckBox4"
         Me.Guna2CheckBox4.Size = New System.Drawing.Size(15, 17)
         Me.Guna2CheckBox4.TabIndex = 14
@@ -732,22 +739,136 @@ Partial Class pedidos
         Me.Guna2ImageButton4.ImageOffset = New System.Drawing.Point(0, 0)
         Me.Guna2ImageButton4.ImageRotate = 0!
         Me.Guna2ImageButton4.ImageSize = New System.Drawing.Size(20, 20)
-        Me.Guna2ImageButton4.Location = New System.Drawing.Point(161, 7)
+        Me.Guna2ImageButton4.Location = New System.Drawing.Point(176, 7)
         Me.Guna2ImageButton4.Name = "Guna2ImageButton4"
         Me.Guna2ImageButton4.PressedState.ImageSize = New System.Drawing.Size(28, 28)
         Me.Guna2ImageButton4.Size = New System.Drawing.Size(25, 25)
         Me.Guna2ImageButton4.TabIndex = 13
         '
-        'Guna2HtmlLabel31
+        'Guna2HtmlLabel12
         '
-        Me.Guna2HtmlLabel31.BackColor = System.Drawing.Color.Transparent
-        Me.Guna2HtmlLabel31.Font = New System.Drawing.Font("Libre Caslon Display", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Guna2HtmlLabel31.ForeColor = System.Drawing.Color.FromArgb(CType(CType(127, Byte), Integer), CType(CType(127, Byte), Integer), CType(CType(127, Byte), Integer))
-        Me.Guna2HtmlLabel31.Location = New System.Drawing.Point(11, 9)
-        Me.Guna2HtmlLabel31.Name = "Guna2HtmlLabel31"
-        Me.Guna2HtmlLabel31.Size = New System.Drawing.Size(96, 21)
-        Me.Guna2HtmlLabel31.TabIndex = 12
-        Me.Guna2HtmlLabel31.Text = "Nome do Prato"
+        Me.Guna2HtmlLabel12.BackColor = System.Drawing.Color.Transparent
+        Me.Guna2HtmlLabel12.Font = New System.Drawing.Font("Libre Caslon Display", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Guna2HtmlLabel12.ForeColor = System.Drawing.Color.FromArgb(CType(CType(127, Byte), Integer), CType(CType(127, Byte), Integer), CType(CType(127, Byte), Integer))
+        Me.Guna2HtmlLabel12.Location = New System.Drawing.Point(11, 9)
+        Me.Guna2HtmlLabel12.Name = "Guna2HtmlLabel12"
+        Me.Guna2HtmlLabel12.Size = New System.Drawing.Size(96, 21)
+        Me.Guna2HtmlLabel12.TabIndex = 12
+        Me.Guna2HtmlLabel12.Text = "Nome do Prato"
+        '
+        'Guna2Panel12
+        '
+        Me.Guna2Panel12.BackColor = System.Drawing.Color.White
+        Me.Guna2Panel12.BorderRadius = 12
+        Me.Guna2Panel12.Controls.Add(Me.Guna2CheckBox5)
+        Me.Guna2Panel12.Controls.Add(Me.Guna2ImageButton5)
+        Me.Guna2Panel12.Controls.Add(Me.Guna2HtmlLabel13)
+        Me.Guna2Panel12.FillColor = System.Drawing.Color.FromArgb(CType(CType(239, Byte), Integer), CType(CType(239, Byte), Integer), CType(CType(239, Byte), Integer))
+        Me.Guna2Panel12.Location = New System.Drawing.Point(12, 204)
+        Me.Guna2Panel12.Margin = New System.Windows.Forms.Padding(4)
+        Me.Guna2Panel12.Name = "Guna2Panel12"
+        Me.Guna2Panel12.Padding = New System.Windows.Forms.Padding(16)
+        Me.Guna2Panel12.Size = New System.Drawing.Size(210, 40)
+        Me.Guna2Panel12.TabIndex = 6
+        '
+        'Guna2CheckBox5
+        '
+        Me.Guna2CheckBox5.CheckedState.BorderColor = System.Drawing.Color.FromArgb(CType(CType(127, Byte), Integer), CType(CType(127, Byte), Integer), CType(CType(127, Byte), Integer))
+        Me.Guna2CheckBox5.CheckedState.BorderRadius = 2
+        Me.Guna2CheckBox5.CheckedState.BorderThickness = 1
+        Me.Guna2CheckBox5.CheckedState.FillColor = System.Drawing.Color.FromArgb(CType(CType(239, Byte), Integer), CType(CType(239, Byte), Integer), CType(CType(239, Byte), Integer))
+        Me.Guna2CheckBox5.CheckMarkColor = System.Drawing.Color.FromArgb(CType(CType(127, Byte), Integer), CType(CType(127, Byte), Integer), CType(CType(127, Byte), Integer))
+        Me.Guna2CheckBox5.Font = New System.Drawing.Font("Microsoft Sans Serif", 21.75!)
+        Me.Guna2CheckBox5.Location = New System.Drawing.Point(155, 12)
+        Me.Guna2CheckBox5.Name = "Guna2CheckBox5"
+        Me.Guna2CheckBox5.Size = New System.Drawing.Size(15, 17)
+        Me.Guna2CheckBox5.TabIndex = 14
+        Me.Guna2CheckBox5.UncheckedState.BorderColor = System.Drawing.Color.FromArgb(CType(CType(125, Byte), Integer), CType(CType(137, Byte), Integer), CType(CType(149, Byte), Integer))
+        Me.Guna2CheckBox5.UncheckedState.BorderRadius = 2
+        Me.Guna2CheckBox5.UncheckedState.BorderThickness = 1
+        Me.Guna2CheckBox5.UncheckedState.FillColor = System.Drawing.Color.FromArgb(CType(CType(239, Byte), Integer), CType(CType(239, Byte), Integer), CType(CType(239, Byte), Integer))
+        '
+        'Guna2ImageButton5
+        '
+        Me.Guna2ImageButton5.Anchor = CType((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
+        Me.Guna2ImageButton5.BackColor = System.Drawing.Color.Transparent
+        Me.Guna2ImageButton5.CheckedState.ImageSize = New System.Drawing.Size(64, 64)
+        Me.Guna2ImageButton5.Cursor = System.Windows.Forms.Cursors.Hand
+        Me.Guna2ImageButton5.HoverState.ImageSize = New System.Drawing.Size(24, 24)
+        Me.Guna2ImageButton5.Image = CType(resources.GetObject("Guna2ImageButton5.Image"), System.Drawing.Image)
+        Me.Guna2ImageButton5.ImageOffset = New System.Drawing.Point(0, 0)
+        Me.Guna2ImageButton5.ImageRotate = 0!
+        Me.Guna2ImageButton5.ImageSize = New System.Drawing.Size(20, 20)
+        Me.Guna2ImageButton5.Location = New System.Drawing.Point(176, 7)
+        Me.Guna2ImageButton5.Name = "Guna2ImageButton5"
+        Me.Guna2ImageButton5.PressedState.ImageSize = New System.Drawing.Size(28, 28)
+        Me.Guna2ImageButton5.Size = New System.Drawing.Size(25, 25)
+        Me.Guna2ImageButton5.TabIndex = 13
+        '
+        'Guna2HtmlLabel13
+        '
+        Me.Guna2HtmlLabel13.BackColor = System.Drawing.Color.Transparent
+        Me.Guna2HtmlLabel13.Font = New System.Drawing.Font("Libre Caslon Display", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Guna2HtmlLabel13.ForeColor = System.Drawing.Color.FromArgb(CType(CType(127, Byte), Integer), CType(CType(127, Byte), Integer), CType(CType(127, Byte), Integer))
+        Me.Guna2HtmlLabel13.Location = New System.Drawing.Point(11, 9)
+        Me.Guna2HtmlLabel13.Name = "Guna2HtmlLabel13"
+        Me.Guna2HtmlLabel13.Size = New System.Drawing.Size(96, 21)
+        Me.Guna2HtmlLabel13.TabIndex = 12
+        Me.Guna2HtmlLabel13.Text = "Nome do Prato"
+        '
+        'btn_entregar
+        '
+        Me.btn_entregar.AutoRoundedCorners = True
+        Me.btn_entregar.BackColor = System.Drawing.Color.Transparent
+        Me.btn_entregar.BorderRadius = 17
+        Me.btn_entregar.Cursor = System.Windows.Forms.Cursors.Hand
+        Me.btn_entregar.DisabledState.BorderColor = System.Drawing.Color.DarkGray
+        Me.btn_entregar.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray
+        Me.btn_entregar.DisabledState.FillColor = System.Drawing.Color.FromArgb(CType(CType(169, Byte), Integer), CType(CType(169, Byte), Integer), CType(CType(169, Byte), Integer))
+        Me.btn_entregar.DisabledState.ForeColor = System.Drawing.Color.FromArgb(CType(CType(141, Byte), Integer), CType(CType(141, Byte), Integer), CType(CType(141, Byte), Integer))
+        Me.btn_entregar.Dock = System.Windows.Forms.DockStyle.Bottom
+        Me.btn_entregar.FillColor = System.Drawing.Color.FromArgb(CType(CType(46, Byte), Integer), CType(CType(31, Byte), Integer), CType(CType(39, Byte), Integer))
+        Me.btn_entregar.Font = New System.Drawing.Font("Libre Caslon Display", 15.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.btn_entregar.ForeColor = System.Drawing.Color.White
+        Me.btn_entregar.Location = New System.Drawing.Point(16, 276)
+        Me.btn_entregar.Margin = New System.Windows.Forms.Padding(0)
+        Me.btn_entregar.Name = "btn_entregar"
+        Me.btn_entregar.Size = New System.Drawing.Size(241, 37)
+        Me.btn_entregar.TabIndex = 9
+        Me.btn_entregar.Text = "Entregar pedido"
+        '
+        'Guna2Panel7
+        '
+        Me.Guna2Panel7.Controls.Add(Me.Guna2HtmlLabel18)
+        Me.Guna2Panel7.Controls.Add(Me.Guna2HtmlLabel17)
+        Me.Guna2Panel7.Controls.Add(Me.btn_1)
+        Me.Guna2Panel7.Controls.Add(Me.Guna2HtmlLabel16)
+        Me.Guna2Panel7.Dock = System.Windows.Forms.DockStyle.Top
+        Me.Guna2Panel7.Location = New System.Drawing.Point(16, 16)
+        Me.Guna2Panel7.Margin = New System.Windows.Forms.Padding(0)
+        Me.Guna2Panel7.Name = "Guna2Panel7"
+        Me.Guna2Panel7.Size = New System.Drawing.Size(241, 62)
+        Me.Guna2Panel7.TabIndex = 25
+        '
+        'Guna2HtmlLabel18
+        '
+        Me.Guna2HtmlLabel18.BackColor = System.Drawing.Color.Transparent
+        Me.Guna2HtmlLabel18.Font = New System.Drawing.Font("Libre Caslon Display", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Guna2HtmlLabel18.Location = New System.Drawing.Point(2, 31)
+        Me.Guna2HtmlLabel18.Name = "Guna2HtmlLabel18"
+        Me.Guna2HtmlLabel18.Size = New System.Drawing.Size(56, 21)
+        Me.Guna2HtmlLabel18.TabIndex = 8
+        Me.Guna2HtmlLabel18.Text = "Mesa 01"
+        '
+        'Guna2HtmlLabel17
+        '
+        Me.Guna2HtmlLabel17.BackColor = System.Drawing.Color.Transparent
+        Me.Guna2HtmlLabel17.Font = New System.Drawing.Font("Libre Caslon Display", 14.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Guna2HtmlLabel17.Location = New System.Drawing.Point(2, 4)
+        Me.Guna2HtmlLabel17.Name = "Guna2HtmlLabel17"
+        Me.Guna2HtmlLabel17.Size = New System.Drawing.Size(120, 25)
+        Me.Guna2HtmlLabel17.TabIndex = 6
+        Me.Guna2HtmlLabel17.Text = "Nome do cliente"
         '
         'btn_1
         '
@@ -760,31 +881,11 @@ Partial Class pedidos
         Me.btn_1.ImageOffset = New System.Drawing.Point(0, 0)
         Me.btn_1.ImageRotate = 0!
         Me.btn_1.ImageSize = New System.Drawing.Size(34, 34)
-        Me.btn_1.Location = New System.Drawing.Point(201, 13)
+        Me.btn_1.Location = New System.Drawing.Point(199, 13)
         Me.btn_1.Name = "btn_1"
         Me.btn_1.PressedState.ImageSize = New System.Drawing.Size(28, 28)
-        Me.btn_1.Size = New System.Drawing.Size(36, 54)
+        Me.btn_1.Size = New System.Drawing.Size(36, 36)
         Me.btn_1.TabIndex = 3
-        '
-        'Guna2HtmlLabel18
-        '
-        Me.Guna2HtmlLabel18.BackColor = System.Drawing.Color.Transparent
-        Me.Guna2HtmlLabel18.Font = New System.Drawing.Font("Libre Caslon Display", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Guna2HtmlLabel18.Location = New System.Drawing.Point(15, 42)
-        Me.Guna2HtmlLabel18.Name = "Guna2HtmlLabel18"
-        Me.Guna2HtmlLabel18.Size = New System.Drawing.Size(56, 21)
-        Me.Guna2HtmlLabel18.TabIndex = 8
-        Me.Guna2HtmlLabel18.Text = "Mesa 01"
-        '
-        'Guna2HtmlLabel17
-        '
-        Me.Guna2HtmlLabel17.BackColor = System.Drawing.Color.Transparent
-        Me.Guna2HtmlLabel17.Font = New System.Drawing.Font("Libre Caslon Display", 14.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Guna2HtmlLabel17.Location = New System.Drawing.Point(15, 15)
-        Me.Guna2HtmlLabel17.Name = "Guna2HtmlLabel17"
-        Me.Guna2HtmlLabel17.Size = New System.Drawing.Size(120, 25)
-        Me.Guna2HtmlLabel17.TabIndex = 6
-        Me.Guna2HtmlLabel17.Text = "Nome do cliente"
         '
         'Guna2HtmlLabel16
         '
@@ -793,42 +894,12 @@ Partial Class pedidos
             Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
         Me.Guna2HtmlLabel16.BackColor = System.Drawing.Color.Transparent
         Me.Guna2HtmlLabel16.Font = New System.Drawing.Font("Julius Sans One", 25.0!)
-        Me.Guna2HtmlLabel16.Location = New System.Drawing.Point(141, 23)
+        Me.Guna2HtmlLabel16.Location = New System.Drawing.Point(138, 13)
         Me.Guna2HtmlLabel16.Name = "Guna2HtmlLabel16"
         Me.Guna2HtmlLabel16.Size = New System.Drawing.Size(54, 38)
         Me.Guna2HtmlLabel16.TabIndex = 5
         Me.Guna2HtmlLabel16.Text = "#12"
         Me.Guna2HtmlLabel16.TextAlignment = System.Drawing.ContentAlignment.TopCenter
-        '
-        'Guna2Panel13
-        '
-        Me.Guna2Panel13.BackColor = System.Drawing.Color.Transparent
-        Me.Guna2Panel13.Controls.Add(Me.btn_entregar)
-        Me.Guna2Panel13.Dock = System.Windows.Forms.DockStyle.Bottom
-        Me.Guna2Panel13.Location = New System.Drawing.Point(12, 264)
-        Me.Guna2Panel13.Name = "Guna2Panel13"
-        Me.Guna2Panel13.Size = New System.Drawing.Size(225, 53)
-        Me.Guna2Panel13.TabIndex = 23
-        '
-        'btn_entregar
-        '
-        Me.btn_entregar.AutoRoundedCorners = True
-        Me.btn_entregar.BackColor = System.Drawing.Color.Transparent
-        Me.btn_entregar.BorderRadius = 17
-        Me.btn_entregar.Cursor = System.Windows.Forms.Cursors.Hand
-        Me.btn_entregar.DisabledState.BorderColor = System.Drawing.Color.DarkGray
-        Me.btn_entregar.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray
-        Me.btn_entregar.DisabledState.FillColor = System.Drawing.Color.FromArgb(CType(CType(169, Byte), Integer), CType(CType(169, Byte), Integer), CType(CType(169, Byte), Integer))
-        Me.btn_entregar.DisabledState.ForeColor = System.Drawing.Color.FromArgb(CType(CType(141, Byte), Integer), CType(CType(141, Byte), Integer), CType(CType(141, Byte), Integer))
-        Me.btn_entregar.FillColor = System.Drawing.Color.FromArgb(CType(CType(46, Byte), Integer), CType(CType(31, Byte), Integer), CType(CType(39, Byte), Integer))
-        Me.btn_entregar.Font = New System.Drawing.Font("Libre Caslon Display", 15.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.btn_entregar.ForeColor = System.Drawing.Color.White
-        Me.btn_entregar.Location = New System.Drawing.Point(5, 10)
-        Me.btn_entregar.Margin = New System.Windows.Forms.Padding(0)
-        Me.btn_entregar.Name = "btn_entregar"
-        Me.btn_entregar.Size = New System.Drawing.Size(221, 37)
-        Me.btn_entregar.TabIndex = 9
-        Me.btn_entregar.Text = "Entregar pedido"
         '
         'Guna2HtmlLabel1
         '
@@ -875,24 +946,28 @@ Partial Class pedidos
         'flp_progressoPedidos
         '
         Me.flp_progressoPedidos.AutoScroll = True
-        Me.flp_progressoPedidos.AutoSize = True
         Me.flp_progressoPedidos.Controls.Add(Me.Guna2Panel6)
         Me.flp_progressoPedidos.Location = New System.Drawing.Point(3, 36)
         Me.flp_progressoPedidos.Name = "flp_progressoPedidos"
         Me.flp_progressoPedidos.Padding = New System.Windows.Forms.Padding(16)
-        Me.flp_progressoPedidos.Size = New System.Drawing.Size(1592, 114)
+        Me.flp_progressoPedidos.RightToLeft = System.Windows.Forms.RightToLeft.No
+        Me.flp_progressoPedidos.Size = New System.Drawing.Size(929, 107)
         Me.flp_progressoPedidos.TabIndex = 7
+        Me.flp_progressoPedidos.WrapContents = False
         '
         'Guna2Panel6
         '
         Me.Guna2Panel6.BackColor = System.Drawing.Color.Transparent
-        Me.Guna2Panel6.BorderRadius = 12
         Me.Guna2Panel6.Controls.Add(Me.Guna2HtmlLabel8)
         Me.Guna2Panel6.Controls.Add(Me.Guna2HtmlLabel9)
         Me.Guna2Panel6.Controls.Add(Me.Guna2HtmlLabel6)
         Me.Guna2Panel6.FillColor = System.Drawing.Color.FromArgb(CType(CType(244, Byte), Integer), CType(CType(187, Byte), Integer), CType(CType(108, Byte), Integer))
         Me.Guna2Panel6.Location = New System.Drawing.Point(19, 19)
         Me.Guna2Panel6.Name = "Guna2Panel6"
+        Me.Guna2Panel6.Radius = 6
+        Me.Guna2Panel6.ShadowColor = System.Drawing.Color.FromArgb(CType(CType(200, Byte), Integer), CType(CType(200, Byte), Integer), CType(CType(200, Byte), Integer))
+        Me.Guna2Panel6.ShadowShift = 2
+        Me.Guna2Panel6.ShadowStyle = Guna.UI2.WinForms.Guna2ShadowPanel.ShadowMode.ForwardDiagonal
         Me.Guna2Panel6.Size = New System.Drawing.Size(254, 70)
         Me.Guna2Panel6.TabIndex = 6
         Me.Guna2Panel6.Visible = False
@@ -921,7 +996,7 @@ Partial Class pedidos
         '
         Me.Guna2HtmlLabel6.BackColor = System.Drawing.Color.Transparent
         Me.Guna2HtmlLabel6.Font = New System.Drawing.Font("Julius Sans One", 25.0!)
-        Me.Guna2HtmlLabel6.Location = New System.Drawing.Point(30, 18)
+        Me.Guna2HtmlLabel6.Location = New System.Drawing.Point(30, 16)
         Me.Guna2HtmlLabel6.Name = "Guna2HtmlLabel6"
         Me.Guna2HtmlLabel6.Size = New System.Drawing.Size(54, 38)
         Me.Guna2HtmlLabel6.TabIndex = 4
@@ -975,19 +1050,21 @@ Partial Class pedidos
         Me.Guna2Panel4.ResumeLayout(False)
         Me.Panel1.ResumeLayout(False)
         Me.Panel1.PerformLayout()
-        Me.FlowLayoutPanel2.ResumeLayout(False)
+        Me.flp_pedidos.ResumeLayout(False)
         Me.Guna2Panel9.ResumeLayout(False)
-        Me.Guna2Panel9.PerformLayout()
         Me.FlowLayoutPanel3.ResumeLayout(False)
         Me.Guna2Panel14.ResumeLayout(False)
         Me.Guna2Panel14.PerformLayout()
-        Me.Guna2Panel15.ResumeLayout(False)
-        Me.Guna2Panel15.PerformLayout()
-        Me.Guna2Panel16.ResumeLayout(False)
-        Me.Guna2Panel16.PerformLayout()
-        Me.Guna2Panel17.ResumeLayout(False)
-        Me.Guna2Panel17.PerformLayout()
-        Me.Guna2Panel13.ResumeLayout(False)
+        Me.Guna2Panel8.ResumeLayout(False)
+        Me.Guna2Panel8.PerformLayout()
+        Me.Guna2Panel10.ResumeLayout(False)
+        Me.Guna2Panel10.PerformLayout()
+        Me.Guna2Panel11.ResumeLayout(False)
+        Me.Guna2Panel11.PerformLayout()
+        Me.Guna2Panel12.ResumeLayout(False)
+        Me.Guna2Panel12.PerformLayout()
+        Me.Guna2Panel7.ResumeLayout(False)
+        Me.Guna2Panel7.PerformLayout()
         Me.Guna2Panel5.ResumeLayout(False)
         Me.Guna2Panel5.PerformLayout()
         Me.flp_progressoPedidos.ResumeLayout(False)
@@ -1029,33 +1106,37 @@ Partial Class pedidos
     Friend WithEvents Guna2HtmlLabel1 As Guna.UI2.WinForms.Guna2HtmlLabel
     Friend WithEvents cmb_progs As Guna.UI2.WinForms.Guna2ComboBox
     Friend WithEvents flp_progressoPedidos As FlowLayoutPanel
-    Friend WithEvents Guna2Panel6 As Guna.UI2.WinForms.Guna2Panel
+    Friend WithEvents Guna2Panel6 As Guna.UI2.WinForms.Guna2ShadowPanel
     Friend WithEvents Guna2HtmlLabel6 As Guna.UI2.WinForms.Guna2HtmlLabel
     Friend WithEvents Guna2HtmlLabel8 As Guna.UI2.WinForms.Guna2HtmlLabel
     Friend WithEvents Guna2HtmlLabel9 As Guna.UI2.WinForms.Guna2HtmlLabel
-    Friend WithEvents FlowLayoutPanel2 As FlowLayoutPanel
-    Friend WithEvents Guna2Panel9 As Guna.UI2.WinForms.Guna2Panel
+    Friend WithEvents flp_pedidos As FlowLayoutPanel
+    Friend WithEvents Guna2Panel9 As Guna.UI2.WinForms.Guna2ShadowPanel
     Friend WithEvents btn_1 As Guna.UI2.WinForms.Guna2ImageButton
     Friend WithEvents Guna2HtmlLabel18 As Guna.UI2.WinForms.Guna2HtmlLabel
     Friend WithEvents Guna2HtmlLabel17 As Guna.UI2.WinForms.Guna2HtmlLabel
     Friend WithEvents Guna2HtmlLabel16 As Guna.UI2.WinForms.Guna2HtmlLabel
-    Friend WithEvents btn_entregar As Guna.UI2.WinForms.Guna2Button
-    Friend WithEvents Guna2Panel13 As Guna.UI2.WinForms.Guna2Panel
     Friend WithEvents FlowLayoutPanel3 As FlowLayoutPanel
     Friend WithEvents Guna2Panel14 As Guna.UI2.WinForms.Guna2Panel
     Friend WithEvents Guna2HtmlLabel29 As Guna.UI2.WinForms.Guna2HtmlLabel
     Friend WithEvents Guna2CheckBox1 As Guna.UI2.WinForms.Guna2CheckBox
     Friend WithEvents Guna2ImageButton1 As Guna.UI2.WinForms.Guna2ImageButton
-    Friend WithEvents Guna2Panel15 As Guna.UI2.WinForms.Guna2Panel
+    Friend WithEvents btn_entregar As Guna.UI2.WinForms.Guna2Button
+    Friend WithEvents Guna2Panel8 As Guna.UI2.WinForms.Guna2Panel
     Friend WithEvents Guna2CheckBox2 As Guna.UI2.WinForms.Guna2CheckBox
     Friend WithEvents Guna2ImageButton2 As Guna.UI2.WinForms.Guna2ImageButton
-    Friend WithEvents Guna2HtmlLabel28 As Guna.UI2.WinForms.Guna2HtmlLabel
-    Friend WithEvents Guna2Panel16 As Guna.UI2.WinForms.Guna2Panel
+    Friend WithEvents Guna2HtmlLabel10 As Guna.UI2.WinForms.Guna2HtmlLabel
+    Friend WithEvents Guna2Panel10 As Guna.UI2.WinForms.Guna2Panel
     Friend WithEvents Guna2CheckBox3 As Guna.UI2.WinForms.Guna2CheckBox
     Friend WithEvents Guna2ImageButton3 As Guna.UI2.WinForms.Guna2ImageButton
-    Friend WithEvents Guna2HtmlLabel30 As Guna.UI2.WinForms.Guna2HtmlLabel
-    Friend WithEvents Guna2Panel17 As Guna.UI2.WinForms.Guna2Panel
+    Friend WithEvents Guna2HtmlLabel11 As Guna.UI2.WinForms.Guna2HtmlLabel
+    Friend WithEvents Guna2Panel11 As Guna.UI2.WinForms.Guna2Panel
     Friend WithEvents Guna2CheckBox4 As Guna.UI2.WinForms.Guna2CheckBox
     Friend WithEvents Guna2ImageButton4 As Guna.UI2.WinForms.Guna2ImageButton
-    Friend WithEvents Guna2HtmlLabel31 As Guna.UI2.WinForms.Guna2HtmlLabel
+    Friend WithEvents Guna2HtmlLabel12 As Guna.UI2.WinForms.Guna2HtmlLabel
+    Friend WithEvents Guna2Panel12 As Guna.UI2.WinForms.Guna2Panel
+    Friend WithEvents Guna2CheckBox5 As Guna.UI2.WinForms.Guna2CheckBox
+    Friend WithEvents Guna2ImageButton5 As Guna.UI2.WinForms.Guna2ImageButton
+    Friend WithEvents Guna2HtmlLabel13 As Guna.UI2.WinForms.Guna2HtmlLabel
+    Friend WithEvents Guna2Panel7 As Guna.UI2.WinForms.Guna2Panel
 End Class

@@ -138,10 +138,10 @@
     <Compile Include="pedidos.vb">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="sair.Designer.vb">
-      <DependentUpon>sair.vb</DependentUpon>
+    <Compile Include="telaConfirmacao.Designer.vb">
+      <DependentUpon>telaConfirmacao.vb</DependentUpon>
     </Compile>
-    <Compile Include="sair.vb">
+    <Compile Include="telaConfirmacao.vb">
       <SubType>Form</SubType>
     </Compile>
   </ItemGroup>
@@ -173,8 +173,8 @@
     <EmbeddedResource Include="pedidos.resx">
       <DependentUpon>pedidos.vb</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="sair.resx">
-      <DependentUpon>sair.vb</DependentUpon>
+    <EmbeddedResource Include="telaConfirmacao.resx">
+      <DependentUpon>telaConfirmacao.vb</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <ItemGroup>

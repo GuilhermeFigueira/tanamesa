@@ -1,5 +1,5 @@
 ﻿<Global.Microsoft.VisualBasic.CompilerServices.DesignerGenerated()>
-Partial Class sair
+Partial Class telaConfirmacao
     Inherits System.Windows.Forms.Form
 
     'Descartar substituições de formulário para limpar a lista de componentes.
@@ -23,12 +23,12 @@ Partial Class sair
     <System.Diagnostics.DebuggerStepThrough()>
     Private Sub InitializeComponent()
         Me.components = New System.ComponentModel.Container()
-        Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(sair))
+        Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(telaConfirmacao))
         Me.Guna2BorderlessForm1 = New Guna.UI2.WinForms.Guna2BorderlessForm(Me.components)
         Me.btn_minimizar = New Guna.UI2.WinForms.Guna2ImageButton()
         Me.btn_fechar = New Guna.UI2.WinForms.Guna2ImageButton()
         Me.Guna2ContainerControl1 = New Guna.UI2.WinForms.Guna2ContainerControl()
-        Me.Guna2HtmlLabel2 = New Guna.UI2.WinForms.Guna2HtmlLabel()
+        Me.lbl_mensagem = New Guna.UI2.WinForms.Guna2HtmlLabel()
         Me.btn_sim = New Guna.UI2.WinForms.Guna2Button()
         Me.btn_nao = New Guna.UI2.WinForms.Guna2Button()
         Me.Guna2ContainerControl1.SuspendLayout()
@@ -86,15 +86,17 @@ Partial Class sair
         Me.Guna2ContainerControl1.TabIndex = 2
         Me.Guna2ContainerControl1.Text = "Guna2ContainerControl1"
         '
-        'Guna2HtmlLabel2
+        'lbl_mensagem
         '
-        Me.Guna2HtmlLabel2.BackColor = System.Drawing.Color.Transparent
-        Me.Guna2HtmlLabel2.Font = New System.Drawing.Font("Libre Caslon Display", 15.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Guna2HtmlLabel2.Location = New System.Drawing.Point(153, 42)
-        Me.Guna2HtmlLabel2.Name = "Guna2HtmlLabel2"
-        Me.Guna2HtmlLabel2.Size = New System.Drawing.Size(178, 27)
-        Me.Guna2HtmlLabel2.TabIndex = 4
-        Me.Guna2HtmlLabel2.Text = "Deseja realmente sair?"
+        Me.lbl_mensagem.AutoSize = False
+        Me.lbl_mensagem.BackColor = System.Drawing.Color.Transparent
+        Me.lbl_mensagem.Dock = System.Windows.Forms.DockStyle.Top
+        Me.lbl_mensagem.Font = New System.Drawing.Font("Libre Caslon Display", 15.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.lbl_mensagem.Location = New System.Drawing.Point(0, 0)
+        Me.lbl_mensagem.Name = "lbl_mensagem"
+        Me.lbl_mensagem.Size = New System.Drawing.Size(486, 126)
+        Me.lbl_mensagem.TabIndex = 4
+        Me.lbl_mensagem.TextAlignment = System.Drawing.ContentAlignment.MiddleCenter
         '
         'btn_sim
         '
@@ -128,7 +130,7 @@ Partial Class sair
         Me.btn_nao.TabIndex = 8
         Me.btn_nao.Text = "Não"
         '
-        'sair
+        'telaConfirmacao
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
@@ -136,15 +138,14 @@ Partial Class sair
         Me.ClientSize = New System.Drawing.Size(486, 168)
         Me.Controls.Add(Me.btn_nao)
         Me.Controls.Add(Me.btn_sim)
-        Me.Controls.Add(Me.Guna2HtmlLabel2)
         Me.Controls.Add(Me.Guna2ContainerControl1)
+        Me.Controls.Add(Me.lbl_mensagem)
         Me.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None
-        Me.Name = "sair"
+        Me.Name = "telaConfirmacao"
         Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen
         Me.Text = "sair1"
         Me.Guna2ContainerControl1.ResumeLayout(False)
         Me.ResumeLayout(False)
-        Me.PerformLayout()
 
     End Sub
 
@@ -152,7 +153,7 @@ Partial Class sair
     Friend WithEvents Guna2ContainerControl1 As Guna.UI2.WinForms.Guna2ContainerControl
     Friend WithEvents btn_fechar As Guna.UI2.WinForms.Guna2ImageButton
     Friend WithEvents btn_minimizar As Guna.UI2.WinForms.Guna2ImageButton
-    Friend WithEvents Guna2HtmlLabel2 As Guna.UI2.WinForms.Guna2HtmlLabel
+    Friend WithEvents lbl_mensagem As Guna.UI2.WinForms.Guna2HtmlLabel
     Friend WithEvents btn_sim As Guna.UI2.WinForms.Guna2Button
     Friend WithEvents btn_nao As Guna.UI2.WinForms.Guna2Button
 End Class
