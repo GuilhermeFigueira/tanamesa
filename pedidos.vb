@@ -95,7 +95,7 @@ Public Class criarPedidos
     End Sub
 
     Sub carregarPedidos()
-        Dim count As Integer
+        Dim count, count2 As Integer
         Do While count < 10
             Dim pnl_pedido As New Guna2ShadowPanel With {
                 .Name = "pnl_pedido",
@@ -105,7 +105,7 @@ Public Class criarPedidos
                 .Radius = 6,
                 .ShadowColor = Color.FromArgb(200, 200, 200),
                 .ShadowShift = 2,
-                .Padding = New Padding(8)
+                .Padding = New Padding(16)
             }
 
             Dim pnl_info As New Guna2Panel With {
@@ -137,9 +137,22 @@ Public Class criarPedidos
                 .Name = "lbl_numeroPedido",
                 .Text = "#12",
                 .Font = New Font("Julius Sans One", 25),
-                .Location = New Point(138, 13),
+                .Location = New Point(144, 13),
                 .Parent = pnl_info
             }
+
+            Dim btn_excluirPedido As New Guna2ImageButton() With {
+                .Name = "btn_excluirPedido",
+                .Location = New Point(199, 12),
+                .Size = New Size(34, 34),
+                .ImageSize = New Size(34, 34),
+                .BackColor = Color.Transparent,
+                .Cursor = Cursors.Hand,
+                .Parent = pnl_info,
+                .Image = Image.FromFile(Application.StartupPath & "\imgs\trash.png")
+            }
+            btn_excluirPedido.HoverState.ImageSize = New Size(36, 36)
+            btn_excluirPedido.PressedState.ImageSize = New Size(38, 38)
 
             Dim flp_itensPedido As New FlowLayoutPanel With {
                 .Name = "flp_itensPedido",
@@ -149,54 +162,77 @@ Public Class criarPedidos
             .Padding = New Padding(8),
             .Size = New Size(241, 198)
             }
-            '.BackColor = Color.White,
+            count2 = 0
+            Do While count2 < 10
+                Dim pnl_itemDoPedido As New Guna2Panel With {
+                    .FillColor = Color.FromArgb(239, 239, 239),
+                    .Margin = New Padding(4),
+                    .Size = New Size(210, 40),
+                    .BorderRadius = 12,
+                    .BackColor = Color.White,
+                    .Parent = flp_itensPedido
+                }
 
-            Dim pnl_itemDoPedido As New Guna2Panel With {
-                .FillColor = Color.FromArgb(239, 239, 239),
-                .Margin = New Padding(4),
-                .Size = New Size(210, 40),
-                .BorderRadius = 12,
-                .BackColor = Color.White,
-                .Parent = flp_itensPedido
+                Dim lbl_nomeItem As New Guna2HtmlLabel With {
+                    .Name = "lbl_nomeItem",
+                    .Text = "Nome do prato",
+                    .ForeColor = Color.FromArgb(127, 127, 127),
+                    .Font = New Font("Libre Caslon Display", 12),
+                    .Location = New Point(11, 9),
+                    .Parent = pnl_itemDoPedido
+                }
+
+                Dim cbx_concluido As New Guna2CheckBox With {
+                    .CheckMarkColor = Color.FromArgb(127, 127, 127),
+                    .Location = New Point(155, 12),
+                    .Size = New Size(15, 17),
+                    .Parent = pnl_itemDoPedido
+                }
+                cbx_concluido.CheckedState.BorderColor = Color.FromArgb(127, 127, 127)
+                cbx_concluido.CheckedState.BorderRadius = 2
+                cbx_concluido.CheckedState.BorderThickness = 1
+                cbx_concluido.CheckedState.FillColor = Color.FromArgb(239, 239, 239)
+                cbx_concluido.UncheckedState.BorderColor = Color.FromArgb(127, 127, 127)
+                cbx_concluido.UncheckedState.BorderRadius = 2
+                cbx_concluido.UncheckedState.BorderThickness = 1
+                cbx_concluido.UncheckedState.FillColor = Color.FromArgb(239, 239, 239)
+
+                Dim btn_removerItem As New Guna2ImageButton() With {
+                    .Name = "btn_removerItem",
+                    .Location = New Point(176, 7),
+                    .Size = New Size(25, 25),
+                    .ImageSize = New Size(20, 20),
+                    .BackColor = Color.Transparent,
+                    .Cursor = Cursors.Hand,
+                    .Parent = pnl_itemDoPedido,
+                    .Image = Image.FromFile(Application.StartupPath & "\imgs\trash.png")
+                }
+                btn_removerItem.HoverState.ImageSize = New Size(24, 24)
+                btn_removerItem.PressedState.ImageSize = New Size(28, 28)
+                count2 += 1
+            Loop
+            Dim pnl_enviarPedido As New Guna2Panel() With {
+                .Name = "pnl_enviarPedido",
+                .Dock = DockStyle.Bottom,
+                .Size = New Size(241, 49),
+                .Parent = pnl_pedido
             }
-
-            Dim lbl_nomeItem As New Guna2HtmlLabel With {
-                .Name = "lbl_nomeItem",
-                .ForeColor = Color.FromArgb(127, 127, 127),
-                .Font = New Font("Libre Caslon Display", 12),
-                .Location = New Point(11, 9),
-                .Parent = pnl_itemDoPedido
+            Dim btn_EnviarPedido As New Guna2Button() With {
+                .Name = "pnl_enviarPedido",
+                .Dock = DockStyle.Bottom,
+                .Size = New Size(241, 37),
+                .Parent = pnl_enviarPedido,
+                .FillColor = Color.FromArgb(46, 31, 39),
+                .Cursor = Cursors.Hand,
+                .Text = "Entregar pedido",
+                .Font = New Font("Libre Caslon Display", 15),
+                .ForeColor = Color.White,
+                .BorderRadius = 17
             }
-
-            Dim cbx_concluido As New Guna2CheckBox With {
-                .CheckMarkColor = Color.FromArgb(127, 127, 127),
-                .Location = New Point(155, 12),
-                .Size = New Size(15, 17),
-                .Parent = pnl_itemDoPedido
-            }
-            cbx_concluido.CheckedState.BorderColor = Color.FromArgb(127, 127, 127)
-            cbx_concluido.CheckedState.BorderRadius = 2
-            cbx_concluido.CheckedState.BorderThickness = 1
-            cbx_concluido.CheckedState.FillColor = Color.FromArgb(239, 239, 239)
-            cbx_concluido.UncheckedState.BorderColor = Color.FromArgb(127, 127, 127)
-            cbx_concluido.UncheckedState.BorderRadius = 2
-            cbx_concluido.UncheckedState.BorderThickness = 1
-            cbx_concluido.UncheckedState.FillColor = Color.FromArgb(239, 239, 239)
-
-            Dim btn_removerItem As New Guna2ImageButton() With {
-            .Name = "btn_removerItem",
-            .Location = New Point(176, 7),
-            .Size = New Size(25, 25),
-            .ImageSize = New Size(20, 20),
-            .BackColor = Color.Transparent,
-            .Cursor = Cursors.Hand,
-            .Parent = pnl_itemDoPedido,
-            .Image = Image.FromFile(Application.StartupPath & "\imgs\trash.png")
-        }
 
             pedidos.flp_pedidos.Controls.Add(pnl_pedido)
-            pnl_pedido.Controls.Add(flp_itensPedido)
-            count += 1
-        Loop
+                pnl_pedido.Controls.Add(pnl_info)
+                count += 1
+            Loop
     End Sub
 End Class

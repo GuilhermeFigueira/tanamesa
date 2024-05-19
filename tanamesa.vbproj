@@ -79,6 +79,18 @@
     <Import Include="System.Threading.Tasks" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="estoque.Designer.vb">
+      <DependentUpon>estoque.vb</DependentUpon>
+    </Compile>
+    <Compile Include="estoque.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="cadastrarEstoque.Designer.vb">
+      <DependentUpon>cadastrarEstoque.vb</DependentUpon>
+    </Compile>
+    <Compile Include="cadastrarEstoque.vb">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="login.vb">
       <SubType>Form</SubType>
     </Compile>
@@ -146,6 +158,12 @@
     </Compile>
   </ItemGroup>
   <ItemGroup>
+    <EmbeddedResource Include="estoque.resx">
+      <DependentUpon>estoque.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="cadastrarEstoque.resx">
+      <DependentUpon>cadastrarEstoque.vb</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="login.resx">
       <DependentUpon>login.vb</DependentUpon>
     </EmbeddedResource>

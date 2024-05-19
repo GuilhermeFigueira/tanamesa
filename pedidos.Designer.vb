@@ -72,12 +72,13 @@ Partial Class pedidos
         Me.Guna2CheckBox5 = New Guna.UI2.WinForms.Guna2CheckBox()
         Me.Guna2ImageButton5 = New Guna.UI2.WinForms.Guna2ImageButton()
         Me.Guna2HtmlLabel13 = New Guna.UI2.WinForms.Guna2HtmlLabel()
-        Me.btn_entregar = New Guna.UI2.WinForms.Guna2Button()
         Me.Guna2Panel7 = New Guna.UI2.WinForms.Guna2Panel()
         Me.Guna2HtmlLabel18 = New Guna.UI2.WinForms.Guna2HtmlLabel()
         Me.Guna2HtmlLabel17 = New Guna.UI2.WinForms.Guna2HtmlLabel()
         Me.btn_1 = New Guna.UI2.WinForms.Guna2ImageButton()
         Me.Guna2HtmlLabel16 = New Guna.UI2.WinForms.Guna2HtmlLabel()
+        Me.Guna2Panel13 = New Guna.UI2.WinForms.Guna2Panel()
+        Me.btn_entregar = New Guna.UI2.WinForms.Guna2Button()
         Me.Guna2HtmlLabel1 = New Guna.UI2.WinForms.Guna2HtmlLabel()
         Me.cmb_progs = New Guna.UI2.WinForms.Guna2ComboBox()
         Me.Guna2Panel5 = New Guna.UI2.WinForms.Guna2Panel()
@@ -107,6 +108,7 @@ Partial Class pedidos
         Me.Guna2Panel11.SuspendLayout()
         Me.Guna2Panel12.SuspendLayout()
         Me.Guna2Panel7.SuspendLayout()
+        Me.Guna2Panel13.SuspendLayout()
         Me.Guna2Panel5.SuspendLayout()
         Me.flp_progressoPedidos.SuspendLayout()
         Me.Guna2Panel6.SuspendLayout()
@@ -476,19 +478,21 @@ Partial Class pedidos
         '
         'flp_pedidos
         '
+        Me.flp_pedidos.AutoScroll = True
         Me.flp_pedidos.Controls.Add(Me.Guna2Panel9)
         Me.flp_pedidos.Location = New System.Drawing.Point(3, 48)
         Me.flp_pedidos.Name = "flp_pedidos"
         Me.flp_pedidos.Padding = New System.Windows.Forms.Padding(16)
-        Me.flp_pedidos.Size = New System.Drawing.Size(925, 461)
+        Me.flp_pedidos.Size = New System.Drawing.Size(925, 374)
         Me.flp_pedidos.TabIndex = 13
+        Me.flp_pedidos.WrapContents = False
         '
         'Guna2Panel9
         '
         Me.Guna2Panel9.BackColor = System.Drawing.Color.Transparent
         Me.Guna2Panel9.Controls.Add(Me.FlowLayoutPanel3)
-        Me.Guna2Panel9.Controls.Add(Me.btn_entregar)
         Me.Guna2Panel9.Controls.Add(Me.Guna2Panel7)
+        Me.Guna2Panel9.Controls.Add(Me.Guna2Panel13)
         Me.Guna2Panel9.FillColor = System.Drawing.Color.White
         Me.Guna2Panel9.Location = New System.Drawing.Point(19, 19)
         Me.Guna2Panel9.Name = "Guna2Panel9"
@@ -496,8 +500,9 @@ Partial Class pedidos
         Me.Guna2Panel9.Radius = 6
         Me.Guna2Panel9.ShadowColor = System.Drawing.Color.FromArgb(CType(CType(200, Byte), Integer), CType(CType(200, Byte), Integer), CType(CType(200, Byte), Integer))
         Me.Guna2Panel9.ShadowShift = 2
-        Me.Guna2Panel9.Size = New System.Drawing.Size(273, 329)
+        Me.Guna2Panel9.Size = New System.Drawing.Size(273, 308)
         Me.Guna2Panel9.TabIndex = 0
+        Me.Guna2Panel9.Visible = False
         '
         'FlowLayoutPanel3
         '
@@ -513,7 +518,7 @@ Partial Class pedidos
         Me.FlowLayoutPanel3.Margin = New System.Windows.Forms.Padding(0)
         Me.FlowLayoutPanel3.Name = "FlowLayoutPanel3"
         Me.FlowLayoutPanel3.Padding = New System.Windows.Forms.Padding(8)
-        Me.FlowLayoutPanel3.Size = New System.Drawing.Size(241, 198)
+        Me.FlowLayoutPanel3.Size = New System.Drawing.Size(241, 165)
         Me.FlowLayoutPanel3.TabIndex = 24
         '
         'Guna2Panel14
@@ -816,27 +821,6 @@ Partial Class pedidos
         Me.Guna2HtmlLabel13.TabIndex = 12
         Me.Guna2HtmlLabel13.Text = "Nome do Prato"
         '
-        'btn_entregar
-        '
-        Me.btn_entregar.AutoRoundedCorners = True
-        Me.btn_entregar.BackColor = System.Drawing.Color.Transparent
-        Me.btn_entregar.BorderRadius = 17
-        Me.btn_entregar.Cursor = System.Windows.Forms.Cursors.Hand
-        Me.btn_entregar.DisabledState.BorderColor = System.Drawing.Color.DarkGray
-        Me.btn_entregar.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray
-        Me.btn_entregar.DisabledState.FillColor = System.Drawing.Color.FromArgb(CType(CType(169, Byte), Integer), CType(CType(169, Byte), Integer), CType(CType(169, Byte), Integer))
-        Me.btn_entregar.DisabledState.ForeColor = System.Drawing.Color.FromArgb(CType(CType(141, Byte), Integer), CType(CType(141, Byte), Integer), CType(CType(141, Byte), Integer))
-        Me.btn_entregar.Dock = System.Windows.Forms.DockStyle.Bottom
-        Me.btn_entregar.FillColor = System.Drawing.Color.FromArgb(CType(CType(46, Byte), Integer), CType(CType(31, Byte), Integer), CType(CType(39, Byte), Integer))
-        Me.btn_entregar.Font = New System.Drawing.Font("Libre Caslon Display", 15.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.btn_entregar.ForeColor = System.Drawing.Color.White
-        Me.btn_entregar.Location = New System.Drawing.Point(16, 276)
-        Me.btn_entregar.Margin = New System.Windows.Forms.Padding(0)
-        Me.btn_entregar.Name = "btn_entregar"
-        Me.btn_entregar.Size = New System.Drawing.Size(241, 37)
-        Me.btn_entregar.TabIndex = 9
-        Me.btn_entregar.Text = "Entregar pedido"
-        '
         'Guna2Panel7
         '
         Me.Guna2Panel7.Controls.Add(Me.Guna2HtmlLabel18)
@@ -894,12 +878,42 @@ Partial Class pedidos
             Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
         Me.Guna2HtmlLabel16.BackColor = System.Drawing.Color.Transparent
         Me.Guna2HtmlLabel16.Font = New System.Drawing.Font("Julius Sans One", 25.0!)
-        Me.Guna2HtmlLabel16.Location = New System.Drawing.Point(138, 13)
+        Me.Guna2HtmlLabel16.Location = New System.Drawing.Point(144, 13)
         Me.Guna2HtmlLabel16.Name = "Guna2HtmlLabel16"
         Me.Guna2HtmlLabel16.Size = New System.Drawing.Size(54, 38)
         Me.Guna2HtmlLabel16.TabIndex = 5
         Me.Guna2HtmlLabel16.Text = "#12"
         Me.Guna2HtmlLabel16.TextAlignment = System.Drawing.ContentAlignment.TopCenter
+        '
+        'Guna2Panel13
+        '
+        Me.Guna2Panel13.Controls.Add(Me.btn_entregar)
+        Me.Guna2Panel13.Dock = System.Windows.Forms.DockStyle.Bottom
+        Me.Guna2Panel13.Location = New System.Drawing.Point(16, 243)
+        Me.Guna2Panel13.Name = "Guna2Panel13"
+        Me.Guna2Panel13.Size = New System.Drawing.Size(241, 49)
+        Me.Guna2Panel13.TabIndex = 26
+        '
+        'btn_entregar
+        '
+        Me.btn_entregar.AutoRoundedCorners = True
+        Me.btn_entregar.BackColor = System.Drawing.Color.Transparent
+        Me.btn_entregar.BorderRadius = 17
+        Me.btn_entregar.Cursor = System.Windows.Forms.Cursors.Hand
+        Me.btn_entregar.DisabledState.BorderColor = System.Drawing.Color.DarkGray
+        Me.btn_entregar.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray
+        Me.btn_entregar.DisabledState.FillColor = System.Drawing.Color.FromArgb(CType(CType(169, Byte), Integer), CType(CType(169, Byte), Integer), CType(CType(169, Byte), Integer))
+        Me.btn_entregar.DisabledState.ForeColor = System.Drawing.Color.FromArgb(CType(CType(141, Byte), Integer), CType(CType(141, Byte), Integer), CType(CType(141, Byte), Integer))
+        Me.btn_entregar.Dock = System.Windows.Forms.DockStyle.Bottom
+        Me.btn_entregar.FillColor = System.Drawing.Color.FromArgb(CType(CType(46, Byte), Integer), CType(CType(31, Byte), Integer), CType(CType(39, Byte), Integer))
+        Me.btn_entregar.Font = New System.Drawing.Font("Libre Caslon Display", 15.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.btn_entregar.ForeColor = System.Drawing.Color.White
+        Me.btn_entregar.Location = New System.Drawing.Point(0, 12)
+        Me.btn_entregar.Margin = New System.Windows.Forms.Padding(12)
+        Me.btn_entregar.Name = "btn_entregar"
+        Me.btn_entregar.Size = New System.Drawing.Size(241, 37)
+        Me.btn_entregar.TabIndex = 9
+        Me.btn_entregar.Text = "Entregar pedido"
         '
         'Guna2HtmlLabel1
         '
@@ -1065,6 +1079,7 @@ Partial Class pedidos
         Me.Guna2Panel12.PerformLayout()
         Me.Guna2Panel7.ResumeLayout(False)
         Me.Guna2Panel7.PerformLayout()
+        Me.Guna2Panel13.ResumeLayout(False)
         Me.Guna2Panel5.ResumeLayout(False)
         Me.Guna2Panel5.PerformLayout()
         Me.flp_progressoPedidos.ResumeLayout(False)
@@ -1139,4 +1154,5 @@ Partial Class pedidos
     Friend WithEvents Guna2ImageButton5 As Guna.UI2.WinForms.Guna2ImageButton
     Friend WithEvents Guna2HtmlLabel13 As Guna.UI2.WinForms.Guna2HtmlLabel
     Friend WithEvents Guna2Panel7 As Guna.UI2.WinForms.Guna2Panel
+    Friend WithEvents Guna2Panel13 As Guna.UI2.WinForms.Guna2Panel
 End Class

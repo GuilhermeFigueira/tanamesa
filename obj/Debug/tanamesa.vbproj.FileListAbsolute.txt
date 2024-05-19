@@ -68,7 +68,6 @@ C:\Users\guibf\www\fatec\tanamesa\obj\Debug\tanamesa.cardapio.resources
 C:\Users\guibf\www\fatec\tanamesa\obj\Debug\tanamesa.Resources.resources
 C:\Users\guibf\www\fatec\tanamesa\obj\Debug\tanamesa.infoUsuario.resources
 C:\Users\guibf\www\fatec\tanamesa\obj\Debug\tanamesa.mesas.resources
-C:\Users\guibf\www\fatec\tanamesa\obj\Debug\tanamesa.sair.resources
 C:\Users\guibf\www\fatec\tanamesa\obj\Debug\tanamesa.vbproj.GenerateResource.cache
 C:\Users\guibf\www\fatec\tanamesa\obj\Debug\tanamesa.vbproj.CoreCompileInputs.cache
 C:\Users\guibf\www\fatec\tanamesa\obj\Debug\tanamesa.vbproj.Up2Date
@@ -102,3 +101,5 @@ F:\FATEC\Tanamesa\tanamesa\obj\Debug\tanamesa.exe
 F:\FATEC\Tanamesa\tanamesa\obj\Debug\tanamesa.xml
 F:\FATEC\Tanamesa\tanamesa\obj\Debug\tanamesa.pdb
 F:\FATEC\Tanamesa\tanamesa\obj\Debug\tanamesa.telaConfirmacao.resources
+C:\Users\guibf\www\fatec\tanamesa\obj\Debug\tanamesa.telaConfirmacao.resources
+C:\Users\guibf\www\fatec\tanamesa\obj\Debug\tanamesa.estoque.resources
