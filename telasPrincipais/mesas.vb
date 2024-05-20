@@ -64,7 +64,8 @@ Public Class criarMesas
                 .BackColor = Control.DefaultBackColor,
                 .CustomBorderColor = Color.FromArgb(48, 107, 52),
                 .CustomBorderThickness = New Padding(15, 0, 0, 0),
-                .BorderRadius = 8
+                .BorderRadius = 8,
+                .Cursor = Cursors.Hand
             }
             pnl_mesa.ShadowDecoration.BorderRadius = 8
             pnl_mesa.ShadowDecoration.Enabled = True

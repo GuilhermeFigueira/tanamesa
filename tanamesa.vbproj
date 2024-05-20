@@ -79,34 +79,34 @@
     <Import Include="System.Threading.Tasks" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="cadastrarCardápio.Designer.vb">
+    <Compile Include="telasSecundarias\cadastrarCardápio.Designer.vb">
       <DependentUpon>cadastrarCardápio.vb</DependentUpon>
     </Compile>
-    <Compile Include="cadastrarCardápio.vb">
+    <Compile Include="telasSecundarias\cadastrarCardápio.vb">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="estoque.Designer.vb">
+    <Compile Include="telasPrincipais\estoque.Designer.vb">
       <DependentUpon>estoque.vb</DependentUpon>
     </Compile>
-    <Compile Include="estoque.vb">
+    <Compile Include="telasPrincipais\estoque.vb">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="cadastrarEstoque.Designer.vb">
+    <Compile Include="telasSecundarias\cadastrarEstoque.Designer.vb">
       <DependentUpon>cadastrarEstoque.vb</DependentUpon>
     </Compile>
-    <Compile Include="cadastrarEstoque.vb">
+    <Compile Include="telasSecundarias\cadastrarEstoque.vb">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="cadastrarFuncionário.Designer.vb">
+    <Compile Include="telasSecundarias\cadastrarFuncionário.Designer.vb">
       <DependentUpon>cadastrarFuncionário.vb</DependentUpon>
     </Compile>
-    <Compile Include="cadastrarFuncionário.vb">
+    <Compile Include="telasSecundarias\cadastrarFuncionário.vb">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="login.vb">
+    <Compile Include="telasSecundarias\login.vb">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="login.Designer.vb">
+    <Compile Include="telasSecundarias\login.Designer.vb">
       <DependentUpon>login.vb</DependentUpon>
       <SubType>Form</SubType>
     </Compile>
@@ -116,16 +116,16 @@
     <Compile Include="formDefault.vb">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="deslogar.Designer.vb">
+    <Compile Include="telasSecundarias\deslogar.Designer.vb">
       <DependentUpon>deslogar.vb</DependentUpon>
     </Compile>
-    <Compile Include="deslogar.vb">
+    <Compile Include="telasSecundarias\deslogar.vb">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="cardapio.Designer.vb">
+    <Compile Include="telasPrincipais\cardapio.Designer.vb">
       <DependentUpon>cardapio.vb</DependentUpon>
     </Compile>
-    <Compile Include="cardapio.vb">
+    <Compile Include="telasPrincipais\cardapio.vb">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="Module1.vb" />
@@ -145,66 +145,66 @@
       <DependentUpon>Settings.settings</DependentUpon>
       <DesignTimeSharedInput>True</DesignTimeSharedInput>
     </Compile>
-    <Compile Include="infoUsuario.Designer.vb">
+    <Compile Include="telasSecundarias\infoUsuario.Designer.vb">
       <DependentUpon>infoUsuario.vb</DependentUpon>
     </Compile>
-    <Compile Include="infoUsuario.vb">
+    <Compile Include="telasSecundarias\infoUsuario.vb">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="mesas.Designer.vb">
+    <Compile Include="telasPrincipais\mesas.Designer.vb">
       <DependentUpon>mesas.vb</DependentUpon>
     </Compile>
-    <Compile Include="mesas.vb">
+    <Compile Include="telasPrincipais\mesas.vb">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="pedidos.Designer.vb">
+    <Compile Include="telasPrincipais\pedidos.Designer.vb">
       <DependentUpon>pedidos.vb</DependentUpon>
     </Compile>
-    <Compile Include="pedidos.vb">
+    <Compile Include="telasPrincipais\pedidos.vb">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="telaConfirmacao.Designer.vb">
+    <Compile Include="telasSecundarias\telaConfirmacao.Designer.vb">
       <DependentUpon>telaConfirmacao.vb</DependentUpon>
     </Compile>
-    <Compile Include="telaConfirmacao.vb">
+    <Compile Include="telasSecundarias\telaConfirmacao.vb">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="telaErro.Designer.vb">
+    <Compile Include="telasSecundarias\telaErro.Designer.vb">
       <DependentUpon>telaErro.vb</DependentUpon>
     </Compile>
-    <Compile Include="telaErro.vb">
+    <Compile Include="telasSecundarias\telaErro.vb">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="gerencia.Designer.vb">
+    <Compile Include="telasPrincipais\gerencia.Designer.vb">
       <DependentUpon>gerencia.vb</DependentUpon>
     </Compile>
-    <Compile Include="gerencia.vb">
+    <Compile Include="telasPrincipais\gerencia.vb">
       <SubType>Form</SubType>
     </Compile>
   </ItemGroup>
   <ItemGroup>
-    <EmbeddedResource Include="cadastrarCardápio.resx">
+    <EmbeddedResource Include="telasSecundarias\cadastrarCardápio.resx">
       <DependentUpon>cadastrarCardápio.vb</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="estoque.resx">
+    <EmbeddedResource Include="telasPrincipais\estoque.resx">
       <DependentUpon>estoque.vb</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="cadastrarEstoque.resx">
+    <EmbeddedResource Include="telasSecundarias\cadastrarEstoque.resx">
       <DependentUpon>cadastrarEstoque.vb</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="cadastrarFuncionário.resx">
+    <EmbeddedResource Include="telasSecundarias\cadastrarFuncionário.resx">
       <DependentUpon>cadastrarFuncionário.vb</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="login.resx">
+    <EmbeddedResource Include="telasSecundarias\login.resx">
       <DependentUpon>login.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="formDefault.resx">
       <DependentUpon>formDefault.vb</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="deslogar.resx">
+    <EmbeddedResource Include="telasSecundarias\deslogar.resx">
       <DependentUpon>deslogar.vb</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="cardapio.resx">
+    <EmbeddedResource Include="telasPrincipais\cardapio.resx">
       <DependentUpon>cardapio.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="My Project\Resources.resx">
@@ -213,22 +213,22 @@
       <CustomToolNamespace>My.Resources</CustomToolNamespace>
       <SubType>Designer</SubType>
     </EmbeddedResource>
-    <EmbeddedResource Include="infoUsuario.resx">
+    <EmbeddedResource Include="telasSecundarias\infoUsuario.resx">
       <DependentUpon>infoUsuario.vb</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="mesas.resx">
+    <EmbeddedResource Include="telasPrincipais\mesas.resx">
       <DependentUpon>mesas.vb</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="pedidos.resx">
+    <EmbeddedResource Include="telasPrincipais\pedidos.resx">
       <DependentUpon>pedidos.vb</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="telaConfirmacao.resx">
+    <EmbeddedResource Include="telasSecundarias\telaConfirmacao.resx">
       <DependentUpon>telaConfirmacao.vb</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="telaErro.resx">
+    <EmbeddedResource Include="telasSecundarias\telaErro.resx">
       <DependentUpon>telaErro.vb</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="gerencia.resx">
+    <EmbeddedResource Include="telasPrincipais\gerencia.resx">
       <DependentUpon>gerencia.vb</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
@@ -245,5 +245,6 @@
     <None Include="App.config" />
     <None Include="packages.config" />
   </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.VisualBasic.targets" />
 </Project>
