@@ -48,6 +48,14 @@ Public Class cardapio
     Private Sub btn_info_Click(sender As Object, e As EventArgs) Handles btn_info.Click
         infoUsuario.Show()
     End Sub
+
+    Private Sub Guna2Panel5_Paint(sender As Object, e As PaintEventArgs) Handles Guna2Panel5.Paint
+
+    End Sub
+
+    Private Sub Guna2ImageButton1_Click(sender As Object, e As EventArgs) Handles Guna2ImageButton1.Click
+
+    End Sub
 End Class
 Public Class criarCardapio
     Public Sub carregarCardapio()
@@ -124,6 +132,19 @@ Public Class criarCardapio
                 .Cursor = Cursors.Hand,
                 .Parent = pnl_prato
             }
+
+            Dim btn_editar As New Guna2ImageButton() With {
+                .Name = "btn_editar",
+                .Location = New Point(226, 137),
+                .Size = New Size(36, 38),
+                .ImageSize = New Size(26, 26),
+                .BackColor = Color.Transparent,
+                .Cursor = Cursors.Hand,
+                .Parent = pnl_prato,
+                .Image = Image.FromFile(Application.StartupPath & "\imgs\pencil-line.png")
+            }
+            btn_editar.HoverState.ImageSize = New Size(24, 24)
+            btn_editar.PressedState.ImageSize = New Size(28, 28)
             AddHandler btn_pedir.Click, AddressOf adicionarPratoAoPedido
             cardapio.flp_itemsCard.Controls.Add(pnl_prato)
             count += 1

@@ -1,7 +1,7 @@
 ﻿Imports System.Runtime.CompilerServices
 Imports Guna.UI2.WinForms
 
-Public Class cadastrarEstoque
+Public Class cadastrarCardápio
     Private Sub btn_fechar_Click(sender As Object, e As EventArgs) Handles btn_fechar.Click
         Close()
     End Sub

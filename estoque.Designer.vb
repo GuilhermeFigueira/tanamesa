@@ -23,10 +23,10 @@ Partial Class estoque
     <System.Diagnostics.DebuggerStepThrough()>
     Private Sub InitializeComponent()
         Me.components = New System.ComponentModel.Container()
-        Dim DataGridViewCellStyle5 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
-        Dim DataGridViewCellStyle6 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
-        Dim DataGridViewCellStyle7 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
-        Dim DataGridViewCellStyle8 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
+        Dim DataGridViewCellStyle1 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
+        Dim DataGridViewCellStyle2 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
+        Dim DataGridViewCellStyle3 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
+        Dim DataGridViewCellStyle4 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
         Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(estoque))
         Me.Guna2BorderlessForm1 = New Guna.UI2.WinForms.Guna2BorderlessForm(Me.components)
         Me.btn_minimizar = New Guna.UI2.WinForms.Guna2ImageButton()
@@ -54,7 +54,7 @@ Partial Class estoque
         Me.pnl_info = New Guna.UI2.WinForms.Guna2ShadowPanel()
         Me.Guna2DataGridView1 = New Guna.UI2.WinForms.Guna2DataGridView()
         Me.Guna2Panel1 = New Guna.UI2.WinForms.Guna2Panel()
-        Me.btn_ = New Guna.UI2.WinForms.Guna2Button()
+        Me.btn_addProd = New Guna.UI2.WinForms.Guna2Button()
         Me.Guna2HtmlLabel8 = New Guna.UI2.WinForms.Guna2HtmlLabel()
         Me.Guna2TextBox1 = New Guna.UI2.WinForms.Guna2TextBox()
         Me.Guna2DragControl1 = New Guna.UI2.WinForms.Guna2DragControl(Me.components)
@@ -255,7 +255,8 @@ Partial Class estoque
         '
         'btn_estoque
         '
-        Me.btn_estoque.BackColor = System.Drawing.Color.Transparent
+        Me.btn_estoque.BackColor = System.Drawing.Color.WhiteSmoke
+        Me.btn_estoque.BorderThickness = 1
         Me.btn_estoque.Cursor = System.Windows.Forms.Cursors.Hand
         Me.btn_estoque.DisabledState.BorderColor = System.Drawing.Color.DarkGray
         Me.btn_estoque.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray
@@ -263,13 +264,13 @@ Partial Class estoque
         Me.btn_estoque.DisabledState.ForeColor = System.Drawing.Color.FromArgb(CType(CType(141, Byte), Integer), CType(CType(141, Byte), Integer), CType(CType(141, Byte), Integer))
         Me.btn_estoque.FillColor = System.Drawing.Color.Transparent
         Me.btn_estoque.Font = New System.Drawing.Font("Libre Caslon Display", 24.25!)
-        Me.btn_estoque.ForeColor = System.Drawing.Color.Black
+        Me.btn_estoque.ForeColor = System.Drawing.Color.FromArgb(CType(CType(133, Byte), Integer), CType(CType(77, Byte), Integer), CType(CType(39, Byte), Integer))
         Me.btn_estoque.Image = CType(resources.GetObject("btn_estoque.Image"), System.Drawing.Image)
         Me.btn_estoque.ImageAlign = System.Windows.Forms.HorizontalAlignment.Left
         Me.btn_estoque.ImageSize = New System.Drawing.Size(25, 25)
-        Me.btn_estoque.Location = New System.Drawing.Point(3, 416)
+        Me.btn_estoque.Location = New System.Drawing.Point(0, 416)
         Me.btn_estoque.Name = "btn_estoque"
-        Me.btn_estoque.Size = New System.Drawing.Size(217, 54)
+        Me.btn_estoque.Size = New System.Drawing.Size(220, 54)
         Me.btn_estoque.TabIndex = 32
         Me.btn_estoque.Text = "Estoque"
         '
@@ -335,8 +336,7 @@ Partial Class estoque
         '
         'btn_cardapio
         '
-        Me.btn_cardapio.BackColor = System.Drawing.Color.White
-        Me.btn_cardapio.BorderThickness = 1
+        Me.btn_cardapio.BackColor = System.Drawing.Color.Transparent
         Me.btn_cardapio.Cursor = System.Windows.Forms.Cursors.Hand
         Me.btn_cardapio.DisabledState.BorderColor = System.Drawing.Color.DarkGray
         Me.btn_cardapio.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray
@@ -344,7 +344,7 @@ Partial Class estoque
         Me.btn_cardapio.DisabledState.ForeColor = System.Drawing.Color.FromArgb(CType(CType(141, Byte), Integer), CType(CType(141, Byte), Integer), CType(CType(141, Byte), Integer))
         Me.btn_cardapio.FillColor = System.Drawing.Color.Transparent
         Me.btn_cardapio.Font = New System.Drawing.Font("Libre Caslon Display", 24.25!)
-        Me.btn_cardapio.ForeColor = System.Drawing.Color.FromArgb(CType(CType(133, Byte), Integer), CType(CType(77, Byte), Integer), CType(CType(39, Byte), Integer))
+        Me.btn_cardapio.ForeColor = System.Drawing.Color.Black
         Me.btn_cardapio.Image = CType(resources.GetObject("btn_cardapio.Image"), System.Drawing.Image)
         Me.btn_cardapio.ImageAlign = System.Windows.Forms.HorizontalAlignment.Left
         Me.btn_cardapio.ImageSize = New System.Drawing.Size(25, 25)
@@ -447,44 +447,43 @@ Partial Class estoque
         '
         Me.Guna2DataGridView1.AllowUserToOrderColumns = True
         Me.Guna2DataGridView1.AllowUserToResizeRows = False
-        DataGridViewCellStyle5.BackColor = System.Drawing.Color.White
-        DataGridViewCellStyle5.Font = New System.Drawing.Font("Libre Caslon Display", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        DataGridViewCellStyle5.ForeColor = System.Drawing.SystemColors.ControlText
-        DataGridViewCellStyle5.SelectionBackColor = System.Drawing.Color.FromArgb(CType(CType(231, Byte), Integer), CType(CType(229, Byte), Integer), CType(CType(255, Byte), Integer))
-        DataGridViewCellStyle5.SelectionForeColor = System.Drawing.Color.FromArgb(CType(CType(71, Byte), Integer), CType(CType(69, Byte), Integer), CType(CType(94, Byte), Integer))
-        Me.Guna2DataGridView1.AlternatingRowsDefaultCellStyle = DataGridViewCellStyle5
-        Me.Guna2DataGridView1.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.None
-        DataGridViewCellStyle6.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft
-        DataGridViewCellStyle6.BackColor = System.Drawing.Color.FromArgb(CType(CType(244, Byte), Integer), CType(CType(187, Byte), Integer), CType(CType(108, Byte), Integer))
-        DataGridViewCellStyle6.Font = New System.Drawing.Font("Julius Sans One", 14.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        DataGridViewCellStyle6.ForeColor = System.Drawing.Color.Black
-        DataGridViewCellStyle6.SelectionBackColor = System.Drawing.Color.FromArgb(CType(CType(244, Byte), Integer), CType(CType(187, Byte), Integer), CType(CType(108, Byte), Integer))
-        DataGridViewCellStyle6.SelectionForeColor = System.Drawing.SystemColors.HighlightText
-        DataGridViewCellStyle6.WrapMode = System.Windows.Forms.DataGridViewTriState.[True]
-        Me.Guna2DataGridView1.ColumnHeadersDefaultCellStyle = DataGridViewCellStyle6
+        DataGridViewCellStyle1.BackColor = System.Drawing.Color.White
+        DataGridViewCellStyle1.Font = New System.Drawing.Font("Libre Caslon Display", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        DataGridViewCellStyle1.ForeColor = System.Drawing.SystemColors.ControlText
+        DataGridViewCellStyle1.SelectionBackColor = System.Drawing.Color.FromArgb(CType(CType(231, Byte), Integer), CType(CType(229, Byte), Integer), CType(CType(255, Byte), Integer))
+        DataGridViewCellStyle1.SelectionForeColor = System.Drawing.Color.FromArgb(CType(CType(71, Byte), Integer), CType(CType(69, Byte), Integer), CType(CType(94, Byte), Integer))
+        Me.Guna2DataGridView1.AlternatingRowsDefaultCellStyle = DataGridViewCellStyle1
+        DataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft
+        DataGridViewCellStyle2.BackColor = System.Drawing.Color.FromArgb(CType(CType(244, Byte), Integer), CType(CType(187, Byte), Integer), CType(CType(108, Byte), Integer))
+        DataGridViewCellStyle2.Font = New System.Drawing.Font("Julius Sans One", 14.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        DataGridViewCellStyle2.ForeColor = System.Drawing.Color.Black
+        DataGridViewCellStyle2.SelectionBackColor = System.Drawing.Color.FromArgb(CType(CType(244, Byte), Integer), CType(CType(187, Byte), Integer), CType(CType(108, Byte), Integer))
+        DataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText
+        DataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.[True]
+        Me.Guna2DataGridView1.ColumnHeadersDefaultCellStyle = DataGridViewCellStyle2
         Me.Guna2DataGridView1.ColumnHeadersHeight = 60
         Me.Guna2DataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.EnableResizing
         Me.Guna2DataGridView1.Columns.AddRange(New System.Windows.Forms.DataGridViewColumn() {Me.fotoProduto, Me.produto, Me.categoria, Me.qtdEmEstoque, Me.vlrPagoUnidade, Me.dataCompra, Me.dataValidade, Me.editar, Me.excluir})
-        DataGridViewCellStyle7.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft
-        DataGridViewCellStyle7.BackColor = System.Drawing.Color.White
-        DataGridViewCellStyle7.Font = New System.Drawing.Font("Libre Caslon Display", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        DataGridViewCellStyle7.ForeColor = System.Drawing.Color.FromArgb(CType(CType(71, Byte), Integer), CType(CType(69, Byte), Integer), CType(CType(94, Byte), Integer))
-        DataGridViewCellStyle7.SelectionBackColor = System.Drawing.Color.FromArgb(CType(CType(231, Byte), Integer), CType(CType(229, Byte), Integer), CType(CType(255, Byte), Integer))
-        DataGridViewCellStyle7.SelectionForeColor = System.Drawing.Color.FromArgb(CType(CType(71, Byte), Integer), CType(CType(69, Byte), Integer), CType(CType(94, Byte), Integer))
-        DataGridViewCellStyle7.WrapMode = System.Windows.Forms.DataGridViewTriState.[False]
-        Me.Guna2DataGridView1.DefaultCellStyle = DataGridViewCellStyle7
+        DataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft
+        DataGridViewCellStyle3.BackColor = System.Drawing.Color.White
+        DataGridViewCellStyle3.Font = New System.Drawing.Font("Libre Caslon Display", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        DataGridViewCellStyle3.ForeColor = System.Drawing.Color.FromArgb(CType(CType(71, Byte), Integer), CType(CType(69, Byte), Integer), CType(CType(94, Byte), Integer))
+        DataGridViewCellStyle3.SelectionBackColor = System.Drawing.Color.FromArgb(CType(CType(231, Byte), Integer), CType(CType(229, Byte), Integer), CType(CType(255, Byte), Integer))
+        DataGridViewCellStyle3.SelectionForeColor = System.Drawing.Color.FromArgb(CType(CType(71, Byte), Integer), CType(CType(69, Byte), Integer), CType(CType(94, Byte), Integer))
+        DataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.[False]
+        Me.Guna2DataGridView1.DefaultCellStyle = DataGridViewCellStyle3
         Me.Guna2DataGridView1.GridColor = System.Drawing.Color.FromArgb(CType(CType(231, Byte), Integer), CType(CType(229, Byte), Integer), CType(CType(255, Byte), Integer))
         Me.Guna2DataGridView1.Location = New System.Drawing.Point(16, 109)
         Me.Guna2DataGridView1.Name = "Guna2DataGridView1"
         Me.Guna2DataGridView1.RowHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None
-        DataGridViewCellStyle8.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft
-        DataGridViewCellStyle8.BackColor = System.Drawing.Color.White
-        DataGridViewCellStyle8.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        DataGridViewCellStyle8.ForeColor = System.Drawing.SystemColors.WindowText
-        DataGridViewCellStyle8.SelectionBackColor = System.Drawing.Color.White
-        DataGridViewCellStyle8.SelectionForeColor = System.Drawing.SystemColors.HighlightText
-        DataGridViewCellStyle8.WrapMode = System.Windows.Forms.DataGridViewTriState.[True]
-        Me.Guna2DataGridView1.RowHeadersDefaultCellStyle = DataGridViewCellStyle8
+        DataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft
+        DataGridViewCellStyle4.BackColor = System.Drawing.Color.White
+        DataGridViewCellStyle4.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        DataGridViewCellStyle4.ForeColor = System.Drawing.SystemColors.WindowText
+        DataGridViewCellStyle4.SelectionBackColor = System.Drawing.Color.White
+        DataGridViewCellStyle4.SelectionForeColor = System.Drawing.SystemColors.HighlightText
+        DataGridViewCellStyle4.WrapMode = System.Windows.Forms.DataGridViewTriState.[True]
+        Me.Guna2DataGridView1.RowHeadersDefaultCellStyle = DataGridViewCellStyle4
         Me.Guna2DataGridView1.RowHeadersVisible = False
         Me.Guna2DataGridView1.RowTemplate.Height = 30
         Me.Guna2DataGridView1.Size = New System.Drawing.Size(916, 560)
@@ -513,7 +512,7 @@ Partial Class estoque
         '
         'Guna2Panel1
         '
-        Me.Guna2Panel1.Controls.Add(Me.btn_)
+        Me.Guna2Panel1.Controls.Add(Me.btn_addProd)
         Me.Guna2Panel1.Controls.Add(Me.Guna2HtmlLabel8)
         Me.Guna2Panel1.Controls.Add(Me.Guna2TextBox1)
         Me.Guna2Panel1.Dock = System.Windows.Forms.DockStyle.Top
@@ -522,26 +521,26 @@ Partial Class estoque
         Me.Guna2Panel1.Size = New System.Drawing.Size(916, 88)
         Me.Guna2Panel1.TabIndex = 35
         '
-        'btn_
+        'btn_addProd
         '
-        Me.btn_.AutoRoundedCorners = True
-        Me.btn_.BackColor = System.Drawing.Color.Transparent
-        Me.btn_.BorderRadius = 22
-        Me.btn_.Cursor = System.Windows.Forms.Cursors.Hand
-        Me.btn_.DisabledState.BorderColor = System.Drawing.Color.DarkGray
-        Me.btn_.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray
-        Me.btn_.DisabledState.FillColor = System.Drawing.Color.FromArgb(CType(CType(169, Byte), Integer), CType(CType(169, Byte), Integer), CType(CType(169, Byte), Integer))
-        Me.btn_.DisabledState.ForeColor = System.Drawing.Color.FromArgb(CType(CType(141, Byte), Integer), CType(CType(141, Byte), Integer), CType(CType(141, Byte), Integer))
-        Me.btn_.FillColor = System.Drawing.Color.FromArgb(CType(CType(46, Byte), Integer), CType(CType(31, Byte), Integer), CType(CType(39, Byte), Integer))
-        Me.btn_.Font = New System.Drawing.Font("Libre Caslon Display", 15.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.btn_.ForeColor = System.Drawing.Color.White
-        Me.btn_.Image = CType(resources.GetObject("btn_.Image"), System.Drawing.Image)
-        Me.btn_.ImageSize = New System.Drawing.Size(28, 28)
-        Me.btn_.Location = New System.Drawing.Point(680, 20)
-        Me.btn_.Name = "btn_"
-        Me.btn_.Size = New System.Drawing.Size(219, 47)
-        Me.btn_.TabIndex = 35
-        Me.btn_.Text = "Adicionar Produto"
+        Me.btn_addProd.AutoRoundedCorners = True
+        Me.btn_addProd.BackColor = System.Drawing.Color.Transparent
+        Me.btn_addProd.BorderRadius = 22
+        Me.btn_addProd.Cursor = System.Windows.Forms.Cursors.Hand
+        Me.btn_addProd.DisabledState.BorderColor = System.Drawing.Color.DarkGray
+        Me.btn_addProd.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray
+        Me.btn_addProd.DisabledState.FillColor = System.Drawing.Color.FromArgb(CType(CType(169, Byte), Integer), CType(CType(169, Byte), Integer), CType(CType(169, Byte), Integer))
+        Me.btn_addProd.DisabledState.ForeColor = System.Drawing.Color.FromArgb(CType(CType(141, Byte), Integer), CType(CType(141, Byte), Integer), CType(CType(141, Byte), Integer))
+        Me.btn_addProd.FillColor = System.Drawing.Color.FromArgb(CType(CType(46, Byte), Integer), CType(CType(31, Byte), Integer), CType(CType(39, Byte), Integer))
+        Me.btn_addProd.Font = New System.Drawing.Font("Libre Caslon Display", 15.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.btn_addProd.ForeColor = System.Drawing.Color.White
+        Me.btn_addProd.Image = CType(resources.GetObject("btn_addProd.Image"), System.Drawing.Image)
+        Me.btn_addProd.ImageSize = New System.Drawing.Size(28, 28)
+        Me.btn_addProd.Location = New System.Drawing.Point(680, 20)
+        Me.btn_addProd.Name = "btn_addProd"
+        Me.btn_addProd.Size = New System.Drawing.Size(219, 47)
+        Me.btn_addProd.TabIndex = 35
+        Me.btn_addProd.Text = "Adicionar Produto"
         '
         'Guna2HtmlLabel8
         '
@@ -799,7 +798,7 @@ Partial Class estoque
     Friend WithEvents Guna2TextBox1 As Guna.UI2.WinForms.Guna2TextBox
     Friend WithEvents Guna2TextBox2 As Guna.UI2.WinForms.Guna2TextBox
     Friend WithEvents Guna2Panel1 As Guna.UI2.WinForms.Guna2Panel
-    Friend WithEvents btn_ As Guna.UI2.WinForms.Guna2Button
+    Friend WithEvents btn_addProd As Guna.UI2.WinForms.Guna2Button
     Friend WithEvents Guna2DataGridView1 As Guna.UI2.WinForms.Guna2DataGridView
     Friend WithEvents Guna2DataGridViewStyler1 As Guna.UI2.WinForms.Guna2DataGridViewStyler
     Friend WithEvents Guna2DataGridViewStyler2 As Guna.UI2.WinForms.Guna2DataGridViewStyler

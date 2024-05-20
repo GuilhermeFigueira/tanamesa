@@ -26,7 +26,7 @@ Public Class pedidos
     End Sub
 
     Private Sub btn_estoque_Click(sender As Object, e As EventArgs) Handles btn_estoque.Click
-        'estoque.Show()
+        estoque.Show()
         Me.Hide()
     End Sub
 

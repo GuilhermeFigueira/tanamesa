@@ -3,7 +3,6 @@ D:\FATEC\Tanamesa\tanamesa\obj\Debug\tanamesa.vbproj.SuggestedBindingRedirects.c
 D:\FATEC\Tanamesa\tanamesa\obj\Debug\tanamesa.login.resources
 D:\FATEC\Tanamesa\tanamesa\obj\Debug\tanamesa.form_base.resources
 D:\FATEC\Tanamesa\tanamesa\obj\Debug\tanamesa.Resources.resources
-D:\FATEC\Tanamesa\tanamesa\obj\Debug\tanamesa.sair.resources
 D:\FATEC\Tanamesa\tanamesa\obj\Debug\tanamesa.vbproj.GenerateResource.cache
 D:\FATEC\Tanamesa\tanamesa\obj\Debug\tanamesa.vbproj.CoreCompileInputs.cache
 D:\FATEC\Tanamesa\tanamesa\bin\Debug\tanamesa.exe.config
@@ -103,3 +102,7 @@ F:\FATEC\Tanamesa\tanamesa\obj\Debug\tanamesa.pdb
 F:\FATEC\Tanamesa\tanamesa\obj\Debug\tanamesa.telaConfirmacao.resources
 C:\Users\guibf\www\fatec\tanamesa\obj\Debug\tanamesa.telaConfirmacao.resources
 C:\Users\guibf\www\fatec\tanamesa\obj\Debug\tanamesa.estoque.resources
+D:\FATEC\Tanamesa\tanamesa\obj\Debug\tanamesa.estoque.resources
+D:\FATEC\Tanamesa\tanamesa\obj\Debug\tanamesa.cadastrarEstoque.resources
+D:\FATEC\Tanamesa\tanamesa\obj\Debug\tanamesa.telaConfirmacao.resources
+D:\FATEC\Tanamesa\tanamesa\obj\Debug\tanamesa.cadastrarCardápio.resources

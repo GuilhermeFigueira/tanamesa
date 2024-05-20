@@ -34,14 +34,14 @@ Partial Class infoUsuario
         Me.Guna2HtmlLabel1 = New Guna.UI2.WinForms.Guna2HtmlLabel()
         Me.txt_cpf = New Guna.UI2.WinForms.Guna2TextBox()
         Me.Guna2HtmlLabel3 = New Guna.UI2.WinForms.Guna2HtmlLabel()
-        Me.Guna2Panel1 = New Guna.UI2.WinForms.Guna2Panel()
+        Me.pnl_info = New Guna.UI2.WinForms.Guna2ShadowPanel()
         Me.txt_funcao = New Guna.UI2.WinForms.Guna2TextBox()
         Me.Guna2HtmlLabel4 = New Guna.UI2.WinForms.Guna2HtmlLabel()
         Me.pnl_titulo = New Guna.UI2.WinForms.Guna2Panel()
         Me.Guna2DragControl1 = New Guna.UI2.WinForms.Guna2DragControl(Me.components)
         Me.Guna2ContainerControl1.SuspendLayout()
         CType(Me.pbx_imgFuncionario, System.ComponentModel.ISupportInitialize).BeginInit()
-        Me.Guna2Panel1.SuspendLayout()
+        Me.pnl_info.SuspendLayout()
         Me.SuspendLayout()
         '
         'Guna2BorderlessForm1
@@ -189,21 +189,23 @@ Partial Class infoUsuario
         Me.Guna2HtmlLabel3.TabIndex = 9
         Me.Guna2HtmlLabel3.Text = "CPF"
         '
-        'Guna2Panel1
+        'pnl_info
         '
-        Me.Guna2Panel1.BackColor = System.Drawing.Color.Transparent
-        Me.Guna2Panel1.BorderRadius = 12
-        Me.Guna2Panel1.Controls.Add(Me.txt_funcao)
-        Me.Guna2Panel1.Controls.Add(Me.Guna2HtmlLabel4)
-        Me.Guna2Panel1.Controls.Add(Me.txt_cpf)
-        Me.Guna2Panel1.Controls.Add(Me.Guna2HtmlLabel3)
-        Me.Guna2Panel1.Controls.Add(Me.txt_nome)
-        Me.Guna2Panel1.Controls.Add(Me.Guna2HtmlLabel1)
-        Me.Guna2Panel1.FillColor = System.Drawing.Color.White
-        Me.Guna2Panel1.Location = New System.Drawing.Point(216, 78)
-        Me.Guna2Panel1.Name = "Guna2Panel1"
-        Me.Guna2Panel1.Size = New System.Drawing.Size(400, 182)
-        Me.Guna2Panel1.TabIndex = 11
+        Me.pnl_info.BackColor = System.Drawing.Color.Transparent
+        Me.pnl_info.Controls.Add(Me.txt_funcao)
+        Me.pnl_info.Controls.Add(Me.Guna2HtmlLabel4)
+        Me.pnl_info.Controls.Add(Me.txt_cpf)
+        Me.pnl_info.Controls.Add(Me.Guna2HtmlLabel3)
+        Me.pnl_info.Controls.Add(Me.txt_nome)
+        Me.pnl_info.Controls.Add(Me.Guna2HtmlLabel1)
+        Me.pnl_info.FillColor = System.Drawing.Color.White
+        Me.pnl_info.Location = New System.Drawing.Point(216, 78)
+        Me.pnl_info.Name = "pnl_info"
+        Me.pnl_info.Radius = 6
+        Me.pnl_info.ShadowColor = System.Drawing.Color.Black
+        Me.pnl_info.ShadowShift = 2
+        Me.pnl_info.Size = New System.Drawing.Size(400, 182)
+        Me.pnl_info.TabIndex = 11
         '
         'txt_funcao
         '
@@ -262,7 +264,7 @@ Partial Class infoUsuario
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.BackColor = System.Drawing.Color.FromArgb(CType(CType(239, Byte), Integer), CType(CType(239, Byte), Integer), CType(CType(239, Byte), Integer))
         Me.ClientSize = New System.Drawing.Size(629, 290)
-        Me.Controls.Add(Me.Guna2Panel1)
+        Me.Controls.Add(Me.pnl_info)
         Me.Controls.Add(Me.Guna2HtmlLabel2)
         Me.Controls.Add(Me.pbx_imgFuncionario)
         Me.Controls.Add(Me.Guna2ContainerControl1)
@@ -273,8 +275,8 @@ Partial Class infoUsuario
         Me.Text = "sair1"
         Me.Guna2ContainerControl1.ResumeLayout(False)
         CType(Me.pbx_imgFuncionario, System.ComponentModel.ISupportInitialize).EndInit()
-        Me.Guna2Panel1.ResumeLayout(False)
-        Me.Guna2Panel1.PerformLayout()
+        Me.pnl_info.ResumeLayout(False)
+        Me.pnl_info.PerformLayout()
         Me.ResumeLayout(False)
         Me.PerformLayout()
 
@@ -290,7 +292,7 @@ Partial Class infoUsuario
     Friend WithEvents Guna2HtmlLabel1 As Guna.UI2.WinForms.Guna2HtmlLabel
     Friend WithEvents txt_cpf As Guna.UI2.WinForms.Guna2TextBox
     Friend WithEvents Guna2HtmlLabel3 As Guna.UI2.WinForms.Guna2HtmlLabel
-    Friend WithEvents Guna2Panel1 As Guna.UI2.WinForms.Guna2Panel
+    Friend WithEvents pnl_info As Guna.UI2.WinForms.Guna2ShadowPanel
     Friend WithEvents txt_funcao As Guna.UI2.WinForms.Guna2TextBox
     Friend WithEvents Guna2HtmlLabel4 As Guna.UI2.WinForms.Guna2HtmlLabel
     Friend WithEvents pnl_titulo As Guna.UI2.WinForms.Guna2Panel

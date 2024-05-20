@@ -79,6 +79,12 @@
     <Import Include="System.Threading.Tasks" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="cadastrarCardápio.Designer.vb">
+      <DependentUpon>cadastrarCardápio.vb</DependentUpon>
+    </Compile>
+    <Compile Include="cadastrarCardápio.vb">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="estoque.Designer.vb">
       <DependentUpon>estoque.vb</DependentUpon>
     </Compile>
@@ -89,6 +95,12 @@
       <DependentUpon>cadastrarEstoque.vb</DependentUpon>
     </Compile>
     <Compile Include="cadastrarEstoque.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="cadastrarFuncionário.Designer.vb">
+      <DependentUpon>cadastrarFuncionário.vb</DependentUpon>
+    </Compile>
+    <Compile Include="cadastrarFuncionário.vb">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="login.vb">
@@ -116,6 +128,7 @@
     <Compile Include="cardapio.vb">
       <SubType>Form</SubType>
     </Compile>
+    <Compile Include="Module1.vb" />
     <Compile Include="My Project\AssemblyInfo.vb" />
     <Compile Include="My Project\Application.Designer.vb">
       <AutoGen>True</AutoGen>
@@ -158,11 +171,17 @@
     </Compile>
   </ItemGroup>
   <ItemGroup>
+    <EmbeddedResource Include="cadastrarCardápio.resx">
+      <DependentUpon>cadastrarCardápio.vb</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="estoque.resx">
       <DependentUpon>estoque.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="cadastrarEstoque.resx">
       <DependentUpon>cadastrarEstoque.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="cadastrarFuncionário.resx">
+      <DependentUpon>cadastrarFuncionário.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="login.resx">
       <DependentUpon>login.vb</DependentUpon>
