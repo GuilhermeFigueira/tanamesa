@@ -2,7 +2,6 @@
 Imports System.IO
 Imports System.Runtime.CompilerServices
 Imports System.Web.UI.Design
-
 Imports Guna.UI2.WinForms
 
 Public Class estoque
@@ -39,12 +38,11 @@ Public Class estoque
         infoUsuario.Show()
     End Sub
 
-    Private Sub btn__Click(sender As Object, e As EventArgs) Handles btn_addProd.Click
-        cadastrarEstoque.Show()
-    End Sub
-
     Private Sub btn_cardapio_Click(sender As Object, e As EventArgs) Handles btn_cardapio.Click
         cardapio.Show()
         Me.Hide()
+    End Sub
+    Private Sub estoque_Click(sender As Object, e As EventArgs) Handles Me.Click
+        cadastrarEstoque.Show()
     End Sub
 End Class
