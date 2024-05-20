@@ -32,14 +32,19 @@ Partial Class cadastrarCardápio
         Me.txt_nome = New Guna.UI2.WinForms.Guna2TextBox()
         Me.Guna2HtmlLabel1 = New Guna.UI2.WinForms.Guna2HtmlLabel()
         Me.pnl_nome = New Guna.UI2.WinForms.Guna2ShadowPanel()
+        Me.txt_descricao = New Guna.UI2.WinForms.Guna2TextBox()
+        Me.Guna2HtmlLabel2 = New Guna.UI2.WinForms.Guna2HtmlLabel()
         Me.pnl_titulo = New Guna.UI2.WinForms.Guna2Panel()
         Me.Guna2DragControl1 = New Guna.UI2.WinForms.Guna2DragControl(Me.components)
         Me.Guna2Panel2 = New Guna.UI2.WinForms.Guna2Panel()
+        Me.Guna2HtmlLabel3 = New Guna.UI2.WinForms.Guna2HtmlLabel()
         Me.btn_cadastrar = New Guna.UI2.WinForms.Guna2Button()
         Me.Guna2ShadowPanel1 = New Guna.UI2.WinForms.Guna2ShadowPanel()
         Me.Guna2HtmlLabel10 = New Guna.UI2.WinForms.Guna2HtmlLabel()
         Me.pbx_imagem = New Guna.UI2.WinForms.Guna2PictureBox()
         Me.pnl_info = New Guna.UI2.WinForms.Guna2ShadowPanel()
+        Me.txt_preco = New Guna.UI2.WinForms.Guna2TextBox()
+        Me.txt_precoRecomendado = New Guna.UI2.WinForms.Guna2TextBox()
         Me.txt_markup = New Guna.UI2.WinForms.Guna2TextBox()
         Me.Guna2HtmlLabel9 = New Guna.UI2.WinForms.Guna2HtmlLabel()
         Me.Guna2HtmlLabel8 = New Guna.UI2.WinForms.Guna2HtmlLabel()
@@ -48,11 +53,6 @@ Partial Class cadastrarCardápio
         Me.txt_custoPrato = New Guna.UI2.WinForms.Guna2TextBox()
         Me.Guna2HtmlLabel7 = New Guna.UI2.WinForms.Guna2HtmlLabel()
         Me.ofd_imagem = New System.Windows.Forms.OpenFileDialog()
-        Me.txt_descricao = New Guna.UI2.WinForms.Guna2TextBox()
-        Me.Guna2HtmlLabel2 = New Guna.UI2.WinForms.Guna2HtmlLabel()
-        Me.Guna2HtmlLabel3 = New Guna.UI2.WinForms.Guna2HtmlLabel()
-        Me.txt_precoRecomendado = New Guna.UI2.WinForms.Guna2TextBox()
-        Me.txt_preco = New Guna.UI2.WinForms.Guna2TextBox()
         Me.Guna2ContainerControl1.SuspendLayout()
         Me.pnl_nome.SuspendLayout()
         Me.Guna2Panel2.SuspendLayout()
@@ -176,6 +176,41 @@ Partial Class cadastrarCardápio
         Me.pnl_nome.Size = New System.Drawing.Size(597, 187)
         Me.pnl_nome.TabIndex = 11
         '
+        'txt_descricao
+        '
+        Me.txt_descricao.AutoRoundedCorners = True
+        Me.txt_descricao.BorderColor = System.Drawing.Color.FromArgb(CType(CType(239, Byte), Integer), CType(CType(239, Byte), Integer), CType(CType(239, Byte), Integer))
+        Me.txt_descricao.BorderRadius = 22
+        Me.txt_descricao.Cursor = System.Windows.Forms.Cursors.Hand
+        Me.txt_descricao.DefaultText = ""
+        Me.txt_descricao.DisabledState.BorderColor = System.Drawing.Color.FromArgb(CType(CType(208, Byte), Integer), CType(CType(208, Byte), Integer), CType(CType(208, Byte), Integer))
+        Me.txt_descricao.DisabledState.FillColor = System.Drawing.Color.FromArgb(CType(CType(226, Byte), Integer), CType(CType(226, Byte), Integer), CType(CType(226, Byte), Integer))
+        Me.txt_descricao.DisabledState.ForeColor = System.Drawing.Color.FromArgb(CType(CType(138, Byte), Integer), CType(CType(138, Byte), Integer), CType(CType(138, Byte), Integer))
+        Me.txt_descricao.DisabledState.PlaceholderForeColor = System.Drawing.Color.FromArgb(CType(CType(138, Byte), Integer), CType(CType(138, Byte), Integer), CType(CType(138, Byte), Integer))
+        Me.txt_descricao.FillColor = System.Drawing.Color.FromArgb(CType(CType(239, Byte), Integer), CType(CType(239, Byte), Integer), CType(CType(239, Byte), Integer))
+        Me.txt_descricao.FocusedState.BorderColor = System.Drawing.Color.FromArgb(CType(CType(250, Byte), Integer), CType(CType(250, Byte), Integer), CType(CType(250, Byte), Integer))
+        Me.txt_descricao.Font = New System.Drawing.Font("Libre Caslon Display", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.txt_descricao.ForeColor = System.Drawing.Color.Black
+        Me.txt_descricao.HoverState.BorderColor = System.Drawing.Color.FromArgb(CType(CType(250, Byte), Integer), CType(CType(250, Byte), Integer), CType(CType(250, Byte), Integer))
+        Me.txt_descricao.Location = New System.Drawing.Point(14, 121)
+        Me.txt_descricao.Margin = New System.Windows.Forms.Padding(3, 4, 3, 4)
+        Me.txt_descricao.Name = "txt_descricao"
+        Me.txt_descricao.PasswordChar = Global.Microsoft.VisualBasic.ChrW(0)
+        Me.txt_descricao.PlaceholderText = ""
+        Me.txt_descricao.SelectedText = ""
+        Me.txt_descricao.Size = New System.Drawing.Size(570, 47)
+        Me.txt_descricao.TabIndex = 10
+        '
+        'Guna2HtmlLabel2
+        '
+        Me.Guna2HtmlLabel2.BackColor = System.Drawing.Color.Transparent
+        Me.Guna2HtmlLabel2.Font = New System.Drawing.Font("Libre Caslon Display", 15.75!)
+        Me.Guna2HtmlLabel2.Location = New System.Drawing.Point(14, 87)
+        Me.Guna2HtmlLabel2.Name = "Guna2HtmlLabel2"
+        Me.Guna2HtmlLabel2.Size = New System.Drawing.Size(82, 27)
+        Me.Guna2HtmlLabel2.TabIndex = 9
+        Me.Guna2HtmlLabel2.Text = "Descrição"
+        '
         'pnl_titulo
         '
         Me.pnl_titulo.Dock = System.Windows.Forms.DockStyle.Top
@@ -204,6 +239,16 @@ Partial Class cadastrarCardápio
         Me.Guna2Panel2.Padding = New System.Windows.Forms.Padding(16)
         Me.Guna2Panel2.Size = New System.Drawing.Size(978, 491)
         Me.Guna2Panel2.TabIndex = 13
+        '
+        'Guna2HtmlLabel3
+        '
+        Me.Guna2HtmlLabel3.BackColor = System.Drawing.Color.Transparent
+        Me.Guna2HtmlLabel3.Font = New System.Drawing.Font("Libre Caslon Display", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Guna2HtmlLabel3.Location = New System.Drawing.Point(16, 457)
+        Me.Guna2HtmlLabel3.Name = "Guna2HtmlLabel3"
+        Me.Guna2HtmlLabel3.Size = New System.Drawing.Size(341, 21)
+        Me.Guna2HtmlLabel3.TabIndex = 37
+        Me.Guna2HtmlLabel3.Text = "* (Custos Fixos% + Margem de Lucro% + Impostos %- 1) "
         '
         'btn_cadastrar
         '
@@ -286,6 +331,58 @@ Partial Class cadastrarCardápio
         Me.pnl_info.ShadowShift = 2
         Me.pnl_info.Size = New System.Drawing.Size(597, 226)
         Me.pnl_info.TabIndex = 12
+        '
+        'txt_preco
+        '
+        Me.txt_preco.AutoRoundedCorners = True
+        Me.txt_preco.BorderColor = System.Drawing.Color.FromArgb(CType(CType(239, Byte), Integer), CType(CType(239, Byte), Integer), CType(CType(239, Byte), Integer))
+        Me.txt_preco.BorderRadius = 19
+        Me.txt_preco.Cursor = System.Windows.Forms.Cursors.Hand
+        Me.txt_preco.DefaultText = ""
+        Me.txt_preco.DisabledState.BorderColor = System.Drawing.Color.FromArgb(CType(CType(208, Byte), Integer), CType(CType(208, Byte), Integer), CType(CType(208, Byte), Integer))
+        Me.txt_preco.DisabledState.FillColor = System.Drawing.Color.FromArgb(CType(CType(226, Byte), Integer), CType(CType(226, Byte), Integer), CType(CType(226, Byte), Integer))
+        Me.txt_preco.DisabledState.ForeColor = System.Drawing.Color.FromArgb(CType(CType(138, Byte), Integer), CType(CType(138, Byte), Integer), CType(CType(138, Byte), Integer))
+        Me.txt_preco.DisabledState.PlaceholderForeColor = System.Drawing.Color.FromArgb(CType(CType(138, Byte), Integer), CType(CType(138, Byte), Integer), CType(CType(138, Byte), Integer))
+        Me.txt_preco.FillColor = System.Drawing.Color.FromArgb(CType(CType(239, Byte), Integer), CType(CType(239, Byte), Integer), CType(CType(239, Byte), Integer))
+        Me.txt_preco.FocusedState.BorderColor = System.Drawing.Color.FromArgb(CType(CType(250, Byte), Integer), CType(CType(250, Byte), Integer), CType(CType(250, Byte), Integer))
+        Me.txt_preco.Font = New System.Drawing.Font("Libre Caslon Display", 14.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.txt_preco.ForeColor = System.Drawing.Color.Black
+        Me.txt_preco.HoverState.BorderColor = System.Drawing.Color.FromArgb(CType(CType(250, Byte), Integer), CType(CType(250, Byte), Integer), CType(CType(250, Byte), Integer))
+        Me.txt_preco.Location = New System.Drawing.Point(352, 170)
+        Me.txt_preco.Margin = New System.Windows.Forms.Padding(4, 5, 4, 5)
+        Me.txt_preco.Name = "txt_preco"
+        Me.txt_preco.PasswordChar = Global.Microsoft.VisualBasic.ChrW(0)
+        Me.txt_preco.PlaceholderText = ""
+        Me.txt_preco.SelectedText = ""
+        Me.txt_preco.Size = New System.Drawing.Size(192, 40)
+        Me.txt_preco.TabIndex = 22
+        Me.txt_preco.TextAlign = System.Windows.Forms.HorizontalAlignment.Center
+        '
+        'txt_precoRecomendado
+        '
+        Me.txt_precoRecomendado.AutoRoundedCorners = True
+        Me.txt_precoRecomendado.BorderColor = System.Drawing.Color.FromArgb(CType(CType(239, Byte), Integer), CType(CType(239, Byte), Integer), CType(CType(239, Byte), Integer))
+        Me.txt_precoRecomendado.BorderRadius = 19
+        Me.txt_precoRecomendado.Cursor = System.Windows.Forms.Cursors.Hand
+        Me.txt_precoRecomendado.DefaultText = "R$ --"
+        Me.txt_precoRecomendado.DisabledState.BorderColor = System.Drawing.Color.FromArgb(CType(CType(208, Byte), Integer), CType(CType(208, Byte), Integer), CType(CType(208, Byte), Integer))
+        Me.txt_precoRecomendado.DisabledState.FillColor = System.Drawing.Color.FromArgb(CType(CType(226, Byte), Integer), CType(CType(226, Byte), Integer), CType(CType(226, Byte), Integer))
+        Me.txt_precoRecomendado.DisabledState.ForeColor = System.Drawing.Color.FromArgb(CType(CType(138, Byte), Integer), CType(CType(138, Byte), Integer), CType(CType(138, Byte), Integer))
+        Me.txt_precoRecomendado.DisabledState.PlaceholderForeColor = System.Drawing.Color.FromArgb(CType(CType(138, Byte), Integer), CType(CType(138, Byte), Integer), CType(CType(138, Byte), Integer))
+        Me.txt_precoRecomendado.FillColor = System.Drawing.Color.FromArgb(CType(CType(46, Byte), Integer), CType(CType(31, Byte), Integer), CType(CType(39, Byte), Integer))
+        Me.txt_precoRecomendado.FocusedState.BorderColor = System.Drawing.Color.FromArgb(CType(CType(250, Byte), Integer), CType(CType(250, Byte), Integer), CType(CType(250, Byte), Integer))
+        Me.txt_precoRecomendado.Font = New System.Drawing.Font("Libre Caslon Display", 14.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.txt_precoRecomendado.ForeColor = System.Drawing.Color.White
+        Me.txt_precoRecomendado.HoverState.BorderColor = System.Drawing.Color.FromArgb(CType(CType(250, Byte), Integer), CType(CType(250, Byte), Integer), CType(CType(250, Byte), Integer))
+        Me.txt_precoRecomendado.Location = New System.Drawing.Point(68, 170)
+        Me.txt_precoRecomendado.Margin = New System.Windows.Forms.Padding(4, 5, 4, 5)
+        Me.txt_precoRecomendado.Name = "txt_precoRecomendado"
+        Me.txt_precoRecomendado.PasswordChar = Global.Microsoft.VisualBasic.ChrW(0)
+        Me.txt_precoRecomendado.PlaceholderText = ""
+        Me.txt_precoRecomendado.SelectedText = ""
+        Me.txt_precoRecomendado.Size = New System.Drawing.Size(192, 40)
+        Me.txt_precoRecomendado.TabIndex = 21
+        Me.txt_precoRecomendado.TextAlign = System.Windows.Forms.HorizontalAlignment.Center
         '
         'txt_markup
         '
@@ -390,103 +487,6 @@ Partial Class cadastrarCardápio
         'ofd_imagem
         '
         Me.ofd_imagem.FileName = "OpenFileDialog1"
-        '
-        'txt_descricao
-        '
-        Me.txt_descricao.AutoRoundedCorners = True
-        Me.txt_descricao.BorderColor = System.Drawing.Color.FromArgb(CType(CType(239, Byte), Integer), CType(CType(239, Byte), Integer), CType(CType(239, Byte), Integer))
-        Me.txt_descricao.BorderRadius = 22
-        Me.txt_descricao.Cursor = System.Windows.Forms.Cursors.Hand
-        Me.txt_descricao.DefaultText = ""
-        Me.txt_descricao.DisabledState.BorderColor = System.Drawing.Color.FromArgb(CType(CType(208, Byte), Integer), CType(CType(208, Byte), Integer), CType(CType(208, Byte), Integer))
-        Me.txt_descricao.DisabledState.FillColor = System.Drawing.Color.FromArgb(CType(CType(226, Byte), Integer), CType(CType(226, Byte), Integer), CType(CType(226, Byte), Integer))
-        Me.txt_descricao.DisabledState.ForeColor = System.Drawing.Color.FromArgb(CType(CType(138, Byte), Integer), CType(CType(138, Byte), Integer), CType(CType(138, Byte), Integer))
-        Me.txt_descricao.DisabledState.PlaceholderForeColor = System.Drawing.Color.FromArgb(CType(CType(138, Byte), Integer), CType(CType(138, Byte), Integer), CType(CType(138, Byte), Integer))
-        Me.txt_descricao.FillColor = System.Drawing.Color.FromArgb(CType(CType(239, Byte), Integer), CType(CType(239, Byte), Integer), CType(CType(239, Byte), Integer))
-        Me.txt_descricao.FocusedState.BorderColor = System.Drawing.Color.FromArgb(CType(CType(250, Byte), Integer), CType(CType(250, Byte), Integer), CType(CType(250, Byte), Integer))
-        Me.txt_descricao.Font = New System.Drawing.Font("Libre Caslon Display", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.txt_descricao.ForeColor = System.Drawing.Color.Black
-        Me.txt_descricao.HoverState.BorderColor = System.Drawing.Color.FromArgb(CType(CType(250, Byte), Integer), CType(CType(250, Byte), Integer), CType(CType(250, Byte), Integer))
-        Me.txt_descricao.Location = New System.Drawing.Point(14, 121)
-        Me.txt_descricao.Margin = New System.Windows.Forms.Padding(3, 4, 3, 4)
-        Me.txt_descricao.Name = "txt_descricao"
-        Me.txt_descricao.PasswordChar = Global.Microsoft.VisualBasic.ChrW(0)
-        Me.txt_descricao.PlaceholderText = ""
-        Me.txt_descricao.SelectedText = ""
-        Me.txt_descricao.Size = New System.Drawing.Size(570, 47)
-        Me.txt_descricao.TabIndex = 10
-        '
-        'Guna2HtmlLabel2
-        '
-        Me.Guna2HtmlLabel2.BackColor = System.Drawing.Color.Transparent
-        Me.Guna2HtmlLabel2.Font = New System.Drawing.Font("Libre Caslon Display", 15.75!)
-        Me.Guna2HtmlLabel2.Location = New System.Drawing.Point(14, 87)
-        Me.Guna2HtmlLabel2.Name = "Guna2HtmlLabel2"
-        Me.Guna2HtmlLabel2.Size = New System.Drawing.Size(82, 27)
-        Me.Guna2HtmlLabel2.TabIndex = 9
-        Me.Guna2HtmlLabel2.Text = "Descrição"
-        '
-        'Guna2HtmlLabel3
-        '
-        Me.Guna2HtmlLabel3.BackColor = System.Drawing.Color.Transparent
-        Me.Guna2HtmlLabel3.Font = New System.Drawing.Font("Libre Caslon Display", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Guna2HtmlLabel3.Location = New System.Drawing.Point(16, 457)
-        Me.Guna2HtmlLabel3.Name = "Guna2HtmlLabel3"
-        Me.Guna2HtmlLabel3.Size = New System.Drawing.Size(341, 21)
-        Me.Guna2HtmlLabel3.TabIndex = 37
-        Me.Guna2HtmlLabel3.Text = "* (Custos Fixos% + Margem de Lucro% + Impostos %- 1) "
-        '
-        'txt_precoRecomendado
-        '
-        Me.txt_precoRecomendado.AutoRoundedCorners = True
-        Me.txt_precoRecomendado.BorderColor = System.Drawing.Color.FromArgb(CType(CType(239, Byte), Integer), CType(CType(239, Byte), Integer), CType(CType(239, Byte), Integer))
-        Me.txt_precoRecomendado.BorderRadius = 19
-        Me.txt_precoRecomendado.Cursor = System.Windows.Forms.Cursors.Hand
-        Me.txt_precoRecomendado.DefaultText = "R$ --"
-        Me.txt_precoRecomendado.DisabledState.BorderColor = System.Drawing.Color.FromArgb(CType(CType(208, Byte), Integer), CType(CType(208, Byte), Integer), CType(CType(208, Byte), Integer))
-        Me.txt_precoRecomendado.DisabledState.FillColor = System.Drawing.Color.FromArgb(CType(CType(226, Byte), Integer), CType(CType(226, Byte), Integer), CType(CType(226, Byte), Integer))
-        Me.txt_precoRecomendado.DisabledState.ForeColor = System.Drawing.Color.FromArgb(CType(CType(138, Byte), Integer), CType(CType(138, Byte), Integer), CType(CType(138, Byte), Integer))
-        Me.txt_precoRecomendado.DisabledState.PlaceholderForeColor = System.Drawing.Color.FromArgb(CType(CType(138, Byte), Integer), CType(CType(138, Byte), Integer), CType(CType(138, Byte), Integer))
-        Me.txt_precoRecomendado.FillColor = System.Drawing.Color.FromArgb(CType(CType(46, Byte), Integer), CType(CType(31, Byte), Integer), CType(CType(39, Byte), Integer))
-        Me.txt_precoRecomendado.FocusedState.BorderColor = System.Drawing.Color.FromArgb(CType(CType(250, Byte), Integer), CType(CType(250, Byte), Integer), CType(CType(250, Byte), Integer))
-        Me.txt_precoRecomendado.Font = New System.Drawing.Font("Libre Caslon Display", 14.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.txt_precoRecomendado.ForeColor = System.Drawing.Color.White
-        Me.txt_precoRecomendado.HoverState.BorderColor = System.Drawing.Color.FromArgb(CType(CType(250, Byte), Integer), CType(CType(250, Byte), Integer), CType(CType(250, Byte), Integer))
-        Me.txt_precoRecomendado.Location = New System.Drawing.Point(68, 170)
-        Me.txt_precoRecomendado.Margin = New System.Windows.Forms.Padding(4, 5, 4, 5)
-        Me.txt_precoRecomendado.Name = "txt_precoRecomendado"
-        Me.txt_precoRecomendado.PasswordChar = Global.Microsoft.VisualBasic.ChrW(0)
-        Me.txt_precoRecomendado.PlaceholderText = ""
-        Me.txt_precoRecomendado.SelectedText = ""
-        Me.txt_precoRecomendado.Size = New System.Drawing.Size(192, 40)
-        Me.txt_precoRecomendado.TabIndex = 21
-        Me.txt_precoRecomendado.TextAlign = System.Windows.Forms.HorizontalAlignment.Center
-        '
-        'txt_preco
-        '
-        Me.txt_preco.AutoRoundedCorners = True
-        Me.txt_preco.BorderColor = System.Drawing.Color.FromArgb(CType(CType(239, Byte), Integer), CType(CType(239, Byte), Integer), CType(CType(239, Byte), Integer))
-        Me.txt_preco.BorderRadius = 19
-        Me.txt_preco.Cursor = System.Windows.Forms.Cursors.Hand
-        Me.txt_preco.DefaultText = ""
-        Me.txt_preco.DisabledState.BorderColor = System.Drawing.Color.FromArgb(CType(CType(208, Byte), Integer), CType(CType(208, Byte), Integer), CType(CType(208, Byte), Integer))
-        Me.txt_preco.DisabledState.FillColor = System.Drawing.Color.FromArgb(CType(CType(226, Byte), Integer), CType(CType(226, Byte), Integer), CType(CType(226, Byte), Integer))
-        Me.txt_preco.DisabledState.ForeColor = System.Drawing.Color.FromArgb(CType(CType(138, Byte), Integer), CType(CType(138, Byte), Integer), CType(CType(138, Byte), Integer))
-        Me.txt_preco.DisabledState.PlaceholderForeColor = System.Drawing.Color.FromArgb(CType(CType(138, Byte), Integer), CType(CType(138, Byte), Integer), CType(CType(138, Byte), Integer))
-        Me.txt_preco.FillColor = System.Drawing.Color.FromArgb(CType(CType(239, Byte), Integer), CType(CType(239, Byte), Integer), CType(CType(239, Byte), Integer))
-        Me.txt_preco.FocusedState.BorderColor = System.Drawing.Color.FromArgb(CType(CType(250, Byte), Integer), CType(CType(250, Byte), Integer), CType(CType(250, Byte), Integer))
-        Me.txt_preco.Font = New System.Drawing.Font("Libre Caslon Display", 14.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.txt_preco.ForeColor = System.Drawing.Color.Black
-        Me.txt_preco.HoverState.BorderColor = System.Drawing.Color.FromArgb(CType(CType(250, Byte), Integer), CType(CType(250, Byte), Integer), CType(CType(250, Byte), Integer))
-        Me.txt_preco.Location = New System.Drawing.Point(352, 170)
-        Me.txt_preco.Margin = New System.Windows.Forms.Padding(4, 5, 4, 5)
-        Me.txt_preco.Name = "txt_preco"
-        Me.txt_preco.PasswordChar = Global.Microsoft.VisualBasic.ChrW(0)
-        Me.txt_preco.PlaceholderText = ""
-        Me.txt_preco.SelectedText = ""
-        Me.txt_preco.Size = New System.Drawing.Size(192, 40)
-        Me.txt_preco.TabIndex = 22
-        Me.txt_preco.TextAlign = System.Windows.Forms.HorizontalAlignment.Center
         '
         'cadastrarCardápio
         '

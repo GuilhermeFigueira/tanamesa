@@ -169,6 +169,18 @@
     <Compile Include="telaConfirmacao.vb">
       <SubType>Form</SubType>
     </Compile>
+    <Compile Include="telaErro.Designer.vb">
+      <DependentUpon>telaErro.vb</DependentUpon>
+    </Compile>
+    <Compile Include="telaErro.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="gerencia.Designer.vb">
+      <DependentUpon>gerencia.vb</DependentUpon>
+    </Compile>
+    <Compile Include="gerencia.vb">
+      <SubType>Form</SubType>
+    </Compile>
   </ItemGroup>
   <ItemGroup>
     <EmbeddedResource Include="cadastrarCardápio.resx">
@@ -212,6 +224,12 @@
     </EmbeddedResource>
     <EmbeddedResource Include="telaConfirmacao.resx">
       <DependentUpon>telaConfirmacao.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="telaErro.resx">
+      <DependentUpon>telaErro.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="gerencia.resx">
+      <DependentUpon>gerencia.vb</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <ItemGroup>

@@ -5,8 +5,7 @@ Imports System.Web.UI.Design
 
 Imports Guna.UI2.WinForms
 
-Public Class estoque
-    Dim estoque As New criarCardapio
+Public Class gerencia
     Private Sub btn_fechar_Click(sender As Object, e As EventArgs) Handles btn_fechar.Click
         telaConfirmacao.setTexto("Deseja realmente sair?")
         telaConfirmacao.Show()
@@ -30,21 +29,17 @@ Public Class estoque
         Me.Hide()
     End Sub
 
-    Private Sub btn_gerencia_Click(sender As Object, e As EventArgs) Handles btn_gerencia.Click
-        gerencia.Show()
-        Me.Hide()
-    End Sub
-
     Private Sub btn_info_Click(sender As Object, e As EventArgs) Handles btn_info.Click
         infoUsuario.Show()
     End Sub
 
-    Private Sub btn__Click(sender As Object, e As EventArgs) Handles btn_addProd.Click
-        cadastrarEstoque.Show()
-    End Sub
-
     Private Sub btn_cardapio_Click(sender As Object, e As EventArgs) Handles btn_cardapio.Click
         cardapio.Show()
+        Me.Hide()
+    End Sub
+
+    Private Sub btn_estoque_Click(sender As Object, e As EventArgs) Handles btn_estoque.Click
+        estoque.Show()
         Me.Hide()
     End Sub
 End Class

@@ -23,8 +23,12 @@ Public Class cadastrarCardápio
             Exit Sub
         End Try
     End Sub
-    Public Sub alterarTipoForm(titulo As String, btn As String)
+    Public Sub alterarTipoFormCardapio(titulo As String, btn As String)
         lbl_titulo.Text = titulo
         btn_cadastrar.Text = btn
+    End Sub
+
+    Private Sub btn_cadastrar_Click(sender As Object, e As EventArgs) Handles btn_cadastrar.Click
+
     End Sub
 End Class

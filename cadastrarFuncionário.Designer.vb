@@ -46,8 +46,8 @@ Partial Class cadastrarFuncionário
         Me.pnl_info = New Guna.UI2.WinForms.Guna2ShadowPanel()
         Me.Guna2HtmlLabel2 = New Guna.UI2.WinForms.Guna2HtmlLabel()
         Me.Guna2HtmlLabel5 = New Guna.UI2.WinForms.Guna2HtmlLabel()
-        Me.Guna2TextBox2 = New Guna.UI2.WinForms.Guna2TextBox()
-        Me.Guna2TextBox3 = New Guna.UI2.WinForms.Guna2TextBox()
+        Me.txt_codFunc = New Guna.UI2.WinForms.Guna2TextBox()
+        Me.txt_funcao = New Guna.UI2.WinForms.Guna2TextBox()
         Me.ofd_imagem = New System.Windows.Forms.OpenFileDialog()
         Me.Guna2ContainerControl1.SuspendLayout()
         Me.pnl_nome.SuspendLayout()
@@ -339,8 +339,8 @@ Partial Class cadastrarFuncionário
         Me.pnl_info.BackColor = System.Drawing.Color.Transparent
         Me.pnl_info.Controls.Add(Me.Guna2HtmlLabel2)
         Me.pnl_info.Controls.Add(Me.Guna2HtmlLabel5)
-        Me.pnl_info.Controls.Add(Me.Guna2TextBox2)
-        Me.pnl_info.Controls.Add(Me.Guna2TextBox3)
+        Me.pnl_info.Controls.Add(Me.txt_codFunc)
+        Me.pnl_info.Controls.Add(Me.txt_funcao)
         Me.pnl_info.FillColor = System.Drawing.Color.White
         Me.pnl_info.Location = New System.Drawing.Point(16, 224)
         Me.pnl_info.Margin = New System.Windows.Forms.Padding(0)
@@ -371,56 +371,56 @@ Partial Class cadastrarFuncionário
         Me.Guna2HtmlLabel5.TabIndex = 20
         Me.Guna2HtmlLabel5.Text = "Código do Funcionário"
         '
-        'Guna2TextBox2
+        'txt_codFunc
         '
-        Me.Guna2TextBox2.AutoRoundedCorners = True
-        Me.Guna2TextBox2.BorderColor = System.Drawing.Color.FromArgb(CType(CType(239, Byte), Integer), CType(CType(239, Byte), Integer), CType(CType(239, Byte), Integer))
-        Me.Guna2TextBox2.BorderRadius = 17
-        Me.Guna2TextBox2.Cursor = System.Windows.Forms.Cursors.Hand
-        Me.Guna2TextBox2.DefaultText = ""
-        Me.Guna2TextBox2.DisabledState.BorderColor = System.Drawing.Color.FromArgb(CType(CType(208, Byte), Integer), CType(CType(208, Byte), Integer), CType(CType(208, Byte), Integer))
-        Me.Guna2TextBox2.DisabledState.FillColor = System.Drawing.Color.FromArgb(CType(CType(226, Byte), Integer), CType(CType(226, Byte), Integer), CType(CType(226, Byte), Integer))
-        Me.Guna2TextBox2.DisabledState.ForeColor = System.Drawing.Color.FromArgb(CType(CType(138, Byte), Integer), CType(CType(138, Byte), Integer), CType(CType(138, Byte), Integer))
-        Me.Guna2TextBox2.DisabledState.PlaceholderForeColor = System.Drawing.Color.FromArgb(CType(CType(138, Byte), Integer), CType(CType(138, Byte), Integer), CType(CType(138, Byte), Integer))
-        Me.Guna2TextBox2.Enabled = False
-        Me.Guna2TextBox2.FillColor = System.Drawing.Color.FromArgb(CType(CType(239, Byte), Integer), CType(CType(239, Byte), Integer), CType(CType(239, Byte), Integer))
-        Me.Guna2TextBox2.FocusedState.BorderColor = System.Drawing.Color.FromArgb(CType(CType(250, Byte), Integer), CType(CType(250, Byte), Integer), CType(CType(250, Byte), Integer))
-        Me.Guna2TextBox2.Font = New System.Drawing.Font("Libre Caslon Display", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Guna2TextBox2.ForeColor = System.Drawing.Color.Black
-        Me.Guna2TextBox2.HoverState.BorderColor = System.Drawing.Color.FromArgb(CType(CType(250, Byte), Integer), CType(CType(250, Byte), Integer), CType(CType(250, Byte), Integer))
-        Me.Guna2TextBox2.Location = New System.Drawing.Point(14, 52)
-        Me.Guna2TextBox2.Margin = New System.Windows.Forms.Padding(3, 4, 3, 4)
-        Me.Guna2TextBox2.Name = "Guna2TextBox2"
-        Me.Guna2TextBox2.PasswordChar = Global.Microsoft.VisualBasic.ChrW(0)
-        Me.Guna2TextBox2.PlaceholderText = ""
-        Me.Guna2TextBox2.SelectedText = ""
-        Me.Guna2TextBox2.Size = New System.Drawing.Size(185, 36)
-        Me.Guna2TextBox2.TabIndex = 22
+        Me.txt_codFunc.AutoRoundedCorners = True
+        Me.txt_codFunc.BorderColor = System.Drawing.Color.FromArgb(CType(CType(239, Byte), Integer), CType(CType(239, Byte), Integer), CType(CType(239, Byte), Integer))
+        Me.txt_codFunc.BorderRadius = 17
+        Me.txt_codFunc.Cursor = System.Windows.Forms.Cursors.Hand
+        Me.txt_codFunc.DefaultText = ""
+        Me.txt_codFunc.DisabledState.BorderColor = System.Drawing.Color.FromArgb(CType(CType(208, Byte), Integer), CType(CType(208, Byte), Integer), CType(CType(208, Byte), Integer))
+        Me.txt_codFunc.DisabledState.FillColor = System.Drawing.Color.FromArgb(CType(CType(226, Byte), Integer), CType(CType(226, Byte), Integer), CType(CType(226, Byte), Integer))
+        Me.txt_codFunc.DisabledState.ForeColor = System.Drawing.Color.FromArgb(CType(CType(138, Byte), Integer), CType(CType(138, Byte), Integer), CType(CType(138, Byte), Integer))
+        Me.txt_codFunc.DisabledState.PlaceholderForeColor = System.Drawing.Color.FromArgb(CType(CType(138, Byte), Integer), CType(CType(138, Byte), Integer), CType(CType(138, Byte), Integer))
+        Me.txt_codFunc.Enabled = False
+        Me.txt_codFunc.FillColor = System.Drawing.Color.FromArgb(CType(CType(239, Byte), Integer), CType(CType(239, Byte), Integer), CType(CType(239, Byte), Integer))
+        Me.txt_codFunc.FocusedState.BorderColor = System.Drawing.Color.FromArgb(CType(CType(250, Byte), Integer), CType(CType(250, Byte), Integer), CType(CType(250, Byte), Integer))
+        Me.txt_codFunc.Font = New System.Drawing.Font("Libre Caslon Display", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.txt_codFunc.ForeColor = System.Drawing.Color.Black
+        Me.txt_codFunc.HoverState.BorderColor = System.Drawing.Color.FromArgb(CType(CType(250, Byte), Integer), CType(CType(250, Byte), Integer), CType(CType(250, Byte), Integer))
+        Me.txt_codFunc.Location = New System.Drawing.Point(14, 52)
+        Me.txt_codFunc.Margin = New System.Windows.Forms.Padding(3, 4, 3, 4)
+        Me.txt_codFunc.Name = "txt_codFunc"
+        Me.txt_codFunc.PasswordChar = Global.Microsoft.VisualBasic.ChrW(0)
+        Me.txt_codFunc.PlaceholderText = ""
+        Me.txt_codFunc.SelectedText = ""
+        Me.txt_codFunc.Size = New System.Drawing.Size(185, 36)
+        Me.txt_codFunc.TabIndex = 22
         '
-        'Guna2TextBox3
+        'txt_funcao
         '
-        Me.Guna2TextBox3.AutoRoundedCorners = True
-        Me.Guna2TextBox3.BorderColor = System.Drawing.Color.FromArgb(CType(CType(239, Byte), Integer), CType(CType(239, Byte), Integer), CType(CType(239, Byte), Integer))
-        Me.Guna2TextBox3.BorderRadius = 17
-        Me.Guna2TextBox3.Cursor = System.Windows.Forms.Cursors.Hand
-        Me.Guna2TextBox3.DefaultText = ""
-        Me.Guna2TextBox3.DisabledState.BorderColor = System.Drawing.Color.FromArgb(CType(CType(208, Byte), Integer), CType(CType(208, Byte), Integer), CType(CType(208, Byte), Integer))
-        Me.Guna2TextBox3.DisabledState.FillColor = System.Drawing.Color.FromArgb(CType(CType(226, Byte), Integer), CType(CType(226, Byte), Integer), CType(CType(226, Byte), Integer))
-        Me.Guna2TextBox3.DisabledState.ForeColor = System.Drawing.Color.FromArgb(CType(CType(138, Byte), Integer), CType(CType(138, Byte), Integer), CType(CType(138, Byte), Integer))
-        Me.Guna2TextBox3.DisabledState.PlaceholderForeColor = System.Drawing.Color.FromArgb(CType(CType(138, Byte), Integer), CType(CType(138, Byte), Integer), CType(CType(138, Byte), Integer))
-        Me.Guna2TextBox3.FillColor = System.Drawing.Color.FromArgb(CType(CType(239, Byte), Integer), CType(CType(239, Byte), Integer), CType(CType(239, Byte), Integer))
-        Me.Guna2TextBox3.FocusedState.BorderColor = System.Drawing.Color.FromArgb(CType(CType(250, Byte), Integer), CType(CType(250, Byte), Integer), CType(CType(250, Byte), Integer))
-        Me.Guna2TextBox3.Font = New System.Drawing.Font("Libre Caslon Display", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Guna2TextBox3.ForeColor = System.Drawing.Color.Black
-        Me.Guna2TextBox3.HoverState.BorderColor = System.Drawing.Color.FromArgb(CType(CType(250, Byte), Integer), CType(CType(250, Byte), Integer), CType(CType(250, Byte), Integer))
-        Me.Guna2TextBox3.Location = New System.Drawing.Point(218, 52)
-        Me.Guna2TextBox3.Margin = New System.Windows.Forms.Padding(3, 4, 3, 4)
-        Me.Guna2TextBox3.Name = "Guna2TextBox3"
-        Me.Guna2TextBox3.PasswordChar = Global.Microsoft.VisualBasic.ChrW(42)
-        Me.Guna2TextBox3.PlaceholderText = ""
-        Me.Guna2TextBox3.SelectedText = ""
-        Me.Guna2TextBox3.Size = New System.Drawing.Size(366, 36)
-        Me.Guna2TextBox3.TabIndex = 23
+        Me.txt_funcao.AutoRoundedCorners = True
+        Me.txt_funcao.BorderColor = System.Drawing.Color.FromArgb(CType(CType(239, Byte), Integer), CType(CType(239, Byte), Integer), CType(CType(239, Byte), Integer))
+        Me.txt_funcao.BorderRadius = 17
+        Me.txt_funcao.Cursor = System.Windows.Forms.Cursors.Hand
+        Me.txt_funcao.DefaultText = ""
+        Me.txt_funcao.DisabledState.BorderColor = System.Drawing.Color.FromArgb(CType(CType(208, Byte), Integer), CType(CType(208, Byte), Integer), CType(CType(208, Byte), Integer))
+        Me.txt_funcao.DisabledState.FillColor = System.Drawing.Color.FromArgb(CType(CType(226, Byte), Integer), CType(CType(226, Byte), Integer), CType(CType(226, Byte), Integer))
+        Me.txt_funcao.DisabledState.ForeColor = System.Drawing.Color.FromArgb(CType(CType(138, Byte), Integer), CType(CType(138, Byte), Integer), CType(CType(138, Byte), Integer))
+        Me.txt_funcao.DisabledState.PlaceholderForeColor = System.Drawing.Color.FromArgb(CType(CType(138, Byte), Integer), CType(CType(138, Byte), Integer), CType(CType(138, Byte), Integer))
+        Me.txt_funcao.FillColor = System.Drawing.Color.FromArgb(CType(CType(239, Byte), Integer), CType(CType(239, Byte), Integer), CType(CType(239, Byte), Integer))
+        Me.txt_funcao.FocusedState.BorderColor = System.Drawing.Color.FromArgb(CType(CType(250, Byte), Integer), CType(CType(250, Byte), Integer), CType(CType(250, Byte), Integer))
+        Me.txt_funcao.Font = New System.Drawing.Font("Libre Caslon Display", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.txt_funcao.ForeColor = System.Drawing.Color.Black
+        Me.txt_funcao.HoverState.BorderColor = System.Drawing.Color.FromArgb(CType(CType(250, Byte), Integer), CType(CType(250, Byte), Integer), CType(CType(250, Byte), Integer))
+        Me.txt_funcao.Location = New System.Drawing.Point(218, 52)
+        Me.txt_funcao.Margin = New System.Windows.Forms.Padding(3, 4, 3, 4)
+        Me.txt_funcao.Name = "txt_funcao"
+        Me.txt_funcao.PasswordChar = Global.Microsoft.VisualBasic.ChrW(42)
+        Me.txt_funcao.PlaceholderText = ""
+        Me.txt_funcao.SelectedText = ""
+        Me.txt_funcao.Size = New System.Drawing.Size(366, 36)
+        Me.txt_funcao.TabIndex = 23
         '
         'ofd_imagem
         '
@@ -473,8 +473,8 @@ Partial Class cadastrarFuncionário
     Friend WithEvents pbx_imagem As Guna.UI2.WinForms.Guna2PictureBox
     Friend WithEvents Guna2HtmlLabel2 As Guna.UI2.WinForms.Guna2HtmlLabel
     Friend WithEvents Guna2HtmlLabel5 As Guna.UI2.WinForms.Guna2HtmlLabel
-    Friend WithEvents Guna2TextBox2 As Guna.UI2.WinForms.Guna2TextBox
-    Friend WithEvents Guna2TextBox3 As Guna.UI2.WinForms.Guna2TextBox
+    Friend WithEvents txt_codFunc As Guna.UI2.WinForms.Guna2TextBox
+    Friend WithEvents txt_funcao As Guna.UI2.WinForms.Guna2TextBox
     Friend WithEvents Guna2HtmlLabel4 As Guna.UI2.WinForms.Guna2HtmlLabel
     Friend WithEvents Guna2HtmlLabel3 As Guna.UI2.WinForms.Guna2HtmlLabel
     Friend WithEvents txt_cpf As Guna.UI2.WinForms.Guna2TextBox

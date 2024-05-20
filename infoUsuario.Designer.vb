@@ -103,7 +103,7 @@ Partial Class infoUsuario
         Me.pbx_imgFuncionario.ImageRotate = 0!
         Me.pbx_imgFuncionario.Location = New System.Drawing.Point(27, 78)
         Me.pbx_imgFuncionario.Name = "pbx_imgFuncionario"
-        Me.pbx_imgFuncionario.Size = New System.Drawing.Size(151, 182)
+        Me.pbx_imgFuncionario.Size = New System.Drawing.Size(183, 182)
         Me.pbx_imgFuncionario.TabIndex = 3
         Me.pbx_imgFuncionario.TabStop = False
         '
@@ -140,7 +140,7 @@ Partial Class infoUsuario
         Me.txt_nome.PasswordChar = Global.Microsoft.VisualBasic.ChrW(0)
         Me.txt_nome.PlaceholderText = ""
         Me.txt_nome.SelectedText = ""
-        Me.txt_nome.Size = New System.Drawing.Size(371, 36)
+        Me.txt_nome.Size = New System.Drawing.Size(360, 36)
         Me.txt_nome.TabIndex = 8
         '
         'Guna2HtmlLabel1
@@ -176,7 +176,7 @@ Partial Class infoUsuario
         Me.txt_cpf.PasswordChar = Global.Microsoft.VisualBasic.ChrW(0)
         Me.txt_cpf.PlaceholderText = ""
         Me.txt_cpf.SelectedText = ""
-        Me.txt_cpf.Size = New System.Drawing.Size(182, 36)
+        Me.txt_cpf.Size = New System.Drawing.Size(171, 36)
         Me.txt_cpf.TabIndex = 10
         '
         'Guna2HtmlLabel3
@@ -199,12 +199,12 @@ Partial Class infoUsuario
         Me.pnl_info.Controls.Add(Me.txt_nome)
         Me.pnl_info.Controls.Add(Me.Guna2HtmlLabel1)
         Me.pnl_info.FillColor = System.Drawing.Color.White
-        Me.pnl_info.Location = New System.Drawing.Point(216, 78)
+        Me.pnl_info.Location = New System.Drawing.Point(228, 78)
         Me.pnl_info.Name = "pnl_info"
         Me.pnl_info.Radius = 6
         Me.pnl_info.ShadowColor = System.Drawing.Color.Black
         Me.pnl_info.ShadowShift = 2
-        Me.pnl_info.Size = New System.Drawing.Size(400, 182)
+        Me.pnl_info.Size = New System.Drawing.Size(388, 182)
         Me.pnl_info.TabIndex = 11
         '
         'txt_funcao
@@ -230,7 +230,7 @@ Partial Class infoUsuario
         Me.txt_funcao.PasswordChar = Global.Microsoft.VisualBasic.ChrW(0)
         Me.txt_funcao.PlaceholderText = ""
         Me.txt_funcao.SelectedText = ""
-        Me.txt_funcao.Size = New System.Drawing.Size(182, 36)
+        Me.txt_funcao.Size = New System.Drawing.Size(171, 36)
         Me.txt_funcao.TabIndex = 12
         '
         'Guna2HtmlLabel4

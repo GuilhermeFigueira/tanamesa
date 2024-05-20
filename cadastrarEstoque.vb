@@ -23,7 +23,7 @@ Public Class cadastrarEstoque
             Exit Sub
         End Try
     End Sub
-    Public Sub alterarTipoForm(titulo As String, btn As String)
+    Public Sub alterarTipoFormEstoque(titulo As String, btn As String)
         lbl_titulo.Text = titulo
         btn_cadastrar.Text = btn
     End Sub

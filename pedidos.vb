@@ -14,8 +14,6 @@ Public Class pedidos
     Private Sub btn_minimizar_Click(sender As Object, e As EventArgs) Handles btn_minimizar.Click
         Me.WindowState = FormWindowState.Minimized
     End Sub
-
-
     Private Sub btn_sair_Click(sender As Object, e As EventArgs) Handles btn_sair.Click
         deslogar.Show()
     End Sub
@@ -31,7 +29,7 @@ Public Class pedidos
     End Sub
 
     Private Sub btn_gerencia_Click(sender As Object, e As EventArgs) Handles btn_gerencia.Click
-        'gerencia.Show()
+        gerencia.Show()
         Me.Hide()
     End Sub
 

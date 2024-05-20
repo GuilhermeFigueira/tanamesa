@@ -106,3 +106,6 @@ D:\FATEC\Tanamesa\tanamesa\obj\Debug\tanamesa.estoque.resources
 D:\FATEC\Tanamesa\tanamesa\obj\Debug\tanamesa.cadastrarEstoque.resources
 D:\FATEC\Tanamesa\tanamesa\obj\Debug\tanamesa.telaConfirmacao.resources
 D:\FATEC\Tanamesa\tanamesa\obj\Debug\tanamesa.cadastrarCardápio.resources
+D:\FATEC\Tanamesa\tanamesa\obj\Debug\tanamesa.cadastrarFuncionário.resources
+D:\FATEC\Tanamesa\tanamesa\obj\Debug\tanamesa.telaErro.resources
+D:\FATEC\Tanamesa\tanamesa\obj\Debug\tanamesa.gerencia.resources

@@ -36,25 +36,19 @@ Public Class cardapio
     End Sub
 
     Private Sub btn_gerencia_Click(sender As Object, e As EventArgs) Handles btn_gerencia.Click
-        'gerencia.Show()
+        gerencia.Show()
         Me.Hide()
     End Sub
 
-    Private Sub home_Load(sender As Object, e As EventArgs) Handles Me.Load
-        cardapio.carregarCardapio()
-        'cardapio.carregarPedidos()
-    End Sub
 
     Private Sub btn_info_Click(sender As Object, e As EventArgs) Handles btn_info.Click
         infoUsuario.Show()
     End Sub
 
-    Private Sub Guna2Panel5_Paint(sender As Object, e As PaintEventArgs) Handles Guna2Panel5.Paint
 
-    End Sub
-
-    Private Sub Guna2ImageButton1_Click(sender As Object, e As EventArgs) Handles Guna2ImageButton1.Click
-
+    Private Sub cardapio_Load(sender As Object, e As EventArgs) Handles Me.Load
+        cardapio.carregarCardapio()
+        'cardapio.carregarPedidos()
     End Sub
 End Class
 Public Class criarCardapio

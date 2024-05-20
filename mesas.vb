@@ -36,7 +36,7 @@ Public Class mesas
     End Sub
 
     Private Sub btn_gerencia_Click(sender As Object, e As EventArgs) Handles btn_gerencia.Click
-        'gerencia.Show()
+        gerencia.Show()
         Me.Hide()
     End Sub
 

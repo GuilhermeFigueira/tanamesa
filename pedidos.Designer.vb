@@ -45,8 +45,8 @@ Partial Class pedidos
         Me.Guna2ContainerControl1 = New Guna.UI2.WinForms.Guna2ContainerControl()
         Me.pnl_title = New Guna.UI2.WinForms.Guna2ShadowPanel()
         Me.Guna2Panel1 = New Guna.UI2.WinForms.Guna2Panel()
-        Me.Guna2TextBox2 = New Guna.UI2.WinForms.Guna2TextBox()
         Me.Guna2HtmlLabel7 = New Guna.UI2.WinForms.Guna2HtmlLabel()
+        Me.txt_pesquisaPedidos = New Guna.UI2.WinForms.Guna2TextBox()
         Me.Guna2Panel4 = New Guna.UI2.WinForms.Guna2Panel()
         Me.Panel1 = New System.Windows.Forms.Panel()
         Me.flp_pedidos = New System.Windows.Forms.FlowLayoutPanel()
@@ -245,6 +245,7 @@ Partial Class pedidos
         '
         Me.btn_info.AutoRoundedCorners = True
         Me.btn_info.BorderRadius = 11
+        Me.btn_info.Cursor = System.Windows.Forms.Cursors.Hand
         Me.btn_info.DisabledState.BorderColor = System.Drawing.Color.DarkGray
         Me.btn_info.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray
         Me.btn_info.DisabledState.FillColor = System.Drawing.Color.FromArgb(CType(CType(169, Byte), Integer), CType(CType(169, Byte), Integer), CType(CType(169, Byte), Integer))
@@ -398,8 +399,8 @@ Partial Class pedidos
         '
         Me.pnl_title.BackColor = System.Drawing.Color.Transparent
         Me.pnl_title.Controls.Add(Me.Guna2Panel1)
-        Me.pnl_title.Controls.Add(Me.Guna2TextBox2)
         Me.pnl_title.Controls.Add(Me.Guna2HtmlLabel7)
+        Me.pnl_title.Controls.Add(Me.txt_pesquisaPedidos)
         Me.pnl_title.Dock = System.Windows.Forms.DockStyle.Top
         Me.pnl_title.FillColor = System.Drawing.Color.White
         Me.pnl_title.Location = New System.Drawing.Point(0, 0)
@@ -417,33 +418,6 @@ Partial Class pedidos
         Me.Guna2Panel1.Size = New System.Drawing.Size(311, 720)
         Me.Guna2Panel1.TabIndex = 34
         '
-        'Guna2TextBox2
-        '
-        Me.Guna2TextBox2.AutoRoundedCorners = True
-        Me.Guna2TextBox2.BackColor = System.Drawing.Color.Transparent
-        Me.Guna2TextBox2.BorderColor = System.Drawing.Color.FromArgb(CType(CType(239, Byte), Integer), CType(CType(239, Byte), Integer), CType(CType(239, Byte), Integer))
-        Me.Guna2TextBox2.BorderRadius = 17
-        Me.Guna2TextBox2.Cursor = System.Windows.Forms.Cursors.IBeam
-        Me.Guna2TextBox2.DefaultText = ""
-        Me.Guna2TextBox2.DisabledState.BorderColor = System.Drawing.Color.FromArgb(CType(CType(208, Byte), Integer), CType(CType(208, Byte), Integer), CType(CType(208, Byte), Integer))
-        Me.Guna2TextBox2.DisabledState.FillColor = System.Drawing.Color.FromArgb(CType(CType(226, Byte), Integer), CType(CType(226, Byte), Integer), CType(CType(226, Byte), Integer))
-        Me.Guna2TextBox2.DisabledState.ForeColor = System.Drawing.Color.FromArgb(CType(CType(138, Byte), Integer), CType(CType(138, Byte), Integer), CType(CType(138, Byte), Integer))
-        Me.Guna2TextBox2.DisabledState.PlaceholderForeColor = System.Drawing.Color.FromArgb(CType(CType(138, Byte), Integer), CType(CType(138, Byte), Integer), CType(CType(138, Byte), Integer))
-        Me.Guna2TextBox2.FillColor = System.Drawing.Color.FromArgb(CType(CType(239, Byte), Integer), CType(CType(239, Byte), Integer), CType(CType(239, Byte), Integer))
-        Me.Guna2TextBox2.FocusedState.BorderColor = System.Drawing.Color.FromArgb(CType(CType(250, Byte), Integer), CType(CType(250, Byte), Integer), CType(CType(250, Byte), Integer))
-        Me.Guna2TextBox2.Font = New System.Drawing.Font("Libre Caslon Display", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Guna2TextBox2.ForeColor = System.Drawing.Color.Black
-        Me.Guna2TextBox2.HoverState.BorderColor = System.Drawing.Color.FromArgb(CType(CType(250, Byte), Integer), CType(CType(250, Byte), Integer), CType(CType(250, Byte), Integer))
-        Me.Guna2TextBox2.Location = New System.Drawing.Point(518, 24)
-        Me.Guna2TextBox2.Margin = New System.Windows.Forms.Padding(3, 4, 3, 4)
-        Me.Guna2TextBox2.Name = "Guna2TextBox2"
-        Me.Guna2TextBox2.Padding = New System.Windows.Forms.Padding(15, 0, 15, 0)
-        Me.Guna2TextBox2.PasswordChar = Global.Microsoft.VisualBasic.ChrW(0)
-        Me.Guna2TextBox2.PlaceholderText = "Pesquise pedidos1"
-        Me.Guna2TextBox2.SelectedText = ""
-        Me.Guna2TextBox2.Size = New System.Drawing.Size(413, 36)
-        Me.Guna2TextBox2.TabIndex = 33
-        '
         'Guna2HtmlLabel7
         '
         Me.Guna2HtmlLabel7.BackColor = System.Drawing.Color.Transparent
@@ -453,6 +427,34 @@ Partial Class pedidos
         Me.Guna2HtmlLabel7.Size = New System.Drawing.Size(123, 51)
         Me.Guna2HtmlLabel7.TabIndex = 33
         Me.Guna2HtmlLabel7.Text = "Pedidos"
+        '
+        'txt_pesquisaPedidos
+        '
+        Me.txt_pesquisaPedidos.AutoRoundedCorners = True
+        Me.txt_pesquisaPedidos.BackColor = System.Drawing.Color.Transparent
+        Me.txt_pesquisaPedidos.BorderColor = System.Drawing.Color.FromArgb(CType(CType(239, Byte), Integer), CType(CType(239, Byte), Integer), CType(CType(239, Byte), Integer))
+        Me.txt_pesquisaPedidos.BorderRadius = 17
+        Me.txt_pesquisaPedidos.Cursor = System.Windows.Forms.Cursors.IBeam
+        Me.txt_pesquisaPedidos.DefaultText = ""
+        Me.txt_pesquisaPedidos.DisabledState.BorderColor = System.Drawing.Color.FromArgb(CType(CType(208, Byte), Integer), CType(CType(208, Byte), Integer), CType(CType(208, Byte), Integer))
+        Me.txt_pesquisaPedidos.DisabledState.FillColor = System.Drawing.Color.FromArgb(CType(CType(226, Byte), Integer), CType(CType(226, Byte), Integer), CType(CType(226, Byte), Integer))
+        Me.txt_pesquisaPedidos.DisabledState.ForeColor = System.Drawing.Color.FromArgb(CType(CType(138, Byte), Integer), CType(CType(138, Byte), Integer), CType(CType(138, Byte), Integer))
+        Me.txt_pesquisaPedidos.DisabledState.PlaceholderForeColor = System.Drawing.Color.FromArgb(CType(CType(138, Byte), Integer), CType(CType(138, Byte), Integer), CType(CType(138, Byte), Integer))
+        Me.txt_pesquisaPedidos.FillColor = System.Drawing.Color.FromArgb(CType(CType(239, Byte), Integer), CType(CType(239, Byte), Integer), CType(CType(239, Byte), Integer))
+        Me.txt_pesquisaPedidos.FocusedState.BorderColor = System.Drawing.Color.FromArgb(CType(CType(250, Byte), Integer), CType(CType(250, Byte), Integer), CType(CType(250, Byte), Integer))
+        Me.txt_pesquisaPedidos.Font = New System.Drawing.Font("Libre Caslon Display", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.txt_pesquisaPedidos.ForeColor = System.Drawing.Color.Black
+        Me.txt_pesquisaPedidos.HoverState.BorderColor = System.Drawing.Color.FromArgb(CType(CType(250, Byte), Integer), CType(CType(250, Byte), Integer), CType(CType(250, Byte), Integer))
+        Me.txt_pesquisaPedidos.IconLeft = CType(resources.GetObject("txt_pesquisaPedidos.IconLeft"), System.Drawing.Image)
+        Me.txt_pesquisaPedidos.Location = New System.Drawing.Point(518, 24)
+        Me.txt_pesquisaPedidos.Margin = New System.Windows.Forms.Padding(3, 4, 3, 4)
+        Me.txt_pesquisaPedidos.Name = "txt_pesquisaPedidos"
+        Me.txt_pesquisaPedidos.Padding = New System.Windows.Forms.Padding(15, 0, 15, 0)
+        Me.txt_pesquisaPedidos.PasswordChar = Global.Microsoft.VisualBasic.ChrW(0)
+        Me.txt_pesquisaPedidos.PlaceholderText = "Pesquise pedidos"
+        Me.txt_pesquisaPedidos.SelectedText = ""
+        Me.txt_pesquisaPedidos.Size = New System.Drawing.Size(413, 36)
+        Me.txt_pesquisaPedidos.TabIndex = 35
         '
         'Guna2Panel4
         '
@@ -1108,7 +1110,6 @@ Partial Class pedidos
     Friend WithEvents Guna2HtmlLabel4 As Guna.UI2.WinForms.Guna2HtmlLabel
     Friend WithEvents Guna2CirclePictureBox1 As Guna.UI2.WinForms.Guna2CirclePictureBox
     Friend WithEvents pnl_title As Guna.UI2.WinForms.Guna2ShadowPanel
-    Friend WithEvents Guna2TextBox2 As Guna.UI2.WinForms.Guna2TextBox
     Friend WithEvents Guna2HtmlLabel7 As Guna.UI2.WinForms.Guna2HtmlLabel
     Friend WithEvents Guna2Panel1 As Guna.UI2.WinForms.Guna2Panel
     Friend WithEvents Guna2Panel4 As Guna.UI2.WinForms.Guna2Panel
@@ -1155,4 +1156,5 @@ Partial Class pedidos
     Friend WithEvents Guna2HtmlLabel13 As Guna.UI2.WinForms.Guna2HtmlLabel
     Friend WithEvents Guna2Panel7 As Guna.UI2.WinForms.Guna2Panel
     Friend WithEvents Guna2Panel13 As Guna.UI2.WinForms.Guna2Panel
+    Friend WithEvents txt_pesquisaPedidos As Guna.UI2.WinForms.Guna2TextBox
 End Class
