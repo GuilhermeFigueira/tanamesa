@@ -32,6 +32,10 @@ Partial Class cadastrarFuncionário
         Me.txt_nome = New Guna.UI2.WinForms.Guna2TextBox()
         Me.Guna2HtmlLabel1 = New Guna.UI2.WinForms.Guna2HtmlLabel()
         Me.pnl_nome = New Guna.UI2.WinForms.Guna2ShadowPanel()
+        Me.Guna2HtmlLabel4 = New Guna.UI2.WinForms.Guna2HtmlLabel()
+        Me.Guna2HtmlLabel3 = New Guna.UI2.WinForms.Guna2HtmlLabel()
+        Me.txt_cpf = New Guna.UI2.WinForms.Guna2TextBox()
+        Me.txt_senha = New Guna.UI2.WinForms.Guna2TextBox()
         Me.pnl_titulo = New Guna.UI2.WinForms.Guna2Panel()
         Me.Guna2DragControl1 = New Guna.UI2.WinForms.Guna2DragControl(Me.components)
         Me.Guna2Panel2 = New Guna.UI2.WinForms.Guna2Panel()
@@ -40,15 +44,11 @@ Partial Class cadastrarFuncionário
         Me.Guna2HtmlLabel10 = New Guna.UI2.WinForms.Guna2HtmlLabel()
         Me.pbx_imagem = New Guna.UI2.WinForms.Guna2PictureBox()
         Me.pnl_info = New Guna.UI2.WinForms.Guna2ShadowPanel()
-        Me.ofd_imagem = New System.Windows.Forms.OpenFileDialog()
-        Me.Guna2HtmlLabel3 = New Guna.UI2.WinForms.Guna2HtmlLabel()
-        Me.Guna2HtmlLabel4 = New Guna.UI2.WinForms.Guna2HtmlLabel()
-        Me.txt_cpf = New Guna.UI2.WinForms.Guna2TextBox()
-        Me.txt_senha = New Guna.UI2.WinForms.Guna2TextBox()
         Me.Guna2HtmlLabel2 = New Guna.UI2.WinForms.Guna2HtmlLabel()
         Me.Guna2HtmlLabel5 = New Guna.UI2.WinForms.Guna2HtmlLabel()
         Me.Guna2TextBox2 = New Guna.UI2.WinForms.Guna2TextBox()
         Me.Guna2TextBox3 = New Guna.UI2.WinForms.Guna2TextBox()
+        Me.ofd_imagem = New System.Windows.Forms.OpenFileDialog()
         Me.Guna2ContainerControl1.SuspendLayout()
         Me.pnl_nome.SuspendLayout()
         Me.pnl_titulo.SuspendLayout()
@@ -175,6 +175,76 @@ Partial Class cadastrarFuncionário
         Me.pnl_nome.Size = New System.Drawing.Size(597, 187)
         Me.pnl_nome.TabIndex = 11
         '
+        'Guna2HtmlLabel4
+        '
+        Me.Guna2HtmlLabel4.BackColor = System.Drawing.Color.Transparent
+        Me.Guna2HtmlLabel4.Font = New System.Drawing.Font("Libre Caslon Display", 15.75!)
+        Me.Guna2HtmlLabel4.Location = New System.Drawing.Point(304, 91)
+        Me.Guna2HtmlLabel4.Name = "Guna2HtmlLabel4"
+        Me.Guna2HtmlLabel4.Size = New System.Drawing.Size(52, 27)
+        Me.Guna2HtmlLabel4.TabIndex = 14
+        Me.Guna2HtmlLabel4.Text = "Senha"
+        '
+        'Guna2HtmlLabel3
+        '
+        Me.Guna2HtmlLabel3.BackColor = System.Drawing.Color.Transparent
+        Me.Guna2HtmlLabel3.Font = New System.Drawing.Font("Libre Caslon Display", 15.75!)
+        Me.Guna2HtmlLabel3.Location = New System.Drawing.Point(14, 91)
+        Me.Guna2HtmlLabel3.Name = "Guna2HtmlLabel3"
+        Me.Guna2HtmlLabel3.Size = New System.Drawing.Size(41, 27)
+        Me.Guna2HtmlLabel3.TabIndex = 9
+        Me.Guna2HtmlLabel3.Text = "CPF"
+        '
+        'txt_cpf
+        '
+        Me.txt_cpf.AutoRoundedCorners = True
+        Me.txt_cpf.BorderColor = System.Drawing.Color.FromArgb(CType(CType(239, Byte), Integer), CType(CType(239, Byte), Integer), CType(CType(239, Byte), Integer))
+        Me.txt_cpf.BorderRadius = 17
+        Me.txt_cpf.Cursor = System.Windows.Forms.Cursors.Hand
+        Me.txt_cpf.DefaultText = ""
+        Me.txt_cpf.DisabledState.BorderColor = System.Drawing.Color.FromArgb(CType(CType(208, Byte), Integer), CType(CType(208, Byte), Integer), CType(CType(208, Byte), Integer))
+        Me.txt_cpf.DisabledState.FillColor = System.Drawing.Color.FromArgb(CType(CType(226, Byte), Integer), CType(CType(226, Byte), Integer), CType(CType(226, Byte), Integer))
+        Me.txt_cpf.DisabledState.ForeColor = System.Drawing.Color.FromArgb(CType(CType(138, Byte), Integer), CType(CType(138, Byte), Integer), CType(CType(138, Byte), Integer))
+        Me.txt_cpf.DisabledState.PlaceholderForeColor = System.Drawing.Color.FromArgb(CType(CType(138, Byte), Integer), CType(CType(138, Byte), Integer), CType(CType(138, Byte), Integer))
+        Me.txt_cpf.FillColor = System.Drawing.Color.FromArgb(CType(CType(239, Byte), Integer), CType(CType(239, Byte), Integer), CType(CType(239, Byte), Integer))
+        Me.txt_cpf.FocusedState.BorderColor = System.Drawing.Color.FromArgb(CType(CType(250, Byte), Integer), CType(CType(250, Byte), Integer), CType(CType(250, Byte), Integer))
+        Me.txt_cpf.Font = New System.Drawing.Font("Libre Caslon Display", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.txt_cpf.ForeColor = System.Drawing.Color.Black
+        Me.txt_cpf.HoverState.BorderColor = System.Drawing.Color.FromArgb(CType(CType(250, Byte), Integer), CType(CType(250, Byte), Integer), CType(CType(250, Byte), Integer))
+        Me.txt_cpf.Location = New System.Drawing.Point(14, 125)
+        Me.txt_cpf.Margin = New System.Windows.Forms.Padding(3, 4, 3, 4)
+        Me.txt_cpf.Name = "txt_cpf"
+        Me.txt_cpf.PasswordChar = Global.Microsoft.VisualBasic.ChrW(0)
+        Me.txt_cpf.PlaceholderText = ""
+        Me.txt_cpf.SelectedText = ""
+        Me.txt_cpf.Size = New System.Drawing.Size(280, 36)
+        Me.txt_cpf.TabIndex = 16
+        '
+        'txt_senha
+        '
+        Me.txt_senha.AutoRoundedCorners = True
+        Me.txt_senha.BorderColor = System.Drawing.Color.FromArgb(CType(CType(239, Byte), Integer), CType(CType(239, Byte), Integer), CType(CType(239, Byte), Integer))
+        Me.txt_senha.BorderRadius = 17
+        Me.txt_senha.Cursor = System.Windows.Forms.Cursors.Hand
+        Me.txt_senha.DefaultText = ""
+        Me.txt_senha.DisabledState.BorderColor = System.Drawing.Color.FromArgb(CType(CType(208, Byte), Integer), CType(CType(208, Byte), Integer), CType(CType(208, Byte), Integer))
+        Me.txt_senha.DisabledState.FillColor = System.Drawing.Color.FromArgb(CType(CType(226, Byte), Integer), CType(CType(226, Byte), Integer), CType(CType(226, Byte), Integer))
+        Me.txt_senha.DisabledState.ForeColor = System.Drawing.Color.FromArgb(CType(CType(138, Byte), Integer), CType(CType(138, Byte), Integer), CType(CType(138, Byte), Integer))
+        Me.txt_senha.DisabledState.PlaceholderForeColor = System.Drawing.Color.FromArgb(CType(CType(138, Byte), Integer), CType(CType(138, Byte), Integer), CType(CType(138, Byte), Integer))
+        Me.txt_senha.FillColor = System.Drawing.Color.FromArgb(CType(CType(239, Byte), Integer), CType(CType(239, Byte), Integer), CType(CType(239, Byte), Integer))
+        Me.txt_senha.FocusedState.BorderColor = System.Drawing.Color.FromArgb(CType(CType(250, Byte), Integer), CType(CType(250, Byte), Integer), CType(CType(250, Byte), Integer))
+        Me.txt_senha.Font = New System.Drawing.Font("Libre Caslon Display", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.txt_senha.ForeColor = System.Drawing.Color.Black
+        Me.txt_senha.HoverState.BorderColor = System.Drawing.Color.FromArgb(CType(CType(250, Byte), Integer), CType(CType(250, Byte), Integer), CType(CType(250, Byte), Integer))
+        Me.txt_senha.Location = New System.Drawing.Point(304, 125)
+        Me.txt_senha.Margin = New System.Windows.Forms.Padding(3, 4, 3, 4)
+        Me.txt_senha.Name = "txt_senha"
+        Me.txt_senha.PasswordChar = Global.Microsoft.VisualBasic.ChrW(42)
+        Me.txt_senha.PlaceholderText = ""
+        Me.txt_senha.SelectedText = ""
+        Me.txt_senha.Size = New System.Drawing.Size(280, 36)
+        Me.txt_senha.TabIndex = 17
+        '
         'pnl_titulo
         '
         Me.pnl_titulo.Controls.Add(Me.Guna2ContainerControl1)
@@ -281,80 +351,6 @@ Partial Class cadastrarFuncionário
         Me.pnl_info.Size = New System.Drawing.Size(597, 112)
         Me.pnl_info.TabIndex = 12
         '
-        'ofd_imagem
-        '
-        Me.ofd_imagem.FileName = "OpenFileDialog1"
-        '
-        'Guna2HtmlLabel3
-        '
-        Me.Guna2HtmlLabel3.BackColor = System.Drawing.Color.Transparent
-        Me.Guna2HtmlLabel3.Font = New System.Drawing.Font("Libre Caslon Display", 15.75!)
-        Me.Guna2HtmlLabel3.Location = New System.Drawing.Point(14, 91)
-        Me.Guna2HtmlLabel3.Name = "Guna2HtmlLabel3"
-        Me.Guna2HtmlLabel3.Size = New System.Drawing.Size(41, 27)
-        Me.Guna2HtmlLabel3.TabIndex = 9
-        Me.Guna2HtmlLabel3.Text = "CPF"
-        '
-        'Guna2HtmlLabel4
-        '
-        Me.Guna2HtmlLabel4.BackColor = System.Drawing.Color.Transparent
-        Me.Guna2HtmlLabel4.Font = New System.Drawing.Font("Libre Caslon Display", 15.75!)
-        Me.Guna2HtmlLabel4.Location = New System.Drawing.Point(304, 91)
-        Me.Guna2HtmlLabel4.Name = "Guna2HtmlLabel4"
-        Me.Guna2HtmlLabel4.Size = New System.Drawing.Size(52, 27)
-        Me.Guna2HtmlLabel4.TabIndex = 14
-        Me.Guna2HtmlLabel4.Text = "Senha"
-        '
-        'txt_cpf
-        '
-        Me.txt_cpf.AutoRoundedCorners = True
-        Me.txt_cpf.BorderColor = System.Drawing.Color.FromArgb(CType(CType(239, Byte), Integer), CType(CType(239, Byte), Integer), CType(CType(239, Byte), Integer))
-        Me.txt_cpf.BorderRadius = 17
-        Me.txt_cpf.Cursor = System.Windows.Forms.Cursors.Hand
-        Me.txt_cpf.DefaultText = ""
-        Me.txt_cpf.DisabledState.BorderColor = System.Drawing.Color.FromArgb(CType(CType(208, Byte), Integer), CType(CType(208, Byte), Integer), CType(CType(208, Byte), Integer))
-        Me.txt_cpf.DisabledState.FillColor = System.Drawing.Color.FromArgb(CType(CType(226, Byte), Integer), CType(CType(226, Byte), Integer), CType(CType(226, Byte), Integer))
-        Me.txt_cpf.DisabledState.ForeColor = System.Drawing.Color.FromArgb(CType(CType(138, Byte), Integer), CType(CType(138, Byte), Integer), CType(CType(138, Byte), Integer))
-        Me.txt_cpf.DisabledState.PlaceholderForeColor = System.Drawing.Color.FromArgb(CType(CType(138, Byte), Integer), CType(CType(138, Byte), Integer), CType(CType(138, Byte), Integer))
-        Me.txt_cpf.FillColor = System.Drawing.Color.FromArgb(CType(CType(239, Byte), Integer), CType(CType(239, Byte), Integer), CType(CType(239, Byte), Integer))
-        Me.txt_cpf.FocusedState.BorderColor = System.Drawing.Color.FromArgb(CType(CType(250, Byte), Integer), CType(CType(250, Byte), Integer), CType(CType(250, Byte), Integer))
-        Me.txt_cpf.Font = New System.Drawing.Font("Libre Caslon Display", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.txt_cpf.ForeColor = System.Drawing.Color.Black
-        Me.txt_cpf.HoverState.BorderColor = System.Drawing.Color.FromArgb(CType(CType(250, Byte), Integer), CType(CType(250, Byte), Integer), CType(CType(250, Byte), Integer))
-        Me.txt_cpf.Location = New System.Drawing.Point(14, 125)
-        Me.txt_cpf.Margin = New System.Windows.Forms.Padding(3, 4, 3, 4)
-        Me.txt_cpf.Name = "txt_cpf"
-        Me.txt_cpf.PasswordChar = Global.Microsoft.VisualBasic.ChrW(0)
-        Me.txt_cpf.PlaceholderText = ""
-        Me.txt_cpf.SelectedText = ""
-        Me.txt_cpf.Size = New System.Drawing.Size(280, 36)
-        Me.txt_cpf.TabIndex = 16
-        '
-        'txt_senha
-        '
-        Me.txt_senha.AutoRoundedCorners = True
-        Me.txt_senha.BorderColor = System.Drawing.Color.FromArgb(CType(CType(239, Byte), Integer), CType(CType(239, Byte), Integer), CType(CType(239, Byte), Integer))
-        Me.txt_senha.BorderRadius = 17
-        Me.txt_senha.Cursor = System.Windows.Forms.Cursors.Hand
-        Me.txt_senha.DefaultText = ""
-        Me.txt_senha.DisabledState.BorderColor = System.Drawing.Color.FromArgb(CType(CType(208, Byte), Integer), CType(CType(208, Byte), Integer), CType(CType(208, Byte), Integer))
-        Me.txt_senha.DisabledState.FillColor = System.Drawing.Color.FromArgb(CType(CType(226, Byte), Integer), CType(CType(226, Byte), Integer), CType(CType(226, Byte), Integer))
-        Me.txt_senha.DisabledState.ForeColor = System.Drawing.Color.FromArgb(CType(CType(138, Byte), Integer), CType(CType(138, Byte), Integer), CType(CType(138, Byte), Integer))
-        Me.txt_senha.DisabledState.PlaceholderForeColor = System.Drawing.Color.FromArgb(CType(CType(138, Byte), Integer), CType(CType(138, Byte), Integer), CType(CType(138, Byte), Integer))
-        Me.txt_senha.FillColor = System.Drawing.Color.FromArgb(CType(CType(239, Byte), Integer), CType(CType(239, Byte), Integer), CType(CType(239, Byte), Integer))
-        Me.txt_senha.FocusedState.BorderColor = System.Drawing.Color.FromArgb(CType(CType(250, Byte), Integer), CType(CType(250, Byte), Integer), CType(CType(250, Byte), Integer))
-        Me.txt_senha.Font = New System.Drawing.Font("Libre Caslon Display", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.txt_senha.ForeColor = System.Drawing.Color.Black
-        Me.txt_senha.HoverState.BorderColor = System.Drawing.Color.FromArgb(CType(CType(250, Byte), Integer), CType(CType(250, Byte), Integer), CType(CType(250, Byte), Integer))
-        Me.txt_senha.Location = New System.Drawing.Point(304, 125)
-        Me.txt_senha.Margin = New System.Windows.Forms.Padding(3, 4, 3, 4)
-        Me.txt_senha.Name = "txt_senha"
-        Me.txt_senha.PasswordChar = Global.Microsoft.VisualBasic.ChrW(42)
-        Me.txt_senha.PlaceholderText = ""
-        Me.txt_senha.SelectedText = ""
-        Me.txt_senha.Size = New System.Drawing.Size(280, 36)
-        Me.txt_senha.TabIndex = 17
-        '
         'Guna2HtmlLabel2
         '
         Me.Guna2HtmlLabel2.BackColor = System.Drawing.Color.Transparent
@@ -426,7 +422,11 @@ Partial Class cadastrarFuncionário
         Me.Guna2TextBox3.Size = New System.Drawing.Size(366, 36)
         Me.Guna2TextBox3.TabIndex = 23
         '
-        'janelaDefault1
+        'ofd_imagem
+        '
+        Me.ofd_imagem.FileName = "OpenFileDialog1"
+        '
+        'cadastrarFuncionário
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
@@ -436,7 +436,7 @@ Partial Class cadastrarFuncionário
         Me.Controls.Add(Me.lbl_titulo)
         Me.Controls.Add(Me.pnl_titulo)
         Me.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None
-        Me.Name = "janelaDefault1"
+        Me.Name = "cadastrarFuncionário"
         Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen
         Me.Text = "sair1"
         Me.Guna2ContainerControl1.ResumeLayout(False)

@@ -27,4 +27,8 @@ Public Class cadastrarFuncionário
         lbl_titulo.Text = titulo
         btn_cadastrar.Text = btn
     End Sub
+
+    Private Sub Guna2Panel2_Paint(sender As Object, e As PaintEventArgs) Handles Guna2Panel2.Paint
+
+    End Sub
 End Class
