@@ -1,5 +1,5 @@
 ﻿<Global.Microsoft.VisualBasic.CompilerServices.DesignerGenerated()>
-Partial Class cadastrarCardápio
+Partial Class cadastrarCardapio
     Inherits System.Windows.Forms.Form
 
     'Descartar substituições de formulário para limpar a lista de componentes.
@@ -23,7 +23,7 @@ Partial Class cadastrarCardápio
     <System.Diagnostics.DebuggerStepThrough()>
     Private Sub InitializeComponent()
         Me.components = New System.ComponentModel.Container()
-        Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(cadastrarCardápio))
+        Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(cadastrarCardapio))
         Me.Guna2BorderlessForm1 = New Guna.UI2.WinForms.Guna2BorderlessForm(Me.components)
         Me.btn_minimizar = New Guna.UI2.WinForms.Guna2ImageButton()
         Me.btn_fechar = New Guna.UI2.WinForms.Guna2ImageButton()
@@ -348,7 +348,7 @@ Partial Class cadastrarCardápio
         Me.txt_preco.Font = New System.Drawing.Font("Libre Caslon Display", 14.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.txt_preco.ForeColor = System.Drawing.Color.Black
         Me.txt_preco.HoverState.BorderColor = System.Drawing.Color.FromArgb(CType(CType(250, Byte), Integer), CType(CType(250, Byte), Integer), CType(CType(250, Byte), Integer))
-        Me.txt_preco.Location = New System.Drawing.Point(352, 170)
+        Me.txt_preco.Location = New System.Drawing.Point(349, 170)
         Me.txt_preco.Margin = New System.Windows.Forms.Padding(4, 5, 4, 5)
         Me.txt_preco.Name = "txt_preco"
         Me.txt_preco.PasswordChar = Global.Microsoft.VisualBasic.ChrW(0)
@@ -374,7 +374,7 @@ Partial Class cadastrarCardápio
         Me.txt_precoRecomendado.Font = New System.Drawing.Font("Libre Caslon Display", 14.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.txt_precoRecomendado.ForeColor = System.Drawing.Color.White
         Me.txt_precoRecomendado.HoverState.BorderColor = System.Drawing.Color.FromArgb(CType(CType(250, Byte), Integer), CType(CType(250, Byte), Integer), CType(CType(250, Byte), Integer))
-        Me.txt_precoRecomendado.Location = New System.Drawing.Point(68, 170)
+        Me.txt_precoRecomendado.Location = New System.Drawing.Point(59, 170)
         Me.txt_precoRecomendado.Margin = New System.Windows.Forms.Padding(4, 5, 4, 5)
         Me.txt_precoRecomendado.Name = "txt_precoRecomendado"
         Me.txt_precoRecomendado.PasswordChar = Global.Microsoft.VisualBasic.ChrW(0)
@@ -433,7 +433,7 @@ Partial Class cadastrarCardápio
         '
         Me.Guna2HtmlLabel5.BackColor = System.Drawing.Color.Transparent
         Me.Guna2HtmlLabel5.Font = New System.Drawing.Font("Libre Caslon Display", 15.75!)
-        Me.Guna2HtmlLabel5.Location = New System.Drawing.Point(416, 135)
+        Me.Guna2HtmlLabel5.Location = New System.Drawing.Point(418, 135)
         Me.Guna2HtmlLabel5.Name = "Guna2HtmlLabel5"
         Me.Guna2HtmlLabel5.Size = New System.Drawing.Size(50, 27)
         Me.Guna2HtmlLabel5.TabIndex = 14
@@ -488,7 +488,7 @@ Partial Class cadastrarCardápio
         '
         Me.ofd_imagem.FileName = "OpenFileDialog1"
         '
-        'cadastrarCardápio
+        'cadastrarCardapio
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
@@ -499,7 +499,7 @@ Partial Class cadastrarCardápio
         Me.Controls.Add(Me.Guna2ContainerControl1)
         Me.Controls.Add(Me.pnl_titulo)
         Me.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None
-        Me.Name = "cadastrarCardápio"
+        Me.Name = "cadastrarCardapio"
         Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen
         Me.Text = "sair1"
         Me.Guna2ContainerControl1.ResumeLayout(False)

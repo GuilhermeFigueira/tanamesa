@@ -1,7 +1,7 @@
 ﻿Imports System.Runtime.CompilerServices
 Imports Guna.UI2.WinForms
 
-Public Class cadastrarCardápio
+Public Class cadastrarCardapio
     Private Sub btn_fechar_Click(sender As Object, e As EventArgs) Handles btn_fechar.Click
         Close()
     End Sub
@@ -28,7 +28,7 @@ Public Class cadastrarCardápio
         btn_cadastrar.Text = btn
     End Sub
 
-    Private Sub btn_cadastrar_Click(sender As Object, e As EventArgs) Handles btn_cadastrar.Click
-
+    Private Sub cadastrarCardapio_Load(sender As Object, e As EventArgs) Handles Me.Load
+        Me.TopMost = True
     End Sub
 End Class

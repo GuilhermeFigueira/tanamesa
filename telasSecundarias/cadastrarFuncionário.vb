@@ -27,4 +27,8 @@ Public Class cadastrarFuncionário
         lbl_titulo.Text = titulo
         btn_cadastrar.Text = btn
     End Sub
+
+    Private Sub cadastrarFuncionário_Load(sender As Object, e As EventArgs) Handles Me.Load
+        Me.TopMost = True
+    End Sub
 End Class

@@ -5,7 +5,7 @@ Imports System.Web.UI.Design
 Imports Guna.UI2.WinForms
 
 Public Class estoque
-    Dim estoque As New criarCardapio
+    Dim estoque As New criarEstoque
     Private Sub btn_fechar_Click(sender As Object, e As EventArgs) Handles btn_fechar.Click
         telaConfirmacao.setTexto("Deseja realmente sair?")
         telaConfirmacao.Show()
@@ -44,5 +44,38 @@ Public Class estoque
     End Sub
     Private Sub estoque_Click(sender As Object, e As EventArgs) Handles Me.Click
         cadastrarEstoque.Show()
+    End Sub
+
+    Private Sub btn_addProd_Click(sender As Object, e As EventArgs) Handles btn_addProd.Click
+        cadastrarEstoque.Show()
+    End Sub
+
+    Private Sub estoque_Load(sender As Object, e As EventArgs) Handles MyBase.Load
+        conecta_banco_access()
+        estoque.carregarEstoque()
+    End Sub
+End Class
+Class criarEstoque
+    Public Sub carregarEstoque()
+        MessageBox.Show(String.Format("Error: {0}", "bomba"))
+        Try
+            sql = "SELECT * FROM tb_estoque ORDER BY nome ASC"
+            rs = db.Execute(sql)
+            count = 0
+            With estoque.dgv_estoque
+                .Rows.Clear()
+                'MessageBox.Show(String.Format("Error: {0}", rs.Fields(7).Value
+                ' Do While rs.EOF = False
+                '.Rows.Add(Nothing, rs.Fields(1).Value, rs.Fields(2).Value, rs.Fields(8).Value, rs.Fields(4), rs.Fields(6), rs.Fields(5), Nothing, Nothing)
+                'Dim fotoProduto As Image = Image.FromFile(rs.Fields(7).Value)
+                '.Rows(count).Cells("fotoProduto").Value = fotoProduto
+                'count += 1
+                'rs.MoveNext()
+                'Loop
+            End With
+        Catch ex As Exception
+            telaErro.setTexto("Erro ao carregar dados!")
+            telaErro.Show()
+        End Try
     End Sub
 End Class

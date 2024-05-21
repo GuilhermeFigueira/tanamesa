@@ -101,7 +101,7 @@ Partial Class infoUsuario
         '
         Me.pbx_imgFuncionario.BorderRadius = 16
         Me.pbx_imgFuncionario.ImageRotate = 0!
-        Me.pbx_imgFuncionario.Location = New System.Drawing.Point(27, 78)
+        Me.pbx_imgFuncionario.Location = New System.Drawing.Point(19, 78)
         Me.pbx_imgFuncionario.Name = "pbx_imgFuncionario"
         Me.pbx_imgFuncionario.Size = New System.Drawing.Size(183, 182)
         Me.pbx_imgFuncionario.TabIndex = 3
@@ -199,7 +199,7 @@ Partial Class infoUsuario
         Me.pnl_info.Controls.Add(Me.txt_nome)
         Me.pnl_info.Controls.Add(Me.Guna2HtmlLabel1)
         Me.pnl_info.FillColor = System.Drawing.Color.White
-        Me.pnl_info.Location = New System.Drawing.Point(228, 78)
+        Me.pnl_info.Location = New System.Drawing.Point(220, 78)
         Me.pnl_info.Name = "pnl_info"
         Me.pnl_info.Radius = 6
         Me.pnl_info.ShadowColor = System.Drawing.Color.Black

@@ -17,4 +17,8 @@
             End If
         Next
     End Sub
+
+    Private Sub deslogar_Load(sender As Object, e As EventArgs) Handles Me.Load
+        Me.TopMost = True
+    End Sub
 End Class

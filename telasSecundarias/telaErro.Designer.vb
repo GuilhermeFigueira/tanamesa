@@ -30,6 +30,7 @@ Partial Class telaErro
         Me.Guna2ContainerControl1 = New Guna.UI2.WinForms.Guna2ContainerControl()
         Me.lbl_mensagem = New Guna.UI2.WinForms.Guna2HtmlLabel()
         Me.btn_ok = New Guna.UI2.WinForms.Guna2Button()
+        Me.Guna2DragControl1 = New Guna.UI2.WinForms.Guna2DragControl(Me.components)
         Me.Guna2ContainerControl1.SuspendLayout()
         Me.SuspendLayout()
         '
@@ -108,11 +109,17 @@ Partial Class telaErro
         Me.btn_ok.FillColor = System.Drawing.Color.FromArgb(CType(CType(46, Byte), Integer), CType(CType(31, Byte), Integer), CType(CType(39, Byte), Integer))
         Me.btn_ok.Font = New System.Drawing.Font("Libre Caslon Display", 18.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.btn_ok.ForeColor = System.Drawing.Color.White
-        Me.btn_ok.Location = New System.Drawing.Point(21, 101)
+        Me.btn_ok.Location = New System.Drawing.Point(16, 101)
         Me.btn_ok.Name = "btn_ok"
-        Me.btn_ok.Size = New System.Drawing.Size(452, 47)
+        Me.btn_ok.Size = New System.Drawing.Size(453, 47)
         Me.btn_ok.TabIndex = 7
         Me.btn_ok.Text = "Ok"
+        '
+        'Guna2DragControl1
+        '
+        Me.Guna2DragControl1.DockIndicatorTransparencyValue = 0.6R
+        Me.Guna2DragControl1.TargetControl = Me.lbl_mensagem
+        Me.Guna2DragControl1.UseTransparentDrag = True
         '
         'telaErro
         '
@@ -138,4 +145,5 @@ Partial Class telaErro
     Friend WithEvents btn_minimizar As Guna.UI2.WinForms.Guna2ImageButton
     Friend WithEvents lbl_mensagem As Guna.UI2.WinForms.Guna2HtmlLabel
     Friend WithEvents btn_ok As Guna.UI2.WinForms.Guna2Button
+    Friend WithEvents Guna2DragControl1 As Guna.UI2.WinForms.Guna2DragControl
 End Class

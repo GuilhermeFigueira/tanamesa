@@ -17,4 +17,7 @@ Public Class telaErro
         Close()
     End Sub
 
+    Private Sub telaErro_Load(sender As Object, e As EventArgs) Handles Me.Load
+        Me.TopMost = True
+    End Sub
 End Class

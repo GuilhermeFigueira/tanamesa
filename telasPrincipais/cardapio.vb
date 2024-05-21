@@ -50,6 +50,10 @@ Public Class cardapio
         cardapio.carregarCardapio()
         'cardapio.carregarPedidos()
     End Sub
+
+    Private Sub btn_addProd_Click(sender As Object, e As EventArgs) Handles btn_addProd.Click
+        cadastrarCardapio.Show()
+    End Sub
 End Class
 Public Class criarCardapio
     Public Sub carregarCardapio()

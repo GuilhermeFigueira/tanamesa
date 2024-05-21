@@ -31,6 +31,7 @@ Partial Class telaConfirmacao
         Me.lbl_mensagem = New Guna.UI2.WinForms.Guna2HtmlLabel()
         Me.btn_sim = New Guna.UI2.WinForms.Guna2Button()
         Me.btn_nao = New Guna.UI2.WinForms.Guna2Button()
+        Me.Guna2DragControl1 = New Guna.UI2.WinForms.Guna2DragControl(Me.components)
         Me.Guna2ContainerControl1.SuspendLayout()
         Me.SuspendLayout()
         '
@@ -96,6 +97,7 @@ Partial Class telaConfirmacao
         Me.lbl_mensagem.Name = "lbl_mensagem"
         Me.lbl_mensagem.Size = New System.Drawing.Size(486, 126)
         Me.lbl_mensagem.TabIndex = 4
+        Me.lbl_mensagem.Text = Nothing
         Me.lbl_mensagem.TextAlignment = System.Drawing.ContentAlignment.MiddleCenter
         '
         'btn_sim
@@ -130,6 +132,12 @@ Partial Class telaConfirmacao
         Me.btn_nao.TabIndex = 8
         Me.btn_nao.Text = "Não"
         '
+        'Guna2DragControl1
+        '
+        Me.Guna2DragControl1.DockIndicatorTransparencyValue = 0.6R
+        Me.Guna2DragControl1.TargetControl = Me.lbl_mensagem
+        Me.Guna2DragControl1.UseTransparentDrag = True
+        '
         'telaConfirmacao
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
@@ -156,4 +164,5 @@ Partial Class telaConfirmacao
     Friend WithEvents lbl_mensagem As Guna.UI2.WinForms.Guna2HtmlLabel
     Friend WithEvents btn_sim As Guna.UI2.WinForms.Guna2Button
     Friend WithEvents btn_nao As Guna.UI2.WinForms.Guna2Button
+    Friend WithEvents Guna2DragControl1 As Guna.UI2.WinForms.Guna2DragControl
 End Class

@@ -79,10 +79,10 @@
     <Import Include="System.Threading.Tasks" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="telasSecundarias\cadastrarCardápio.Designer.vb">
-      <DependentUpon>cadastrarCardápio.vb</DependentUpon>
+    <Compile Include="telasSecundarias\cadastrarCardapio.Designer.vb">
+      <DependentUpon>cadastrarCardapio.vb</DependentUpon>
     </Compile>
-    <Compile Include="telasSecundarias\cadastrarCardápio.vb">
+    <Compile Include="telasSecundarias\cadastrarCardapio.vb">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="telasPrincipais\estoque.Designer.vb">
@@ -183,8 +183,8 @@
     </Compile>
   </ItemGroup>
   <ItemGroup>
-    <EmbeddedResource Include="telasSecundarias\cadastrarCardápio.resx">
-      <DependentUpon>cadastrarCardápio.vb</DependentUpon>
+    <EmbeddedResource Include="telasSecundarias\cadastrarCardapio.resx">
+      <DependentUpon>cadastrarCardapio.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="telasPrincipais\estoque.resx">
       <DependentUpon>estoque.vb</DependentUpon>
@@ -245,6 +245,16 @@
     <None Include="App.config" />
     <None Include="packages.config" />
   </ItemGroup>
-  <ItemGroup />
+  <ItemGroup>
+    <COMReference Include="ADODB">
+      <Guid>{B691E011-1797-432E-907A-4D8C69339129}</Guid>
+      <VersionMajor>6</VersionMajor>
+      <VersionMinor>1</VersionMinor>
+      <Lcid>0</Lcid>
+      <WrapperTool>tlbimp</WrapperTool>
+      <Isolated>False</Isolated>
+      <EmbedInteropTypes>True</EmbedInteropTypes>
+    </COMReference>
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.VisualBasic.targets" />
 </Project>
