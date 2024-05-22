@@ -1,4 +1,6 @@
-﻿Module Module1
+﻿Imports System.Globalization
+
+Module Module1
     Public diretorio As String
     Public db As ADODB.Connection
     Public rs As New ADODB.Recordset
@@ -24,4 +26,10 @@
         telaConfirmacao.setTexto("Deseja realmente sair?")
         telaConfirmacao.Show()
     End Sub
+
+    Public Function formatDate(data As Object) As String
+        Dim dateTime As DateTime = DirectCast(data, DateTime)
+        Dim dateOnly As String = dateTime.ToShortDateString()
+        Return dateOnly
+    End Function
 End Module

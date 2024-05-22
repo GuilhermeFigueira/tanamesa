@@ -3,7 +3,6 @@ Imports System.IO
 Imports System.Runtime.CompilerServices
 Imports System.Web.UI.Design
 Imports Guna.UI2.WinForms
-
 Public Class estoque
     Dim estoque As New criarEstoque
     Private Sub btn_fechar_Click(sender As Object, e As EventArgs) Handles btn_fechar.Click
@@ -64,18 +63,13 @@ Class criarEstoque
             rs = db.Execute(sql)
             count = 0
             With estoque.dgv_estoque
-                .Columns("dataCompra").DefaultCellStyle.
                 .Rows.Clear()
                 Do While rs.EOF = False
-                    Dim data_compra As String()
-                    data_compra = rs.Fields(5).Value.ToString.Split(" ")
-
-                    MessageBox.Show(String.Format("Error: {0}", data_compra))
-                    time13
-                    TimeFatec
-                    143.0.58.194
-                    https://sharp-tires-hope.loca.lt/public
-                    .Rows.Add(Nothing, rs.Fields(1).Value, rs.Fields(2).Value, rs.Fields(8).Value, rs.Fields(4).Value, data_compra, rs.Fields(5), Nothing, Nothing)
+                    'MessageBox.Show(String.Format("Error: {0}", dateOnly))
+                    'time13
+                    'TimeFatec
+                    '143.0.58.194
+                    .Rows.Add(Nothing, rs.Fields(1).Value, rs.Fields(2).Value, rs.Fields(8).Value, rs.Fields(4).Value, formatDate(rs.Fields(6).Value), formatDate(rs.Fields(5).Value), Nothing, Nothing)
                     'Dim fotoProduto As Image = Image.FromFile(rs.Fields(7).Value)
                     '.Rows(count).Cells("fotoProduto").Value = fotoProduto
                     count += 1

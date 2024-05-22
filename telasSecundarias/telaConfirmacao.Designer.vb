@@ -42,7 +42,6 @@ Partial Class telaConfirmacao
         Me.Guna2BorderlessForm1.DockIndicatorTransparencyValue = 0.6R
         Me.Guna2BorderlessForm1.DragStartTransparencyValue = 1.0R
         Me.Guna2BorderlessForm1.ResizeForm = False
-        Me.Guna2BorderlessForm1.TransparentWhileDrag = True
         '
         'btn_minimizar
         '
@@ -136,7 +135,7 @@ Partial Class telaConfirmacao
         '
         Me.Guna2DragControl1.DockIndicatorTransparencyValue = 0.6R
         Me.Guna2DragControl1.TargetControl = Me.lbl_mensagem
-        Me.Guna2DragControl1.UseTransparentDrag = True
+        Me.Guna2DragControl1.TransparentWhileDrag = False
         '
         'telaConfirmacao
         '
