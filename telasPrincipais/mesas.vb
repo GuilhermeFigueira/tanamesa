@@ -6,7 +6,7 @@ Imports System.Web.UI.Design
 Imports Guna.UI2.WinForms
 
 Public Class mesas
-    Dim mesas As New criarMesas
+    Dim gerenciarMesas As New criarMesas
     Private Sub btn_fechar_Click(sender As Object, e As EventArgs) Handles btn_fechar.Click
         sair()
     End Sub
@@ -46,8 +46,8 @@ Public Class mesas
 
     Private Sub mesas_Load(sender As Object, e As EventArgs) Handles MyBase.Load
         telaConfirmacao.setSub(Sub() Application.Exit())
-        mesas.carregarMesas()
-        mesas.atualizarMesa()
+        gerenciarMesas.carregarMesas()
+        gerenciarMesas.atualizarMesa()
     End Sub
 
 End Class

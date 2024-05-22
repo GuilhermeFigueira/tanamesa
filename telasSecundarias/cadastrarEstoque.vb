@@ -1,6 +1,7 @@
 ﻿Imports System.Runtime.CompilerServices
+Imports System.Security.Cryptography
 Imports Guna.UI2.WinForms
-
+Imports System.IO
 Public Class cadastrarEstoque
     Private Sub btn_fechar_Click(sender As Object, e As EventArgs) Handles btn_fechar.Click
         Close()
@@ -13,12 +14,19 @@ Public Class cadastrarEstoque
     Private Sub pbx_imagem_Click(sender As Object, e As EventArgs) Handles pbx_imagem.Click
         Try
             With ofd_imagem
-                .Title = "SELECIONE UMA FOTO"
-                .InitialDirectory = (Application.StartupPath & "\Fotos")
+                .Title = "Selecione uma foto"
+                .InitialDirectory = (Application.StartupPath & "\imgProdutos")
                 .ShowDialog()
-                diretorio = .FileName
-                pbx_imagem.Load(diretorio)
+                caminhoImagem = .FileName
+                pbx_imagem.Load(caminhoImagem)
             End With
+            Dim randomNomeArquivo As Guid = Guid.NewGuid()
+            Dim uuidString As String = randomNomeArquivo.ToString()
+
+            Dim caminhoCopia As String = Path.Combine(Application.StartupPath, "imgProdutos", Path.GetFileName($"{uuidString}.jpg"))
+            Directory.CreateDirectory(Path.GetDirectoryName(caminhoCopia))
+            File.Copy(caminhoImagem, caminhoCopia, True)
+            caminhoImagem = caminhoCopia
         Catch ex As Exception
             Exit Sub
         End Try
@@ -30,5 +38,9 @@ Public Class cadastrarEstoque
 
     Private Sub cadastrarEstoque_Load(sender As Object, e As EventArgs) Handles Me.Load
         Me.TopMost = True
+    End Sub
+
+    Private Sub btn_cadastrar_Click(sender As Object, e As EventArgs) Handles btn_cadastrar.Click
+        gerenciadorEstoque.cadastrarItemNoEstoque()
     End Sub
 End Class

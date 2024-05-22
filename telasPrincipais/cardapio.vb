@@ -6,7 +6,7 @@ Imports System.Web.UI.Design
 Imports Guna.UI2.WinForms
 
 Public Class cardapio
-    Dim cardapio As New criarCardapio
+    Dim gerenciadorCardapio As New criarCardapio
     Private Sub btn_fechar_Click(sender As Object, e As EventArgs) Handles btn_fechar.Click
         sair()
     End Sub
@@ -47,7 +47,7 @@ Public Class cardapio
 
     Private Sub cardapio_Load(sender As Object, e As EventArgs) Handles Me.Load
         telaConfirmacao.setSub(Sub() Application.Exit())
-        cardapio.carregarCardapio()
+        gerenciadorCardapio.carregarCardapio()
         'cardapio.carregarPedidos()
     End Sub
 

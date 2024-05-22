@@ -1,14 +1,15 @@
 ﻿Imports System.Globalization
 
 Module Module1
-    Public diretorio As String
     Public db As ADODB.Connection
     Public rs As New ADODB.Recordset
-    Public sql, aux_cpf, resp As String ' Querys CRUD linguagem SQL
+    Public sql As String ' Querys CRUD linguagem SQL
     Public dir_banco = Application.StartupPath & "\banco\db.mdb"
     Public count As Integer
+    Public caminhoImagem As String
+    Public gerenciadorEstoque As New criarEstoque
 
-    Sub conecta_banco_access()
+    Sub abreConexao()
         Try
             db = CreateObject("ADODB.Connection")
             db.Open("Provider=Microsoft.JET.OLEDB.4.0;Data Source=" & dir_banco)
@@ -19,6 +20,12 @@ Module Module1
             telaErro.Show()
             'MessageBox.Show(String.Format("Error: {0}", ex.Message))
         End Try
+    End Sub
+
+    Sub fechaConexao()
+        'telaErro.setTexto("Fechando banco")
+        'telaErro.Show()
+        db.Close()
     End Sub
 
     Sub sair()

@@ -16,8 +16,8 @@ Public Class cadastrarFuncionário
                 .Title = "SELECIONE UMA FOTO"
                 .InitialDirectory = (Application.StartupPath & "\Fotos")
                 .ShowDialog()
-                diretorio = .FileName
-                pbx_imagem.Load(diretorio)
+                caminhoImagem = .FileName
+                pbx_imagem.Load(caminhoImagem)
             End With
         Catch ex As Exception
             Exit Sub
