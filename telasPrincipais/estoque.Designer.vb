@@ -437,7 +437,7 @@ Partial Class estoque
         Me.dgv_estoque.ColumnHeadersHeight = 60
         Me.dgv_estoque.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.EnableResizing
         Me.dgv_estoque.Columns.AddRange(New System.Windows.Forms.DataGridViewColumn() {Me.fotoProduto, Me.produto, Me.categoria, Me.qtdEmEstoque, Me.vlrPagoUnidade, Me.dataCompra, Me.dataValidade, Me.editar, Me.excluir})
-        Me.dgv_estoque.Cursor = System.Windows.Forms.Cursors.Hand
+        Me.dgv_estoque.Cursor = System.Windows.Forms.Cursors.Default
         DataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft
         DataGridViewCellStyle3.BackColor = System.Drawing.Color.White
         DataGridViewCellStyle3.Font = New System.Drawing.Font("Libre Caslon Display", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))

@@ -67,13 +67,16 @@ Class criarEstoque
                 .ClearSelection()
                 .Rows.Clear()
                 Do While rs.EOF = False
-                    .Rows.Add(Nothing, rs.Fields(1).Value, rs.Fields(2).Value, rs.Fields(8).Value, rs.Fields(4), rs.Fields(6), rs.Fields(5), Nothing, Nothing)
+                    Dim data_compra As String()
+                    data_compra = rs.Fields(5).Value.ToString.Split(" ")
+                    MessageBox.Show(String.Format("Error: {0}", data_compra))
+
+                    .Rows.Add(Nothing, rs.Fields(1).Value, rs.Fields(2).Value, rs.Fields(8).Value, rs.Fields(4).Value, data_compra, rs.Fields(5), Nothing, Nothing)
                     'Dim fotoProduto As Image = Image.FromFile(rs.Fields(7).Value)
                     '.Rows(count).Cells("fotoProduto").Value = fotoProduto
                     count += 1
                     rs.MoveNext()
                 Loop
-                'MessageBox.Show(String.Format("Error: {0}", .Rows.Count))
             End With
         Catch ex As Exception
             telaErro.setTexto("Erro ao carregar dados!")
