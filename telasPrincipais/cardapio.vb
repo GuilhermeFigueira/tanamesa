@@ -8,8 +8,7 @@ Imports Guna.UI2.WinForms
 Public Class cardapio
     Dim cardapio As New criarCardapio
     Private Sub btn_fechar_Click(sender As Object, e As EventArgs) Handles btn_fechar.Click
-        telaConfirmacao.setTexto("Deseja realmente sair?")
-        telaConfirmacao.Show()
+        sair()
     End Sub
 
     Private Sub btn_minimizar_Click(sender As Object, e As EventArgs) Handles btn_minimizar.Click
@@ -47,6 +46,7 @@ Public Class cardapio
 
 
     Private Sub cardapio_Load(sender As Object, e As EventArgs) Handles Me.Load
+        telaConfirmacao.setSub(Sub() Application.Exit())
         cardapio.carregarCardapio()
         'cardapio.carregarPedidos()
     End Sub

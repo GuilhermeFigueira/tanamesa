@@ -2,8 +2,14 @@
 Imports Guna.UI2.WinForms
 
 Public Class telaConfirmacao
+    Delegate Sub DelegatedSub()
+
+    Dim simSub As DelegatedSub
     Public Sub setTexto(texto As String)
         lbl_mensagem.Text = texto
+    End Sub
+    Public Sub setSub(subToSet As DelegatedSub)
+        simSub = subToSet
     End Sub
     Private Sub btn_fechar_Click(sender As Object, e As EventArgs) Handles btn_fechar.Click
         Close()
@@ -14,7 +20,7 @@ Public Class telaConfirmacao
     End Sub
 
     Private Sub btn_sim_Click(sender As Object, e As EventArgs) Handles btn_sim.Click
-        Application.Exit()
+        simSub?.Invoke()
     End Sub
 
     Private Sub btn_nao_Click(sender As Object, e As EventArgs) Handles btn_nao.Click

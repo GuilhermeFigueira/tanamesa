@@ -8,8 +8,7 @@ Imports Guna.UI2.WinForms
 Public Class mesas
     Dim mesas As New criarMesas
     Private Sub btn_fechar_Click(sender As Object, e As EventArgs) Handles btn_fechar.Click
-        telaConfirmacao.setTexto("Deseja realmente sair?")
-        telaConfirmacao.Show()
+        sair()
     End Sub
 
     Private Sub btn_minimizar_Click(sender As Object, e As EventArgs) Handles btn_minimizar.Click
@@ -46,6 +45,7 @@ Public Class mesas
     End Sub
 
     Private Sub mesas_Load(sender As Object, e As EventArgs) Handles MyBase.Load
+        telaConfirmacao.setSub(Sub() Application.Exit())
         mesas.carregarMesas()
         mesas.atualizarMesa()
     End Sub

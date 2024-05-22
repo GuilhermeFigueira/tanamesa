@@ -7,8 +7,7 @@ Imports Guna.UI2.WinForms
 Public Class pedidos
     Dim pedidos As New criarPedidos
     Private Sub btn_fechar_Click(sender As Object, e As EventArgs) Handles btn_fechar.Click
-        telaConfirmacao.setTexto("Deseja realmente sair?")
-        telaConfirmacao.Show()
+        sair()
     End Sub
 
     Private Sub btn_minimizar_Click(sender As Object, e As EventArgs) Handles btn_minimizar.Click

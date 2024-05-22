@@ -7,8 +7,7 @@ Imports Guna.UI2.WinForms
 
 Public Class gerencia
     Private Sub btn_fechar_Click(sender As Object, e As EventArgs) Handles btn_fechar.Click
-        telaConfirmacao.setTexto("Deseja realmente sair?")
-        telaConfirmacao.Show()
+        sair()
     End Sub
 
     Private Sub btn_minimizar_Click(sender As Object, e As EventArgs) Handles btn_minimizar.Click
@@ -41,5 +40,9 @@ Public Class gerencia
     Private Sub btn_estoque_Click(sender As Object, e As EventArgs) Handles btn_estoque.Click
         estoque.Show()
         Me.Hide()
+    End Sub
+
+    Private Sub gerencia_Load(sender As Object, e As EventArgs) Handles Me.Load
+        telaConfirmacao.setSub(Sub() Application.Exit())
     End Sub
 End Class

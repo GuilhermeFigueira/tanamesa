@@ -10,12 +10,18 @@
         Try
             db = CreateObject("ADODB.Connection")
             db.Open("Provider=Microsoft.JET.OLEDB.4.0;Data Source=" & dir_banco)
-            telaErro.setTexto("Conexão com o banco de dados OK")
-            telaErro.Show()
+            'telaErro.setTexto("Conexão com o banco de dados OK")
+            'telaErro.Show()
         Catch ex As Exception
             telaErro.setTexto("Erro de conexão com o banco de dados")
             telaErro.Show()
             'MessageBox.Show(String.Format("Error: {0}", ex.Message))
         End Try
+    End Sub
+
+    Sub sair()
+        telaConfirmacao.setSub(Sub() Application.Exit())
+        telaConfirmacao.setTexto("Deseja realmente sair?")
+        telaConfirmacao.Show()
     End Sub
 End Module
