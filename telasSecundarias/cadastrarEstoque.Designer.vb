@@ -209,7 +209,6 @@ Partial Class cadastrarEstoque
         Me.cmb_unidade.Name = "cmb_unidade"
         Me.cmb_unidade.Size = New System.Drawing.Size(280, 36)
         Me.cmb_unidade.TabIndex = 15
-        Me.cmb_unidade.TextAlign = System.Windows.Forms.HorizontalAlignment.Right
         '
         'Guna2HtmlLabel4
         '
@@ -241,7 +240,6 @@ Partial Class cadastrarEstoque
         Me.cmb_categoria.Name = "cmb_categoria"
         Me.cmb_categoria.Size = New System.Drawing.Size(280, 36)
         Me.cmb_categoria.TabIndex = 13
-        Me.cmb_categoria.TextAlign = System.Windows.Forms.HorizontalAlignment.Right
         '
         'pnl_titulo
         '

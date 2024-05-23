@@ -1,5 +1,4 @@
-﻿Imports Newtonsoft.Json
-Imports System.IO
+﻿Imports System.IO
 Public Class estoque
     Private Sub btn_fechar_Click(sender As Object, e As EventArgs) Handles btn_fechar.Click
         sair()
@@ -75,8 +74,8 @@ Public Class criarEstoque
                 .Rows.Clear()
                 Do While rs.EOF = False
                     .Rows.Add(Nothing, rs.Fields(1).Value, rs.Fields(2).Value, rs.Fields(8).Value, rs.Fields(4).Value, formatDate(rs.Fields(6).Value), formatDate(rs.Fields(5).Value), Nothing, Nothing)
-                    Dim fotoProduto As Image = Image.FromFile(rs.Fields(7).Value)
-                    .Rows(count).Cells("fotoProduto").Value = fotoProduto
+                    'Dim fotoProduto As Image = Image.FromFile(rs.Fields(7).Value)
+                    '.Rows(count).Cells("fotoProduto").Value = fotoProduto
                     count += 1
                     rs.MoveNext()
                 Loop
@@ -98,9 +97,9 @@ Public Class criarEstoque
         Dim dataValidade As String = cadastrarEstoque.dtp_dataValidade.Value.Date
 
         Try
-            sql = "SELECT * FROM tb_estoque WHERE nome =" & nomeItem & ""
+            sql = "SELECT * FROM tb_estoque WHERE nome ='" & nomeItem & "'"
             rs = db.Execute(sql)
-            If rs.EOF = False Then
+            If rs.EOF = True Then
                 sql = "INSERT INTO tb_estoque VALUES ('" & nomeItem & "', '" & categoriaItem & "', '" & unidadeItem & "', '" & valorPagoUnidade & "', '" & dataValidade & "', '" & dataCompra & "', '" & caminhoImagem & "', '" & qtdComprada & "')"
                 rs = db.Execute(UCase(sql))
                 telaErro.setTexto($"{nomeItem} foi cadastrado com sucesso!")
@@ -112,14 +111,27 @@ Public Class criarEstoque
         Catch ex As Exception
             telaErro.setTexto("Erro ao cadastrar item no estoque!")
             telaErro.Show()
+            MessageBox.Show(String.Format("Error: {0}", "INSERT INTO tb_estoque VALUES ('" & nomeItem & "', '" & categoriaItem & "', '" & unidadeItem & "', '" & valorPagoUnidade & "', '" & dataValidade & "', '" & dataCompra & "', '" & caminhoImagem & "', '" & qtdComprada & "')"))
         End Try
         NotifyAll({})
     End Sub
 
     Public Sub carregarCategorias()
-        'For Each categoria In categorias
-        'cadastrarEstoque.cmb_categoria.Items.Add(categoria)
-        'Next
+        abreConexao()
+        Try
+            sql = "SELECT * FROM tb_categorias WHERE pertence = 'estoque'"
+            rs = db.Execute(sql)
+            With cadastrarEstoque.cmb_categoria
+                .Items.Clear()
+                Do While rs.EOF = False
+                    .Items.Add(rs.Fields(1).Value)
+                    rs.MoveNext()
+                Loop
+            End With
+        Catch ex As Exception
+            telaErro.setTexto("Erro ao carregar categorias!")
+            telaErro.Show()
+        End Try
     End Sub
     Public Class Categoria
         Public Property categoria As String

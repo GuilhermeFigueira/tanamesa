@@ -21,12 +21,12 @@ Public Class cadastrarEstoque
                 pbx_imagem.Load(caminhoImagem)
             End With
             Dim randomNomeArquivo As Guid = Guid.NewGuid()
-            Dim uuidString As String = randomNomeArquivo.ToString()
+            Dim uuidString As String = $"{randomNomeArquivo.ToString()}.jpg"
 
-            Dim caminhoCopia As String = Path.Combine(Application.StartupPath, "imgProdutos", Path.GetFileName($"{uuidString}.jpg"))
+            Dim caminhoCopia As String = Path.Combine(Application.StartupPath, "imgProdutos", Path.GetFileName(uuidString))
             Directory.CreateDirectory(Path.GetDirectoryName(caminhoCopia))
             File.Copy(caminhoImagem, caminhoCopia, True)
-            caminhoImagem = caminhoCopia
+            caminhoImagem = uuidString
         Catch ex As Exception
             Exit Sub
         End Try
@@ -38,6 +38,9 @@ Public Class cadastrarEstoque
 
     Private Sub cadastrarEstoque_Load(sender As Object, e As EventArgs) Handles Me.Load
         Me.TopMost = True
+        gerenciadorEstoque.carregarCategorias()
+        carregarUnidades(cmb_unidade)
+
     End Sub
 
     Private Sub btn_cadastrar_Click(sender As Object, e As EventArgs) Handles btn_cadastrar.Click

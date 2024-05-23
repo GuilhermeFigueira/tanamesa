@@ -67,6 +67,7 @@ Partial Class estoque
         Me.produto = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.categoria = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.qtdEmEstoque = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.unidade = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.vlrPagoUnidade = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.dataCompra = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.dataValidade = New System.Windows.Forms.DataGridViewTextBoxColumn()
@@ -419,14 +420,12 @@ Partial Class estoque
         Me.dgv_estoque.AllowUserToAddRows = False
         Me.dgv_estoque.AllowUserToDeleteRows = False
         Me.dgv_estoque.AllowUserToResizeColumns = False
-        Me.dgv_estoque.AllowUserToResizeRows = False
         DataGridViewCellStyle1.BackColor = System.Drawing.Color.White
         DataGridViewCellStyle1.Font = New System.Drawing.Font("Libre Caslon Display", 15.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         DataGridViewCellStyle1.ForeColor = System.Drawing.SystemColors.ControlText
         DataGridViewCellStyle1.SelectionBackColor = System.Drawing.Color.FromArgb(CType(CType(231, Byte), Integer), CType(CType(229, Byte), Integer), CType(CType(255, Byte), Integer))
         DataGridViewCellStyle1.SelectionForeColor = System.Drawing.Color.FromArgb(CType(CType(71, Byte), Integer), CType(CType(69, Byte), Integer), CType(CType(94, Byte), Integer))
         Me.dgv_estoque.AlternatingRowsDefaultCellStyle = DataGridViewCellStyle1
-        Me.dgv_estoque.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.None
         DataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft
         DataGridViewCellStyle2.BackColor = System.Drawing.Color.FromArgb(CType(CType(244, Byte), Integer), CType(CType(187, Byte), Integer), CType(CType(108, Byte), Integer))
         DataGridViewCellStyle2.Font = New System.Drawing.Font("Julius Sans One", 14.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
@@ -436,8 +435,7 @@ Partial Class estoque
         DataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.[True]
         Me.dgv_estoque.ColumnHeadersDefaultCellStyle = DataGridViewCellStyle2
         Me.dgv_estoque.ColumnHeadersHeight = 70
-        Me.dgv_estoque.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.EnableResizing
-        Me.dgv_estoque.Columns.AddRange(New System.Windows.Forms.DataGridViewColumn() {Me.fotoProduto, Me.produto, Me.categoria, Me.qtdEmEstoque, Me.vlrPagoUnidade, Me.dataCompra, Me.dataValidade, Me.editar, Me.excluir})
+        Me.dgv_estoque.Columns.AddRange(New System.Windows.Forms.DataGridViewColumn() {Me.fotoProduto, Me.produto, Me.categoria, Me.qtdEmEstoque, Me.unidade, Me.vlrPagoUnidade, Me.dataCompra, Me.dataValidade, Me.editar, Me.excluir})
         Me.dgv_estoque.Cursor = System.Windows.Forms.Cursors.Default
         DataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft
         DataGridViewCellStyle3.BackColor = System.Drawing.Color.White
@@ -463,6 +461,7 @@ Partial Class estoque
         DataGridViewCellStyle4.WrapMode = System.Windows.Forms.DataGridViewTriState.[True]
         Me.dgv_estoque.RowHeadersDefaultCellStyle = DataGridViewCellStyle4
         Me.dgv_estoque.RowHeadersVisible = False
+        Me.dgv_estoque.RowHeadersWidthSizeMode = System.Windows.Forms.DataGridViewRowHeadersWidthSizeMode.DisableResizing
         Me.dgv_estoque.RowTemplate.Height = 50
         Me.dgv_estoque.ScrollBars = System.Windows.Forms.ScrollBars.Vertical
         Me.dgv_estoque.ShowCellErrors = False
@@ -482,7 +481,7 @@ Partial Class estoque
         Me.dgv_estoque.ThemeStyle.HeaderStyle.BorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None
         Me.dgv_estoque.ThemeStyle.HeaderStyle.Font = New System.Drawing.Font("Julius Sans One", 14.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.dgv_estoque.ThemeStyle.HeaderStyle.ForeColor = System.Drawing.Color.Black
-        Me.dgv_estoque.ThemeStyle.HeaderStyle.HeaightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.EnableResizing
+        Me.dgv_estoque.ThemeStyle.HeaderStyle.HeaightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.DisableResizing
         Me.dgv_estoque.ThemeStyle.HeaderStyle.Height = 70
         Me.dgv_estoque.ThemeStyle.ReadOnly = True
         Me.dgv_estoque.ThemeStyle.RowsStyle.BackColor = System.Drawing.Color.White
@@ -639,57 +638,60 @@ Partial Class estoque
         '
         'produto
         '
-        Me.produto.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.None
+        Me.produto.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill
         Me.produto.FillWeight = 77.10199!
         Me.produto.HeaderText = "Produto"
         Me.produto.Name = "produto"
         Me.produto.ReadOnly = True
-        Me.produto.Width = 122
         '
         'categoria
         '
-        Me.categoria.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.None
+        Me.categoria.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill
         Me.categoria.FillWeight = 77.10199!
         Me.categoria.HeaderText = "Categoria"
         Me.categoria.Name = "categoria"
         Me.categoria.ReadOnly = True
-        Me.categoria.Width = 121
         '
         'qtdEmEstoque
         '
-        Me.qtdEmEstoque.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.None
+        Me.qtdEmEstoque.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill
         Me.qtdEmEstoque.FillWeight = 77.10199!
         Me.qtdEmEstoque.HeaderText = "Em Estoque"
         Me.qtdEmEstoque.Name = "qtdEmEstoque"
         Me.qtdEmEstoque.ReadOnly = True
-        Me.qtdEmEstoque.Width = 121
+        '
+        'unidade
+        '
+        Me.unidade.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill
+        Me.unidade.FillWeight = 30.0!
+        Me.unidade.HeaderText = "UN"
+        Me.unidade.Name = "unidade"
+        Me.unidade.ReadOnly = True
+        Me.unidade.Resizable = System.Windows.Forms.DataGridViewTriState.[False]
         '
         'vlrPagoUnidade
         '
-        Me.vlrPagoUnidade.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.None
+        Me.vlrPagoUnidade.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill
         Me.vlrPagoUnidade.FillWeight = 77.10199!
         Me.vlrPagoUnidade.HeaderText = "Valor Pago por Unidade"
         Me.vlrPagoUnidade.Name = "vlrPagoUnidade"
         Me.vlrPagoUnidade.ReadOnly = True
-        Me.vlrPagoUnidade.Width = 121
         '
         'dataCompra
         '
-        Me.dataCompra.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.None
+        Me.dataCompra.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill
         Me.dataCompra.FillWeight = 77.10199!
         Me.dataCompra.HeaderText = "Data da compra"
         Me.dataCompra.Name = "dataCompra"
         Me.dataCompra.ReadOnly = True
-        Me.dataCompra.Width = 121
         '
         'dataValidade
         '
-        Me.dataValidade.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.None
+        Me.dataValidade.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill
         Me.dataValidade.FillWeight = 77.10199!
         Me.dataValidade.HeaderText = "Data de Validade"
         Me.dataValidade.Name = "dataValidade"
         Me.dataValidade.ReadOnly = True
-        Me.dataValidade.Width = 122
         '
         'editar
         '
@@ -784,6 +786,7 @@ Partial Class estoque
     Friend WithEvents produto As DataGridViewTextBoxColumn
     Friend WithEvents categoria As DataGridViewTextBoxColumn
     Friend WithEvents qtdEmEstoque As DataGridViewTextBoxColumn
+    Friend WithEvents unidade As DataGridViewTextBoxColumn
     Friend WithEvents vlrPagoUnidade As DataGridViewTextBoxColumn
     Friend WithEvents dataCompra As DataGridViewTextBoxColumn
     Friend WithEvents dataValidade As DataGridViewTextBoxColumn

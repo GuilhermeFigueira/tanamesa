@@ -39,4 +39,23 @@ Module Module1
         Dim dateOnly As String = dateTime.ToShortDateString()
         Return dateOnly
     End Function
+
+    Public Sub carregarUnidades(cmb As Guna.UI2.WinForms.Guna2ComboBox)
+        abreConexao()
+        Try
+            sql = "SELECT * FROM tb_unidade"
+            rs = db.Execute(sql)
+            With cmb
+                .Items.Clear()
+                Do While rs.EOF = False
+                    .Items.Add(rs.Fields(1).Value)
+                    rs.MoveNext()
+                Loop
+            End With
+        Catch ex As Exception
+            telaErro.setTexto("Erro ao carregar unidades de medida!")
+            telaErro.Show()
+        End Try
+        fechaConexao()
+    End Sub
 End Module
