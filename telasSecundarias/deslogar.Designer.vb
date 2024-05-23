@@ -141,7 +141,7 @@ Partial Class deslogar
         Me.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None
         Me.Name = "deslogar"
         Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen
-        Me.Text = "Form3"
+        Me.Text = "Desconectar"
         Me.Guna2ContainerControl1.ResumeLayout(False)
         Me.ResumeLayout(False)
         Me.PerformLayout()

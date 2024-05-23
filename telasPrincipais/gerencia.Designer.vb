@@ -468,7 +468,7 @@ Partial Class gerencia
         Me.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None
         Me.Name = "gerencia"
         Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen
-        Me.Text = "formDefault1"
+        Me.Text = "Tá na Mesa - Gerência"
         Me.pnl_controls.ResumeLayout(False)
         Me.pnl_logo.ResumeLayout(False)
         Me.pnl_logo.PerformLayout()

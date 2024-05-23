@@ -501,7 +501,7 @@ Partial Class cadastrarCardapio
         Me.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None
         Me.Name = "cadastrarCardapio"
         Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen
-        Me.Text = "sair1"
+        Me.Text = "Salvar Item no Cardápio"
         Me.Guna2ContainerControl1.ResumeLayout(False)
         Me.pnl_nome.ResumeLayout(False)
         Me.pnl_nome.PerformLayout()

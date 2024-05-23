@@ -438,7 +438,7 @@ Partial Class cadastrarFuncionário
         Me.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None
         Me.Name = "cadastrarFuncionário"
         Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen
-        Me.Text = "sair1"
+        Me.Text = "Cadastrar Funcionário"
         Me.Guna2ContainerControl1.ResumeLayout(False)
         Me.pnl_nome.ResumeLayout(False)
         Me.pnl_nome.PerformLayout()

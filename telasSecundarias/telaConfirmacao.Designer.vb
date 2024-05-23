@@ -42,6 +42,7 @@ Partial Class telaConfirmacao
         Me.Guna2BorderlessForm1.DockIndicatorTransparencyValue = 0.6R
         Me.Guna2BorderlessForm1.DragStartTransparencyValue = 1.0R
         Me.Guna2BorderlessForm1.ResizeForm = False
+        Me.Guna2BorderlessForm1.TransparentWhileDrag = True
         '
         'btn_minimizar
         '
@@ -150,7 +151,7 @@ Partial Class telaConfirmacao
         Me.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None
         Me.Name = "telaConfirmacao"
         Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen
-        Me.Text = "sair1"
+        Me.Text = "Tá na Mesa - Confirmar Ação"
         Me.Guna2ContainerControl1.ResumeLayout(False)
         Me.ResumeLayout(False)
 

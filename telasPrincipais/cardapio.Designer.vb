@@ -354,7 +354,7 @@ Partial Class cardapio
         Me.btn_pedidos.Image = CType(resources.GetObject("btn_pedidos.Image"), System.Drawing.Image)
         Me.btn_pedidos.ImageAlign = System.Windows.Forms.HorizontalAlignment.Left
         Me.btn_pedidos.ImageSize = New System.Drawing.Size(25, 25)
-        Me.btn_pedidos.Location = New System.Drawing.Point(3, 356)
+        Me.btn_pedidos.Location = New System.Drawing.Point(0, 356)
         Me.btn_pedidos.Name = "btn_pedidos"
         Me.btn_pedidos.Size = New System.Drawing.Size(217, 54)
         Me.btn_pedidos.TabIndex = 32
@@ -438,7 +438,7 @@ Partial Class cardapio
         Me.btn_addProd.Location = New System.Drawing.Point(0, 0)
         Me.btn_addProd.Name = "btn_addProd"
         Me.btn_addProd.Size = New System.Drawing.Size(219, 38)
-        Me.btn_addProd.TabIndex = 36
+        Me.btn_addProd.TabIndex = 6
         Me.btn_addProd.Text = "Adicionar Produto"
         '
         'Guna2TextBox2
@@ -468,7 +468,7 @@ Partial Class cardapio
         Me.Guna2TextBox2.PlaceholderText = "Pesquise itens do cardápio"
         Me.Guna2TextBox2.SelectedText = ""
         Me.Guna2TextBox2.Size = New System.Drawing.Size(413, 38)
-        Me.Guna2TextBox2.TabIndex = 33
+        Me.Guna2TextBox2.TabIndex = 1
         '
         'Guna2Panel1
         '
@@ -682,7 +682,7 @@ Partial Class cardapio
         Me.cmb_ordenar.Location = New System.Drawing.Point(83, 6)
         Me.cmb_ordenar.Name = "cmb_ordenar"
         Me.cmb_ordenar.Size = New System.Drawing.Size(121, 36)
-        Me.cmb_ordenar.TabIndex = 11
+        Me.cmb_ordenar.TabIndex = 5
         Me.cmb_ordenar.TextAlign = System.Windows.Forms.HorizontalAlignment.Right
         '
         'Guna2HtmlLabel1
@@ -748,7 +748,7 @@ Partial Class cardapio
         Me.btn_efetuarPedido.Margin = New System.Windows.Forms.Padding(0)
         Me.btn_efetuarPedido.Name = "btn_efetuarPedido"
         Me.btn_efetuarPedido.Size = New System.Drawing.Size(276, 37)
-        Me.btn_efetuarPedido.TabIndex = 22
+        Me.btn_efetuarPedido.TabIndex = 4
         Me.btn_efetuarPedido.Text = "Efetuar Pedido"
         '
         'lbl_total
@@ -921,7 +921,7 @@ Partial Class cardapio
         Me.txt_nomeCliente.PlaceholderText = ""
         Me.txt_nomeCliente.SelectedText = ""
         Me.txt_nomeCliente.Size = New System.Drawing.Size(244, 36)
-        Me.txt_nomeCliente.TabIndex = 14
+        Me.txt_nomeCliente.TabIndex = 3
         '
         'Guna2HtmlLabel10
         '
@@ -952,7 +952,7 @@ Partial Class cardapio
         Me.cmb_numeroMesa.Location = New System.Drawing.Point(32, 88)
         Me.cmb_numeroMesa.Name = "cmb_numeroMesa"
         Me.cmb_numeroMesa.Size = New System.Drawing.Size(244, 36)
-        Me.cmb_numeroMesa.TabIndex = 12
+        Me.cmb_numeroMesa.TabIndex = 2
         Me.cmb_numeroMesa.TextAlign = System.Windows.Forms.HorizontalAlignment.Right
         '
         'Guna2HtmlLabel9
@@ -1042,7 +1042,7 @@ Partial Class cardapio
         Me.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None
         Me.Name = "cardapio"
         Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen
-        Me.Text = "formDefault1"
+        Me.Text = "Tá na Mesa - Cardápio"
         Me.pnl_controls.ResumeLayout(False)
         Me.pnl_logo.ResumeLayout(False)
         Me.pnl_logo.PerformLayout()

@@ -29,6 +29,5 @@ Public Class cadastrarFuncionário
     End Sub
 
     Private Sub cadastrarFuncionário_Load(sender As Object, e As EventArgs) Handles Me.Load
-        Me.TopMost = True
     End Sub
 End Class

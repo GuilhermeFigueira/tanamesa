@@ -21,7 +21,7 @@ Public Class cadastrarEstoque
                 pbx_imagem.Load(caminhoImagem)
             End With
             Dim randomNomeArquivo As Guid = Guid.NewGuid()
-            Dim uuidString As String = $"{randomNomeArquivo.ToString()}.jpg"
+            Dim uuidString As String = $"{randomNomeArquivo}.jpg"
 
             Dim caminhoCopia As String = Path.Combine(Application.StartupPath, "imgProdutos", Path.GetFileName(uuidString))
             Directory.CreateDirectory(Path.GetDirectoryName(caminhoCopia))
@@ -37,13 +37,20 @@ Public Class cadastrarEstoque
     End Sub
 
     Private Sub cadastrarEstoque_Load(sender As Object, e As EventArgs) Handles Me.Load
-        Me.TopMost = True
         gerenciadorEstoque.carregarCategorias()
         carregarUnidades(cmb_unidade)
-
+        dtp_dataCompra.Value = Date.Now
+        dtp_dataValidade.Value = Date.Now
     End Sub
 
     Private Sub btn_cadastrar_Click(sender As Object, e As EventArgs) Handles btn_cadastrar.Click
         gerenciadorEstoque.cadastrarItemNoEstoque()
+    End Sub
+
+    Private Sub cmb_unidade_SelectedValueChanged(sender As Object, e As EventArgs) Handles cmb_unidade.SelectedValueChanged
+        If cmb_unidade.Text IsNot "" Then
+            lbl_mudancaUnidade.Text = cmb_unidade.Text
+            lbl_precoPorUnidade.Text = $"reais / {cmb_unidade.Text}"
+        End If
     End Sub
 End Class

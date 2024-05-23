@@ -41,6 +41,7 @@ Partial Class telaErro
         Me.Guna2BorderlessForm1.DockIndicatorTransparencyValue = 0.6R
         Me.Guna2BorderlessForm1.DragStartTransparencyValue = 1.0R
         Me.Guna2BorderlessForm1.ResizeForm = False
+        Me.Guna2BorderlessForm1.TransparentWhileDrag = True
         '
         'btn_minimizar
         '
@@ -132,7 +133,8 @@ Partial Class telaErro
         Me.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None
         Me.Name = "telaErro"
         Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen
-        Me.Text = "sair1"
+        Me.Tag = ""
+        Me.Text = "Tá na Mesa - Aviso"
         Me.Guna2ContainerControl1.ResumeLayout(False)
         Me.ResumeLayout(False)
 

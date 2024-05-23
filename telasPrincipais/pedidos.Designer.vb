@@ -1053,7 +1053,7 @@ Partial Class pedidos
         Me.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None
         Me.Name = "pedidos"
         Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen
-        Me.Text = "formDefault1"
+        Me.Text = "Tá na Mesa - Pedidos"
         Me.pnl_controls.ResumeLayout(False)
         Me.pnl_logo.ResumeLayout(False)
         Me.pnl_logo.PerformLayout()

@@ -795,7 +795,7 @@ Partial Class mesas
         Me.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None
         Me.Name = "mesas"
         Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen
-        Me.Text = "formDefault1"
+        Me.Text = "Tá na Mesa - Mesas"
         Me.pnl_controls.ResumeLayout(False)
         Me.pnl_logo.ResumeLayout(False)
         Me.pnl_logo.PerformLayout()

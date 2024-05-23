@@ -272,7 +272,7 @@ Partial Class infoUsuario
         Me.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None
         Me.Name = "infoUsuario"
         Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen
-        Me.Text = "sair1"
+        Me.Text = "Informações do Funcionario"
         Me.Guna2ContainerControl1.ResumeLayout(False)
         CType(Me.pbx_imgFuncionario, System.ComponentModel.ISupportInitialize).EndInit()
         Me.pnl_info.ResumeLayout(False)

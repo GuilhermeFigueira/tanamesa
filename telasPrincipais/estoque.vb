@@ -1,4 +1,5 @@
-﻿Imports System.IO
+﻿Imports System.ComponentModel
+Imports System.IO
 Public Class estoque
     Private Sub btn_fechar_Click(sender As Object, e As EventArgs) Handles btn_fechar.Click
         sair()
@@ -73,9 +74,9 @@ Public Class criarEstoque
             With estoque.dgv_estoque
                 .Rows.Clear()
                 Do While rs.EOF = False
-                    .Rows.Add(Nothing, rs.Fields(1).Value, rs.Fields(2).Value, rs.Fields(8).Value, rs.Fields(4).Value, formatDate(rs.Fields(6).Value), formatDate(rs.Fields(5).Value), Nothing, Nothing)
-                    'Dim fotoProduto As Image = Image.FromFile(rs.Fields(7).Value)
-                    '.Rows(count).Cells("fotoProduto").Value = fotoProduto
+                    .Rows.Add(Nothing, rs.Fields(2).Value, rs.Fields(3).Value, rs.Fields(4).Value, rs.Fields(5).Value, rs.Fields(6).Value, formatDate(rs.Fields(7).Value), formatDate(rs.Fields(8).Value), Nothing, Nothing)
+                    Dim fotoProduto As Image = Image.FromFile(Path.Combine(Application.StartupPath, "imgProdutos", rs.Fields(1).Value))
+                    .Rows(count).Cells("fotoProduto").Value = fotoProduto
                     count += 1
                     rs.MoveNext()
                 Loop
@@ -88,6 +89,7 @@ Public Class criarEstoque
 
     Public Sub cadastrarItemNoEstoque()
         abreConexao()
+        Dim itensList As New List(Of String)
         Dim nomeItem As String = cadastrarEstoque.txt_nome.Text
         Dim categoriaItem As String = cadastrarEstoque.cmb_categoria.Text
         Dim unidadeItem As String = cadastrarEstoque.cmb_unidade.Text
@@ -95,23 +97,34 @@ Public Class criarEstoque
         Dim valorPagoUnidade As String = cadastrarEstoque.txt_vlrUnidade.Text
         Dim dataCompra As String = cadastrarEstoque.dtp_dataCompra.Value.Date
         Dim dataValidade As String = cadastrarEstoque.dtp_dataValidade.Value.Date
-
+        itensList.Add(nomeItem)
+        itensList.Add(categoriaItem)
+        itensList.Add(unidadeItem)
+        itensList.Add(qtdComprada)
+        itensList.Add(valorPagoUnidade)
+        itensList.Add(dataCompra)
+        itensList.Add(dataValidade)
         Try
-            sql = "SELECT * FROM tb_estoque WHERE nome ='" & nomeItem & "'"
-            rs = db.Execute(sql)
-            If rs.EOF = True Then
-                sql = "INSERT INTO tb_estoque VALUES ('" & nomeItem & "', '" & categoriaItem & "', '" & unidadeItem & "', '" & valorPagoUnidade & "', '" & dataValidade & "', '" & dataCompra & "', '" & caminhoImagem & "', '" & qtdComprada & "')"
-                rs = db.Execute(UCase(sql))
-                telaErro.setTexto($"{nomeItem} foi cadastrado com sucesso!")
-                telaErro.Show()
+            If verificarVazio(itensList) = False Then
+                sql = "SELECT * FROM tb_estoque WHERE nome ='" & nomeItem & "'"
+                rs = db.Execute(sql)
+                If rs.EOF = True Then
+                    sql = "INSERT INTO tb_estoque (foto, nome, categoria, em_estoque, unidade, valor_pago, data_compra, data_validade) VALUES ('" & caminhoImagem & "', '" & nomeItem & "', '" & categoriaItem & "', '" & qtdComprada & "', '" & unidadeItem & "', '" & valorPagoUnidade & "', '" & dataCompra & "', '" & dataValidade & "')"
+                    rs = db.Execute(sql)
+                    telaErro.setTexto($"{nomeItem} foi cadastrado com sucesso!")
+                    telaErro.Show()
+                Else
+                    telaErro.setTexto($"{nomeItem} já está cadastrado no estoque!")
+                    telaErro.Show()
+                End If
             Else
-                telaErro.setTexto($"{nomeItem} já está cadastrado no estoque!")
+                telaErro.setTexto("Existem campos vazios!")
                 telaErro.Show()
             End If
         Catch ex As Exception
             telaErro.setTexto("Erro ao cadastrar item no estoque!")
             telaErro.Show()
-            MessageBox.Show(String.Format("Error: {0}", "INSERT INTO tb_estoque VALUES ('" & nomeItem & "', '" & categoriaItem & "', '" & unidadeItem & "', '" & valorPagoUnidade & "', '" & dataValidade & "', '" & dataCompra & "', '" & caminhoImagem & "', '" & qtdComprada & "')"))
+            'MessageBox.Show(String.Format("Error: {0}", sql))
         End Try
         NotifyAll({})
     End Sub
@@ -136,4 +149,12 @@ Public Class criarEstoque
     Public Class Categoria
         Public Property categoria As String
     End Class
+    Function verificarVazio(itensArray As List(Of String))
+        For Each item As String In itensArray
+            If item = "" Then
+                Return True
+            End If
+        Next
+        Return False
+    End Function
 End Class

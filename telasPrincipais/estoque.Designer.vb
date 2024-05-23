@@ -52,6 +52,16 @@ Partial Class estoque
         Me.Guna2Panel4 = New Guna.UI2.WinForms.Guna2Panel()
         Me.pnl_info = New Guna.UI2.WinForms.Guna2ShadowPanel()
         Me.dgv_estoque = New Guna.UI2.WinForms.Guna2DataGridView()
+        Me.fotoProduto = New System.Windows.Forms.DataGridViewImageColumn()
+        Me.produto = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.categoria = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.qtdEmEstoque = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.unidade = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.vlrPagoUnidade = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.dataCompra = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.dataValidade = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.editar = New System.Windows.Forms.DataGridViewImageColumn()
+        Me.excluir = New System.Windows.Forms.DataGridViewImageColumn()
         Me.Guna2Panel1 = New Guna.UI2.WinForms.Guna2Panel()
         Me.btn_addProd = New Guna.UI2.WinForms.Guna2Button()
         Me.Guna2HtmlLabel8 = New Guna.UI2.WinForms.Guna2HtmlLabel()
@@ -63,16 +73,6 @@ Partial Class estoque
         Me.Guna2HtmlLabel27 = New Guna.UI2.WinForms.Guna2HtmlLabel()
         Me.Guna2HtmlLabel26 = New Guna.UI2.WinForms.Guna2HtmlLabel()
         Me.Guna2HtmlLabel2 = New Guna.UI2.WinForms.Guna2HtmlLabel()
-        Me.fotoProduto = New System.Windows.Forms.DataGridViewImageColumn()
-        Me.produto = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.categoria = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.qtdEmEstoque = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.unidade = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.vlrPagoUnidade = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.dataCompra = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.dataValidade = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.editar = New System.Windows.Forms.DataGridViewImageColumn()
-        Me.excluir = New System.Windows.Forms.DataGridViewImageColumn()
         Me.pnl_controls.SuspendLayout()
         Me.pnl_logo.SuspendLayout()
         Me.Guna2Panel3.SuspendLayout()
@@ -492,6 +492,93 @@ Partial Class estoque
         Me.dgv_estoque.ThemeStyle.RowsStyle.SelectionBackColor = System.Drawing.Color.FromArgb(CType(CType(231, Byte), Integer), CType(CType(229, Byte), Integer), CType(CType(255, Byte), Integer))
         Me.dgv_estoque.ThemeStyle.RowsStyle.SelectionForeColor = System.Drawing.Color.FromArgb(CType(CType(71, Byte), Integer), CType(CType(69, Byte), Integer), CType(CType(94, Byte), Integer))
         '
+        'fotoProduto
+        '
+        Me.fotoProduto.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.None
+        Me.fotoProduto.FillWeight = 60.0!
+        Me.fotoProduto.HeaderText = ""
+        Me.fotoProduto.ImageLayout = System.Windows.Forms.DataGridViewImageCellLayout.Zoom
+        Me.fotoProduto.Name = "fotoProduto"
+        Me.fotoProduto.ReadOnly = True
+        Me.fotoProduto.Width = 94
+        '
+        'produto
+        '
+        Me.produto.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill
+        Me.produto.FillWeight = 77.10199!
+        Me.produto.HeaderText = "Produto"
+        Me.produto.Name = "produto"
+        Me.produto.ReadOnly = True
+        '
+        'categoria
+        '
+        Me.categoria.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill
+        Me.categoria.FillWeight = 77.10199!
+        Me.categoria.HeaderText = "Categoria"
+        Me.categoria.Name = "categoria"
+        Me.categoria.ReadOnly = True
+        '
+        'qtdEmEstoque
+        '
+        Me.qtdEmEstoque.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill
+        Me.qtdEmEstoque.FillWeight = 77.10199!
+        Me.qtdEmEstoque.HeaderText = "Em Estoque"
+        Me.qtdEmEstoque.Name = "qtdEmEstoque"
+        Me.qtdEmEstoque.ReadOnly = True
+        '
+        'unidade
+        '
+        Me.unidade.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill
+        Me.unidade.FillWeight = 30.0!
+        Me.unidade.HeaderText = "UN"
+        Me.unidade.Name = "unidade"
+        Me.unidade.ReadOnly = True
+        Me.unidade.Resizable = System.Windows.Forms.DataGridViewTriState.[False]
+        '
+        'vlrPagoUnidade
+        '
+        Me.vlrPagoUnidade.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill
+        Me.vlrPagoUnidade.FillWeight = 77.10199!
+        Me.vlrPagoUnidade.HeaderText = "Valor Pago por Unidade"
+        Me.vlrPagoUnidade.Name = "vlrPagoUnidade"
+        Me.vlrPagoUnidade.ReadOnly = True
+        '
+        'dataCompra
+        '
+        Me.dataCompra.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill
+        Me.dataCompra.FillWeight = 77.10199!
+        Me.dataCompra.HeaderText = "Data da compra"
+        Me.dataCompra.Name = "dataCompra"
+        Me.dataCompra.ReadOnly = True
+        '
+        'dataValidade
+        '
+        Me.dataValidade.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill
+        Me.dataValidade.FillWeight = 77.10199!
+        Me.dataValidade.HeaderText = "Data de Validade"
+        Me.dataValidade.Name = "dataValidade"
+        Me.dataValidade.ReadOnly = True
+        '
+        'editar
+        '
+        Me.editar.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.None
+        Me.editar.FillWeight = 30.0!
+        Me.editar.HeaderText = ""
+        Me.editar.Image = CType(resources.GetObject("editar.Image"), System.Drawing.Image)
+        Me.editar.Name = "editar"
+        Me.editar.ReadOnly = True
+        Me.editar.Width = 47
+        '
+        'excluir
+        '
+        Me.excluir.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.None
+        Me.excluir.FillWeight = 30.0!
+        Me.excluir.HeaderText = ""
+        Me.excluir.Image = CType(resources.GetObject("excluir.Image"), System.Drawing.Image)
+        Me.excluir.Name = "excluir"
+        Me.excluir.ReadOnly = True
+        Me.excluir.Width = 47
+        '
         'Guna2Panel1
         '
         Me.Guna2Panel1.Controls.Add(Me.btn_addProd)
@@ -626,93 +713,6 @@ Partial Class estoque
         Me.Guna2HtmlLabel2.TabIndex = 5
         Me.Guna2HtmlLabel2.Text = "Explorar itens do cardápio"
         '
-        'fotoProduto
-        '
-        Me.fotoProduto.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.None
-        Me.fotoProduto.FillWeight = 60.0!
-        Me.fotoProduto.HeaderText = ""
-        Me.fotoProduto.ImageLayout = System.Windows.Forms.DataGridViewImageCellLayout.Zoom
-        Me.fotoProduto.Name = "fotoProduto"
-        Me.fotoProduto.ReadOnly = True
-        Me.fotoProduto.Width = 94
-        '
-        'produto
-        '
-        Me.produto.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill
-        Me.produto.FillWeight = 77.10199!
-        Me.produto.HeaderText = "Produto"
-        Me.produto.Name = "produto"
-        Me.produto.ReadOnly = True
-        '
-        'categoria
-        '
-        Me.categoria.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill
-        Me.categoria.FillWeight = 77.10199!
-        Me.categoria.HeaderText = "Categoria"
-        Me.categoria.Name = "categoria"
-        Me.categoria.ReadOnly = True
-        '
-        'qtdEmEstoque
-        '
-        Me.qtdEmEstoque.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill
-        Me.qtdEmEstoque.FillWeight = 77.10199!
-        Me.qtdEmEstoque.HeaderText = "Em Estoque"
-        Me.qtdEmEstoque.Name = "qtdEmEstoque"
-        Me.qtdEmEstoque.ReadOnly = True
-        '
-        'unidade
-        '
-        Me.unidade.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill
-        Me.unidade.FillWeight = 30.0!
-        Me.unidade.HeaderText = "UN"
-        Me.unidade.Name = "unidade"
-        Me.unidade.ReadOnly = True
-        Me.unidade.Resizable = System.Windows.Forms.DataGridViewTriState.[False]
-        '
-        'vlrPagoUnidade
-        '
-        Me.vlrPagoUnidade.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill
-        Me.vlrPagoUnidade.FillWeight = 77.10199!
-        Me.vlrPagoUnidade.HeaderText = "Valor Pago por Unidade"
-        Me.vlrPagoUnidade.Name = "vlrPagoUnidade"
-        Me.vlrPagoUnidade.ReadOnly = True
-        '
-        'dataCompra
-        '
-        Me.dataCompra.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill
-        Me.dataCompra.FillWeight = 77.10199!
-        Me.dataCompra.HeaderText = "Data da compra"
-        Me.dataCompra.Name = "dataCompra"
-        Me.dataCompra.ReadOnly = True
-        '
-        'dataValidade
-        '
-        Me.dataValidade.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill
-        Me.dataValidade.FillWeight = 77.10199!
-        Me.dataValidade.HeaderText = "Data de Validade"
-        Me.dataValidade.Name = "dataValidade"
-        Me.dataValidade.ReadOnly = True
-        '
-        'editar
-        '
-        Me.editar.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.None
-        Me.editar.FillWeight = 30.0!
-        Me.editar.HeaderText = ""
-        Me.editar.Image = CType(resources.GetObject("editar.Image"), System.Drawing.Image)
-        Me.editar.Name = "editar"
-        Me.editar.ReadOnly = True
-        Me.editar.Width = 47
-        '
-        'excluir
-        '
-        Me.excluir.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.None
-        Me.excluir.FillWeight = 30.0!
-        Me.excluir.HeaderText = ""
-        Me.excluir.Image = CType(resources.GetObject("excluir.Image"), System.Drawing.Image)
-        Me.excluir.Name = "excluir"
-        Me.excluir.ReadOnly = True
-        Me.excluir.Width = 47
-        '
         'estoque
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
@@ -726,7 +726,7 @@ Partial Class estoque
         Me.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None
         Me.Name = "estoque"
         Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen
-        Me.Text = "formDefault1"
+        Me.Text = "Tá na Mesa - Estoque"
         Me.pnl_controls.ResumeLayout(False)
         Me.pnl_logo.ResumeLayout(False)
         Me.pnl_logo.PerformLayout()

@@ -44,6 +44,8 @@ Partial Class cadastrarEstoque
         Me.Guna2HtmlLabel10 = New Guna.UI2.WinForms.Guna2HtmlLabel()
         Me.pbx_imagem = New Guna.UI2.WinForms.Guna2PictureBox()
         Me.pnl_info = New Guna.UI2.WinForms.Guna2ShadowPanel()
+        Me.lbl_mudancaUnidade = New Guna.UI2.WinForms.Guna2HtmlLabel()
+        Me.lbl_precoPorUnidade = New Guna.UI2.WinForms.Guna2HtmlLabel()
         Me.dtp_dataValidade = New Guna.UI2.WinForms.Guna2DateTimePicker()
         Me.txt_vlrUnidade = New Guna.UI2.WinForms.Guna2TextBox()
         Me.Guna2HtmlLabel9 = New Guna.UI2.WinForms.Guna2HtmlLabel()
@@ -148,7 +150,7 @@ Partial Class cadastrarEstoque
         Me.txt_nome.PlaceholderText = ""
         Me.txt_nome.SelectedText = ""
         Me.txt_nome.Size = New System.Drawing.Size(570, 36)
-        Me.txt_nome.TabIndex = 8
+        Me.txt_nome.TabIndex = 1
         '
         'Guna2HtmlLabel1
         '
@@ -208,7 +210,7 @@ Partial Class cadastrarEstoque
         Me.cmb_unidade.Location = New System.Drawing.Point(304, 124)
         Me.cmb_unidade.Name = "cmb_unidade"
         Me.cmb_unidade.Size = New System.Drawing.Size(280, 36)
-        Me.cmb_unidade.TabIndex = 15
+        Me.cmb_unidade.TabIndex = 3
         '
         'Guna2HtmlLabel4
         '
@@ -239,7 +241,7 @@ Partial Class cadastrarEstoque
         Me.cmb_categoria.Location = New System.Drawing.Point(14, 124)
         Me.cmb_categoria.Name = "cmb_categoria"
         Me.cmb_categoria.Size = New System.Drawing.Size(280, 36)
-        Me.cmb_categoria.TabIndex = 13
+        Me.cmb_categoria.TabIndex = 2
         '
         'pnl_titulo
         '
@@ -287,7 +289,7 @@ Partial Class cadastrarEstoque
         Me.btn_cadastrar.Location = New System.Drawing.Point(634, 403)
         Me.btn_cadastrar.Name = "btn_cadastrar"
         Me.btn_cadastrar.Size = New System.Drawing.Size(328, 47)
-        Me.btn_cadastrar.TabIndex = 36
+        Me.btn_cadastrar.TabIndex = 8
         Me.btn_cadastrar.Text = "Adicionar Produto"
         '
         'Guna2ShadowPanel1
@@ -320,18 +322,20 @@ Partial Class cadastrarEstoque
         Me.pbx_imagem.BorderRadius = 17
         Me.pbx_imagem.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
         Me.pbx_imagem.Cursor = System.Windows.Forms.Cursors.Hand
-        Me.pbx_imagem.Image = CType(resources.GetObject("pbx_imagem.Image"), System.Drawing.Image)
         Me.pbx_imagem.ImageRotate = 0!
+        Me.pbx_imagem.InitialImage = CType(resources.GetObject("pbx_imagem.InitialImage"), System.Drawing.Image)
         Me.pbx_imagem.Location = New System.Drawing.Point(26, 53)
         Me.pbx_imagem.Name = "pbx_imagem"
         Me.pbx_imagem.Size = New System.Drawing.Size(280, 290)
-        Me.pbx_imagem.SizeMode = System.Windows.Forms.PictureBoxSizeMode.CenterImage
+        Me.pbx_imagem.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
         Me.pbx_imagem.TabIndex = 18
         Me.pbx_imagem.TabStop = False
         '
         'pnl_info
         '
         Me.pnl_info.BackColor = System.Drawing.Color.Transparent
+        Me.pnl_info.Controls.Add(Me.lbl_mudancaUnidade)
+        Me.pnl_info.Controls.Add(Me.lbl_precoPorUnidade)
         Me.pnl_info.Controls.Add(Me.dtp_dataValidade)
         Me.pnl_info.Controls.Add(Me.txt_vlrUnidade)
         Me.pnl_info.Controls.Add(Me.Guna2HtmlLabel9)
@@ -351,6 +355,27 @@ Partial Class cadastrarEstoque
         Me.pnl_info.Size = New System.Drawing.Size(597, 226)
         Me.pnl_info.TabIndex = 12
         '
+        'lbl_mudancaUnidade
+        '
+        Me.lbl_mudancaUnidade.BackColor = System.Drawing.Color.FromArgb(CType(CType(239, Byte), Integer), CType(CType(239, Byte), Integer), CType(CType(239, Byte), Integer))
+        Me.lbl_mudancaUnidade.Font = New System.Drawing.Font("Libre Caslon Display", 15.75!)
+        Me.lbl_mudancaUnidade.Location = New System.Drawing.Point(253, 92)
+        Me.lbl_mudancaUnidade.Name = "lbl_mudancaUnidade"
+        Me.lbl_mudancaUnidade.Size = New System.Drawing.Size(17, 27)
+        Me.lbl_mudancaUnidade.TabIndex = 19
+        Me.lbl_mudancaUnidade.Text = "--"
+        '
+        'lbl_precoPorUnidade
+        '
+        Me.lbl_precoPorUnidade.AutoSize = False
+        Me.lbl_precoPorUnidade.BackColor = System.Drawing.Color.FromArgb(CType(CType(239, Byte), Integer), CType(CType(239, Byte), Integer), CType(CType(239, Byte), Integer))
+        Me.lbl_precoPorUnidade.Font = New System.Drawing.Font("Libre Caslon Display", 15.75!)
+        Me.lbl_precoPorUnidade.Location = New System.Drawing.Point(467, 92)
+        Me.lbl_precoPorUnidade.Name = "lbl_precoPorUnidade"
+        Me.lbl_precoPorUnidade.Size = New System.Drawing.Size(101, 32)
+        Me.lbl_precoPorUnidade.TabIndex = 18
+        Me.lbl_precoPorUnidade.Text = "reais / --"
+        '
         'dtp_dataValidade
         '
         Me.dtp_dataValidade.BorderRadius = 17
@@ -364,7 +389,7 @@ Partial Class cadastrarEstoque
         Me.dtp_dataValidade.MinDate = New Date(1753, 1, 1, 0, 0, 0, 0)
         Me.dtp_dataValidade.Name = "dtp_dataValidade"
         Me.dtp_dataValidade.Size = New System.Drawing.Size(280, 36)
-        Me.dtp_dataValidade.TabIndex = 20
+        Me.dtp_dataValidade.TabIndex = 7
         Me.dtp_dataValidade.Value = New Date(2024, 5, 20, 7, 38, 54, 607)
         '
         'txt_vlrUnidade
@@ -390,7 +415,7 @@ Partial Class cadastrarEstoque
         Me.txt_vlrUnidade.PlaceholderText = ""
         Me.txt_vlrUnidade.SelectedText = ""
         Me.txt_vlrUnidade.Size = New System.Drawing.Size(280, 36)
-        Me.txt_vlrUnidade.TabIndex = 18
+        Me.txt_vlrUnidade.TabIndex = 5
         '
         'Guna2HtmlLabel9
         '
@@ -455,7 +480,7 @@ Partial Class cadastrarEstoque
         Me.txt_qtd.PlaceholderText = ""
         Me.txt_qtd.SelectedText = ""
         Me.txt_qtd.Size = New System.Drawing.Size(280, 36)
-        Me.txt_qtd.TabIndex = 8
+        Me.txt_qtd.TabIndex = 4
         '
         'Guna2HtmlLabel7
         '
@@ -480,7 +505,7 @@ Partial Class cadastrarEstoque
         Me.dtp_dataCompra.MinDate = New Date(1753, 1, 1, 0, 0, 0, 0)
         Me.dtp_dataCompra.Name = "dtp_dataCompra"
         Me.dtp_dataCompra.Size = New System.Drawing.Size(280, 36)
-        Me.dtp_dataCompra.TabIndex = 19
+        Me.dtp_dataCompra.TabIndex = 6
         Me.dtp_dataCompra.Value = New Date(2024, 5, 20, 7, 38, 54, 607)
         '
         'ofd_imagem
@@ -500,7 +525,7 @@ Partial Class cadastrarEstoque
         Me.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None
         Me.Name = "cadastrarEstoque"
         Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen
-        Me.Text = "sair1"
+        Me.Text = "Salvar Produto No Estoque"
         Me.Guna2ContainerControl1.ResumeLayout(False)
         Me.pnl_nome.ResumeLayout(False)
         Me.pnl_nome.PerformLayout()
@@ -545,4 +570,6 @@ Partial Class cadastrarEstoque
     Friend WithEvents btn_cadastrar As Guna.UI2.WinForms.Guna2Button
     Friend WithEvents ofd_imagem As OpenFileDialog
     Friend WithEvents pbx_imagem As Guna.UI2.WinForms.Guna2PictureBox
+    Friend WithEvents lbl_precoPorUnidade As Guna.UI2.WinForms.Guna2HtmlLabel
+    Friend WithEvents lbl_mudancaUnidade As Guna.UI2.WinForms.Guna2HtmlLabel
 End Class

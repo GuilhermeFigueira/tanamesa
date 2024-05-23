@@ -203,7 +203,7 @@ Partial Class login
         Me.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None
         Me.Name = "login"
         Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen
-        Me.Text = "Form1"
+        Me.Text = "Tá na Mesa - Entrar"
         Me.Guna2ContainerControl1.ResumeLayout(False)
         Me.ResumeLayout(False)
         Me.PerformLayout()
