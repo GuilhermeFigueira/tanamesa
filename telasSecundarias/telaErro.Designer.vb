@@ -112,7 +112,7 @@ Partial Class telaErro
         Me.btn_ok.Location = New System.Drawing.Point(16, 101)
         Me.btn_ok.Name = "btn_ok"
         Me.btn_ok.Size = New System.Drawing.Size(453, 47)
-        Me.btn_ok.TabIndex = 7
+        Me.btn_ok.TabIndex = 1
         Me.btn_ok.Text = "Ok"
         '
         'Guna2DragControl1

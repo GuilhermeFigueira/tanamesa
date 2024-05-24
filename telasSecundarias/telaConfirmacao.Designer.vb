@@ -113,7 +113,7 @@ Partial Class telaConfirmacao
         Me.btn_sim.Location = New System.Drawing.Point(21, 101)
         Me.btn_sim.Name = "btn_sim"
         Me.btn_sim.Size = New System.Drawing.Size(219, 47)
-        Me.btn_sim.TabIndex = 7
+        Me.btn_sim.TabIndex = 1
         Me.btn_sim.Text = "Sim"
         '
         'btn_nao
@@ -129,7 +129,7 @@ Partial Class telaConfirmacao
         Me.btn_nao.Location = New System.Drawing.Point(246, 101)
         Me.btn_nao.Name = "btn_nao"
         Me.btn_nao.Size = New System.Drawing.Size(219, 47)
-        Me.btn_nao.TabIndex = 8
+        Me.btn_nao.TabIndex = 2
         Me.btn_nao.Text = "Não"
         '
         'Guna2DragControl1

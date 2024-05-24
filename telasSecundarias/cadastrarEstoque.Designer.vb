@@ -42,7 +42,6 @@ Partial Class cadastrarEstoque
         Me.btn_cadastrar = New Guna.UI2.WinForms.Guna2Button()
         Me.Guna2ShadowPanel1 = New Guna.UI2.WinForms.Guna2ShadowPanel()
         Me.Guna2HtmlLabel10 = New Guna.UI2.WinForms.Guna2HtmlLabel()
-        Me.pbx_imagem = New Guna.UI2.WinForms.Guna2PictureBox()
         Me.pnl_info = New Guna.UI2.WinForms.Guna2ShadowPanel()
         Me.lbl_mudancaUnidade = New Guna.UI2.WinForms.Guna2HtmlLabel()
         Me.lbl_precoPorUnidade = New Guna.UI2.WinForms.Guna2HtmlLabel()
@@ -56,12 +55,13 @@ Partial Class cadastrarEstoque
         Me.Guna2HtmlLabel7 = New Guna.UI2.WinForms.Guna2HtmlLabel()
         Me.dtp_dataCompra = New Guna.UI2.WinForms.Guna2DateTimePicker()
         Me.ofd_imagem = New System.Windows.Forms.OpenFileDialog()
+        Me.pbx_imagem = New Guna.UI2.WinForms.Guna2PictureBox()
         Me.Guna2ContainerControl1.SuspendLayout()
         Me.pnl_nome.SuspendLayout()
         Me.Guna2Panel2.SuspendLayout()
         Me.Guna2ShadowPanel1.SuspendLayout()
-        CType(Me.pbx_imagem, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.pnl_info.SuspendLayout()
+        CType(Me.pbx_imagem, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
         'Guna2BorderlessForm1
@@ -295,8 +295,8 @@ Partial Class cadastrarEstoque
         'Guna2ShadowPanel1
         '
         Me.Guna2ShadowPanel1.BackColor = System.Drawing.Color.Transparent
-        Me.Guna2ShadowPanel1.Controls.Add(Me.Guna2HtmlLabel10)
         Me.Guna2ShadowPanel1.Controls.Add(Me.pbx_imagem)
+        Me.Guna2ShadowPanel1.Controls.Add(Me.Guna2HtmlLabel10)
         Me.Guna2ShadowPanel1.FillColor = System.Drawing.Color.White
         Me.Guna2ShadowPanel1.Location = New System.Drawing.Point(634, 16)
         Me.Guna2ShadowPanel1.Margin = New System.Windows.Forms.Padding(0)
@@ -316,20 +316,6 @@ Partial Class cadastrarEstoque
         Me.Guna2HtmlLabel10.Size = New System.Drawing.Size(72, 31)
         Me.Guna2HtmlLabel10.TabIndex = 17
         Me.Guna2HtmlLabel10.Text = "Imagem"
-        '
-        'pbx_imagem
-        '
-        Me.pbx_imagem.BorderRadius = 17
-        Me.pbx_imagem.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
-        Me.pbx_imagem.Cursor = System.Windows.Forms.Cursors.Hand
-        Me.pbx_imagem.ImageRotate = 0!
-        Me.pbx_imagem.InitialImage = CType(resources.GetObject("pbx_imagem.InitialImage"), System.Drawing.Image)
-        Me.pbx_imagem.Location = New System.Drawing.Point(26, 53)
-        Me.pbx_imagem.Name = "pbx_imagem"
-        Me.pbx_imagem.Size = New System.Drawing.Size(280, 290)
-        Me.pbx_imagem.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
-        Me.pbx_imagem.TabIndex = 18
-        Me.pbx_imagem.TabStop = False
         '
         'pnl_info
         '
@@ -512,6 +498,19 @@ Partial Class cadastrarEstoque
         '
         Me.ofd_imagem.FileName = "OpenFileDialog1"
         '
+        'pbx_imagem
+        '
+        Me.pbx_imagem.BorderRadius = 17
+        Me.pbx_imagem.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
+        Me.pbx_imagem.Cursor = System.Windows.Forms.Cursors.Hand
+        Me.pbx_imagem.ImageRotate = 0!
+        Me.pbx_imagem.Location = New System.Drawing.Point(24, 51)
+        Me.pbx_imagem.Name = "pbx_imagem"
+        Me.pbx_imagem.Size = New System.Drawing.Size(280, 290)
+        Me.pbx_imagem.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom
+        Me.pbx_imagem.TabIndex = 19
+        Me.pbx_imagem.TabStop = False
+        '
         'cadastrarEstoque
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
@@ -532,9 +531,9 @@ Partial Class cadastrarEstoque
         Me.Guna2Panel2.ResumeLayout(False)
         Me.Guna2ShadowPanel1.ResumeLayout(False)
         Me.Guna2ShadowPanel1.PerformLayout()
-        CType(Me.pbx_imagem, System.ComponentModel.ISupportInitialize).EndInit()
         Me.pnl_info.ResumeLayout(False)
         Me.pnl_info.PerformLayout()
+        CType(Me.pbx_imagem, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)
         Me.PerformLayout()
 
@@ -569,7 +568,7 @@ Partial Class cadastrarEstoque
     Friend WithEvents Guna2HtmlLabel10 As Guna.UI2.WinForms.Guna2HtmlLabel
     Friend WithEvents btn_cadastrar As Guna.UI2.WinForms.Guna2Button
     Friend WithEvents ofd_imagem As OpenFileDialog
-    Friend WithEvents pbx_imagem As Guna.UI2.WinForms.Guna2PictureBox
     Friend WithEvents lbl_precoPorUnidade As Guna.UI2.WinForms.Guna2HtmlLabel
     Friend WithEvents lbl_mudancaUnidade As Guna.UI2.WinForms.Guna2HtmlLabel
+    Friend WithEvents pbx_imagem As Guna.UI2.WinForms.Guna2PictureBox
 End Class

@@ -46,7 +46,6 @@ Public Class cardapio
 
 
     Private Sub cardapio_Load(sender As Object, e As EventArgs) Handles Me.Load
-        telaConfirmacao.setSub(Sub() Application.Exit())
         gerenciadorCardapio.carregarCardapio()
         'cardapio.carregarPedidos()
     End Sub

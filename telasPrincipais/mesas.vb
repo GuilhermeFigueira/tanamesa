@@ -45,7 +45,6 @@ Public Class mesas
     End Sub
 
     Private Sub mesas_Load(sender As Object, e As EventArgs) Handles MyBase.Load
-        telaConfirmacao.setSub(Sub() Application.Exit())
         gerenciarMesas.carregarMesas()
         gerenciarMesas.atualizarMesa()
     End Sub

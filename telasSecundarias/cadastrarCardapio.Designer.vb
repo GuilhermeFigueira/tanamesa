@@ -147,7 +147,7 @@ Partial Class cadastrarCardapio
         Me.txt_nome.PlaceholderText = ""
         Me.txt_nome.SelectedText = ""
         Me.txt_nome.Size = New System.Drawing.Size(570, 36)
-        Me.txt_nome.TabIndex = 8
+        Me.txt_nome.TabIndex = 1
         '
         'Guna2HtmlLabel1
         '
@@ -199,7 +199,7 @@ Partial Class cadastrarCardapio
         Me.txt_descricao.PlaceholderText = ""
         Me.txt_descricao.SelectedText = ""
         Me.txt_descricao.Size = New System.Drawing.Size(570, 47)
-        Me.txt_descricao.TabIndex = 10
+        Me.txt_descricao.TabIndex = 2
         '
         'Guna2HtmlLabel2
         '
@@ -268,7 +268,7 @@ Partial Class cadastrarCardapio
         Me.btn_cadastrar.Location = New System.Drawing.Point(634, 403)
         Me.btn_cadastrar.Name = "btn_cadastrar"
         Me.btn_cadastrar.Size = New System.Drawing.Size(328, 47)
-        Me.btn_cadastrar.TabIndex = 36
+        Me.btn_cadastrar.TabIndex = 6
         Me.btn_cadastrar.Text = "Adicionar Produto"
         '
         'Guna2ShadowPanel1
@@ -301,12 +301,11 @@ Partial Class cadastrarCardapio
         Me.pbx_imagem.BorderRadius = 17
         Me.pbx_imagem.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
         Me.pbx_imagem.Cursor = System.Windows.Forms.Cursors.Hand
-        Me.pbx_imagem.Image = CType(resources.GetObject("pbx_imagem.Image"), System.Drawing.Image)
         Me.pbx_imagem.ImageRotate = 0!
         Me.pbx_imagem.Location = New System.Drawing.Point(26, 53)
         Me.pbx_imagem.Name = "pbx_imagem"
         Me.pbx_imagem.Size = New System.Drawing.Size(280, 290)
-        Me.pbx_imagem.SizeMode = System.Windows.Forms.PictureBoxSizeMode.CenterImage
+        Me.pbx_imagem.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom
         Me.pbx_imagem.TabIndex = 18
         Me.pbx_imagem.TabStop = False
         '
@@ -355,7 +354,7 @@ Partial Class cadastrarCardapio
         Me.txt_preco.PlaceholderText = ""
         Me.txt_preco.SelectedText = ""
         Me.txt_preco.Size = New System.Drawing.Size(192, 40)
-        Me.txt_preco.TabIndex = 22
+        Me.txt_preco.TabIndex = 5
         Me.txt_preco.TextAlign = System.Windows.Forms.HorizontalAlignment.Center
         '
         'txt_precoRecomendado
@@ -407,7 +406,7 @@ Partial Class cadastrarCardapio
         Me.txt_markup.PlaceholderText = ""
         Me.txt_markup.SelectedText = ""
         Me.txt_markup.Size = New System.Drawing.Size(280, 36)
-        Me.txt_markup.TabIndex = 18
+        Me.txt_markup.TabIndex = 4
         '
         'Guna2HtmlLabel9
         '
@@ -472,7 +471,7 @@ Partial Class cadastrarCardapio
         Me.txt_custoPrato.PlaceholderText = ""
         Me.txt_custoPrato.SelectedText = ""
         Me.txt_custoPrato.Size = New System.Drawing.Size(280, 36)
-        Me.txt_custoPrato.TabIndex = 8
+        Me.txt_custoPrato.TabIndex = 3
         '
         'Guna2HtmlLabel7
         '

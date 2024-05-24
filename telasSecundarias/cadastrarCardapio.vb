@@ -30,4 +30,27 @@ Public Class cadastrarCardapio
 
     Private Sub cadastrarCardapio_Load(sender As Object, e As EventArgs) Handles Me.Load
     End Sub
+
+    Private Sub txt_markup_LostFocus(sender As Object, e As EventArgs) Handles txt_markup.LostFocus
+        calcularPreco()
+    End Sub
+    Private Sub txt_custoPrato_LostFocus(sender As Object, e As EventArgs) Handles txt_custoPrato.LostFocus
+        calcularPreco()
+    End Sub
+
+    Private Sub calcularPreco()
+        Try
+            If txt_markup.Text IsNot "" And txt_custoPrato.Text IsNot "" Then
+                Dim markup As Single = CSng(txt_markup.Text)
+                Dim custoPrato As Single = CSng(txt_custoPrato.Text)
+                Dim preco As Single
+                preco = custoPrato / markup
+                txt_precoRecomendado.Text = $"R$ {preco.ToString("N2")}"
+            End If
+        Catch ex As Exception
+            telaErro.setTexto("Erro ao calcular preço!")
+            telaErro.Show()
+        End Try
+    End Sub
+
 End Class

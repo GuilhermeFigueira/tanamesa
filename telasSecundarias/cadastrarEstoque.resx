@@ -147,18 +147,6 @@
   <metadata name="Guna2DragControl1.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
     <value>195, 17</value>
   </metadata>
-  <data name="pbx_imagem.InitialImage" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
-    <value>
-        iVBORw0KGgoAAAANSUhEUgAAADAAAAAwCAYAAABXAvmHAAAABGdBTUEAALGPC/xhBQAAAWJJREFUaEPt
-        mcFtwzAQBFVK/mkiZeTpElJCOkkZeaaUlJCnn84NkAMWwjGmTZMm4RtgYQmSebs82hCoLXkAnv60DAfT
-        h+nbdBJ9mbg2JS8mDKrhkt5NU8HyiIzSBWYcw0g7MtWSUtN0oWSOEH5fbRe6B9XZZ8bP4cuMzwjG8475
-        uHSuWxAtxO/gHHo/piLDe3UNwBr3QjVFXk1qriRM01GCdTMPGiDqQM0Mo2GGI9yEF68xfDR9mu5iWKH4
-        jykyqbrrDCu1M7yc4WmWxJ7ILJpmhv8DY0sZjsDsUoaT5NF5NvFM4+LhS89HK6qPxxAu6H/9zApDLB8A
-        uOCtejP5FzjWNo5QqX7R/B5u9gE4Hk1z/QzQSAbIAI1kgAzQSAbIAI1kgOUD6L4Q+0GjuXTrPsQHYGNr
-        NPrS8Gp0T5QQnNPOnqKGmm/qPq3TwUar9C7tIgihnRgh7/bNIUzU9lsrWYRt+wWrOJplG7AWsgAAAABJ
-        RU5ErkJggg==
-</value>
-  </data>
   <metadata name="ofd_imagem.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
     <value>356, 17</value>
   </metadata>

@@ -87,7 +87,7 @@ Partial Class login
         Me.txt_cpf.PlaceholderText = ""
         Me.txt_cpf.SelectedText = ""
         Me.txt_cpf.Size = New System.Drawing.Size(700, 60)
-        Me.txt_cpf.TabIndex = 3
+        Me.txt_cpf.TabIndex = 1
         '
         'txt_senha
         '
@@ -108,7 +108,7 @@ Partial Class login
         Me.txt_senha.PlaceholderText = ""
         Me.txt_senha.SelectedText = ""
         Me.txt_senha.Size = New System.Drawing.Size(534, 60)
-        Me.txt_senha.TabIndex = 4
+        Me.txt_senha.TabIndex = 2
         '
         'Guna2BorderlessForm1
         '
@@ -182,7 +182,7 @@ Partial Class login
         Me.btn_entrar.Location = New System.Drawing.Point(553, 334)
         Me.btn_entrar.Name = "btn_entrar"
         Me.btn_entrar.Size = New System.Drawing.Size(364, 88)
-        Me.btn_entrar.TabIndex = 31
+        Me.btn_entrar.TabIndex = 3
         Me.btn_entrar.Text = "ENTRAR"
         '
         'login

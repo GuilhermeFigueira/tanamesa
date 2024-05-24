@@ -454,7 +454,7 @@ Partial Class pedidos
         Me.txt_pesquisaPedidos.PlaceholderText = "Pesquise pedidos"
         Me.txt_pesquisaPedidos.SelectedText = ""
         Me.txt_pesquisaPedidos.Size = New System.Drawing.Size(413, 36)
-        Me.txt_pesquisaPedidos.TabIndex = 35
+        Me.txt_pesquisaPedidos.TabIndex = 1
         '
         'Guna2Panel4
         '

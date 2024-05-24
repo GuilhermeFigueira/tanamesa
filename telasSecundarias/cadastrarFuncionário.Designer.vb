@@ -144,7 +144,7 @@ Partial Class cadastrarFuncionário
         Me.txt_nome.PlaceholderText = ""
         Me.txt_nome.SelectedText = ""
         Me.txt_nome.Size = New System.Drawing.Size(570, 36)
-        Me.txt_nome.TabIndex = 8
+        Me.txt_nome.TabIndex = 1
         '
         'Guna2HtmlLabel1
         '
@@ -218,7 +218,7 @@ Partial Class cadastrarFuncionário
         Me.txt_cpf.PlaceholderText = ""
         Me.txt_cpf.SelectedText = ""
         Me.txt_cpf.Size = New System.Drawing.Size(280, 36)
-        Me.txt_cpf.TabIndex = 16
+        Me.txt_cpf.TabIndex = 2
         '
         'txt_senha
         '
@@ -243,7 +243,7 @@ Partial Class cadastrarFuncionário
         Me.txt_senha.PlaceholderText = ""
         Me.txt_senha.SelectedText = ""
         Me.txt_senha.Size = New System.Drawing.Size(280, 36)
-        Me.txt_senha.TabIndex = 17
+        Me.txt_senha.TabIndex = 3
         '
         'pnl_titulo
         '
@@ -292,7 +292,7 @@ Partial Class cadastrarFuncionário
         Me.btn_cadastrar.Location = New System.Drawing.Point(634, 289)
         Me.btn_cadastrar.Name = "btn_cadastrar"
         Me.btn_cadastrar.Size = New System.Drawing.Size(242, 47)
-        Me.btn_cadastrar.TabIndex = 36
+        Me.btn_cadastrar.TabIndex = 6
         Me.btn_cadastrar.Text = "Cadastrar Funcionário"
         '
         'Guna2ShadowPanel1
@@ -325,12 +325,11 @@ Partial Class cadastrarFuncionário
         Me.pbx_imagem.BorderRadius = 17
         Me.pbx_imagem.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
         Me.pbx_imagem.Cursor = System.Windows.Forms.Cursors.Hand
-        Me.pbx_imagem.Image = CType(resources.GetObject("pbx_imagem.Image"), System.Drawing.Image)
         Me.pbx_imagem.ImageRotate = 0!
         Me.pbx_imagem.Location = New System.Drawing.Point(30, 44)
         Me.pbx_imagem.Name = "pbx_imagem"
         Me.pbx_imagem.Size = New System.Drawing.Size(183, 183)
-        Me.pbx_imagem.SizeMode = System.Windows.Forms.PictureBoxSizeMode.CenterImage
+        Me.pbx_imagem.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom
         Me.pbx_imagem.TabIndex = 18
         Me.pbx_imagem.TabStop = False
         '
@@ -395,7 +394,7 @@ Partial Class cadastrarFuncionário
         Me.txt_codFunc.PlaceholderText = ""
         Me.txt_codFunc.SelectedText = ""
         Me.txt_codFunc.Size = New System.Drawing.Size(185, 36)
-        Me.txt_codFunc.TabIndex = 22
+        Me.txt_codFunc.TabIndex = 4
         '
         'txt_funcao
         '
@@ -420,7 +419,7 @@ Partial Class cadastrarFuncionário
         Me.txt_funcao.PlaceholderText = ""
         Me.txt_funcao.SelectedText = ""
         Me.txt_funcao.Size = New System.Drawing.Size(366, 36)
-        Me.txt_funcao.TabIndex = 23
+        Me.txt_funcao.TabIndex = 5
         '
         'ofd_imagem
         '

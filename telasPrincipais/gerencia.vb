@@ -43,6 +43,5 @@ Public Class gerencia
     End Sub
 
     Private Sub gerencia_Load(sender As Object, e As EventArgs) Handles Me.Load
-        telaConfirmacao.setSub(Sub() Application.Exit())
     End Sub
 End Class

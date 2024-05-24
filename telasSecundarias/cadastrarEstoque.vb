@@ -11,7 +11,7 @@ Public Class cadastrarEstoque
         Me.WindowState = FormWindowState.Minimized
     End Sub
 
-    Private Sub pbx_imagem_Click(sender As Object, e As EventArgs) Handles pbx_imagem.Click
+    Private Sub pbx_imagem_Click(sender As Object, e As EventArgs)
         Try
             With ofd_imagem
                 .Title = "Selecione uma foto"

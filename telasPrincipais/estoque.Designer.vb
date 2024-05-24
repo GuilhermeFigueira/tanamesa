@@ -647,7 +647,7 @@ Partial Class estoque
         Me.txt_pesquisa.PlaceholderText = "Pesquise itens do cardápio"
         Me.txt_pesquisa.SelectedText = ""
         Me.txt_pesquisa.Size = New System.Drawing.Size(413, 36)
-        Me.txt_pesquisa.TabIndex = 34
+        Me.txt_pesquisa.TabIndex = 1
         '
         'Guna2DragControl1
         '

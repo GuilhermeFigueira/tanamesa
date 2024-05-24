@@ -420,7 +420,7 @@ Partial Class mesas
         Me.txt_pesquisaMesas.PlaceholderText = "Pesquise mesas"
         Me.txt_pesquisaMesas.SelectedText = ""
         Me.txt_pesquisaMesas.Size = New System.Drawing.Size(413, 36)
-        Me.txt_pesquisaMesas.TabIndex = 33
+        Me.txt_pesquisaMesas.TabIndex = 1
         '
         'Guna2HtmlLabel7
         '
@@ -539,7 +539,7 @@ Partial Class mesas
         Me.btn_abrirMesa.Margin = New System.Windows.Forms.Padding(0)
         Me.btn_abrirMesa.Name = "btn_abrirMesa"
         Me.btn_abrirMesa.Size = New System.Drawing.Size(324, 45)
-        Me.btn_abrirMesa.TabIndex = 22
+        Me.btn_abrirMesa.TabIndex = 4
         Me.btn_abrirMesa.Text = "Abrir Mesa"
         '
         'lbl_total
@@ -660,7 +660,7 @@ Partial Class mesas
         Me.txt_nomeCliente.PlaceholderText = ""
         Me.txt_nomeCliente.SelectedText = ""
         Me.txt_nomeCliente.Size = New System.Drawing.Size(283, 36)
-        Me.txt_nomeCliente.TabIndex = 14
+        Me.txt_nomeCliente.TabIndex = 3
         '
         'Guna2HtmlLabel10
         '
@@ -691,7 +691,7 @@ Partial Class mesas
         Me.cmb_numeroMesa.Location = New System.Drawing.Point(32, 99)
         Me.cmb_numeroMesa.Name = "cmb_numeroMesa"
         Me.cmb_numeroMesa.Size = New System.Drawing.Size(283, 36)
-        Me.cmb_numeroMesa.TabIndex = 12
+        Me.cmb_numeroMesa.TabIndex = 2
         Me.cmb_numeroMesa.TextAlign = System.Windows.Forms.HorizontalAlignment.Right
         '
         'Guna2HtmlLabel9
