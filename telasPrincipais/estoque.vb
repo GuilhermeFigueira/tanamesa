@@ -1,5 +1,6 @@
 ﻿Imports System.ComponentModel
 Imports System.IO
+
 Public Class estoque
     Private Sub btn_fechar_Click(sender As Object, e As EventArgs) Handles btn_fechar.Click
         sair()
@@ -49,6 +50,22 @@ Public Class estoque
         gerenciadorEstoque.Subscribe(AddressOf fechaConexao)
         gerenciadorEstoque.Subscribe(AddressOf gerenciadorEstoque.carregarEstoque)
     End Sub
+
+    Private Sub dgv_estoque_CellContentClick(sender As Object, e As DataGridViewCellEventArgs) Handles dgv_estoque.CellContentClick
+        Try
+            With dgv_estoque
+                If .CurrentRow.Cells(9).Selected = True Then
+                    gerenciadorEstoque.editarItemEstoque()
+
+                ElseIf .CurrentRow.Cells(10).Selected Then
+                    gerenciadorEstoque.apagarItemEstoque()
+                End If
+            End With
+        Catch ex As Exception
+            telaErro.setTexto("Erro ao carregar dados!")
+            telaErro.Show()
+        End Try
+    End Sub
 End Class
 Public Class criarEstoque
     Public Delegate Sub ObserverFunction(ByVal command As Object)
@@ -77,6 +94,8 @@ Public Class criarEstoque
                     .Rows.Add(Nothing, rs.Fields(2).Value, rs.Fields(3).Value, rs.Fields(4).Value, rs.Fields(5).Value, rs.Fields(6).Value, formatDate(rs.Fields(7).Value), formatDate(rs.Fields(8).Value), Nothing, Nothing)
                     Dim fotoProduto As Image = Image.FromFile(Path.Combine(Application.StartupPath, "imgProdutos", rs.Fields(1).Value))
                     .Rows(count).Cells("fotoProduto").Value = fotoProduto
+                    .Rows(count).Tag = rs.Fields(0).Value
+                    ' MessageBox.Show(String.Format("Error: {0}", .Rows(count).Tag))
                     count += 1
                     rs.MoveNext()
                 Loop
@@ -128,7 +147,36 @@ Public Class criarEstoque
         End Try
         NotifyAll({})
     End Sub
+    Public Sub editarItemEstoque()
+        abreConexao()
+        Try
+            With estoque.dgv_estoque
+                sql = "SELECT * FROM tb_estoque WHERE id_item =" & .CurrentRow.Tag & " "
+                rs = db.Execute(sql)
+                With cadastrarEstoque
+                    If rs.EOF = False Then
+                        .Show()
+                        .txt_nome.Text = rs.Fields(2).Value
+                        .cmb_categoria.SelectedIndex = .cmb_categoria.FindStringExact(rs.Fields(3).Value)
+                        .cmb_unidade.SelectedIndex = .cmb_unidade.FindStringExact(rs.Fields(5).Value)
+                        .lbl_qtdComprada.Text = "Quantidade em Estoque"
+                        .txt_qtd.Text = rs.Fields(4).Value
+                        .txt_vlrUnidade.Text = rs.Fields(6).Value
+                        .dtp_dataCompra.Value = rs.Fields(7).Value
+                        .dtp_dataValidade.Text = rs.Fields(8).Value
+                        '.pbx_imagem. = rs.Fields(1).Value
+                        ' diretorio = rs.Fields(1).Value
+                        '.pbx_imagem.Load(diretorio)
+                    End If
+                End With
+            End With
+        Catch ex As Exception
+            telaErro.setTexto("Erro ao carregar dados!")
+            telaErro.Show()
+            'MessageBox.Show(String.Format("Error: {0}", ex.Message))
 
+        End Try
+    End Sub
     Public Sub carregarCategorias()
         abreConexao()
         Try
@@ -145,6 +193,15 @@ Public Class criarEstoque
             telaErro.setTexto("Erro ao carregar categorias!")
             telaErro.Show()
         End Try
+    End Sub
+
+    Public Sub apagarItemEstoque()
+        telaConfirmacao.setTexto($"Deseja realmente apagar o item {rs.Fields(2).Value}?")
+        telaConfirmacao.setSub(Function()
+                                   sql = "delete * from tb_estoque where cpf='" & estoque.dgv_estoque.CurrentRow.Tag & "'"
+                                   rs = db.Execute(sql)
+                                   NotifyAll({})
+                               End Function)
     End Sub
     Public Class Categoria
         Public Property categoria As String

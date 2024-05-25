@@ -41,6 +41,7 @@ Partial Class cadastrarEstoque
         Me.Guna2Panel2 = New Guna.UI2.WinForms.Guna2Panel()
         Me.btn_cadastrar = New Guna.UI2.WinForms.Guna2Button()
         Me.Guna2ShadowPanel1 = New Guna.UI2.WinForms.Guna2ShadowPanel()
+        Me.pbx_imagem = New Guna.UI2.WinForms.Guna2PictureBox()
         Me.Guna2HtmlLabel10 = New Guna.UI2.WinForms.Guna2HtmlLabel()
         Me.pnl_info = New Guna.UI2.WinForms.Guna2ShadowPanel()
         Me.lbl_mudancaUnidade = New Guna.UI2.WinForms.Guna2HtmlLabel()
@@ -52,16 +53,15 @@ Partial Class cadastrarEstoque
         Me.Guna2HtmlLabel5 = New Guna.UI2.WinForms.Guna2HtmlLabel()
         Me.Guna2HtmlLabel6 = New Guna.UI2.WinForms.Guna2HtmlLabel()
         Me.txt_qtd = New Guna.UI2.WinForms.Guna2TextBox()
-        Me.Guna2HtmlLabel7 = New Guna.UI2.WinForms.Guna2HtmlLabel()
+        Me.lbl_qtdComprada = New Guna.UI2.WinForms.Guna2HtmlLabel()
         Me.dtp_dataCompra = New Guna.UI2.WinForms.Guna2DateTimePicker()
         Me.ofd_imagem = New System.Windows.Forms.OpenFileDialog()
-        Me.pbx_imagem = New Guna.UI2.WinForms.Guna2PictureBox()
         Me.Guna2ContainerControl1.SuspendLayout()
         Me.pnl_nome.SuspendLayout()
         Me.Guna2Panel2.SuspendLayout()
         Me.Guna2ShadowPanel1.SuspendLayout()
-        Me.pnl_info.SuspendLayout()
         CType(Me.pbx_imagem, System.ComponentModel.ISupportInitialize).BeginInit()
+        Me.pnl_info.SuspendLayout()
         Me.SuspendLayout()
         '
         'Guna2BorderlessForm1
@@ -307,6 +307,19 @@ Partial Class cadastrarEstoque
         Me.Guna2ShadowPanel1.Size = New System.Drawing.Size(328, 370)
         Me.Guna2ShadowPanel1.TabIndex = 13
         '
+        'pbx_imagem
+        '
+        Me.pbx_imagem.BorderRadius = 17
+        Me.pbx_imagem.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
+        Me.pbx_imagem.Cursor = System.Windows.Forms.Cursors.Hand
+        Me.pbx_imagem.ImageRotate = 0!
+        Me.pbx_imagem.Location = New System.Drawing.Point(24, 51)
+        Me.pbx_imagem.Name = "pbx_imagem"
+        Me.pbx_imagem.Size = New System.Drawing.Size(280, 290)
+        Me.pbx_imagem.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom
+        Me.pbx_imagem.TabIndex = 19
+        Me.pbx_imagem.TabStop = False
+        '
         'Guna2HtmlLabel10
         '
         Me.Guna2HtmlLabel10.BackColor = System.Drawing.Color.Transparent
@@ -329,7 +342,7 @@ Partial Class cadastrarEstoque
         Me.pnl_info.Controls.Add(Me.Guna2HtmlLabel5)
         Me.pnl_info.Controls.Add(Me.Guna2HtmlLabel6)
         Me.pnl_info.Controls.Add(Me.txt_qtd)
-        Me.pnl_info.Controls.Add(Me.Guna2HtmlLabel7)
+        Me.pnl_info.Controls.Add(Me.lbl_qtdComprada)
         Me.pnl_info.Controls.Add(Me.dtp_dataCompra)
         Me.pnl_info.FillColor = System.Drawing.Color.White
         Me.pnl_info.Location = New System.Drawing.Point(16, 224)
@@ -468,15 +481,15 @@ Partial Class cadastrarEstoque
         Me.txt_qtd.Size = New System.Drawing.Size(280, 36)
         Me.txt_qtd.TabIndex = 4
         '
-        'Guna2HtmlLabel7
+        'lbl_qtdComprada
         '
-        Me.Guna2HtmlLabel7.BackColor = System.Drawing.Color.Transparent
-        Me.Guna2HtmlLabel7.Font = New System.Drawing.Font("Libre Caslon Display", 15.75!)
-        Me.Guna2HtmlLabel7.Location = New System.Drawing.Point(14, 54)
-        Me.Guna2HtmlLabel7.Name = "Guna2HtmlLabel7"
-        Me.Guna2HtmlLabel7.Size = New System.Drawing.Size(174, 27)
-        Me.Guna2HtmlLabel7.TabIndex = 7
-        Me.Guna2HtmlLabel7.Text = "Quantidade comprada"
+        Me.lbl_qtdComprada.BackColor = System.Drawing.Color.Transparent
+        Me.lbl_qtdComprada.Font = New System.Drawing.Font("Libre Caslon Display", 15.75!)
+        Me.lbl_qtdComprada.Location = New System.Drawing.Point(14, 54)
+        Me.lbl_qtdComprada.Name = "lbl_qtdComprada"
+        Me.lbl_qtdComprada.Size = New System.Drawing.Size(174, 27)
+        Me.lbl_qtdComprada.TabIndex = 7
+        Me.lbl_qtdComprada.Text = "Quantidade comprada"
         '
         'dtp_dataCompra
         '
@@ -498,19 +511,6 @@ Partial Class cadastrarEstoque
         '
         Me.ofd_imagem.FileName = "OpenFileDialog1"
         '
-        'pbx_imagem
-        '
-        Me.pbx_imagem.BorderRadius = 17
-        Me.pbx_imagem.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
-        Me.pbx_imagem.Cursor = System.Windows.Forms.Cursors.Hand
-        Me.pbx_imagem.ImageRotate = 0!
-        Me.pbx_imagem.Location = New System.Drawing.Point(24, 51)
-        Me.pbx_imagem.Name = "pbx_imagem"
-        Me.pbx_imagem.Size = New System.Drawing.Size(280, 290)
-        Me.pbx_imagem.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom
-        Me.pbx_imagem.TabIndex = 19
-        Me.pbx_imagem.TabStop = False
-        '
         'cadastrarEstoque
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
@@ -531,9 +531,9 @@ Partial Class cadastrarEstoque
         Me.Guna2Panel2.ResumeLayout(False)
         Me.Guna2ShadowPanel1.ResumeLayout(False)
         Me.Guna2ShadowPanel1.PerformLayout()
+        CType(Me.pbx_imagem, System.ComponentModel.ISupportInitialize).EndInit()
         Me.pnl_info.ResumeLayout(False)
         Me.pnl_info.PerformLayout()
-        CType(Me.pbx_imagem, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)
         Me.PerformLayout()
 
@@ -562,7 +562,7 @@ Partial Class cadastrarEstoque
     Friend WithEvents Guna2HtmlLabel5 As Guna.UI2.WinForms.Guna2HtmlLabel
     Friend WithEvents Guna2HtmlLabel6 As Guna.UI2.WinForms.Guna2HtmlLabel
     Friend WithEvents txt_qtd As Guna.UI2.WinForms.Guna2TextBox
-    Friend WithEvents Guna2HtmlLabel7 As Guna.UI2.WinForms.Guna2HtmlLabel
+    Friend WithEvents lbl_qtdComprada As Guna.UI2.WinForms.Guna2HtmlLabel
     Friend WithEvents dtp_dataValidade As Guna.UI2.WinForms.Guna2DateTimePicker
     Friend WithEvents Guna2ShadowPanel1 As Guna.UI2.WinForms.Guna2ShadowPanel
     Friend WithEvents Guna2HtmlLabel10 As Guna.UI2.WinForms.Guna2HtmlLabel

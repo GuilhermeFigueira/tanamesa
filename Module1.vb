@@ -1,9 +1,9 @@
 ﻿Imports System.Globalization
-
+Imports System.Data.SqlClient
 Module Module1
     Public db As ADODB.Connection
     Public rs As New ADODB.Recordset
-    Public sql As String ' Querys CRUD linguagem SQL
+    Public sql As String ' Queries CRUD in SQL language
     Public dir_banco = Application.StartupPath & "\banco\db.mdb"
     Public count As Integer
     Public caminhoImagem As String
@@ -12,13 +12,17 @@ Module Module1
     Sub abreConexao()
         Try
             db = CreateObject("ADODB.Connection")
-            db.Open("Provider=Microsoft.JET.OLEDB.4.0;Data Source=" & dir_banco)
-            'telaErro.setTexto("Conexão com o banco de dados OK")
-            'telaErro.Show()
+            If db.State <> 64 Then
+                db.Open("Provider=Microsoft.JET.OLEDB.4.0;Data Source=" & dir_banco)
+                MessageBox.Show(String.Format("Connection opened successfully"))
+            Else
+                MessageBox.Show("The connection is already open.")
+            End If
         Catch ex As Exception
-            telaErro.setTexto("Erro de conexão com o banco de dados")
+            telaErro.setTexto("Database connection error")
             telaErro.Show()
-            'MessageBox.Show(String.Format("Error: {0}", ex.Message))
+            ' Uncomment this line if you want to display the exception message
+            ' MessageBox.Show(String.Format("Error: {0}", ex.Message))
         End Try
     End Sub
 
