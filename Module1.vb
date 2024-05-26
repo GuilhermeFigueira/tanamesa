@@ -11,24 +11,23 @@ Module Module1
 
     Sub abreConexao()
         Try
-            db = CreateObject("ADODB.Connection")
-            If db.State <> 64 Then
+            If db Is Nothing Then
+                db = CreateObject("ADODB.Connection")
+            End If
+            If db.State <> 1 Then
                 db.Open("Provider=Microsoft.JET.OLEDB.4.0;Data Source=" & dir_banco)
-                MessageBox.Show(String.Format("Connection opened successfully"))
-            Else
-                MessageBox.Show("The connection is already open.")
+                'MessageBox.Show(String.Format($"Connection opened successfully {db.State}"))
             End If
         Catch ex As Exception
-            telaErro.setTexto("Database connection error")
+            telaErro.setTexto("Erro ao conectar ao banco de dados!")
             telaErro.Show()
-            ' Uncomment this line if you want to display the exception message
             ' MessageBox.Show(String.Format("Error: {0}", ex.Message))
         End Try
     End Sub
 
     Sub fechaConexao()
-        'telaErro.setTexto("Fechando banco")
-        'telaErro.Show()
+        telaErro.setTexto("Fechando banco")
+        telaErro.Show()
         db.Close()
     End Sub
 
@@ -50,16 +49,19 @@ Module Module1
             sql = "SELECT * FROM tb_unidade"
             rs = db.Execute(sql)
             With cmb
-                .Items.Clear()
-                Do While rs.EOF = False
-                    .Items.Add(rs.Fields(1).Value)
-                    rs.MoveNext()
-                Loop
+                If .Items.Count = 0 Then
+                    Do While rs.EOF = False
+                        .Items.Add(rs.Fields(1).Value)
+                        rs.MoveNext()
+                    Loop
+                Else
+                    Exit Sub
+                End If
             End With
         Catch ex As Exception
             telaErro.setTexto("Erro ao carregar unidades de medida!")
             telaErro.Show()
         End Try
-        fechaConexao()
+        'fechaConexao()
     End Sub
 End Module

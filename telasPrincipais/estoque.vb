@@ -1,5 +1,6 @@
 ﻿Imports System.ComponentModel
 Imports System.IO
+Imports System.Runtime.InteropServices.WindowsRuntime
 
 Public Class estoque
     Private Sub btn_fechar_Click(sender As Object, e As EventArgs) Handles btn_fechar.Click
@@ -46,8 +47,9 @@ Public Class estoque
     End Sub
 
     Private Sub estoque_Load(sender As Object, e As EventArgs) Handles MyBase.Load
+        abreConexao()
         gerenciadorEstoque.carregarEstoque()
-        gerenciadorEstoque.Subscribe(AddressOf fechaConexao)
+        'gerenciadorEstoque.Subscribe(AddressOf fechaConexao)
         gerenciadorEstoque.Subscribe(AddressOf gerenciadorEstoque.carregarEstoque)
     End Sub
 
@@ -55,10 +57,10 @@ Public Class estoque
         Try
             With dgv_estoque
                 If .CurrentRow.Cells(9).Selected = True Then
-                    gerenciadorEstoque.editarItemEstoque()
+                    gerenciadorEstoque.editarItemEstoque(.CurrentRow.Tag)
 
                 ElseIf .CurrentRow.Cells(10).Selected Then
-                    gerenciadorEstoque.apagarItemEstoque()
+                    ' gerenciadorEstoque.apagarItemEstoque()
                 End If
             End With
         Catch ex As Exception
@@ -147,62 +149,69 @@ Public Class criarEstoque
         End Try
         NotifyAll({})
     End Sub
-    Public Sub editarItemEstoque()
+    Public Sub editarItemEstoque(itemId As Integer)
         abreConexao()
         Try
-            With estoque.dgv_estoque
-                sql = "SELECT * FROM tb_estoque WHERE id_item =" & .CurrentRow.Tag & " "
-                rs = db.Execute(sql)
-                With cadastrarEstoque
-                    If rs.EOF = False Then
-                        .Show()
-                        .txt_nome.Text = rs.Fields(2).Value
-                        .cmb_categoria.SelectedIndex = .cmb_categoria.FindStringExact(rs.Fields(3).Value)
-                        .cmb_unidade.SelectedIndex = .cmb_unidade.FindStringExact(rs.Fields(5).Value)
-                        .lbl_qtdComprada.Text = "Quantidade em Estoque"
-                        .txt_qtd.Text = rs.Fields(4).Value
-                        .txt_vlrUnidade.Text = rs.Fields(6).Value
-                        .dtp_dataCompra.Value = rs.Fields(7).Value
-                        .dtp_dataValidade.Text = rs.Fields(8).Value
-                        '.pbx_imagem. = rs.Fields(1).Value
-                        ' diretorio = rs.Fields(1).Value
-                        '.pbx_imagem.Load(diretorio)
-                    End If
-                End With
+            carregarCategorias()
+            sql = "SELECT * FROM tb_estoque WHERE id_item =" & itemId & " "
+            rs = db.Execute(sql)
+            With cadastrarEstoque
+                If rs.EOF = False Then
+                    .alterarTipoFormEstoque("Editar produto no Estoque", "Editar Produto")
+                    .txt_nome.Text = rs.Fields(2).Value
+                    .cmb_categoria.SelectedIndex = .cmb_categoria.FindStringExact(rs.Fields(3).Value)
+                    .cmb_unidade.SelectedIndex = .cmb_unidade.FindStringExact(rs.Fields(5).Value)
+                    .lbl_qtdComprada.Text = "Quantidade em Estoque"
+                    .txt_qtd.Text = rs.Fields(4).Value
+                    .txt_vlrUnidade.Text = rs.Fields(6).Value
+                    .dtp_dataCompra.Value = rs.Fields(7).Value
+                    .dtp_dataValidade.Text = rs.Fields(8).Value
+                    .pbx_imagem.Load(Path.Combine(Application.StartupPath, "imgProdutos", rs.Fields(1).Value))
+                    ' diretorio = rs.Fields(1).Value
+                    '.pbx_imagem.Load(diretorio)
+                    .Show()
+                End If
             End With
         Catch ex As Exception
             telaErro.setTexto("Erro ao carregar dados!")
             telaErro.Show()
-            'MessageBox.Show(String.Format("Error: {0}", ex.Message))
-
+            'MessageBox.Show(String.Format("Error editar item estoque: {0}", ex.Message))
         End Try
+        NotifyAll({})
     End Sub
-    Public Sub carregarCategorias()
+    Public Function carregarCategorias()
         abreConexao()
         Try
             sql = "SELECT * FROM tb_categorias WHERE pertence = 'estoque'"
             rs = db.Execute(sql)
             With cadastrarEstoque.cmb_categoria
-                .Items.Clear()
-                Do While rs.EOF = False
-                    .Items.Add(rs.Fields(1).Value)
-                    rs.MoveNext()
-                Loop
+                If .Items.Count = 0 Then
+                    Do While rs.EOF = False
+                        .Items.Add(rs.Fields(1).Value)
+                        rs.MoveNext()
+                    Loop
+                Else
+                    Return 0
+                End If
             End With
         Catch ex As Exception
             telaErro.setTexto("Erro ao carregar categorias!")
             telaErro.Show()
         End Try
-    End Sub
+        NotifyAll({})
+        Return 0
+    End Function
 
-    Public Sub apagarItemEstoque()
-        telaConfirmacao.setTexto($"Deseja realmente apagar o item {rs.Fields(2).Value}?")
-        telaConfirmacao.setSub(Function()
-                                   sql = "delete * from tb_estoque where cpf='" & estoque.dgv_estoque.CurrentRow.Tag & "'"
-                                   rs = db.Execute(sql)
-                                   NotifyAll({})
-                               End Function)
-    End Sub
+    'Public Sub apagarItemEstoque()
+    'abreConexao()
+
+    ' telaConfirmacao.setTexto($"Deseja realmente apagar o item {rs.Fields(2).Value}?")
+    'telaConfirmacao.setSub(Function()
+    '                        sql = "delete * from tb_estoque where cpf='" & estoque.dgv_estoque.CurrentRow.Tag & "'"
+    '                         rs = db.Execute(sql)
+    '                         NotifyAll({})
+    'End Function)
+    'End Sub
     Public Class Categoria
         Public Property categoria As String
     End Class

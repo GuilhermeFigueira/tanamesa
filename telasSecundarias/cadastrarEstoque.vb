@@ -3,6 +3,8 @@ Imports System.Security.Cryptography
 Imports Guna.UI2.WinForms
 Imports System.IO
 Public Class cadastrarEstoque
+    Dim titulo As String
+    Dim btn As String
     Private Sub btn_fechar_Click(sender As Object, e As EventArgs) Handles btn_fechar.Click
         Hide()
     End Sub
@@ -12,16 +14,24 @@ Public Class cadastrarEstoque
     End Sub
 
 
-    Public Sub alterarTipoFormEstoque(titulo As String, btn As String)
-        lbl_titulo.Text = titulo
-        btn_cadastrar.Text = btn
+    Public Sub alterarTipoFormEstoque(tituloString As String, btnString As String)
+        titulo = tituloString
+        btn = btnString
     End Sub
 
-    Private Sub cadastrarEstoque_Load(sender As Object, e As EventArgs) Handles Me.Load
+    Public Sub cadastrarEstoque_Load(sender As Object, e As EventArgs) Handles Me.Load
+        abreConexao()
         gerenciadorEstoque.carregarCategorias()
         carregarUnidades(cmb_unidade)
         dtp_dataCompra.Value = Date.Now
         dtp_dataValidade.Value = Date.Now
+        If btn = "" And titulo = "" Then
+            lbl_titulo.Text = "Salvar Produto no Estoque"
+            btn_cadastrar.Text = "Adicionar Produto"
+        Else
+            lbl_titulo.Text = titulo
+            btn_cadastrar.Text = btn
+        End If
     End Sub
 
     Private Sub btn_cadastrar_Click(sender As Object, e As EventArgs) Handles btn_cadastrar.Click
@@ -54,9 +64,5 @@ Public Class cadastrarEstoque
         Catch ex As Exception
             Exit Sub
         End Try
-    End Sub
-
-    Private Sub Guna2ShadowPanel1_Paint(sender As Object, e As PaintEventArgs) Handles Guna2ShadowPanel1.Paint
-
     End Sub
 End Class
