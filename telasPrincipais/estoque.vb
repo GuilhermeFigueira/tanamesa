@@ -4,6 +4,7 @@ Imports System.Runtime.InteropServices.WindowsRuntime
 Imports ADODB
 
 Public Class estoque
+    Public carregado As Boolean = False
     Private Sub btn_fechar_Click(sender As Object, e As EventArgs) Handles btn_fechar.Click
         sair()
     End Sub
@@ -50,7 +51,6 @@ Public Class estoque
     Private Sub estoque_Load(sender As Object, e As EventArgs) Handles MyBase.Load
         abreConexao()
         gerenciadorEstoque.carregarEstoque()
-        'gerenciadorEstoque.Subscribe(AddressOf fechaConexao)
         gerenciadorEstoque.Subscribe(AddressOf gerenciadorEstoque.carregarEstoque)
     End Sub
 
@@ -70,11 +70,11 @@ Public Class estoque
     End Sub
 
     Private Sub txt_pesquisa_TextChanged(sender As Object, e As EventArgs) Handles txt_pesquisa.TextChanged
-        If txt_pesquisa.Text = "" Then
-            Exit Sub
-        Else
-            gerenciadorEstoque.pesquisarEstoque(txt_pesquisa.Text)
-        End If
+        gerenciadorEstoque.pesquisarEstoque(txt_pesquisa.Text)
+    End Sub
+
+    Private Sub dgv_estoque_Paint(sender As Object, e As PaintEventArgs) Handles dgv_estoque.Paint
+        carregado = True
     End Sub
 End Class
 Public Class criarEstoque
@@ -102,10 +102,11 @@ Public Class criarEstoque
                 .Rows.Clear()
                 Do While rs.EOF = False
                     .Rows.Add(Nothing, rs.Fields(2).Value, rs.Fields(3).Value, rs.Fields(4).Value, rs.Fields(5).Value, rs.Fields(6).Value, formatDate(rs.Fields(7).Value), formatDate(rs.Fields(8).Value), Nothing, Nothing)
-                    Dim fotoProduto As Image = Image.FromFile(Path.Combine(Application.StartupPath, "imgProdutos", rs.Fields(1).Value))
-                    .Rows(count).Cells("fotoProduto").Value = fotoProduto
+                    If rs.Fields(1).Value IsNot "" Then
+                        Dim fotoProduto As Image = Image.FromFile(Path.Combine(Application.StartupPath, "imgProdutos", rs.Fields(1).Value))
+                        .Rows(count).Cells("fotoProduto").Value = fotoProduto
+                    End If
                     .Rows(count).Tag = rs.Fields(0).Value
-                    ' MessageBox.Show(String.Format("Error:  {0}", .Rows(count).Tag))
                     count += 1
                     rs.MoveNext()
                 Loop
@@ -113,6 +114,7 @@ Public Class criarEstoque
         Catch ex As Exception
             telaErro.setTexto("Erro ao carregar dados carrega!")
             telaErro.Show()
+            MessageBox.Show(String.Format("Error editar item estoque: {0}", ex.Message))
         End Try
     End Sub
 
@@ -273,26 +275,29 @@ Public Class criarEstoque
     Public Sub pesquisarEstoque(pesquisa As String)
         abreConexao()
         Try
-            If pesquisa = "" Then
-                carregarEstoque()
-                Exit Sub
-            End If
-            sql = "SELECT * FROM tb_estoque WHERE nome LIKE '" & pesquisa & "%'"
+            sql = "SELECT * FROM tb_estoque WHERE nome LIKE '" & pesquisa & "%' ORDER BY nome ASC"
             rs = db.Execute(sql)
             count = 0
-            With estoque.dgv_estoque
-                count = 1
-                .Rows.Clear()
-                Do While rs.EOF = False
-                    .Rows.Add(Nothing, rs.Fields(2).Value, rs.Fields(3).Value, rs.Fields(4).Value, rs.Fields(5).Value, rs.Fields(6).Value, formatDate(rs.Fields(7).Value), formatDate(rs.Fields(8).Value), Nothing, Nothing)
-                    ' Dim fotoProduto As Image = Image.FromFile(Path.Combine(Application.StartupPath, "imgProdutos", rs.Fields(1).Value))
-                    '.Rows(count).Cells("fotoProduto").Value = fotoProduto
-                    .Rows(count).Tag = rs.Fields(0).Value
-                    count += 1
-                    rs.MoveNext()
-                Loop
-            End With
+            If estoque.carregado = True And estoque.carregado <> Nothing Then
+                With estoque.dgv_estoque
+                    count = 0
+                    .Rows.Clear()
+                    Do While rs.EOF = False
+                        .Rows.Add(Nothing, rs.Fields(2).Value, rs.Fields(3).Value, rs.Fields(4).Value, rs.Fields(5).Value, rs.Fields(6).Value, formatDate(rs.Fields(7).Value), formatDate(rs.Fields(8).Value), Nothing, Nothing)
+                        If rs.Fields(1).Value IsNot "" Then
+                            Dim fotoProduto As Image = Image.FromFile(Path.Combine(Application.StartupPath, "imgProdutos", rs.Fields(1).Value))
+                            .Rows(count).Cells("fotoProduto").Value = fotoProduto
+                        End If
+                        .Rows(count).Tag = rs.Fields(0).Value
+                        count += 1
+                        rs.MoveNext()
+                    Loop
+                End With
+            Else
+                Exit Sub
+            End If
         Catch ex As Exception
+            MessageBox.Show(String.Format("Error editar item estoque: {0}", ex.Message))
             telaErro.setTexto("Erro ao carregar dados pesquisa!")
             telaErro.Show()
         End Try
