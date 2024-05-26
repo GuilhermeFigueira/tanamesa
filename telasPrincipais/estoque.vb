@@ -1,6 +1,7 @@
 ﻿Imports System.ComponentModel
 Imports System.IO
 Imports System.Runtime.InteropServices.WindowsRuntime
+Imports ADODB
 
 Public Class estoque
     Private Sub btn_fechar_Click(sender As Object, e As EventArgs) Handles btn_fechar.Click
@@ -56,17 +57,24 @@ Public Class estoque
     Private Sub dgv_estoque_CellContentClick(sender As Object, e As DataGridViewCellEventArgs) Handles dgv_estoque.CellContentClick
         Try
             With dgv_estoque
-                If .CurrentRow.Cells(9).Selected = True Then
-                    gerenciadorEstoque.editarItemEstoque(.CurrentRow.Tag)
-
-                ElseIf .CurrentRow.Cells(10).Selected Then
-                    ' gerenciadorEstoque.apagarItemEstoque()
+                If e.ColumnIndex = 8 Then
+                    gerenciadorEstoque.carregarEdicaoItemEstoque(.CurrentRow.Tag)
+                ElseIf e.ColumnIndex = 9 Then
+                    gerenciadorEstoque.apagarItemEstoque(.CurrentRow.Tag)
                 End If
             End With
         Catch ex As Exception
             telaErro.setTexto("Erro ao carregar dados!")
             telaErro.Show()
         End Try
+    End Sub
+
+    Private Sub txt_pesquisa_TextChanged(sender As Object, e As EventArgs) Handles txt_pesquisa.TextChanged
+        If txt_pesquisa.Text = "" Then
+            Exit Sub
+        Else
+            gerenciadorEstoque.pesquisarEstoque(txt_pesquisa.Text)
+        End If
     End Sub
 End Class
 Public Class criarEstoque
@@ -97,13 +105,13 @@ Public Class criarEstoque
                     Dim fotoProduto As Image = Image.FromFile(Path.Combine(Application.StartupPath, "imgProdutos", rs.Fields(1).Value))
                     .Rows(count).Cells("fotoProduto").Value = fotoProduto
                     .Rows(count).Tag = rs.Fields(0).Value
-                    ' MessageBox.Show(String.Format("Error: {0}", .Rows(count).Tag))
+                    ' MessageBox.Show(String.Format("Error:  {0}", .Rows(count).Tag))
                     count += 1
                     rs.MoveNext()
                 Loop
             End With
         Catch ex As Exception
-            telaErro.setTexto("Erro ao carregar dados!")
+            telaErro.setTexto("Erro ao carregar dados carrega!")
             telaErro.Show()
         End Try
     End Sub
@@ -149,10 +157,11 @@ Public Class criarEstoque
         End Try
         NotifyAll({})
     End Sub
-    Public Sub editarItemEstoque(itemId As Integer)
+    Public Sub carregarEdicaoItemEstoque(itemId As Integer)
         abreConexao()
         Try
             carregarCategorias()
+            carregarUnidades(cadastrarEstoque.cmb_unidade)
             sql = "SELECT * FROM tb_estoque WHERE id_item =" & itemId & " "
             rs = db.Execute(sql)
             With cadastrarEstoque
@@ -166,9 +175,8 @@ Public Class criarEstoque
                     .txt_vlrUnidade.Text = rs.Fields(6).Value
                     .dtp_dataCompra.Value = rs.Fields(7).Value
                     .dtp_dataValidade.Text = rs.Fields(8).Value
+                    .btn_cadastrar.Tag = itemId
                     .pbx_imagem.Load(Path.Combine(Application.StartupPath, "imgProdutos", rs.Fields(1).Value))
-                    ' diretorio = rs.Fields(1).Value
-                    '.pbx_imagem.Load(diretorio)
                     .Show()
                 End If
             End With
@@ -176,6 +184,40 @@ Public Class criarEstoque
             telaErro.setTexto("Erro ao carregar dados!")
             telaErro.Show()
             'MessageBox.Show(String.Format("Error editar item estoque: {0}", ex.Message))
+        End Try
+        NotifyAll({})
+    End Sub
+    Public Sub editarItemNoEstoque(itemId)
+        abreConexao()
+        Dim itensList As New List(Of String)
+        Dim nomeItem As String = cadastrarEstoque.txt_nome.Text
+        Dim categoriaItem As String = cadastrarEstoque.cmb_categoria.Text
+        Dim unidadeItem As String = cadastrarEstoque.cmb_unidade.Text
+        Dim emEstoque As String = cadastrarEstoque.txt_qtd.Text
+        Dim valorPagoUnidade As String = cadastrarEstoque.txt_vlrUnidade.Text
+        Dim dataCompra As String = cadastrarEstoque.dtp_dataCompra.Value.Date
+        Dim dataValidade As String = cadastrarEstoque.dtp_dataValidade.Value.Date
+        itensList.Add(nomeItem)
+        itensList.Add(categoriaItem)
+        itensList.Add(unidadeItem)
+        itensList.Add(emEstoque)
+        itensList.Add(valorPagoUnidade)
+        itensList.Add(dataCompra)
+        itensList.Add(dataValidade)
+        Try
+            If verificarVazio(itensList) = False Then
+                sql = "UPDATE tb_estoque SET foto='" & caminhoImagem & "', nome ='" & nomeItem & "', categoria='" & categoriaItem & "', em_estoque='" & emEstoque & "', unidade='" & unidadeItem & "', valor_pago='" & valorPagoUnidade & "', data_compra='" & dataCompra & "', data_validade='" & dataValidade & "' WHERE id_item=" & itemId & ""
+                rs = db.Execute(sql)
+                telaErro.setTexto($"{nomeItem} foi editado com sucesso!")
+                telaErro.Show()
+            Else
+                telaErro.setTexto("Existem campos vazios!")
+                telaErro.Show()
+            End If
+        Catch ex As Exception
+            telaErro.setTexto("Erro ao editar item no estoque!")
+            telaErro.Show()
+            MessageBox.Show(String.Format("Error: {0}", sql))
         End Try
         NotifyAll({})
     End Sub
@@ -202,16 +244,59 @@ Public Class criarEstoque
         Return 0
     End Function
 
-    'Public Sub apagarItemEstoque()
-    'abreConexao()
+    Public Sub apagarItemEstoque(itemId As Integer)
+        abreConexao()
+        Try
+            sql = "SELECT * FROM tb_estoque WHERE id_item =" & itemId & ""
+            rs = db.Execute(sql)
+            If rs.EOF = False Then
+                telaConfirmacao.setTexto($"Deseja realmente apagar o item {rs.Fields(2).Value}?")
+                telaConfirmacao.Show()
+                telaConfirmacao.setSub(Sub()
+                                           sql = "DELETE * FROM tb_estoque where id_item=" & itemId & ""
+                                           rs = db.Execute(sql)
+                                           gerenciadorEstoque.NotifyAll({})
+                                           telaConfirmacao.Close()
+                                       End Sub)
+            Else
+                telaErro.setTexto("Produto inválido!")
+                telaErro.Show()
+            End If
+        Catch ex As Exception
+            telaErro.setTexto("Erro ao excluir produto!")
+            telaErro.Show()
+            MessageBox.Show(String.Format("Error: {0}", ex.Message))
 
-    ' telaConfirmacao.setTexto($"Deseja realmente apagar o item {rs.Fields(2).Value}?")
-    'telaConfirmacao.setSub(Function()
-    '                        sql = "delete * from tb_estoque where cpf='" & estoque.dgv_estoque.CurrentRow.Tag & "'"
-    '                         rs = db.Execute(sql)
-    '                         NotifyAll({})
-    'End Function)
-    'End Sub
+        End Try
+    End Sub
+
+    Public Sub pesquisarEstoque(pesquisa As String)
+        abreConexao()
+        Try
+            If pesquisa = "" Then
+                carregarEstoque()
+                Exit Sub
+            End If
+            sql = "SELECT * FROM tb_estoque WHERE nome LIKE '" & pesquisa & "%'"
+            rs = db.Execute(sql)
+            count = 0
+            With estoque.dgv_estoque
+                count = 1
+                .Rows.Clear()
+                Do While rs.EOF = False
+                    .Rows.Add(Nothing, rs.Fields(2).Value, rs.Fields(3).Value, rs.Fields(4).Value, rs.Fields(5).Value, rs.Fields(6).Value, formatDate(rs.Fields(7).Value), formatDate(rs.Fields(8).Value), Nothing, Nothing)
+                    ' Dim fotoProduto As Image = Image.FromFile(Path.Combine(Application.StartupPath, "imgProdutos", rs.Fields(1).Value))
+                    '.Rows(count).Cells("fotoProduto").Value = fotoProduto
+                    .Rows(count).Tag = rs.Fields(0).Value
+                    count += 1
+                    rs.MoveNext()
+                Loop
+            End With
+        Catch ex As Exception
+            telaErro.setTexto("Erro ao carregar dados pesquisa!")
+            telaErro.Show()
+        End Try
+    End Sub
     Public Class Categoria
         Public Property categoria As String
     End Class

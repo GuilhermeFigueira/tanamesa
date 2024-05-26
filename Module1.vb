@@ -26,9 +26,11 @@ Module Module1
     End Sub
 
     Sub fechaConexao()
-        telaErro.setTexto("Fechando banco")
-        telaErro.Show()
-        db.Close()
+        'telaErro.setTexto("Fechando banco")
+        'telaErro.Show()
+        If db.State = 1 And db IsNot Nothing Then
+            db.Close()
+        End If
     End Sub
 
     Sub sair()

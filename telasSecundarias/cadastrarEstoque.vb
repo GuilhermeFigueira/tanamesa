@@ -35,7 +35,11 @@ Public Class cadastrarEstoque
     End Sub
 
     Private Sub btn_cadastrar_Click(sender As Object, e As EventArgs) Handles btn_cadastrar.Click
-        gerenciadorEstoque.cadastrarItemNoEstoque()
+        If btn_cadastrar.Text = "Editar Produto" Then
+            gerenciadorEstoque.editarItemNoEstoque(btn_cadastrar.Tag)
+        Else
+            gerenciadorEstoque.cadastrarItemNoEstoque()
+        End If
     End Sub
 
     Private Sub cmb_unidade_SelectedValueChanged(sender As Object, e As EventArgs) Handles cmb_unidade.SelectedValueChanged
