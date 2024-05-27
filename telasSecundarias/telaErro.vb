@@ -6,7 +6,7 @@ Public Class telaErro
         lbl_mensagem.Text = texto
     End Sub
     Private Sub btn_fechar_Click(sender As Object, e As EventArgs) Handles btn_fechar.Click
-        Hide()
+        Close()
     End Sub
 
     Private Sub btn_minimizar_Click(sender As Object, e As EventArgs) Handles btn_minimizar.Click

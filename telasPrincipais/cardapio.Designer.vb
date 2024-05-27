@@ -533,6 +533,7 @@ Partial Class cardapio
         Me.Guna2Panel8.Controls.Add(Me.Guna2HtmlLabel12)
         Me.Guna2Panel8.Controls.Add(Me.Guna2PictureBox2)
         Me.Guna2Panel8.Controls.Add(Me.Guna2PictureBox1)
+        Me.Guna2Panel8.Enabled = False
         Me.Guna2Panel8.FillColor = System.Drawing.Color.White
         Me.Guna2Panel8.Location = New System.Drawing.Point(14, 14)
         Me.Guna2Panel8.Margin = New System.Windows.Forms.Padding(6)
@@ -756,7 +757,7 @@ Partial Class cardapio
         Me.lbl_total.BackColor = System.Drawing.Color.Transparent
         Me.lbl_total.Font = New System.Drawing.Font("Libre Caslon Display", 14.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.lbl_total.ForeColor = System.Drawing.Color.FromArgb(CType(CType(48, Byte), Integer), CType(CType(107, Byte), Integer), CType(CType(52, Byte), Integer))
-        Me.lbl_total.Location = New System.Drawing.Point(233, 586)
+        Me.lbl_total.Location = New System.Drawing.Point(193, 586)
         Me.lbl_total.Name = "lbl_total"
         Me.lbl_total.Size = New System.Drawing.Size(47, 25)
         Me.lbl_total.TabIndex = 21
@@ -816,6 +817,7 @@ Partial Class cardapio
         Me.Guna2Panel13.Controls.Add(Me.Guna2HtmlLabel17)
         Me.Guna2Panel13.Controls.Add(Me.Guna2HtmlLabel16)
         Me.Guna2Panel13.Controls.Add(Me.Guna2PictureBox3)
+        Me.Guna2Panel13.Enabled = False
         Me.Guna2Panel13.FillColor = System.Drawing.Color.White
         Me.Guna2Panel13.Location = New System.Drawing.Point(8, 8)
         Me.Guna2Panel13.Margin = New System.Windows.Forms.Padding(4)

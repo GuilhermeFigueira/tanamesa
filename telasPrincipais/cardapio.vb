@@ -46,7 +46,9 @@ Public Class cardapio
 
     Private Sub cardapio_Load(sender As Object, e As EventArgs) Handles Me.Load
         gerenciadorCardapio.carregarCardapio()
-        carregarMesas(cmb_numeroMesa)
+        gerenciadorCardapio.calcularPrecoTotal()
+        gerenciadorCardapio.definirNumeroPedido()
+        carregarMesas(cmb_numeroMesa, "Ocupada", "Ocupada")
         gerenciadorCardapio.SubscribeCardapio(AddressOf gerenciadorCardapio.carregarCardapio)
         'cardapio.carregarPedidos()
     End Sub
@@ -58,6 +60,11 @@ Public Class cardapio
     Private Sub cmb_numeroMesa_SelectedValueChanged(sender As Object, e As EventArgs) Handles cmb_numeroMesa.SelectedValueChanged
         gerenciadorCardapio.carregarInformacoesMesa(cmb_numeroMesa.Text, txt_nomeCliente)
     End Sub
+
+    Private Sub btn_efetuarPedido_Click(sender As Object, e As EventArgs) Handles btn_efetuarPedido.Click
+        gerenciadorCardapio.efetuarPedido()
+    End Sub
+
 End Class
 Public Class criarCardapio
     Public Delegate Sub ObserverFunction(ByVal command As Object)
@@ -263,12 +270,31 @@ Public Class criarCardapio
                     lbl_preco.Text = ctrl.Text
             End Select
         Next ctrl
+        calcularPrecoTotal()
         'MessageBox.Show(String.Format("{0}", ctrl))
+    End Sub
+    Public Sub calcularPrecoTotal()
+        Try
+            Dim total As Single
+            For Each prato As Control In cardapio.flp_itemsPedido.Controls
+                For Each ctrl As Control In prato.Controls
+                    Select Case ctrl.Name
+                        Case "lbl_preco"
+                            total += ctrl.Text
+                    End Select
+                Next
+            Next
+            cardapio.lbl_total.Text = $"R$ {total.ToString("N2")}"
+        Catch ex As Exception
+            telaErro.setTexto("Erro ao calcular preço!")
+            telaErro.Show()
+        End Try
     End Sub
     Public Sub removerPratoDoPedido(sender As Object, e As EventArgs)
         Dim prato As Control = DirectCast(sender, Control)
         DirectCast(prato.Parent, Control).Dispose()
         RemoveHandler prato.Click, AddressOf removerPratoDoPedido
+        calcularPrecoTotal()
     End Sub
 
     Public Sub cadastrarItemCardapio()
@@ -317,6 +343,7 @@ Public Class criarCardapio
         Dim itemPrato As Control = prato.Parent
         abreConexao()
         Try
+            limparForm(cadastrarCardapio)
             carregarCategorias("cardapio", cadastrarCardapio.cmb_categoria)
             sql = "SELECT * FROM tb_cardapio WHERE numero_item =" & prato.Tag & " "
             rs = db.Execute(sql)
@@ -352,10 +379,11 @@ Public Class criarCardapio
                 telaConfirmacao.setTexto($"Deseja realmente apagar o item {rs.Fields(1).Value}?")
                 telaConfirmacao.Show()
                 telaConfirmacao.setSub(Sub()
-                                           sql = "DELETE * FROM tb_cardapio where numero_item=" & rs.Fields(0).Value & ""
+                                           sql = "DELETE * FROM tb_cardapio where numero_item=" & prato.Tag & ""
                                            rs = db.Execute(sql)
                                            gerenciadorEstoque.NotifyAllEstoque({})
                                            telaConfirmacao.Close()
+                                           gerenciadorCardapio.NotifyAllCardapio({})
                                        End Sub)
             Else
                 telaErro.setTexto("Prato inválido!")
@@ -366,7 +394,57 @@ Public Class criarCardapio
             telaErro.Show()
             MessageBox.Show(String.Format("Error: {0}", ex.Message))
         End Try
-        NotifyAllCardapio({})
+    End Sub
+    Public Sub efetuarPedido()
+        abreConexao()
+        Try
+            sql = "SELECT TOP 1 * FROM tb_pedidos ORDER BY numero_pedido DESC"
+            rs = db.Execute(sql)
+            If rs.EOF = False Then
+                Dim itensList As New List(Of String)
+                Dim numeroMesa As Integer = cardapio.cmb_numeroMesa.Text
+                Dim horarioPedido As DateTime = TimeOfDay
+                Dim valorTotal As Single = cardapio.lbl_total.Text
+                Dim codigoFuncionario As Integer = 1
+                Dim numeroPedido As Integer = rs.Fields(0).Value + 1
+                itensList.Add(numeroMesa)
+                itensList.Add(horarioPedido)
+                itensList.Add(valorTotal)
+                itensList.Add(codigoFuncionario)
+                itensList.Add(numeroPedido)
+                If verificarVazio(itensList) = False Then
+                    sql = "INSERT INTO tb_pedidos (numero_pedido, numero_mesa, horario_pedido, valor_total, cod_funcionario) VALUES('" & numeroPedido & "', '" & numeroMesa & "', '" & horarioPedido & "', '" & valorTotal & "', '" & codigoFuncionario & "')"
+                    rs = db.Execute(sql)
+                    For Each prato As Control In cardapio.flp_itemsPedido.Controls
+                        If prato.Tag IsNot Nothing Then
+                            Dim pratoId As Integer = prato.Tag
+                            'sql = "INSERT INTO tb_itensPedido (numero_pedido, numero_item, preco) VALUES ('" & numeroPedido & "', '" & pratoId & "', '" & preco & "')"
+                            'rs = db.Execute(sql)
+                        End If
+                    Next
+                End If
+            End If
+
+        Catch ex As Exception
+
+        End Try
+    End Sub
+    Public Sub definirNumeroPedido()
+        abreConexao()
+        Try
+            Dim numeroPedido As Integer
+            sql = "SELECT TOP 1 * FROM tb_pedidos ORDER BY numero_pedido DESC"
+            rs = db.Execute(sql)
+            If rs.EOF = False Then
+                numeroPedido = rs.Fields(0).Value + 1
+            Else
+                numeroPedido = 1
+            End If
+            cardapio.lbl_numeroPedido.Text = $"#{numeroPedido}"
+        Catch ex As Exception
+            telaErro.setTexto("Erro ao definir o numero do pedido!")
+            telaErro.Show()
+        End Try
     End Sub
     Public Sub carregarInformacoesMesa(numeroMesa As Integer, txt As Guna.UI2.WinForms.Guna2TextBox)
         abreConexao()

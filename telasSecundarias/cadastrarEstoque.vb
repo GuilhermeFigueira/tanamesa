@@ -6,7 +6,7 @@ Public Class cadastrarEstoque
     Dim titulo As String
     Dim btn As String
     Private Sub btn_fechar_Click(sender As Object, e As EventArgs) Handles btn_fechar.Click
-        Hide()
+        Close()
     End Sub
 
     Private Sub btn_minimizar_Click(sender As Object, e As EventArgs) Handles btn_minimizar.Click
@@ -28,6 +28,23 @@ Public Class cadastrarEstoque
         If btn = "" And titulo = "" Then
             lbl_titulo.Text = "Salvar Produto no Estoque"
             btn_cadastrar.Text = "Adicionar Produto"
+            limparForm(Me)
+        Else
+            lbl_titulo.Text = titulo
+            btn_cadastrar.Text = btn
+        End If
+    End Sub
+    Public Sub cadastrarEstoque_Shown(sender As Object, e As EventArgs) Handles Me.Shown
+
+        abreConexao()
+        carregarCategorias("estoque", cmb_categoria)
+        carregarUnidades(cmb_unidade)
+        dtp_dataCompra.Value = Date.Now
+        dtp_dataValidade.Value = Date.Now
+        If btn = "" And titulo = "" Then
+            lbl_titulo.Text = "Salvar Produto no Estoque"
+            btn_cadastrar.Text = "Adicionar Produto"
+            limparForm(Me)
         Else
             lbl_titulo.Text = titulo
             btn_cadastrar.Text = btn
@@ -69,4 +86,5 @@ Public Class cadastrarEstoque
             Exit Sub
         End Try
     End Sub
+
 End Class

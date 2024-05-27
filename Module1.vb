@@ -86,10 +86,10 @@ Module Module1
             telaErro.Show()
         End Try
     End Sub
-    Public Sub carregarMesas(cmb As Guna.UI2.WinForms.Guna2ComboBox)
+    Public Sub carregarMesas(cmb As Guna.UI2.WinForms.Guna2ComboBox, status1 As String, status2 As String)
         abreConexao()
         Try
-            sql = "SELECT * FROM tb_mesas WHERE status = 'fechada'"
+            sql = "SELECT * FROM tb_mesas WHERE status = '" & status1 & "' OR status = '" & status2 & "'"
             rs = db.Execute(sql)
             With cmb
                 If .Items.Count = 0 Then
@@ -103,5 +103,22 @@ Module Module1
             telaErro.setTexto("Erro ao carregar mesas!")
             telaErro.Show()
         End Try
+    End Sub
+    Public Function verificarVazio(itensArray As List(Of String))
+        For Each item As String In itensArray
+            If item = "" Then
+                Return True
+            End If
+        Next
+        Return False
+    End Function
+    Public Sub limparForm(parent As Control)
+        For Each child As Control In parent.Controls
+            limparForm(child)
+        Next
+        If TryCast(parent, Guna.UI2.WinForms.Guna2TextBox) IsNot Nothing Then
+            TryCast(parent, Guna.UI2.WinForms.Guna2TextBox).Text = [String].Empty
+        End If
+
     End Sub
 End Module

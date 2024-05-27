@@ -103,8 +103,12 @@ Public Class criarEstoque
                 Do While rs.EOF = False
                     .Rows.Add(Nothing, rs.Fields(2).Value, rs.Fields(3).Value, rs.Fields(4).Value, rs.Fields(5).Value, rs.Fields(6).Value, formatDate(rs.Fields(7).Value), formatDate(rs.Fields(8).Value), Nothing, Nothing)
                     If rs.Fields(1).Value IsNot "" Then
-                        Dim fotoProduto As Image = Image.FromFile(Path.Combine(Application.StartupPath, "imgProdutos", rs.Fields(1).Value))
-                        .Rows(count).Cells("fotoProduto").Value = fotoProduto
+                        If File.Exists(Path.Combine(Application.StartupPath, "imgProdutos", rs.Fields(1).Value)) Then
+                            Dim fotoProduto As Image = Image.FromFile(Path.Combine(Application.StartupPath, "imgProdutos", rs.Fields(1).Value))
+                            If fotoProduto IsNot Nothing Then
+                                .Rows(count).Cells("fotoProduto").Value = fotoProduto
+                            End If
+                        End If
                     End If
                     .Rows(count).Tag = rs.Fields(0).Value
                     count += 1
@@ -178,7 +182,9 @@ Public Class criarEstoque
                     .dtp_dataCompra.Value = rs.Fields(7).Value
                     .dtp_dataValidade.Text = rs.Fields(8).Value
                     .btn_cadastrar.Tag = itemId
-                    .pbx_imagem.Load(Path.Combine(Application.StartupPath, "imgProdutos", rs.Fields(1).Value))
+                    If File.Exists(Path.Combine(Application.StartupPath, "imgProdutos", rs.Fields(1).Value)) Then
+                        .pbx_imagem.Load(Path.Combine(Application.StartupPath, "imgProdutos", rs.Fields(1).Value))
+                    End If
                     .Show()
                 End If
             End With
@@ -263,8 +269,12 @@ Public Class criarEstoque
                     Do While rs.EOF = False
                         .Rows.Add(Nothing, rs.Fields(2).Value, rs.Fields(3).Value, rs.Fields(4).Value, rs.Fields(5).Value, rs.Fields(6).Value, formatDate(rs.Fields(7).Value), formatDate(rs.Fields(8).Value), Nothing, Nothing)
                         If rs.Fields(1).Value IsNot "" Then
-                            Dim fotoProduto As Image = Image.FromFile(Path.Combine(Application.StartupPath, "imgProdutos", rs.Fields(1).Value))
-                            .Rows(count).Cells("fotoProduto").Value = fotoProduto
+                            If File.Exists(Path.Combine(Application.StartupPath, "imgProdutos", rs.Fields(1).Value)) Then
+                                Dim fotoProduto As Image = Image.FromFile(Path.Combine(Application.StartupPath, "imgProdutos", rs.Fields(1).Value))
+                                If fotoProduto IsNot Nothing Then
+                                    .Rows(count).Cells("fotoProduto").Value = fotoProduto
+                                End If
+                            End If
                         End If
                         .Rows(count).Tag = rs.Fields(0).Value
                         count += 1
@@ -283,12 +293,5 @@ Public Class criarEstoque
     Public Class Categoria
         Public Property categoria As String
     End Class
-    Function verificarVazio(itensArray As List(Of String))
-        For Each item As String In itensArray
-            If item = "" Then
-                Return True
-            End If
-        Next
-        Return False
-    End Function
+
 End Class
