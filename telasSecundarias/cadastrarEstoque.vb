@@ -23,22 +23,8 @@ Public Class cadastrarEstoque
         abreConexao()
         carregarCategorias("estoque", cmb_categoria)
         carregarUnidades(cmb_unidade)
-        dtp_dataCompra.Value = Date.Now
-        dtp_dataValidade.Value = Date.Now
-        If btn = "" And titulo = "" Then
-            lbl_titulo.Text = "Salvar Produto no Estoque"
-            btn_cadastrar.Text = "Adicionar Produto"
-            limparForm(Me)
-        Else
-            lbl_titulo.Text = titulo
-            btn_cadastrar.Text = btn
-        End If
     End Sub
     Public Sub cadastrarEstoque_Shown(sender As Object, e As EventArgs) Handles Me.Shown
-
-        abreConexao()
-        carregarCategorias("estoque", cmb_categoria)
-        carregarUnidades(cmb_unidade)
         dtp_dataCompra.Value = Date.Now
         dtp_dataValidade.Value = Date.Now
         If btn = "" And titulo = "" Then

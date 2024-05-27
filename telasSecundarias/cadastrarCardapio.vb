@@ -43,9 +43,12 @@ Public Class cadastrarCardapio
         Me.TopMost = True
         abreConexao()
         carregarCategorias("cardapio", cmb_categoria)
+    End Sub
+    Private Sub cadastrarCardapio_Shown(sender As Object, e As EventArgs) Handles Me.Shown
         If btn = "" And titulo = "" Then
             lbl_titulo.Text = "Salvar Produto no Estoque"
             btn_cadastrar.Text = "Adicionar Produto"
+            limparForm(Me)
         Else
             lbl_titulo.Text = titulo
             btn_cadastrar.Text = btn

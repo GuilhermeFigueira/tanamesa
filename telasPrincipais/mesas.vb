@@ -46,7 +46,6 @@ Public Class mesas
 
     Private Sub mesas_Load(sender As Object, e As EventArgs) Handles MyBase.Load
         gerenciarMesas.carregarMesas()
-        gerenciarMesas.atualizarMesa()
         carregarMesas(cmb_numeroMesa, "Ocupada", "Livre")
     End Sub
 
@@ -65,16 +64,16 @@ Public Class criarMesas
                     corMesa = Color.FromArgb(0, 0, 0)
                 End If
                 Dim pnl_mesa As New Guna2Panel() With {
-                .Name = "pnl_mesa",
-                .FillColor = Color.White,
-                .Size = New Size(155, 80),
-                .Margin = New Padding(8, 6, 8, 6),
-                .BackColor = Control.DefaultBackColor,
-                .CustomBorderColor = corMesa,
-                .CustomBorderThickness = New Padding(15, 0, 0, 0),
-                .BorderRadius = 8,
-                .Cursor = Cursors.Hand,
-                .Tag = rs.Fields(0).Value
+                    .Name = "pnl_mesa",
+                    .FillColor = Color.White,
+                    .Size = New Size(155, 80),
+                    .Margin = New Padding(8, 6, 8, 6),
+                    .BackColor = Control.DefaultBackColor,
+                    .CustomBorderColor = corMesa,
+                    .CustomBorderThickness = New Padding(15, 0, 0, 0),
+                    .BorderRadius = 8,
+                    .Cursor = Cursors.Hand,
+                    .Tag = rs.Fields(0).Value
                 }
                 pnl_mesa.ShadowDecoration.BorderRadius = 8
                 pnl_mesa.ShadowDecoration.Enabled = True
@@ -82,14 +81,13 @@ Public Class criarMesas
                 pnl_mesa.ShadowDecoration.Color = Color.FromArgb(200, 200, 200)
 
                 Dim lbl_numeroMesa As New Guna2HtmlLabel() With {
-                .Name = "lbl_numeroMesa",
-                .Text = "Mesa " & rs.Fields(0).Value,
-                .Font = New Font("Julius Sans One", 16),
-                .ForeColor = Color.FromArgb(127, 127, 127),
-                .Parent = pnl_mesa,
-                .Location = New Point(23, 13)
+                    .Name = "lbl_numeroMesa",
+                    .Text = "Mesa " & rs.Fields(0).Value,
+                    .Font = New Font("Julius Sans One", 16),
+                    .ForeColor = Color.FromArgb(127, 127, 127),
+                    .Parent = pnl_mesa,
+                    .Location = New Point(23, 13)
                 }
-
 
                 Dim lbl_statusMesa As New Guna2HtmlLabel() With {
                     .Name = "lbl_statusMesa",
@@ -110,31 +108,42 @@ Public Class criarMesas
             telaErro.Show()
         End Try
     End Sub
-    Public Sub atualizarMesa()
-        Dim pnl_pedido As New Guna2Panel With {
-            .Name = "pnl_pedido",
-            .BackColor = Color.FromArgb(239, 239, 239),
-            .FillColor = Color.White,
-            .Padding = New Padding(16, 16, 16, 16),
-            .Size = New Size(250, 40),
-            .BorderRadius = 8
-        }
-        Dim lbl_nomePedido As New Guna2HtmlLabel() With {
-            .Name = "lbl_nomePedido",
-            .Text = "Nome do prato",
-            .Font = New Font("Libre Caslon Display", 12),
-            .Location = New Point(19, 9),
-            .ForeColor = Color.FromArgb(127, 127, 127),
-            .Parent = pnl_pedido
-        }
-        Dim lbl_preco As New Guna2HtmlLabel() With {
-            .Name = "lbl_preco",
-            .Text = "R$ 24,90",
-            .Font = New Font("Libre Caslon Display", 12),
-            .Location = New Point(163, 9),
-            .ForeColor = Color.FromArgb(127, 127, 127),
-            .Parent = pnl_pedido
-        }
-        mesas.flp_itemsPedido.Controls.Add(pnl_pedido)
+    Public Sub atualizarMesa(sender As Object, e As EventArgs)
+        Dim mesa As Integer = DirectCast(sender, Control).Tag
+        Try
+            sql = "SELECT * FROM tb_mesa WHERE mesa = " & mesa & ""
+            rs = db.Execute(sql)
+            If rs.EOF = False Then
+
+            End If
+            Dim pnl_pedido As New Guna2Panel With {
+                .Name = "pnl_pedido",
+                .BackColor = Color.FromArgb(239, 239, 239),
+                .FillColor = Color.White,
+                .Padding = New Padding(16, 16, 16, 16),
+                .Size = New Size(250, 40),
+                .BorderRadius = 8
+            }
+            Dim lbl_nomePedido As New Guna2HtmlLabel() With {
+                .Name = "lbl_nomePedido",
+                .Text = "Nome do prato",
+                .Font = New Font("Libre Caslon Display", 12),
+                .Location = New Point(19, 9),
+                .ForeColor = Color.FromArgb(127, 127, 127),
+                .Parent = pnl_pedido
+            }
+            Dim lbl_preco As New Guna2HtmlLabel() With {
+                .Name = "lbl_preco",
+                .Text = "R$ 24,90",
+                .Font = New Font("Libre Caslon Display", 12),
+                .Location = New Point(163, 9),
+                .ForeColor = Color.FromArgb(127, 127, 127),
+                .Parent = pnl_pedido
+            }
+            mesas.flp_itemsPedido.Controls.Add(pnl_pedido)
+        Catch ex As Exception
+
+        End Try
+
     End Sub
 End Class

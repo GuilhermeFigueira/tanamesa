@@ -1,7 +1,4 @@
-﻿Imports System.Drawing.Printing
-Imports System.IO
-Imports System.Runtime.CompilerServices
-Imports System.Web.UI.Design
+﻿Imports System.IO
 
 Imports Guna.UI2.WinForms
 
@@ -38,7 +35,6 @@ Public Class cardapio
         Me.Hide()
     End Sub
 
-
     Private Sub btn_info_Click(sender As Object, e As EventArgs) Handles btn_info.Click
         infoUsuario.Show()
     End Sub
@@ -53,12 +49,12 @@ Public Class cardapio
         'cardapio.carregarPedidos()
     End Sub
 
-    Private Sub btn_addProd_Click(sender As Object, e As EventArgs) Handles btn_addProd.Click
-        cadastrarCardapio.Show()
-    End Sub
 
     Private Sub cmb_numeroMesa_SelectedValueChanged(sender As Object, e As EventArgs) Handles cmb_numeroMesa.SelectedValueChanged
         gerenciadorCardapio.carregarInformacoesMesa(cmb_numeroMesa.Text, txt_nomeCliente)
+    End Sub
+    Private Sub btn_addProd_Click(sender As Object, e As EventArgs) Handles btn_addProd.Click
+        cadastrarCardapio.Show()
     End Sub
 
     Private Sub btn_efetuarPedido_Click(sender As Object, e As EventArgs) Handles btn_efetuarPedido.Click
@@ -66,6 +62,7 @@ Public Class cardapio
     End Sub
 
 End Class
+
 Public Class criarCardapio
     Public Delegate Sub ObserverFunction(ByVal command As Object)
 
@@ -99,7 +96,6 @@ Public Class criarCardapio
                     .Padding = New Padding(16, 24, 16, 24),
                     .ShadowColor = Color.FromArgb(200, 200, 200)
                 }
-
                 Dim pbx_fotoPrato As New Guna2PictureBox() With {
                     .Name = "pbx_fotoPrato",
                     .BackColor = Color.Transparent,
@@ -111,6 +107,15 @@ Public Class criarCardapio
                     .Image = Image.FromFile(Path.Combine(Application.StartupPath, "imgProdutos", rs.Fields(5).Value)),
                     .Dock = DockStyle.Top
                 }
+
+                If rs.Fields(5).Value IsNot "" Then
+                    If File.Exists(Path.Combine(Application.StartupPath, "imgProdutos", rs.Fields(5).Value)) Then
+                        Dim fotoProduto As Image = Image.FromFile(Path.Combine(Application.StartupPath, "imgProdutos", rs.Fields(5).Value))
+                        If fotoProduto IsNot Nothing Then
+                            pbx_fotoPrato.Image = fotoProduto
+                        End If
+                    End If
+                End If
 
                 Dim lbl_nomePrato As New Guna2HtmlLabel() With {
                     .Name = "lbl_nomePrato",
@@ -188,17 +193,19 @@ Public Class criarCardapio
                 btn_editar.PressedState.ImageSize = New Size(28, 28)
                 btn_excluir.HoverState.ImageSize = New Size(24, 24)
                 btn_excluir.PressedState.ImageSize = New Size(28, 28)
+
                 AddHandler btn_pedir.Click, AddressOf adicionarPratoAoPedido
                 AddHandler btn_excluir.Click, AddressOf excluirPratoDoCardapio
                 AddHandler btn_editar.Click, AddressOf carregarEdicaoPrato
+
                 cardapio.flp_itemsCard.Controls.Add(pnl_prato)
                 count += 1
                 rs.MoveNext()
             Loop
         Catch ex As Exception
-            telaErro.setTexto("Erro ao carregar pratos!")
+            telaErro.setTexto("Erro ao carregar o cardápio!")
             telaErro.Show()
-            MessageBox.Show(String.Format("Error editar item estoque: {0}", ex.Message))
+            MessageBox.Show(String.Format("Carregar Cardapio: {0}", ex.Message))
         End Try
     End Sub
     Public Sub adicionarPratoAoPedido(sender As Object, e As EventArgs)
@@ -225,6 +232,7 @@ Public Class criarCardapio
             .Parent = pnl_itemPedido,
             .SizeMode = PictureBoxSizeMode.StretchImage
         }
+
         Dim lbl_nomePrato As New Guna2HtmlLabel() With {
             .Name = "lbl_nomePrato",
             .Text = "Arros e feijan",
@@ -255,7 +263,9 @@ Public Class criarCardapio
         }
         btn_removerItem.HoverState.ImageSize = New Size(24, 24)
         btn_removerItem.PressedState.ImageSize = New Size(28, 28)
+
         AddHandler btn_removerItem.Click, AddressOf removerPratoDoPedido
+
         cardapio.flp_itemsPedido.Controls.Add(pnl_itemPedido)
 
         For Each ctrl As Control In itemPrato.Controls
@@ -270,8 +280,8 @@ Public Class criarCardapio
                     lbl_preco.Text = ctrl.Text
             End Select
         Next ctrl
+
         calcularPrecoTotal()
-        'MessageBox.Show(String.Format("{0}", ctrl))
     End Sub
     Public Sub calcularPrecoTotal()
         Try
@@ -286,13 +296,13 @@ Public Class criarCardapio
             Next
             cardapio.lbl_total.Text = $"R$ {total.ToString("N2")}"
         Catch ex As Exception
-            telaErro.setTexto("Erro ao calcular preço!")
+            telaErro.setTexto("Erro ao calcular preço total do pedido!")
             telaErro.Show()
         End Try
     End Sub
     Public Sub removerPratoDoPedido(sender As Object, e As EventArgs)
         Dim prato As Control = DirectCast(sender, Control)
-        DirectCast(prato.Parent, Control).Dispose()
+        prato.Parent.Dispose()
         RemoveHandler prato.Click, AddressOf removerPratoDoPedido
         calcularPrecoTotal()
     End Sub
@@ -300,31 +310,30 @@ Public Class criarCardapio
     Public Sub cadastrarItemCardapio()
         abreConexao()
         Dim itensList As New List(Of String)
-        Dim nomeItem As String = cadastrarEstoque.txt_nome.Text
-        Dim categoriaItem As String = cadastrarEstoque.cmb_categoria.Text
-        Dim unidadeItem As String = cadastrarEstoque.cmb_unidade.Text
-        Dim qtdComprada As String = cadastrarEstoque.txt_qtd.Text
-        Dim valorPagoUnidade As String = cadastrarEstoque.txt_vlrUnidade.Text
-        Dim dataCompra As String = cadastrarEstoque.dtp_dataCompra.Value.Date
-        Dim dataValidade As String = cadastrarEstoque.dtp_dataValidade.Value.Date
-        itensList.Add(nomeItem)
-        itensList.Add(categoriaItem)
-        itensList.Add(unidadeItem)
-        itensList.Add(qtdComprada)
-        itensList.Add(valorPagoUnidade)
-        itensList.Add(dataCompra)
-        itensList.Add(dataValidade)
+        Dim nomePrato As String = cadastrarCardapio.txt_nome.Text
+        Dim categoriaPrato As String = cadastrarCardapio.cmb_categoria.Text
+        Dim descricaoPrato As String = cadastrarCardapio.txt_descricao.Text
+        Dim custoPrato As String = cadastrarCardapio.txt_custoPrato.Text
+        Dim markup As String = cadastrarCardapio.txt_markup.Text
+        Dim precoPrato As String = cadastrarCardapio.txt_preco.Text
+        Dim dataCadastrado As Date = DateTime.Now
+        itensList.Add(nomePrato)
+        itensList.Add(categoriaPrato)
+        itensList.Add(descricaoPrato)
+        itensList.Add(custoPrato)
+        itensList.Add(markup)
+        itensList.Add(precoPrato)
         Try
             If verificarVazio(itensList) = False Then
-                sql = "SELECT * FROM tb_estoque WHERE nome ='" & nomeItem & "'"
+                sql = "SELECT * FROM tb_cardapio WHERE nome ='" & nomePrato & "'"
                 rs = db.Execute(sql)
                 If rs.EOF = True Then
-                    sql = "INSERT INTO tb_estoque (foto, nome, categoria, em_estoque, unidade, valor_pago, data_compra, data_validade) VALUES ('" & caminhoImagem & "', '" & nomeItem & "', '" & categoriaItem & "', '" & qtdComprada & "', '" & unidadeItem & "', '" & valorPagoUnidade & "', '" & dataCompra & "', '" & dataValidade & "')"
+                    sql = "INSERT INTO tb_cardapio (nome, descricao, preco, markup, foto, data_cadastrado, categoria, custo_prato) VALUES ('" & nomePrato & "', '" & descricaoPrato & "', '" & precoPrato & "', '" & markup & "', '" & caminhoImagem & "', '" & dataCadastrado & "', '" & categoriaPrato & "', '" & custoPrato & "')"
                     rs = db.Execute(sql)
-                    telaErro.setTexto($"{nomeItem} foi cadastrado com sucesso!")
+                    telaErro.setTexto($"{nomePrato} foi cadastrado com sucesso!")
                     telaErro.Show()
                 Else
-                    telaErro.setTexto($"{nomeItem} já está cadastrado no estoque!")
+                    telaErro.setTexto($"{nomePrato} já está cadastrado no estoque!")
                     telaErro.Show()
                 End If
             Else
@@ -332,7 +341,7 @@ Public Class criarCardapio
                 telaErro.Show()
             End If
         Catch ex As Exception
-            telaErro.setTexto("Erro ao cadastrar item no estoque!")
+            telaErro.setTexto("Erro ao cadastrar prato no cardápio!")
             telaErro.Show()
             'MessageBox.Show(String.Format("Error: {0}", sql))
         End Try
@@ -343,7 +352,6 @@ Public Class criarCardapio
         Dim itemPrato As Control = prato.Parent
         abreConexao()
         Try
-            limparForm(cadastrarCardapio)
             carregarCategorias("cardapio", cadastrarCardapio.cmb_categoria)
             sql = "SELECT * FROM tb_cardapio WHERE numero_item =" & prato.Tag & " "
             rs = db.Execute(sql)
@@ -354,7 +362,9 @@ Public Class criarCardapio
                     .txt_descricao.Text = rs.Fields(2).Value
                     .txt_preco.Text = rs.Fields(3).Value
                     .txt_markup.Text = rs.Fields(4).Value
-                    .pbx_imagem.Load(Path.Combine(Application.StartupPath, "imgProdutos", rs.Fields(5).Value))
+                    If File.Exists(Path.Combine(Application.StartupPath, "imgProdutos", rs.Fields(5).Value)) Then
+                        .pbx_imagem.Load(Path.Combine(Application.StartupPath, "imgProdutos", rs.Fields(5).Value))
+                    End If
                     .cmb_categoria.SelectedIndex = .cmb_categoria.FindStringExact(rs.Fields(7).Value)
                     .txt_custoPrato.Text = rs.Fields(8).Value
                     .btn_cadastrar.Tag = prato.Tag
@@ -398,35 +408,32 @@ Public Class criarCardapio
     Public Sub efetuarPedido()
         abreConexao()
         Try
-            sql = "SELECT TOP 1 * FROM tb_pedidos ORDER BY numero_pedido DESC"
-            rs = db.Execute(sql)
-            If rs.EOF = False Then
-                Dim itensList As New List(Of String)
-                Dim numeroMesa As Integer = cardapio.cmb_numeroMesa.Text
-                Dim horarioPedido As DateTime = TimeOfDay
-                Dim valorTotal As Single = cardapio.lbl_total.Text
-                Dim codigoFuncionario As Integer = 1
-                Dim numeroPedido As Integer = rs.Fields(0).Value + 1
-                itensList.Add(numeroMesa)
-                itensList.Add(horarioPedido)
-                itensList.Add(valorTotal)
-                itensList.Add(codigoFuncionario)
-                itensList.Add(numeroPedido)
-                If verificarVazio(itensList) = False Then
-                    sql = "INSERT INTO tb_pedidos (numero_pedido, numero_mesa, horario_pedido, valor_total, cod_funcionario) VALUES('" & numeroPedido & "', '" & numeroMesa & "', '" & horarioPedido & "', '" & valorTotal & "', '" & codigoFuncionario & "')"
-                    rs = db.Execute(sql)
-                    For Each prato As Control In cardapio.flp_itemsPedido.Controls
-                        If prato.Tag IsNot Nothing Then
-                            Dim pratoId As Integer = prato.Tag
-                            'sql = "INSERT INTO tb_itensPedido (numero_pedido, numero_item, preco) VALUES ('" & numeroPedido & "', '" & pratoId & "', '" & preco & "')"
-                            'rs = db.Execute(sql)
-                        End If
-                    Next
-                End If
+            Dim itensList As New List(Of String)
+            Dim numeroMesa As Integer = cardapio.cmb_numeroMesa.Text
+            Dim horarioPedido As DateTime = TimeOfDay
+            Dim valorTotal As Single = cardapio.lbl_total.Text
+            Dim codigoFuncionario As Integer = 1
+            Dim numeroPedido As Integer = cardapio.lbl_numeroPedido.Text
+            itensList.Add(numeroMesa)
+            itensList.Add(horarioPedido)
+            itensList.Add(valorTotal)
+            itensList.Add(codigoFuncionario)
+            itensList.Add(numeroPedido)
+            If verificarVazio(itensList) = False Then
+                sql = "INSERT INTO tb_pedidos (numero_pedido, numero_mesa, horario_pedido, valor_total, cod_funcionario) VALUES('" & numeroPedido & "', '" & numeroMesa & "', '" & horarioPedido & "', '" & valorTotal & "', '" & codigoFuncionario & "')"
+                rs = db.Execute(sql)
+                For Each prato As Control In cardapio.flp_itemsPedido.Controls
+                    If prato.Tag IsNot Nothing Then
+                        Dim pratoId As Integer = prato.Tag
+                        'sql = "INSERT INTO tb_itensPedido (numero_pedido, numero_item, preco) VALUES ('" & numeroPedido & "', '" & pratoId & "', '" & preco & "')"
+                        'rs = db.Execute(sql)
+                    End If
+                Next
             End If
 
         Catch ex As Exception
-
+            telaErro.setTexto("Erro ao efetuar pedido!")
+            telaErro.Show()
         End Try
     End Sub
     Public Sub definirNumeroPedido()
@@ -446,14 +453,14 @@ Public Class criarCardapio
             telaErro.Show()
         End Try
     End Sub
-    Public Sub carregarInformacoesMesa(numeroMesa As Integer, txt As Guna.UI2.WinForms.Guna2TextBox)
+    Public Sub carregarInformacoesMesa(numeroMesa As Integer, txt As Guna2TextBox)
         abreConexao()
         Try
             sql = "SELECT * FROM tb_mesas WHERE mesa = " & numeroMesa & ""
             rs = db.Execute(sql)
             txt.Text = rs.Fields(2).Value
         Catch ex As Exception
-            telaErro.setTexto("Erro ao carregar dados!")
+            telaErro.setTexto("Erro ao carregar informações da mesa!")
             telaErro.Show()
         End Try
     End Sub

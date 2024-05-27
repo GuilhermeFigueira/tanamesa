@@ -1,10 +1,7 @@
-﻿Imports System.ComponentModel
-Imports System.IO
-Imports System.Runtime.InteropServices.WindowsRuntime
-Imports ADODB
+﻿Imports System.IO
 
 Public Class estoque
-    Public carregado As Boolean = False
+    Private carregado As Boolean = False
     Private Sub btn_fechar_Click(sender As Object, e As EventArgs) Handles btn_fechar.Click
         sair()
     End Sub
@@ -52,6 +49,7 @@ Public Class estoque
         abreConexao()
         gerenciadorEstoque.carregarEstoque()
         gerenciadorEstoque.Subscribe(AddressOf gerenciadorEstoque.carregarEstoque)
+        carregado = True
     End Sub
 
     Private Sub dgv_estoque_CellContentClick(sender As Object, e As DataGridViewCellEventArgs) Handles dgv_estoque.CellContentClick
@@ -70,12 +68,9 @@ Public Class estoque
     End Sub
 
     Private Sub txt_pesquisa_TextChanged(sender As Object, e As EventArgs) Handles txt_pesquisa.TextChanged
-        gerenciadorEstoque.pesquisarEstoque(txt_pesquisa.Text)
+        If carregado Then gerenciadorEstoque.pesquisarEstoque(txt_pesquisa.Text)
     End Sub
 
-    Private Sub dgv_estoque_Paint(sender As Object, e As PaintEventArgs) Handles dgv_estoque.Paint
-        carregado = True
-    End Sub
 End Class
 Public Class criarEstoque
     Public Delegate Sub ObserverFunction(ByVal command As Object)
@@ -262,36 +257,28 @@ Public Class criarEstoque
             sql = "SELECT * FROM tb_estoque WHERE nome LIKE '" & pesquisa & "%' ORDER BY nome ASC"
             rs = db.Execute(sql)
             count = 0
-            If estoque.carregado = True And estoque.carregado <> Nothing Then
-                With estoque.dgv_estoque
-                    count = 0
-                    .Rows.Clear()
-                    Do While rs.EOF = False
-                        .Rows.Add(Nothing, rs.Fields(2).Value, rs.Fields(3).Value, rs.Fields(4).Value, rs.Fields(5).Value, rs.Fields(6).Value, formatDate(rs.Fields(7).Value), formatDate(rs.Fields(8).Value), Nothing, Nothing)
-                        If rs.Fields(1).Value IsNot "" Then
-                            If File.Exists(Path.Combine(Application.StartupPath, "imgProdutos", rs.Fields(1).Value)) Then
-                                Dim fotoProduto As Image = Image.FromFile(Path.Combine(Application.StartupPath, "imgProdutos", rs.Fields(1).Value))
-                                If fotoProduto IsNot Nothing Then
-                                    .Rows(count).Cells("fotoProduto").Value = fotoProduto
-                                End If
+            With estoque.dgv_estoque
+                count = 0
+                .Rows.Clear()
+                Do While rs.EOF = False
+                    .Rows.Add(Nothing, rs.Fields(2).Value, rs.Fields(3).Value, rs.Fields(4).Value, rs.Fields(5).Value, rs.Fields(6).Value, formatDate(rs.Fields(7).Value), formatDate(rs.Fields(8).Value), Nothing, Nothing)
+                    If rs.Fields(1).Value IsNot "" Then
+                        If File.Exists(Path.Combine(Application.StartupPath, "imgProdutos", rs.Fields(1).Value)) Then
+                            Dim fotoProduto As Image = Image.FromFile(Path.Combine(Application.StartupPath, "imgProdutos", rs.Fields(1).Value))
+                            If fotoProduto IsNot Nothing Then
+                                .Rows(count).Cells("fotoProduto").Value = fotoProduto
                             End If
                         End If
-                        .Rows(count).Tag = rs.Fields(0).Value
-                        count += 1
-                        rs.MoveNext()
-                    Loop
-                End With
-            Else
-                Exit Sub
-            End If
+                    End If
+                    .Rows(count).Tag = rs.Fields(0).Value
+                    count += 1
+                    rs.MoveNext()
+                Loop
+            End With
         Catch ex As Exception
-            MessageBox.Show(String.Format("Error editar item estoque: {0}", ex.Message))
+            MessageBox.Show(String.Format("pesquisarEstoque: {0}", ex.Message))
             telaErro.setTexto("Erro ao carregar dados pesquisa!")
             telaErro.Show()
         End Try
     End Sub
-    Public Class Categoria
-        Public Property categoria As String
-    End Class
-
 End Class
