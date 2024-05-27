@@ -823,6 +823,7 @@ Partial Class cardapio
         Me.Guna2Panel13.Padding = New System.Windows.Forms.Padding(16)
         Me.Guna2Panel13.Size = New System.Drawing.Size(210, 80)
         Me.Guna2Panel13.TabIndex = 1
+        Me.Guna2Panel13.Visible = False
         '
         'btn_1
         '
