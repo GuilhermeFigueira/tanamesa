@@ -6,7 +6,6 @@ Imports System.Web.UI.Design
 Imports Guna.UI2.WinForms
 
 Public Class cardapio
-    Dim gerenciadorCardapio As New criarCardapio
     Private Sub btn_fechar_Click(sender As Object, e As EventArgs) Handles btn_fechar.Click
         sair()
     End Sub
@@ -47,11 +46,16 @@ Public Class cardapio
 
     Private Sub cardapio_Load(sender As Object, e As EventArgs) Handles Me.Load
         gerenciadorCardapio.carregarCardapio()
+        carregarMesas(cmb_numeroMesa)
+        gerenciadorCardapio.SubscribeCardapio(AddressOf gerenciadorCardapio.carregarCardapio)
         'cardapio.carregarPedidos()
     End Sub
 
     Private Sub btn_addProd_Click(sender As Object, e As EventArgs) Handles btn_addProd.Click
         cadastrarCardapio.Show()
+    End Sub
+
+    Private Sub cmb_numeroMesa_SelectedValueChanged(sender As Object, e As EventArgs) Handles cmb_numeroMesa.SelectedValueChanged
     End Sub
 End Class
 Public Class criarCardapio
@@ -74,6 +78,7 @@ Public Class criarCardapio
             sql = "SELECT * FROM tb_cardapio ORDER BY nome ASC"
             rs = db.Execute(sql)
             count = 0
+            cardapio.flp_itemsCard.Controls.Clear()
             Do While rs.EOF = False
                 Dim pnl_prato As New Guna2ShadowPanel() With {
                     .Name = "pnl_prato",
@@ -168,12 +173,16 @@ Public Class criarCardapio
                     .BackColor = Color.Transparent,
                     .Cursor = Cursors.Hand,
                     .Parent = pnl_prato,
-                    .Image = Image.FromFile(Application.StartupPath & "\imgs\trash-2.png"),
+                    .Image = Image.FromFile(Application.StartupPath & "\imgs\trash.png"),
                     .Tag = rs.Fields(0).Value
                 }
                 btn_editar.HoverState.ImageSize = New Size(24, 24)
                 btn_editar.PressedState.ImageSize = New Size(28, 28)
+                btn_excluir.HoverState.ImageSize = New Size(24, 24)
+                btn_excluir.PressedState.ImageSize = New Size(28, 28)
                 AddHandler btn_pedir.Click, AddressOf adicionarPratoAoPedido
+                AddHandler btn_excluir.Click, AddressOf excluirPratoDoCardapio
+                AddHandler btn_editar.Click, AddressOf carregarEdicaoPrato
                 cardapio.flp_itemsCard.Controls.Add(pnl_prato)
                 count += 1
                 rs.MoveNext()
@@ -195,7 +204,8 @@ Public Class criarCardapio
             .Padding = New Padding(16, 16, 16, 16),
             .BackColor = Control.DefaultBackColor,
             .BorderRadius = 8,
-            .Margin = New Padding(4, 4, 4, 4)
+            .Margin = New Padding(4, 4, 4, 4),
+            .Tag = prato.Tag
         }
         Dim pbx_fotoPrato As New Guna2PictureBox() With {
             .Name = "pbx_fotoPrato",
@@ -299,28 +309,27 @@ Public Class criarCardapio
             telaErro.Show()
             'MessageBox.Show(String.Format("Error: {0}", sql))
         End Try
-        'NotifyAll({})
+        NotifyAllCardapio({})
     End Sub
-    Public Sub carregarEdicaoPrato(itemId As Integer)
+    Public Sub carregarEdicaoPrato(sender As Object, e As EventArgs)
+        Dim prato As Control = DirectCast(sender, Control)
+        Dim itemPrato As Control = prato.Parent
         abreConexao()
         Try
-            carregarCategorias()
-            carregarUnidades(cadastrarEstoque.cmb_unidade)
-            sql = "SELECT * FROM tb_estoque WHERE id_item =" & itemId & " "
+            carregarCategorias("cardapio", cadastrarCardapio.cmb_categoria)
+            sql = "SELECT * FROM tb_cardapio WHERE numero_item =" & prato.Tag & " "
             rs = db.Execute(sql)
-            With cadastrarEstoque
+            With cadastrarCardapio
                 If rs.EOF = False Then
-                    .alterarTipoFormEstoque("Editar produto no Estoque", "Editar Produto")
-                    .txt_nome.Text = rs.Fields(2).Value
-                    .cmb_categoria.SelectedIndex = .cmb_categoria.FindStringExact(rs.Fields(3).Value)
-                    .cmb_unidade.SelectedIndex = .cmb_unidade.FindStringExact(rs.Fields(5).Value)
-                    .lbl_qtdComprada.Text = "Quantidade em Estoque"
-                    .txt_qtd.Text = rs.Fields(4).Value
-                    .txt_vlrUnidade.Text = rs.Fields(6).Value
-                    .dtp_dataCompra.Value = rs.Fields(7).Value
-                    .dtp_dataValidade.Text = rs.Fields(8).Value
-                    .btn_cadastrar.Tag = itemId
-                    .pbx_imagem.Load(Path.Combine(Application.StartupPath, "imgProdutos", rs.Fields(1).Value))
+                    .alterarTipoFormCardapio("Editar Prato no Cardápio", "Editar Prato")
+                    .txt_nome.Text = rs.Fields(1).Value
+                    .txt_descricao.Text = rs.Fields(2).Value
+                    .txt_preco.Text = rs.Fields(3).Value
+                    .txt_markup.Text = rs.Fields(4).Value
+                    .pbx_imagem.Load(Path.Combine(Application.StartupPath, "imgProdutos", rs.Fields(5).Value))
+                    .cmb_categoria.SelectedIndex = .cmb_categoria.FindStringExact(rs.Fields(7).Value)
+                    .txt_custoPrato.Text = rs.Fields(8).Value
+                    .btn_cadastrar.Tag = prato.Tag
                     .Show()
                 End If
             End With
@@ -329,6 +338,41 @@ Public Class criarCardapio
             telaErro.Show()
             'MessageBox.Show(String.Format("Error editar item estoque: {0}", ex.Message))
         End Try
-        NotifyAll({})
+        NotifyAllCardapio({})
     End Sub
+    Public Sub excluirPratoDoCardapio(sender As Object, e As EventArgs)
+        Dim prato As Control = DirectCast(sender, Control)
+        Dim itemPrato As Control = prato.Parent
+        abreConexao()
+        Try
+            sql = "SELECT * FROM tb_cardapio WHERE numero_item =" & prato.Tag & ""
+            rs = db.Execute(sql)
+            If rs.EOF = False Then
+                telaConfirmacao.setTexto($"Deseja realmente apagar o item {rs.Fields(1).Value}?")
+                telaConfirmacao.Show()
+                telaConfirmacao.setSub(Sub()
+                                           sql = "DELETE * FROM tb_cardapio where numero_item=" & rs.Fields(0).Value & ""
+                                           rs = db.Execute(sql)
+                                           gerenciadorEstoque.NotifyAllEstoque({})
+                                           telaConfirmacao.Close()
+                                       End Sub)
+            Else
+                telaErro.setTexto("Prato inválido!")
+                telaErro.Show()
+            End If
+        Catch ex As Exception
+            telaErro.setTexto("Erro ao excluir prato!")
+            telaErro.Show()
+            MessageBox.Show(String.Format("Error: {0}", ex.Message))
+        End Try
+        NotifyAllCardapio({})
+    End Sub
+    Function verificarVazio(itensArray As List(Of String))
+        For Each item As String In itensArray
+            If item = "" Then
+                Return True
+            End If
+        Next
+        Return False
+    End Function
 End Class

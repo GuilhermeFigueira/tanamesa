@@ -8,6 +8,8 @@ Module Module1
     Public count As Integer
     Public caminhoImagem As String
     Public gerenciadorEstoque As New criarEstoque
+    Public gerenciadorCardapio As New criarCardapio
+
 
     Sub abreConexao()
         Try
@@ -65,5 +67,43 @@ Module Module1
             telaErro.Show()
         End Try
         'fechaConexao()
+    End Sub
+    Public Sub carregarCategorias(tabela As String, cmb As Guna.UI2.WinForms.Guna2ComboBox)
+        abreConexao()
+        Try
+            sql = "SELECT * FROM tb_categorias WHERE pertence = '" & tabela & "'"
+            rs = db.Execute(sql)
+            With cmb
+                If .Items.Count = 0 Then
+                    Do While rs.EOF = False
+                        .Items.Add(rs.Fields(1).Value)
+                        rs.MoveNext()
+                    Loop
+                End If
+            End With
+        Catch ex As Exception
+            telaErro.setTexto("Erro ao carregar categorias!")
+            telaErro.Show()
+        End Try
+    End Sub
+    Public Sub carregarMesas(cmb As Guna.UI2.WinForms.Guna2ComboBox)
+        abreConexao()
+        Try
+            sql = "SELECT * FROM tb_mesas WHERE status = 'fechada'"
+            rs = db.Execute(sql)
+            With cmb
+                If .Items.Count = 0 Then
+                    Do While rs.EOF = False
+                        .Items.Add(rs.Fields(0).Value)
+                        MessageBox.Show(String.Format($"{rs.Fields(0).Value}"))
+
+                        rs.MoveNext()
+                    Loop
+                End If
+            End With
+        Catch ex As Exception
+            telaErro.setTexto("Erro ao carregar mesas!")
+            telaErro.Show()
+        End Try
     End Sub
 End Module

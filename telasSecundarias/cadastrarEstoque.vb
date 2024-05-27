@@ -21,7 +21,7 @@ Public Class cadastrarEstoque
 
     Public Sub cadastrarEstoque_Load(sender As Object, e As EventArgs) Handles Me.Load
         abreConexao()
-        gerenciadorEstoque.carregarCategorias()
+        carregarCategorias("estoque", cmb_categoria)
         carregarUnidades(cmb_unidade)
         dtp_dataCompra.Value = Date.Now
         dtp_dataValidade.Value = Date.Now

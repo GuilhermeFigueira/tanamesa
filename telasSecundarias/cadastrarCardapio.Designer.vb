@@ -53,6 +53,8 @@ Partial Class cadastrarCardapio
         Me.txt_custoPrato = New Guna.UI2.WinForms.Guna2TextBox()
         Me.Guna2HtmlLabel7 = New Guna.UI2.WinForms.Guna2HtmlLabel()
         Me.ofd_imagem = New System.Windows.Forms.OpenFileDialog()
+        Me.cmb_categoria = New Guna.UI2.WinForms.Guna2ComboBox()
+        Me.Guna2HtmlLabel4 = New Guna.UI2.WinForms.Guna2HtmlLabel()
         Me.Guna2ContainerControl1.SuspendLayout()
         Me.pnl_nome.SuspendLayout()
         Me.Guna2Panel2.SuspendLayout()
@@ -146,7 +148,7 @@ Partial Class cadastrarCardapio
         Me.txt_nome.PasswordChar = Global.Microsoft.VisualBasic.ChrW(0)
         Me.txt_nome.PlaceholderText = ""
         Me.txt_nome.SelectedText = ""
-        Me.txt_nome.Size = New System.Drawing.Size(570, 36)
+        Me.txt_nome.Size = New System.Drawing.Size(280, 36)
         Me.txt_nome.TabIndex = 1
         '
         'Guna2HtmlLabel1
@@ -162,6 +164,8 @@ Partial Class cadastrarCardapio
         'pnl_nome
         '
         Me.pnl_nome.BackColor = System.Drawing.Color.Transparent
+        Me.pnl_nome.Controls.Add(Me.cmb_categoria)
+        Me.pnl_nome.Controls.Add(Me.Guna2HtmlLabel4)
         Me.pnl_nome.Controls.Add(Me.txt_descricao)
         Me.pnl_nome.Controls.Add(Me.Guna2HtmlLabel2)
         Me.pnl_nome.Controls.Add(Me.txt_nome)
@@ -487,6 +491,37 @@ Partial Class cadastrarCardapio
         '
         Me.ofd_imagem.FileName = "OpenFileDialog1"
         '
+        'cmb_categoria
+        '
+        Me.cmb_categoria.AutoRoundedCorners = True
+        Me.cmb_categoria.BackColor = System.Drawing.Color.Transparent
+        Me.cmb_categoria.BorderColor = System.Drawing.Color.FromArgb(CType(CType(239, Byte), Integer), CType(CType(239, Byte), Integer), CType(CType(239, Byte), Integer))
+        Me.cmb_categoria.BorderRadius = 17
+        Me.cmb_categoria.Cursor = System.Windows.Forms.Cursors.Hand
+        Me.cmb_categoria.DrawMode = System.Windows.Forms.DrawMode.OwnerDrawFixed
+        Me.cmb_categoria.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList
+        Me.cmb_categoria.FillColor = System.Drawing.Color.FromArgb(CType(CType(239, Byte), Integer), CType(CType(239, Byte), Integer), CType(CType(239, Byte), Integer))
+        Me.cmb_categoria.FocusedColor = System.Drawing.Color.FromArgb(CType(CType(239, Byte), Integer), CType(CType(239, Byte), Integer), CType(CType(239, Byte), Integer))
+        Me.cmb_categoria.FocusedState.BorderColor = System.Drawing.Color.FromArgb(CType(CType(239, Byte), Integer), CType(CType(239, Byte), Integer), CType(CType(239, Byte), Integer))
+        Me.cmb_categoria.Font = New System.Drawing.Font("Libre Caslon Display", 12.0!)
+        Me.cmb_categoria.ForeColor = System.Drawing.Color.FromArgb(CType(CType(68, Byte), Integer), CType(CType(88, Byte), Integer), CType(CType(112, Byte), Integer))
+        Me.cmb_categoria.HoverState.BorderColor = System.Drawing.Color.FromArgb(CType(CType(239, Byte), Integer), CType(CType(239, Byte), Integer), CType(CType(239, Byte), Integer))
+        Me.cmb_categoria.ItemHeight = 30
+        Me.cmb_categoria.Location = New System.Drawing.Point(305, 43)
+        Me.cmb_categoria.Name = "cmb_categoria"
+        Me.cmb_categoria.Size = New System.Drawing.Size(280, 36)
+        Me.cmb_categoria.TabIndex = 12
+        '
+        'Guna2HtmlLabel4
+        '
+        Me.Guna2HtmlLabel4.BackColor = System.Drawing.Color.Transparent
+        Me.Guna2HtmlLabel4.Font = New System.Drawing.Font("Libre Caslon Display", 15.75!)
+        Me.Guna2HtmlLabel4.Location = New System.Drawing.Point(305, 10)
+        Me.Guna2HtmlLabel4.Name = "Guna2HtmlLabel4"
+        Me.Guna2HtmlLabel4.Size = New System.Drawing.Size(78, 27)
+        Me.Guna2HtmlLabel4.TabIndex = 13
+        Me.Guna2HtmlLabel4.Text = "Categoria"
+        '
         'cadastrarCardapio
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
@@ -545,4 +580,6 @@ Partial Class cadastrarCardapio
     Friend WithEvents Guna2HtmlLabel3 As Guna.UI2.WinForms.Guna2HtmlLabel
     Friend WithEvents txt_preco As Guna.UI2.WinForms.Guna2TextBox
     Friend WithEvents txt_precoRecomendado As Guna.UI2.WinForms.Guna2TextBox
+    Friend WithEvents cmb_categoria As Guna.UI2.WinForms.Guna2ComboBox
+    Friend WithEvents Guna2HtmlLabel4 As Guna.UI2.WinForms.Guna2HtmlLabel
 End Class

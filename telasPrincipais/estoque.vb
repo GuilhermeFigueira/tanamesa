@@ -86,7 +86,7 @@ Public Class criarEstoque
         observers.Add(observerAction)
     End Sub
 
-    Public Sub NotifyAll(command As Object)
+    Public Sub NotifyAllEstoque(command As Object)
         For Each observerAction In observers
             observerAction.Invoke(command)
         Next
@@ -157,12 +157,12 @@ Public Class criarEstoque
             telaErro.Show()
             'MessageBox.Show(String.Format("Error: {0}", sql))
         End Try
-        NotifyAll({})
+        NotifyAllEstoque({})
     End Sub
     Public Sub carregarEdicaoItemEstoque(itemId As Integer)
         abreConexao()
         Try
-            carregarCategorias()
+            carregarCategorias("estoque", cadastrarEstoque.cmb_categoria)
             carregarUnidades(cadastrarEstoque.cmb_unidade)
             sql = "SELECT * FROM tb_estoque WHERE id_item =" & itemId & " "
             rs = db.Execute(sql)
@@ -187,7 +187,7 @@ Public Class criarEstoque
             telaErro.Show()
             'MessageBox.Show(String.Format("Error editar item estoque: {0}", ex.Message))
         End Try
-        NotifyAll({})
+        NotifyAllEstoque({})
     End Sub
     Public Sub editarItemNoEstoque(itemId)
         abreConexao()
@@ -221,30 +221,8 @@ Public Class criarEstoque
             telaErro.Show()
             MessageBox.Show(String.Format("Error: {0}", sql))
         End Try
-        NotifyAll({})
+        NotifyAllEstoque({})
     End Sub
-    Public Function carregarCategorias()
-        abreConexao()
-        Try
-            sql = "SELECT * FROM tb_categorias WHERE pertence = 'estoque'"
-            rs = db.Execute(sql)
-            With cadastrarEstoque.cmb_categoria
-                If .Items.Count = 0 Then
-                    Do While rs.EOF = False
-                        .Items.Add(rs.Fields(1).Value)
-                        rs.MoveNext()
-                    Loop
-                Else
-                    Return 0
-                End If
-            End With
-        Catch ex As Exception
-            telaErro.setTexto("Erro ao carregar categorias!")
-            telaErro.Show()
-        End Try
-        NotifyAll({})
-        Return 0
-    End Function
 
     Public Sub apagarItemEstoque(itemId As Integer)
         abreConexao()
@@ -257,7 +235,7 @@ Public Class criarEstoque
                 telaConfirmacao.setSub(Sub()
                                            sql = "DELETE * FROM tb_estoque where id_item=" & itemId & ""
                                            rs = db.Execute(sql)
-                                           gerenciadorEstoque.NotifyAll({})
+                                           gerenciadorEstoque.NotifyAllEstoque({})
                                            telaConfirmacao.Close()
                                        End Sub)
             Else
