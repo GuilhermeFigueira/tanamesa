@@ -95,8 +95,6 @@ Module Module1
                 If .Items.Count = 0 Then
                     Do While rs.EOF = False
                         .Items.Add(rs.Fields(0).Value)
-                        MessageBox.Show(String.Format($"{rs.Fields(0).Value}"))
-
                         rs.MoveNext()
                     Loop
                 End If

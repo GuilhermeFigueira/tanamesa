@@ -56,6 +56,7 @@ Public Class cardapio
     End Sub
 
     Private Sub cmb_numeroMesa_SelectedValueChanged(sender As Object, e As EventArgs) Handles cmb_numeroMesa.SelectedValueChanged
+        gerenciadorCardapio.carregarInformacoesMesa(cmb_numeroMesa.Text, txt_nomeCliente)
     End Sub
 End Class
 Public Class criarCardapio
@@ -366,6 +367,17 @@ Public Class criarCardapio
             MessageBox.Show(String.Format("Error: {0}", ex.Message))
         End Try
         NotifyAllCardapio({})
+    End Sub
+    Public Sub carregarInformacoesMesa(numeroMesa As Integer, txt As Guna.UI2.WinForms.Guna2TextBox)
+        abreConexao()
+        Try
+            sql = "SELECT * FROM tb_mesas WHERE mesa = " & numeroMesa & ""
+            rs = db.Execute(sql)
+            txt.Text = rs.Fields(2).Value
+        Catch ex As Exception
+            telaErro.setTexto("Erro ao carregar dados!")
+            telaErro.Show()
+        End Try
     End Sub
     Function verificarVazio(itensArray As List(Of String))
         For Each item As String In itensArray
