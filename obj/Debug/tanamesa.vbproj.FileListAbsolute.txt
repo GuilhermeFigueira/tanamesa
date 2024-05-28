@@ -177,3 +177,11 @@ C:\Users\guibf\Desktop\tanamesa-master\obj\Debug\tanamesa.vbproj.Up2Date
 C:\Users\guibf\Desktop\tanamesa-master\obj\Debug\tanamesa.exe
 C:\Users\guibf\Desktop\tanamesa-master\obj\Debug\tanamesa.xml
 C:\Users\guibf\Desktop\tanamesa-master\obj\Debug\tanamesa.pdb
+F:\FATEC\Tanamesa\tanamesa\obj\Debug\Interop.ADODB.dll
+F:\FATEC\Tanamesa\tanamesa\obj\Debug\tanamesa.vbproj.ResolveComReference.cache
+F:\FATEC\Tanamesa\tanamesa\obj\Debug\tanamesa.cadastrarCardapio.resources
+F:\FATEC\Tanamesa\tanamesa\obj\Debug\tanamesa.estoque.resources
+F:\FATEC\Tanamesa\tanamesa\obj\Debug\tanamesa.cadastrarEstoque.resources
+F:\FATEC\Tanamesa\tanamesa\obj\Debug\tanamesa.cadastrarFuncionário.resources
+F:\FATEC\Tanamesa\tanamesa\obj\Debug\tanamesa.telaErro.resources
+F:\FATEC\Tanamesa\tanamesa\obj\Debug\tanamesa.gerencia.resources

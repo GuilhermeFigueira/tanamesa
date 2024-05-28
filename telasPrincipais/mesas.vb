@@ -41,7 +41,10 @@ Public Class mesas
 
     Private Sub btn_info_Click(sender As Object, e As EventArgs) Handles btn_info.Click
         infoUsuario.Show()
+    End Sub
 
+    Private Sub cmb_numeroMesa_SelectedValueChanged(sender As Object, e As EventArgs) Handles cmb_numeroMesa.SelectedValueChanged
+        gerenciadorMesa.atualizarInformacoesMesa
     End Sub
 
     Private Sub mesas_Load(sender As Object, e As EventArgs) Handles MyBase.Load
@@ -98,7 +101,7 @@ Public Class criarMesas
                     .Location = New Point(23, 52)
                 }
 
-                AddHandler pnl_mesa.Click, AddressOf atualizarMesa
+                AddHandler pnl_mesa.Click, AddressOf atualizarMesaSelecionada
                 mesas.flp_mesas.Controls.Add(pnl_mesa)
                 count += 1
                 rs.MoveNext()
@@ -108,42 +111,116 @@ Public Class criarMesas
             telaErro.Show()
         End Try
     End Sub
-    Public Sub atualizarMesa(sender As Object, e As EventArgs)
-        Dim mesa As Integer = DirectCast(sender, Control).Tag
+    Public Sub atualizarMesaSelecionada(sender As Object, e As EventArgs)
         Try
-            sql = "SELECT * FROM tb_mesa WHERE mesa = " & mesa & ""
-            rs = db.Execute(sql)
-            If rs.EOF = False Then
-
-            End If
-            Dim pnl_pedido As New Guna2Panel With {
-                .Name = "pnl_pedido",
-                .BackColor = Color.FromArgb(239, 239, 239),
-                .FillColor = Color.White,
-                .Padding = New Padding(16, 16, 16, 16),
-                .Size = New Size(250, 40),
-                .BorderRadius = 8
-            }
-            Dim lbl_nomePedido As New Guna2HtmlLabel() With {
-                .Name = "lbl_nomePedido",
-                .Text = "Nome do prato",
-                .Font = New Font("Libre Caslon Display", 12),
-                .Location = New Point(19, 9),
-                .ForeColor = Color.FromArgb(127, 127, 127),
-                .Parent = pnl_pedido
-            }
-            Dim lbl_preco As New Guna2HtmlLabel() With {
-                .Name = "lbl_preco",
-                .Text = "R$ 24,90",
-                .Font = New Font("Libre Caslon Display", 12),
-                .Location = New Point(163, 9),
-                .ForeColor = Color.FromArgb(127, 127, 127),
-                .Parent = pnl_pedido
-            }
-            mesas.flp_itemsPedido.Controls.Add(pnl_pedido)
+            Dim mesa As Integer = DirectCast(sender, Control).Tag
+            MessageBox.Show(String.Format("Error: {0}", mesa))
+            mesas.cmb_numeroMesa.SelectedIndex = mesas.cmb_numeroMesa.FindStringExact(mesa)
         Catch ex As Exception
-
+            telaErro.setTexto("Erro ao atualizar a mesa selecionada!")
+            telaErro.Show()
         End Try
+    End Sub
 
+    Public Sub atualizarInformacoesMesa()
+        Try
+            Dim numeroMesa As Integer = mesas.cmb_numeroMesa.SelectedText
+            Dim statusMesa as String
+
+            For Each ctrl As Control In mesas.flp_mesas.Controls
+                If ctrl.Tag = numeroMesa Then
+                    For Each lbl As Control In ctrl.Controls
+                        Select Case ctrl.Name
+                            Case "lbl_statusMesa"
+                                statusMesa = ctrl.Text
+                        End Select
+                    Next lbl
+                End If
+            Next ctrl
+
+            ' Mudar form
+            ' If statusMesa = "Ocupada" Then
+            '   atualizarNomeCliente(numeroMesa)
+            '   btn_abrirMesa.Text = "Abrir Mesa" 
+            ' ElseIf statusMesa = "Livre" Then
+            '   txt_nomeCliente.Enabled = True
+            '   btn_abrirMesa.Text = "Fechar Mesa" 
+            ' End If
+
+            sql = "SELECT numero_pedido, valor_total FROM tb_pedidos WHERE numero_mesa = " & numeroMesa & ""
+            rs = db.Execute(sql)
+            With mesas.cmb_pedido
+                If .Items.Count = 0 Then
+                    Do While rs.EOF = False
+                        .Items.Add(rs.Fields(0).Value)
+                        rs.MoveNext()
+                    Loop
+                End If
+            End With
+
+        Catch ex As Exception
+            telaErro.setTexto("Erro ao atualizar informações da mesa!")
+            telaErro.Show()
+        End Try
+    End Sub
+
+    Public Sub atualizarNomeCliente(numeroMesa as Integer)
+        Try
+            sql = "SELECT cliente, horario_entrada WHERE mesa = '" & numeroMesa & "'"
+            rs = db.Execute(sql)
+            if rs.EOF = False Then
+                mesas.txt_nomeCliente = rs.Fields(0).Value
+                mesas.txt_nomeCliente.Enabled = False
+                mesas.lbl_horario = rs.Fields(1).Value
+            End If 
+        Catch ex As Exception
+            telaErro.setTexto("Erro ao atualizar informações do cliente!")
+            telaErro.Show()
+        End Try 
+    End Sub
+
+    Public Sub atualizarPedidoMesa(numeroPedido as Integer)
+        Try
+            Dim itensList As New Dictionary(Of String, Single)
+            sql = "SELECT numero_item, preco tb_itensPedido WHERE numero_pedido = '"& numeroPedido &"'"
+            rs = db.Execute(sql)
+            Do While rs.EOF = False
+                itensList.Add(rs.Fields(0).Value, rs.Fields(1).Value)
+            Loop 
+            For Each item in itensList
+                sql = "SELECT nome FROM tb_cardapio WHERE numero_item = " & item.Key & ""
+                rs = db.Execute(sql)
+                Do While rs.EOF = False
+                    Dim pnl_pedido As New Guna2Panel With {
+                        .Name = "pnl_pedido",
+                        .BackColor = Color.FromArgb(239, 239, 239),
+                        .FillColor = Color.White,
+                        .Padding = New Padding(16, 16, 16, 16),
+                        .Size = New Size(250, 40),
+                        .BorderRadius = 8
+                    }
+                    Dim lbl_nomePedido As New Guna2HtmlLabel() With {
+                        .Name = "lbl_nomePedido",
+                        .Text = rs.Fields(0).Value,
+                        .Font = New Font("Libre Caslon Display", 12),
+                        .Location = New Point(19, 9),
+                        .ForeColor = Color.FromArgb(127, 127, 127),
+                        .Parent = pnl_pedido
+                    }
+                    Dim lbl_preco As New Guna2HtmlLabel() With {
+                        .Name = "lbl_preco",
+                        .Text = $"R$ {item.Value}",
+                        .Font = New Font("Libre Caslon Display", 12),
+                        .Location = New Point(163, 9),
+                        .ForeColor = Color.FromArgb(127, 127, 127),
+                        .Parent = pnl_pedido
+                    }
+                    mesas.flp_itemsPedido.Controls.Add(pnl_pedido)
+                Loop 
+            Next item
+        Catch ex As Exception
+            telaErro.setTexto("Erro ao carregar pedidos da mesa!")
+            telaErro.Show()
+        End Try
     End Sub
 End Class

@@ -206,6 +206,7 @@
     </EmbeddedResource>
     <EmbeddedResource Include="telasPrincipais\cardapio.resx">
       <DependentUpon>cardapio.vb</DependentUpon>
+      <SubType>Designer</SubType>
     </EmbeddedResource>
     <EmbeddedResource Include="My Project\Resources.resx">
       <Generator>VbMyResourcesResXFileCodeGenerator</Generator>

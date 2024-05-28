@@ -9,6 +9,7 @@ Module Module1
     Public caminhoImagem As String
     Public gerenciadorEstoque As New criarEstoque
     Public gerenciadorCardapio As New criarCardapio
+    Public gerenciadorMesa As New criarMesas
 
 
     Sub abreConexao()
