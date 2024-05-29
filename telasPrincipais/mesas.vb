@@ -45,7 +45,7 @@ Public Class mesas
     Private Sub mesas_Load(sender As Object, e As EventArgs) Handles MyBase.Load
         gerenciarMesas.carregarMesas()
         carregarMesas(cmb_numeroMesa, "Ocupada", "Livre")
-        gerenciadorMesa.SubscribeMesas(AddressOf carregarMesas(cardapio.cmb_numeroMesa, "Ocupada", "Ocupada"))
+        'gerenciadorMesa.SubscribeMesas(carregarMesas(cardapio.cmb_numeroMesa, "Ocupada", "Ocupada"))
     End Sub
 
     Private Sub btn_abrirMesa_Click(sender As Object, e As EventArgs) Handles btn_abrirMesa.Click
@@ -54,6 +54,10 @@ Public Class mesas
         Else
             gerenciadorMesa.abrirMesa()
         End If
+    End Sub
+
+    Private Sub cmb_pedido_SelectedIndexChanged(sender As Object, e As EventArgs) Handles cmb_pedido.SelectedIndexChanged
+        gerenciadorMesa.atualizarPedidoMesa(cmb_pedido.Text)
     End Sub
 End Class
 
@@ -164,29 +168,27 @@ Public Class criarMesas
                 mesas.pnl_infoMesa.Size = New Size(324, 389)
                 atualizarNomeCliente(numeroMesa)
                 mesas.btn_abrirMesa.Text = "Abrir Mesa"
+                sql = "SELECT numero_pedido, valor_total FROM tb_pedidos WHERE numero_mesa= '" & numeroMesa & "'"
+                rs = db.Execute(sql)
+                mesas.cmb_pedido.Items.Clear()
+                mesas.lbl_total.Tag = 0
+                With mesas.cmb_pedido
+                    Do While rs.EOF = False
+                        .Items.Add(rs.Fields(0).Value)
+                        mesas.lbl_total.Tag += rs.Fields(1).Value
+                        rs.MoveNext()
+                    Loop
+                    .SelectedIndex = 0
+                    mesas.lbl_total.Text = $"R$ {mesas.lbl_total.Tag}"
+                End With
             ElseIf statusMesa = "Livre" Then
                 mesas.pnl_infoMesa.Visible = False
                 mesas.pnl_infoMesa.Size = New Size(0, 0)
                 mesas.txt_nomeCliente.Enabled = True
                 mesas.btn_abrirMesa.Text = "Fechar Mesa"
             End If
-            sql = "SELECT numero_pedido, valor_total FROM tb_pedidos WHERE numero_mesa= '" & numeroMesa & "'"
-            rs = db.Execute(sql)
-
-            mesas.cmb_pedido.Items.Clear()
-
-            With mesas.cmb_pedido
-                If .Items.Count = 0 Then
-                    Do While rs.EOF = False
-                        .Items.Add(rs.Fields(0).Value)
-                        .SelectedIndex = .FindStringExact(rs.Fields(0).Value)
-                        rs.MoveNext()
-                    Loop
-                End If
-            End With
-
         Catch ex As Exception
-            telaErro.setTexto("Erro ao atualizar informações da mesa!")
+            telaErro.setTexto("ThenErro ao atualizar informações da mesa!")
             telaErro.Show()
             MessageBox.Show(String.Format("Error: {0}", ex.Message))
 
@@ -215,16 +217,19 @@ Public Class criarMesas
 
     Public Sub atualizarPedidoMesa(numeroPedido As Integer)
         Try
-            Dim itensList As New Dictionary(Of String, Single)
-            sql = "SELECT numero_item, preco tb_itensPedido WHERE numero_pedido = '" & numeroPedido & "'"
+            Dim itensList As New List(Of List(Of String))
+            sql = "SELECT numero_item, preco FROM tb_itensPedido WHERE numero_pedido = '" & numeroPedido & "'"
             rs = db.Execute(sql)
+            mesas.flp_itemsPedido.Controls.Clear()
             Do While rs.EOF = False
-                itensList.Add(rs.Fields(0).Value, rs.Fields(1).Value)
+                itensList.Add(New List(Of String) From {rs.Fields(0).Value, rs.Fields(1).Value})
+                rs.MoveNext()
             Loop
-            For Each item In itensList
-                sql = "SELECT nome FROM tb_cardapio WHERE numero_item = " & item.Key & ""
+            count = 0
+            For Each item As List(Of String) In itensList
+                sql = "SELECT nome FROM tb_cardapio WHERE numero_item = " & itensList(count)(0) & ""
                 rs = db.Execute(sql)
-                Do While rs.EOF = False
+                If rs.EOF = False Then
                     Dim pnl_pedido As New Guna2Panel With {
                         .Name = "pnl_pedido",
                         .BackColor = Color.FromArgb(239, 239, 239),
@@ -243,14 +248,15 @@ Public Class criarMesas
                     }
                     Dim lbl_preco As New Guna2HtmlLabel() With {
                         .Name = "lbl_preco",
-                        .Text = $"R$ {item.Value}",
+                        .Text = $"R$ {itensList(count)(1)}",
                         .Font = New Font("Libre Caslon Display", 12),
                         .Location = New Point(163, 9),
                         .ForeColor = Color.FromArgb(127, 127, 127),
                         .Parent = pnl_pedido
                     }
                     mesas.flp_itemsPedido.Controls.Add(pnl_pedido)
-                Loop
+                    count += 1
+                End If
             Next item
         Catch ex As Exception
             telaErro.setTexto("Erro ao carregar pedidos da mesa!")

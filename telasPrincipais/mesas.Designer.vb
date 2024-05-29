@@ -640,7 +640,7 @@ Partial Class mesas
         Me.lbl_total.BackColor = System.Drawing.Color.Transparent
         Me.lbl_total.Font = New System.Drawing.Font("Libre Caslon Display", 16.0!)
         Me.lbl_total.ForeColor = System.Drawing.Color.FromArgb(CType(CType(48, Byte), Integer), CType(CType(107, Byte), Integer), CType(CType(52, Byte), Integer))
-        Me.lbl_total.Location = New System.Drawing.Point(249, 351)
+        Me.lbl_total.Location = New System.Drawing.Point(244, 351)
         Me.lbl_total.Name = "lbl_total"
         Me.lbl_total.Size = New System.Drawing.Size(51, 27)
         Me.lbl_total.TabIndex = 21
