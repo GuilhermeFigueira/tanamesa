@@ -32,6 +32,8 @@ Partial Class cadastrarCardapio
         Me.txt_nome = New Guna.UI2.WinForms.Guna2TextBox()
         Me.Guna2HtmlLabel1 = New Guna.UI2.WinForms.Guna2HtmlLabel()
         Me.pnl_nome = New Guna.UI2.WinForms.Guna2ShadowPanel()
+        Me.cmb_categoria = New Guna.UI2.WinForms.Guna2ComboBox()
+        Me.Guna2HtmlLabel4 = New Guna.UI2.WinForms.Guna2HtmlLabel()
         Me.txt_descricao = New Guna.UI2.WinForms.Guna2TextBox()
         Me.Guna2HtmlLabel2 = New Guna.UI2.WinForms.Guna2HtmlLabel()
         Me.pnl_titulo = New Guna.UI2.WinForms.Guna2Panel()
@@ -53,8 +55,6 @@ Partial Class cadastrarCardapio
         Me.txt_custoPrato = New Guna.UI2.WinForms.Guna2TextBox()
         Me.Guna2HtmlLabel7 = New Guna.UI2.WinForms.Guna2HtmlLabel()
         Me.ofd_imagem = New System.Windows.Forms.OpenFileDialog()
-        Me.cmb_categoria = New Guna.UI2.WinForms.Guna2ComboBox()
-        Me.Guna2HtmlLabel4 = New Guna.UI2.WinForms.Guna2HtmlLabel()
         Me.Guna2ContainerControl1.SuspendLayout()
         Me.pnl_nome.SuspendLayout()
         Me.Guna2Panel2.SuspendLayout()
@@ -179,6 +179,37 @@ Partial Class cadastrarCardapio
         Me.pnl_nome.ShadowShift = 2
         Me.pnl_nome.Size = New System.Drawing.Size(597, 187)
         Me.pnl_nome.TabIndex = 11
+        '
+        'cmb_categoria
+        '
+        Me.cmb_categoria.AutoRoundedCorners = True
+        Me.cmb_categoria.BackColor = System.Drawing.Color.Transparent
+        Me.cmb_categoria.BorderColor = System.Drawing.Color.FromArgb(CType(CType(239, Byte), Integer), CType(CType(239, Byte), Integer), CType(CType(239, Byte), Integer))
+        Me.cmb_categoria.BorderRadius = 17
+        Me.cmb_categoria.Cursor = System.Windows.Forms.Cursors.Hand
+        Me.cmb_categoria.DrawMode = System.Windows.Forms.DrawMode.OwnerDrawFixed
+        Me.cmb_categoria.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList
+        Me.cmb_categoria.FillColor = System.Drawing.Color.FromArgb(CType(CType(239, Byte), Integer), CType(CType(239, Byte), Integer), CType(CType(239, Byte), Integer))
+        Me.cmb_categoria.FocusedColor = System.Drawing.Color.FromArgb(CType(CType(239, Byte), Integer), CType(CType(239, Byte), Integer), CType(CType(239, Byte), Integer))
+        Me.cmb_categoria.FocusedState.BorderColor = System.Drawing.Color.FromArgb(CType(CType(239, Byte), Integer), CType(CType(239, Byte), Integer), CType(CType(239, Byte), Integer))
+        Me.cmb_categoria.Font = New System.Drawing.Font("Libre Caslon Display", 12.0!)
+        Me.cmb_categoria.ForeColor = System.Drawing.Color.FromArgb(CType(CType(68, Byte), Integer), CType(CType(88, Byte), Integer), CType(CType(112, Byte), Integer))
+        Me.cmb_categoria.HoverState.BorderColor = System.Drawing.Color.FromArgb(CType(CType(239, Byte), Integer), CType(CType(239, Byte), Integer), CType(CType(239, Byte), Integer))
+        Me.cmb_categoria.ItemHeight = 30
+        Me.cmb_categoria.Location = New System.Drawing.Point(305, 43)
+        Me.cmb_categoria.Name = "cmb_categoria"
+        Me.cmb_categoria.Size = New System.Drawing.Size(280, 36)
+        Me.cmb_categoria.TabIndex = 12
+        '
+        'Guna2HtmlLabel4
+        '
+        Me.Guna2HtmlLabel4.BackColor = System.Drawing.Color.Transparent
+        Me.Guna2HtmlLabel4.Font = New System.Drawing.Font("Libre Caslon Display", 15.75!)
+        Me.Guna2HtmlLabel4.Location = New System.Drawing.Point(305, 10)
+        Me.Guna2HtmlLabel4.Name = "Guna2HtmlLabel4"
+        Me.Guna2HtmlLabel4.Size = New System.Drawing.Size(78, 27)
+        Me.Guna2HtmlLabel4.TabIndex = 13
+        Me.Guna2HtmlLabel4.Text = "Categoria"
         '
         'txt_descricao
         '
@@ -490,37 +521,6 @@ Partial Class cadastrarCardapio
         'ofd_imagem
         '
         Me.ofd_imagem.FileName = "OpenFileDialog1"
-        '
-        'cmb_categoria
-        '
-        Me.cmb_categoria.AutoRoundedCorners = True
-        Me.cmb_categoria.BackColor = System.Drawing.Color.Transparent
-        Me.cmb_categoria.BorderColor = System.Drawing.Color.FromArgb(CType(CType(239, Byte), Integer), CType(CType(239, Byte), Integer), CType(CType(239, Byte), Integer))
-        Me.cmb_categoria.BorderRadius = 17
-        Me.cmb_categoria.Cursor = System.Windows.Forms.Cursors.Hand
-        Me.cmb_categoria.DrawMode = System.Windows.Forms.DrawMode.OwnerDrawFixed
-        Me.cmb_categoria.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList
-        Me.cmb_categoria.FillColor = System.Drawing.Color.FromArgb(CType(CType(239, Byte), Integer), CType(CType(239, Byte), Integer), CType(CType(239, Byte), Integer))
-        Me.cmb_categoria.FocusedColor = System.Drawing.Color.FromArgb(CType(CType(239, Byte), Integer), CType(CType(239, Byte), Integer), CType(CType(239, Byte), Integer))
-        Me.cmb_categoria.FocusedState.BorderColor = System.Drawing.Color.FromArgb(CType(CType(239, Byte), Integer), CType(CType(239, Byte), Integer), CType(CType(239, Byte), Integer))
-        Me.cmb_categoria.Font = New System.Drawing.Font("Libre Caslon Display", 12.0!)
-        Me.cmb_categoria.ForeColor = System.Drawing.Color.FromArgb(CType(CType(68, Byte), Integer), CType(CType(88, Byte), Integer), CType(CType(112, Byte), Integer))
-        Me.cmb_categoria.HoverState.BorderColor = System.Drawing.Color.FromArgb(CType(CType(239, Byte), Integer), CType(CType(239, Byte), Integer), CType(CType(239, Byte), Integer))
-        Me.cmb_categoria.ItemHeight = 30
-        Me.cmb_categoria.Location = New System.Drawing.Point(305, 43)
-        Me.cmb_categoria.Name = "cmb_categoria"
-        Me.cmb_categoria.Size = New System.Drawing.Size(280, 36)
-        Me.cmb_categoria.TabIndex = 12
-        '
-        'Guna2HtmlLabel4
-        '
-        Me.Guna2HtmlLabel4.BackColor = System.Drawing.Color.Transparent
-        Me.Guna2HtmlLabel4.Font = New System.Drawing.Font("Libre Caslon Display", 15.75!)
-        Me.Guna2HtmlLabel4.Location = New System.Drawing.Point(305, 10)
-        Me.Guna2HtmlLabel4.Name = "Guna2HtmlLabel4"
-        Me.Guna2HtmlLabel4.Size = New System.Drawing.Size(78, 27)
-        Me.Guna2HtmlLabel4.TabIndex = 13
-        Me.Guna2HtmlLabel4.Text = "Categoria"
         '
         'cadastrarCardapio
         '

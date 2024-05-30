@@ -179,6 +179,7 @@ Public Class criarEstoque
                     .btn_cadastrar.Tag = itemId
                     If File.Exists(Path.Combine(Application.StartupPath, "imgProdutos", rs.Fields(1).Value)) Then
                         .pbx_imagem.Load(Path.Combine(Application.StartupPath, "imgProdutos", rs.Fields(1).Value))
+                        caminhoImagem = rs.Fields(1).Value
                     End If
                     .Show()
                 End If

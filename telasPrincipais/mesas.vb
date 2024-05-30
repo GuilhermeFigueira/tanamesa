@@ -1,4 +1,5 @@
-﻿Imports Guna.UI2.WinForms
+﻿Imports System.IO
+Imports Guna.UI2.WinForms
 
 Public Class mesas
     Dim gerenciarMesas As New criarMesas
@@ -43,9 +44,8 @@ Public Class mesas
     End Sub
 
     Private Sub mesas_Load(sender As Object, e As EventArgs) Handles MyBase.Load
-        gerenciarMesas.carregarMesas()
+        gerenciarMesas.carregarTodasMesas()
         carregarMesas(cmb_numeroMesa, "Ocupada", "Livre")
-        'gerenciadorMesa.SubscribeMesas(carregarMesas(cardapio.cmb_numeroMesa, "Ocupada", "Ocupada"))
     End Sub
 
     Private Sub btn_abrirMesa_Click(sender As Object, e As EventArgs) Handles btn_abrirMesa.Click
@@ -75,7 +75,7 @@ Public Class criarMesas
             observerAction.Invoke(command)
         Next
     End Sub
-    Public Sub carregarMesas()
+    Public Sub carregarTodasMesas()
         Try
             sql = "SELECT * FROM tb_mesas"
             rs = db.Execute(sql)
@@ -162,23 +162,30 @@ Public Class criarMesas
                     Next lbl
                 End If
             Next ctrl
-
+            mesas.flp_itemsPedido.Controls.Clear()
+            mesas.cmb_pedido.Controls.Clear()
             If statusMesa = "Ocupada" Then
                 mesas.pnl_infoMesa.Visible = True
                 mesas.pnl_infoMesa.Size = New Size(324, 389)
                 atualizarNomeCliente(numeroMesa)
                 mesas.btn_abrirMesa.Text = "Abrir Mesa"
-                sql = "SELECT numero_pedido, valor_total FROM tb_pedidos WHERE numero_mesa= '" & numeroMesa & "'"
+                sql = "SELECT numero_pedido, valor_total, horario_pedido FROM tb_pedidos WHERE numero_mesa= '" & numeroMesa & "'"
                 rs = db.Execute(sql)
                 mesas.cmb_pedido.Items.Clear()
                 mesas.lbl_total.Tag = 0
                 With mesas.cmb_pedido
                     Do While rs.EOF = False
-                        .Items.Add(rs.Fields(0).Value)
-                        mesas.lbl_total.Tag += rs.Fields(1).Value
+                        Dim horarioMesaAberta As DateTime = mesas.lbl_horario.Tag
+                        Dim horarioPedido As DateTime = rs.Fields(2).Value
+                        If horarioMesaAberta < horarioPedido Then
+                            .Items.Add(rs.Fields(0).Value)
+                            mesas.lbl_total.Tag += rs.Fields(1).Value
+                        End If
                         rs.MoveNext()
                     Loop
-                    .SelectedIndex = 0
+                    If .Items.Count > 0 Then
+                        .SelectedIndex = 0
+                    End If
                     mesas.lbl_total.Text = $"R$ {mesas.lbl_total.Tag}"
                 End With
             ElseIf statusMesa = "Livre" Then
@@ -188,7 +195,7 @@ Public Class criarMesas
                 mesas.btn_abrirMesa.Text = "Fechar Mesa"
             End If
         Catch ex As Exception
-            telaErro.setTexto("ThenErro ao atualizar informações da mesa!")
+            telaErro.setTexto("Erro ao atualizar informações da mesa!")
             telaErro.Show()
             MessageBox.Show(String.Format("Error: {0}", ex.Message))
 
@@ -208,6 +215,7 @@ Public Class criarMesas
                 Dim timeOfDay As TimeSpan = dateTime.TimeOfDay
                 Dim timeString As String = timeOfDay.ToString("hh\:mm")
                 mesas.lbl_horario.Text = timeString
+                mesas.lbl_horario.Tag = horarioEntrada
             End If
         Catch ex As Exception
             telaErro.setTexto("Erro ao atualizar informações do cliente!")
@@ -220,11 +228,11 @@ Public Class criarMesas
             Dim itensList As New List(Of List(Of String))
             sql = "SELECT numero_item, preco FROM tb_itensPedido WHERE numero_pedido = '" & numeroPedido & "'"
             rs = db.Execute(sql)
-            mesas.flp_itemsPedido.Controls.Clear()
             Do While rs.EOF = False
                 itensList.Add(New List(Of String) From {rs.Fields(0).Value, rs.Fields(1).Value})
                 rs.MoveNext()
             Loop
+            mesas.flp_itemsPedido.Controls.Clear()
             count = 0
             For Each item As List(Of String) In itensList
                 sql = "SELECT nome FROM tb_cardapio WHERE numero_item = " & itensList(count)(0) & ""
@@ -280,6 +288,7 @@ Public Class criarMesas
                         ctrl.CustomBorderColor = Color.FromArgb(48, 107, 52)
                     End If
                 Next
+                carregarMesas(cardapio.cmb_numeroMesa, "Ocupada", "Ocupada")
                 atualizarInformacoesMesa()
             End With
         Catch ex As Exception
@@ -310,6 +319,7 @@ Public Class criarMesas
                             ctrl.CustomBorderColor = Color.FromArgb(255, 67, 101)
                         End If
                     Next
+                    carregarMesas(cardapio.cmb_numeroMesa, "Ocupada", "Ocupada")
                     atualizarInformacoesMesa()
                 Else
                     telaErro.setTexto("Existem campos vazios!")

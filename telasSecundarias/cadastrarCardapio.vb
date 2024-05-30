@@ -39,14 +39,17 @@ Public Class cadastrarCardapio
         End Try
     End Sub
 
+
+
     Private Sub cadastrarCardapio_Load(sender As Object, e As EventArgs) Handles Me.Load
         Me.TopMost = True
         abreConexao()
         carregarCategorias("cardapio", cmb_categoria)
+
     End Sub
     Private Sub cadastrarCardapio_Shown(sender As Object, e As EventArgs) Handles Me.Shown
         If btn = "" And titulo = "" Then
-            lbl_titulo.Text = "Salvar Produto no Estoque"
+            lbl_titulo.Text = "Salvar Prato no Cardápio"
             btn_cadastrar.Text = "Adicionar Produto"
             limparForm(Me)
         Else
@@ -77,4 +80,11 @@ Public Class cadastrarCardapio
         End Try
     End Sub
 
+    Private Sub btn_cadastrar_Click(sender As Object, e As EventArgs) Handles btn_cadastrar.Click
+        If btn_cadastrar.Text = "Editar Prato" Then
+            gerenciadorCardapio.editarItemCardapio(btn_cadastrar.Tag)
+        Else
+            gerenciadorCardapio.cadastrarItemCardapio()
+        End If
+    End Sub
 End Class

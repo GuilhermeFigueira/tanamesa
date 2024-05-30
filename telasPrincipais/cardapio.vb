@@ -51,7 +51,7 @@ Public Class cardapio
 
 
     Private Sub cmb_numeroMesa_SelectedValueChanged(sender As Object, e As EventArgs) Handles cmb_numeroMesa.SelectedValueChanged
-        gerenciadorCardapio.carregarInformacoesMesa(cmb_numeroMesa.Text, txt_nomeCliente)
+        gerenciadorCardapio.carregarInformacoesMesa()
     End Sub
     Private Sub btn_addProd_Click(sender As Object, e As EventArgs) Handles btn_addProd.Click
         cadastrarCardapio.Show()
@@ -364,6 +364,7 @@ Public Class criarCardapio
                     .txt_markup.Text = rs.Fields(4).Value
                     If File.Exists(Path.Combine(Application.StartupPath, "imgProdutos", rs.Fields(5).Value)) Then
                         .pbx_imagem.Load(Path.Combine(Application.StartupPath, "imgProdutos", rs.Fields(5).Value))
+                        caminhoImagem = rs.Fields(5).Value
                     End If
                     .cmb_categoria.SelectedIndex = .cmb_categoria.FindStringExact(rs.Fields(7).Value)
                     .txt_custoPrato.Text = rs.Fields(8).Value
@@ -405,15 +406,48 @@ Public Class criarCardapio
             MessageBox.Show(String.Format("Error: {0}", ex.Message))
         End Try
     End Sub
+
+    Public Sub editarItemCardapio(itemId)
+        abreConexao()
+        Dim itensList As New List(Of String)
+        Dim nomePrato As String = cadastrarCardapio.txt_nome.Text
+        Dim categoriaPrato As String = cadastrarCardapio.cmb_categoria.Text
+        Dim descricaoPrato As String = cadastrarCardapio.txt_descricao.Text
+        Dim custoPrato As String = cadastrarCardapio.txt_custoPrato.Text
+        Dim markup As String = cadastrarCardapio.txt_markup.Text
+        Dim precoPrato As String = cadastrarCardapio.txt_preco.Text
+        Dim dataEditado As Date = DateTime.Now
+        itensList.Add(nomePrato)
+        itensList.Add(categoriaPrato)
+        itensList.Add(descricaoPrato)
+        itensList.Add(custoPrato)
+        itensList.Add(markup)
+        itensList.Add(precoPrato)
+        Try
+            If verificarVazio(itensList) = False Then
+                sql = "UPDATE tb_cardapio SET foto='" & caminhoImagem & "', nome ='" & nomePrato & "', descricao = '" & descricaoPrato & "', markup = '" & markup & "', custo_prato = '" & custoPrato & "', categoria='" & categoriaPrato & "',  preco='" & precoPrato & "', data_cadastrado='" & dataEditado & "' WHERE numero_item =" & itemId & ""
+                rs = db.Execute(sql)
+                telaErro.setTexto($"{nomePrato} foi editado com sucesso!")
+                telaErro.Show()
+            Else
+                telaErro.setTexto("Existem campos vazios!")
+                telaErro.Show()
+            End If
+        Catch ex As Exception
+            telaErro.setTexto("Erro ao editar item no cardápio!")
+            telaErro.Show()
+        End Try
+        NotifyAllCardapio({})
+    End Sub
     Public Sub efetuarPedido()
         abreConexao()
         Try
             Dim itensList As New List(Of String)
-            Dim numeroMesa As Integer = cardapio.cmb_numeroMesa.Text
-            Dim horarioPedido As DateTime = TimeOfDay
+            Dim numeroMesa As String = cardapio.cmb_numeroMesa.Text
+            Dim horarioPedido As DateTime = Now
             Dim valorTotal As Single = cardapio.lbl_total.Text
             Dim codigoFuncionario As Integer = 1
-            Dim numeroPedido As Integer = cardapio.lbl_numeroPedido.Text
+            Dim numeroPedido As Integer = cardapio.lbl_numeroPedido.Text.Substring(1)
             itensList.Add(numeroMesa)
             itensList.Add(horarioPedido)
             itensList.Add(valorTotal)
@@ -425,15 +459,26 @@ Public Class criarCardapio
                 For Each prato As Control In cardapio.flp_itemsPedido.Controls
                     If prato.Tag IsNot Nothing Then
                         Dim pratoId As Integer = prato.Tag
-                        'sql = "INSERT INTO tb_itensPedido (numero_pedido, numero_item, preco) VALUES ('" & numeroPedido & "', '" & pratoId & "', '" & preco & "')"
-                        'rs = db.Execute(sql)
+                        Dim preco As String
+                        For Each ctrl As Control In prato.Controls
+                            Select Case ctrl.Name
+                                Case "lbl_preco"
+                                    preco = ctrl.Text
+                            End Select
+                        Next
+                        sql = "INSERT INTO tb_itensPedido (numero_pedido, numero_item, preco) VALUES ('" & numeroPedido & "', '" & pratoId & "', '" & preco & "')"
+                        rs = db.Execute(sql)
                     End If
                 Next
+                telaErro.setTexto("Pedido feito com sucesso!")
+                telaErro.Show()
+                definirNumeroPedido()
+                cardapio.flp_itemsPedido.Controls.Clear()
             End If
-
         Catch ex As Exception
             telaErro.setTexto("Erro ao efetuar pedido!")
             telaErro.Show()
+            MessageBox.Show(String.Format("Efetuar pedido: {0}", ex.Message))
         End Try
     End Sub
     Public Sub definirNumeroPedido()
@@ -453,15 +498,17 @@ Public Class criarCardapio
             telaErro.Show()
         End Try
     End Sub
-    Public Sub carregarInformacoesMesa(numeroMesa As Integer, txt As Guna2TextBox)
+    Public Sub carregarInformacoesMesa()
         abreConexao()
         Try
-            sql = "SELECT * FROM tb_mesas WHERE mesa = " & numeroMesa & ""
+            sql = "SELECT * FROM tb_mesas WHERE mesa = '" & cardapio.cmb_numeroMesa.Text & "'"
             rs = db.Execute(sql)
-            txt.Text = rs.Fields(2).Value
+            cardapio.txt_nomeCliente.Text = rs.Fields(2).Value
         Catch ex As Exception
             telaErro.setTexto("Erro ao carregar informações da mesa!")
             telaErro.Show()
+            MessageBox.Show(String.Format("carrega informacao mesa: {0}", ex.Message))
+
         End Try
     End Sub
     Function verificarVazio(itensArray As List(Of String))

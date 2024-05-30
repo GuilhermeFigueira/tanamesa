@@ -45,7 +45,6 @@ Partial Class mesas
         Me.Guna2ContainerControl1 = New Guna.UI2.WinForms.Guna2ContainerControl()
         Me.pnl_title = New Guna.UI2.WinForms.Guna2ShadowPanel()
         Me.Guna2Panel1 = New Guna.UI2.WinForms.Guna2Panel()
-        Me.txt_pesquisaMesas = New Guna.UI2.WinForms.Guna2TextBox()
         Me.Guna2HtmlLabel7 = New Guna.UI2.WinForms.Guna2HtmlLabel()
         Me.Guna2Panel4 = New Guna.UI2.WinForms.Guna2Panel()
         Me.Guna2Panel5 = New Guna.UI2.WinForms.Guna2Panel()
@@ -380,7 +379,6 @@ Partial Class mesas
         '
         Me.pnl_title.BackColor = System.Drawing.Color.Transparent
         Me.pnl_title.Controls.Add(Me.Guna2Panel1)
-        Me.pnl_title.Controls.Add(Me.txt_pesquisaMesas)
         Me.pnl_title.Controls.Add(Me.Guna2HtmlLabel7)
         Me.pnl_title.Dock = System.Windows.Forms.DockStyle.Top
         Me.pnl_title.FillColor = System.Drawing.Color.White
@@ -398,34 +396,6 @@ Partial Class mesas
         Me.Guna2Panel1.Name = "Guna2Panel1"
         Me.Guna2Panel1.Size = New System.Drawing.Size(311, 720)
         Me.Guna2Panel1.TabIndex = 34
-        '
-        'txt_pesquisaMesas
-        '
-        Me.txt_pesquisaMesas.AutoRoundedCorners = True
-        Me.txt_pesquisaMesas.BackColor = System.Drawing.Color.Transparent
-        Me.txt_pesquisaMesas.BorderColor = System.Drawing.Color.FromArgb(CType(CType(239, Byte), Integer), CType(CType(239, Byte), Integer), CType(CType(239, Byte), Integer))
-        Me.txt_pesquisaMesas.BorderRadius = 17
-        Me.txt_pesquisaMesas.Cursor = System.Windows.Forms.Cursors.IBeam
-        Me.txt_pesquisaMesas.DefaultText = ""
-        Me.txt_pesquisaMesas.DisabledState.BorderColor = System.Drawing.Color.FromArgb(CType(CType(208, Byte), Integer), CType(CType(208, Byte), Integer), CType(CType(208, Byte), Integer))
-        Me.txt_pesquisaMesas.DisabledState.FillColor = System.Drawing.Color.FromArgb(CType(CType(226, Byte), Integer), CType(CType(226, Byte), Integer), CType(CType(226, Byte), Integer))
-        Me.txt_pesquisaMesas.DisabledState.ForeColor = System.Drawing.Color.FromArgb(CType(CType(138, Byte), Integer), CType(CType(138, Byte), Integer), CType(CType(138, Byte), Integer))
-        Me.txt_pesquisaMesas.DisabledState.PlaceholderForeColor = System.Drawing.Color.FromArgb(CType(CType(138, Byte), Integer), CType(CType(138, Byte), Integer), CType(CType(138, Byte), Integer))
-        Me.txt_pesquisaMesas.FillColor = System.Drawing.Color.FromArgb(CType(CType(239, Byte), Integer), CType(CType(239, Byte), Integer), CType(CType(239, Byte), Integer))
-        Me.txt_pesquisaMesas.FocusedState.BorderColor = System.Drawing.Color.FromArgb(CType(CType(250, Byte), Integer), CType(CType(250, Byte), Integer), CType(CType(250, Byte), Integer))
-        Me.txt_pesquisaMesas.Font = New System.Drawing.Font("Libre Caslon Display", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.txt_pesquisaMesas.ForeColor = System.Drawing.Color.Black
-        Me.txt_pesquisaMesas.HoverState.BorderColor = System.Drawing.Color.FromArgb(CType(CType(250, Byte), Integer), CType(CType(250, Byte), Integer), CType(CType(250, Byte), Integer))
-        Me.txt_pesquisaMesas.IconLeft = CType(resources.GetObject("txt_pesquisaMesas.IconLeft"), System.Drawing.Image)
-        Me.txt_pesquisaMesas.Location = New System.Drawing.Point(518, 24)
-        Me.txt_pesquisaMesas.Margin = New System.Windows.Forms.Padding(3, 4, 3, 4)
-        Me.txt_pesquisaMesas.Name = "txt_pesquisaMesas"
-        Me.txt_pesquisaMesas.Padding = New System.Windows.Forms.Padding(15, 0, 15, 0)
-        Me.txt_pesquisaMesas.PasswordChar = Global.Microsoft.VisualBasic.ChrW(0)
-        Me.txt_pesquisaMesas.PlaceholderText = "Pesquise mesas"
-        Me.txt_pesquisaMesas.SelectedText = ""
-        Me.txt_pesquisaMesas.Size = New System.Drawing.Size(413, 36)
-        Me.txt_pesquisaMesas.TabIndex = 1
         '
         'Guna2HtmlLabel7
         '
@@ -879,7 +849,6 @@ Partial Class mesas
     Friend WithEvents Guna2HtmlLabel4 As Guna.UI2.WinForms.Guna2HtmlLabel
     Friend WithEvents Guna2CirclePictureBox1 As Guna.UI2.WinForms.Guna2CirclePictureBox
     Friend WithEvents pnl_title As Guna.UI2.WinForms.Guna2ShadowPanel
-    Friend WithEvents txt_pesquisaMesas As Guna.UI2.WinForms.Guna2TextBox
     Friend WithEvents Guna2HtmlLabel7 As Guna.UI2.WinForms.Guna2HtmlLabel
     Friend WithEvents Guna2Panel1 As Guna.UI2.WinForms.Guna2Panel
     Friend WithEvents Guna2Panel4 As Guna.UI2.WinForms.Guna2Panel

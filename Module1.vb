@@ -93,6 +93,7 @@ Module Module1
             sql = "SELECT * FROM tb_mesas WHERE status = '" & status1 & "' OR status = '" & status2 & "'"
             rs = db.Execute(sql)
             With cmb
+                .Items.Clear()
                 If .Items.Count = 0 Then
                     Do While rs.EOF = False
                         .Items.Add(rs.Fields(0).Value)
