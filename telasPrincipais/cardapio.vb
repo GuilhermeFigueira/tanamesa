@@ -46,6 +46,7 @@ Public Class cardapio
         gerenciadorCardapio.definirNumeroPedido()
         carregarMesas(cmb_numeroMesa, "Ocupada", "Ocupada")
         gerenciadorCardapio.SubscribeCardapio(AddressOf gerenciadorCardapio.carregarCardapio)
+        gerenciadorCardapio.SubscribeCardapio(AddressOf gerenciadorCardapio.definirNumeroPedido)
         'cardapio.carregarPedidos()
     End Sub
 
@@ -474,6 +475,8 @@ Public Class criarCardapio
                 telaErro.Show()
                 definirNumeroPedido()
                 cardapio.flp_itemsPedido.Controls.Clear()
+                gerenciadorPedidos.carregarProgresso()
+                gerenciadorPedidos.carregarPedidos()
             End If
         Catch ex As Exception
             telaErro.setTexto("Erro ao efetuar pedido!")

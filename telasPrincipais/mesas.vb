@@ -76,6 +76,7 @@ Public Class criarMesas
         Next
     End Sub
     Public Sub carregarTodasMesas()
+        abreConexao()
         Try
             sql = "SELECT * FROM tb_mesas"
             rs = db.Execute(sql)
@@ -133,6 +134,8 @@ Public Class criarMesas
         End Try
     End Sub
     Public Sub atualizarMesaSelecionada(sender As Object, e As EventArgs)
+        abreConexao()
+
         Try
             Dim mesa As Integer = DirectCast(sender, Control).Tag
             mesas.cmb_numeroMesa.SelectedIndex = mesas.cmb_numeroMesa.FindStringExact(mesa)
@@ -143,6 +146,8 @@ Public Class criarMesas
     End Sub
 
     Public Sub atualizarInformacoesMesa()
+        abreConexao()
+
         Try
             Dim numeroMesa As String = mesas.cmb_numeroMesa.Text
             Dim statusMesa As String
@@ -203,6 +208,8 @@ Public Class criarMesas
     End Sub
 
     Public Sub atualizarNomeCliente(numeroMesa As Integer)
+        abreConexao()
+
         Try
             mesas.txt_nomeCliente.Clear()
             sql = "SELECT cliente, horario_entrada FROM tb_mesas WHERE mesa = '" & numeroMesa & "'"
@@ -224,6 +231,8 @@ Public Class criarMesas
     End Sub
 
     Public Sub atualizarPedidoMesa(numeroPedido As Integer)
+        abreConexao()
+
         Try
             Dim itensList As New List(Of List(Of String))
             sql = "SELECT numero_item, preco FROM tb_itensPedido WHERE numero_pedido = '" & numeroPedido & "'"
@@ -273,6 +282,8 @@ Public Class criarMesas
     End Sub
 
     Public Sub abrirMesa()
+        abreConexao()
+
         Try
             With mesas
                 Dim numeroMesa As String = .cmb_numeroMesa.Text
@@ -298,6 +309,8 @@ Public Class criarMesas
     End Sub
 
     Public Sub fecharMesa()
+        abreConexao()
+
         Try
             With mesas
                 Dim itensList As New List(Of String)

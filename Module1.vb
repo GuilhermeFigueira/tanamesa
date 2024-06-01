@@ -2,15 +2,15 @@
 Imports System.Data.SqlClient
 Module Module1
     Public db As ADODB.Connection
-    Public rs As New ADODB.Recordset
-    Public sql As String ' Queries CRUD in SQL language
+    Public rs, rs2 As New ADODB.Recordset
+    Public sql, sql2 As String ' Queries CRUD in SQL language
     Public dir_banco = Application.StartupPath & "\banco\db.mdb"
-    Public count As Integer
+    Public count, count2 As Integer
     Public caminhoImagem As String
     Public gerenciadorEstoque As New criarEstoque
     Public gerenciadorCardapio As New criarCardapio
     Public gerenciadorMesa As New criarMesas
-
+    Public gerenciadorPedidos As New criarPedidos
 
     Sub abreConexao()
         Try
