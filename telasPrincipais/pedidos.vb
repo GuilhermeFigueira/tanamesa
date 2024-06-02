@@ -404,6 +404,7 @@ Public Class criarPedidos
         Try
             sql = "DELETE * FROM tb_itensPedido WHERE cod_item = " & itemPedido.Tag & ""
             rs = db.Execute(sql)
+            itemPedido.Parent.Dispose()
             gerenciadorPedidos.NotifyAllPedidos({})
             gerenciadorCardapio.NotifyAllCardapio({})
         Catch ex As Exception
