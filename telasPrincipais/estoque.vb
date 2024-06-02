@@ -136,17 +136,17 @@ Public Class criarEstoque
         itensList.Add(dataValidade)
         Try
             If verificarVazio(itensList) = False Then
-                sql = "SELECT * FROM tb_estoque WHERE nome ='" & nomeItem & "'"
-                rs = db.Execute(sql)
-                If rs.EOF = True Then
-                    sql = "INSERT INTO tb_estoque (foto, nome, categoria, em_estoque, unidade, valor_pago, data_compra, data_validade) VALUES ('" & caminhoImagem & "', '" & nomeItem & "', '" & categoriaItem & "', '" & qtdComprada & "', '" & unidadeItem & "', '" & valorPagoUnidade & "', '" & dataCompra & "', '" & dataValidade & "')"
+                'sql = "SELECT * FROM tb_estoque WHERE nome ='" & nomeItem & "'"
+                ' rs = db.Execute(sql)
+                'If rs.EOF = True Then
+                sql = "INSERT INTO tb_estoque (foto, nome, categoria, em_estoque, unidade, valor_pago, data_compra, data_validade) VALUES ('" & caminhoImagem & "', '" & nomeItem & "', '" & categoriaItem & "', '" & qtdComprada & "', '" & unidadeItem & "', '" & valorPagoUnidade & "', '" & dataCompra & "', '" & dataValidade & "')"
                     rs = db.Execute(sql)
                     telaErro.setTexto($"{nomeItem} foi cadastrado com sucesso!")
                     telaErro.Show()
-                Else
-                    telaErro.setTexto($"{nomeItem} já está cadastrado no estoque!")
-                    telaErro.Show()
-                End If
+                'Else
+                ' telaErro.setTexto($"{nomeItem} já está cadastrado no estoque!")
+                'telaErro.Show()
+                'End If
             Else
                 telaErro.setTexto("Existem campos vazios!")
                 telaErro.Show()

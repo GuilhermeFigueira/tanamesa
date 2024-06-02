@@ -1,5 +1,5 @@
-﻿Imports Guna.UI2.WinForms
-
+﻿Imports System.Reflection
+Imports Guna.UI2.WinForms
 Public Class pedidos
     Private Sub btn_fechar_Click(sender As Object, e As EventArgs) Handles btn_fechar.Click
         sair()
@@ -54,6 +54,8 @@ Public Class pedidos
 End Class
 
 Public Class criarPedidos
+    Private timersProgresso As New List(Of Timer)
+
     Public Delegate Sub ObserverFunction(ByVal command As Object)
 
     Private observers As New List(Of Action(Of Object))()
@@ -68,37 +70,34 @@ Public Class criarPedidos
         Next
     End Sub
 
-    Private _elapseTimerRunning As Boolean = False
-    Private _elapseStartTime As DateTime
 
     Public Sub timerTick(sender As Object, e As EventArgs)
-        Dim pedido As Control = DirectCast(sender, Control)
+        Dim timer As Timer = DirectCast(sender, Timer)
+        For Each ctrl As Guna2ShadowPanel In pedidos.flp_progressoPedidos.Controls
+            If ctrl.Tag = timer.Tag Then
+                For Each lbl As Control In ctrl.Controls
+                    If lbl.Name = "lbl_tempoDecorrido" Then
+                        Dim startTime As DateTime = lbl.Tag
+                        Dim now As DateTime = DateTime.Now
+                        Dim elapsedTime As TimeSpan = now - startTime
+                        Dim formattedElapsedTime As String = elapsedTime.ToString("hh\:mm\:ss")
 
-        txtTime.Text = Now.ToString("h:mm:ss tt")
-        If _elapseTimerRunning = True Then
-            Dim elapsedtime = DateTime.Now.Subtract(_elapseStartTime)
-            txtElapsed.Text = String.Format("{0}hr : {1}min : {2}sec", elapsedtime.Hours, elapsedtime.Minutes, elapsedtime.Seconds)
-        End If
-    End Sub
-
-    Private Sub btnStart_Click(sender As Object, e As EventArgs) Handles btnStart.Click
-        _elapseStartTime = DateTime.Now
-        _elapseTimerRunning = True
-    End Sub
-
-    Private Sub btnStop_Click(sender As Object, e As EventArgs) Handles btnStop.Click
-        _elapseTimerRunning = False
+                        lbl.Text = $"Tempo decorrido: {formattedElapsedTime}"
+                    End If
+                Next lbl
+            End If
+        Next
     End Sub
     Sub carregarProgresso()
         abreConexao()
         Try
-            sql = "SELECT numero_pedido, horario_pedido FROM tb_pedidos"
+            pedidos.flp_progressoPedidos.Controls.Clear()
+            sql = "SELECT numero_pedido, horario_pedido, entregue, horario_entrega FROM tb_pedidos ORDER BY numero_pedido DESC"
             rs = db.Execute(sql)
             Do While rs.EOF = False
                 Dim timer As New Timer With {
                     .Tag = rs.Fields(0).Value,
-                    .Interval = 1000,
-                    .Enabled = True
+                    .Interval = 1000
                 }
                 Dim pnl_pedidoProgresso As New Guna2ShadowPanel With {
                     .Name = "pnl_pedidoProgresso",
@@ -108,7 +107,8 @@ Public Class criarPedidos
                     .Radius = 6,
                     .ShadowColor = Color.FromArgb(200, 200, 200),
                     .ShadowShift = 6,
-                    .ShadowStyle = Guna2ShadowPanel.ShadowMode.ForwardDiagonal
+                    .ShadowStyle = Guna2ShadowPanel.ShadowMode.ForwardDiagonal,
+                    .Tag = rs.Fields(0).Value
                 }
 
                 Dim lbl_numeroPedido As New Guna2HtmlLabel With {
@@ -126,23 +126,35 @@ Public Class criarPedidos
                     .Parent = pnl_pedidoProgresso
                 }
                 Dim lbl_tempoDecorrido As New Guna2HtmlLabel With {
-                    .Name = "lbl_numeroPedido",
-                    .Text = "Tempo decorrido: 08:52",
+                    .Name = "lbl_tempoDecorrido",
+                    .Text = "Tempo decorrido: ",
                     .Font = New Font("Libre Caslon Display", 10),
                     .Location = New Point(95, 39),
                     .Parent = pnl_pedidoProgresso
                 }
-                If rs.Fields(5).Value = True Then
+                timersProgresso.Add(timer)
+
+                If rs.Fields(2).Value = False Then
                     lbl_statusPedido.Text = "Em andamento"
+                    timer.Enabled = True
+                    lbl_tempoDecorrido.Tag = rs.Fields(1).Value
                 Else
                     lbl_statusPedido.Text = "Entregue"
+                    timer.Enabled = False
+                    Dim startTime As DateTime = rs.Fields(1).Value
+                    Dim finishTime As DateTime = rs.Fields(3).Value
+                    Dim elapsedTime As TimeSpan = startTime - finishTime
+                    Dim formattedElapsedTime As String = elapsedTime.ToString("hh\:mm\:ss")
+                    lbl_tempoDecorrido.Text = $"Tempo total: {formattedElapsedTime}"
                 End If
                 pedidos.flp_progressoPedidos.Controls.Add(pnl_pedidoProgresso)
                 AddHandler timer.Tick, AddressOf timerTick
-
+                rs.MoveNext()
             Loop
         Catch ex As Exception
             telaErro.setTexto("Erro ao carregar progresso dos pedidos!")
+            MessageBox.Show(String.Format("carregar progresso pedidos: {0}", ex.Message))
+
             telaErro.Show()
         End Try
     End Sub
@@ -370,6 +382,14 @@ Public Class criarPedidos
             telaErro.setTexto("Pedido enviado!")
             telaErro.Show()
             carregarPedidos(False)
+            carregarProgresso()
+
+            For Each timer In timersProgresso
+                If timer.Tag = pedido.Tag Then
+                    timer.Stop()
+                    timer.Enabled = False
+                End If
+            Next
         Catch ex As Exception
             telaErro.setTexto("Erro ao enviar pedido!")
             telaErro.Show()

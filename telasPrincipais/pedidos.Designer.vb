@@ -90,6 +90,7 @@ Partial Class pedidos
         Me.Guna2HtmlLabel2 = New Guna.UI2.WinForms.Guna2HtmlLabel()
         Me.Guna2DragControl1 = New Guna.UI2.WinForms.Guna2DragControl(Me.components)
         Me.Guna2DragControl2 = New Guna.UI2.WinForms.Guna2DragControl(Me.components)
+        Me.Timer1 = New System.Windows.Forms.Timer(Me.components)
         Me.pnl_controls.SuspendLayout()
         Me.pnl_logo.SuspendLayout()
         Me.Guna2Panel3.SuspendLayout()
@@ -1157,4 +1158,5 @@ Partial Class pedidos
     Friend WithEvents Guna2Panel7 As Guna.UI2.WinForms.Guna2Panel
     Friend WithEvents Guna2Panel13 As Guna.UI2.WinForms.Guna2Panel
     Friend WithEvents txt_pesquisaPedidos As Guna.UI2.WinForms.Guna2TextBox
+    Friend WithEvents Timer1 As Timer
 End Class

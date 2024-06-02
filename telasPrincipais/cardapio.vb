@@ -478,6 +478,9 @@ Public Class criarCardapio
                 cardapio.flp_itemsPedido.Controls.Clear()
                 gerenciadorPedidos.carregarProgresso()
                 gerenciadorPedidos.carregarPedidos(False)
+            Else
+                telaErro.setTexto("Existem campos vazios!")
+                telaErro.Show()
             End If
         Catch ex As Exception
             telaErro.setTexto("Erro ao efetuar pedido!")
@@ -515,12 +518,4 @@ Public Class criarCardapio
 
         End Try
     End Sub
-    Function verificarVazio(itensArray As List(Of String))
-        For Each item As String In itensArray
-            If item = "" Then
-                Return True
-            End If
-        Next
-        Return False
-    End Function
 End Class
