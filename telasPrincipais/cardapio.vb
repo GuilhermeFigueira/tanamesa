@@ -129,7 +129,7 @@ Public Class criarCardapio
                 }
 
                 Dim lbl_vezesPedido As New Guna2HtmlLabel() With {
-                    .Text = "Vezes pedido na semana: 10",
+                    .Text = $"Vezes pedido na semana: {calcularVezesPedido(rs.Fields(0).Value)}",
                     .Font = New Font("Libre Caslon Display", 12),
                     .Location = New Point(19, 176),
                     .ForeColor = Color.FromArgb(127, 127, 127),
@@ -349,6 +349,17 @@ Public Class criarCardapio
         End Try
         NotifyAllCardapio({})
     End Sub
+    Public Function calcularVezesPedido(numeroPedido As String)
+        Try
+            sql2 = "SELECT COUNT(*) FROM tb_itenspedido WHERE numero_item = " & numeroPedido & ""
+            rs2 = db.Execute(sql2)
+            Return rs2.Fields(0).Value
+        Catch ex As Exception
+            telaErro.setTexto("Erro ao calcular quantidade de vezes pedido na semana!")
+            telaErro.Show()
+            MessageBox.Show(String.Format("Error: {0}", ex.Message))
+        End Try
+    End Function
     Public Sub carregarEdicaoPrato(sender As Object, e As EventArgs)
         Dim prato As Control = DirectCast(sender, Control)
         Dim itemPrato As Control = prato.Parent
@@ -478,6 +489,7 @@ Public Class criarCardapio
                 cardapio.flp_itemsPedido.Controls.Clear()
                 gerenciadorPedidos.carregarProgresso()
                 gerenciadorPedidos.carregarPedidos(False)
+                gerenciadorCardapio.NotifyAllCardapio({})
             Else
                 telaErro.setTexto("Existem campos vazios!")
                 telaErro.Show()
