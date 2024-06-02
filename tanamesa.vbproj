@@ -106,6 +106,12 @@
     <Import Include="System.Threading.Tasks" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="telasSecundarias\maisInformacoesFuncionario.Designer.vb">
+      <DependentUpon>maisInformacoesFuncionario.vb</DependentUpon>
+    </Compile>
+    <Compile Include="telasSecundarias\maisInformacoesFuncionario.vb">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="telasSecundarias\cadastrarCardapio.Designer.vb">
       <DependentUpon>cadastrarCardapio.vb</DependentUpon>
     </Compile>
@@ -210,6 +216,9 @@
     </Compile>
   </ItemGroup>
   <ItemGroup>
+    <EmbeddedResource Include="telasSecundarias\maisInformacoesFuncionario.resx">
+      <DependentUpon>maisInformacoesFuncionario.vb</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="telasSecundarias\cadastrarCardapio.resx">
       <DependentUpon>cadastrarCardapio.vb</DependentUpon>
     </EmbeddedResource>

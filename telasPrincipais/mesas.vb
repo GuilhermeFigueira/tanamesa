@@ -235,7 +235,7 @@ Public Class criarMesas
 
         Try
             Dim itensList As New List(Of List(Of String))
-            sql = "SELECT numero_item, preco FROM tb_itensPedido WHERE numero_pedido = '" & numeroPedido & "'"
+            sql = "SELECT numero_item, preco FROM tb_itensPedido WHERE numero_pedido = " & numeroPedido & ""
             rs = db.Execute(sql)
             Do While rs.EOF = False
                 itensList.Add(New List(Of String) From {rs.Fields(0).Value, rs.Fields(1).Value})
@@ -278,6 +278,8 @@ Public Class criarMesas
         Catch ex As Exception
             telaErro.setTexto("Erro ao carregar pedidos da mesa!")
             telaErro.Show()
+            MessageBox.Show(String.Format("Error: {0}", ex.Message))
+
         End Try
     End Sub
 

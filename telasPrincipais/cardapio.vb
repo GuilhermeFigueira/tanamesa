@@ -62,6 +62,7 @@ Public Class cardapio
         gerenciadorCardapio.efetuarPedido()
     End Sub
 
+
 End Class
 
 Public Class criarCardapio
@@ -476,7 +477,7 @@ Public Class criarCardapio
                 definirNumeroPedido()
                 cardapio.flp_itemsPedido.Controls.Clear()
                 gerenciadorPedidos.carregarProgresso()
-                gerenciadorPedidos.carregarPedidos()
+                gerenciadorPedidos.carregarPedidos(False)
             End If
         Catch ex As Exception
             telaErro.setTexto("Erro ao efetuar pedido!")

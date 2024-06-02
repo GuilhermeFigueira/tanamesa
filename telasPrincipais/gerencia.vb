@@ -44,4 +44,16 @@ Public Class gerencia
 
     Private Sub gerencia_Load(sender As Object, e As EventArgs) Handles Me.Load
     End Sub
+
+    Private Sub Guna2HtmlLabel8_Click(sender As Object, e As EventArgs) Handles Guna2HtmlLabel8.Click
+
+    End Sub
+
+    Private Sub btn__Click(sender As Object, e As EventArgs) Handles btn_.Click
+
+    End Sub
+
+    Private Sub flp_itemsCard_Paint(sender As Object, e As PaintEventArgs) Handles flp_itemsCard.Paint
+
+    End Sub
 End Class

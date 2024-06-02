@@ -942,11 +942,11 @@ Partial Class pedidos
         Me.cmb_progs.ForeColor = System.Drawing.Color.FromArgb(CType(CType(68, Byte), Integer), CType(CType(88, Byte), Integer), CType(CType(112, Byte), Integer))
         Me.cmb_progs.HoverState.BorderColor = System.Drawing.Color.FromArgb(CType(CType(239, Byte), Integer), CType(CType(239, Byte), Integer), CType(CType(239, Byte), Integer))
         Me.cmb_progs.ItemHeight = 30
+        Me.cmb_progs.Items.AddRange(New Object() {"Pedidos Não Entregues", "Pedidos Entregues"})
         Me.cmb_progs.Location = New System.Drawing.Point(710, 6)
         Me.cmb_progs.Name = "cmb_progs"
         Me.cmb_progs.Size = New System.Drawing.Size(219, 36)
         Me.cmb_progs.TabIndex = 11
-        Me.cmb_progs.TextAlign = System.Windows.Forms.HorizontalAlignment.Right
         '
         'Guna2Panel5
         '

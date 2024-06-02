@@ -190,3 +190,4 @@ C:\Users\guibf\www\fatec\tanamesa\bin\Debug\tanamesa.application
 C:\Users\guibf\www\fatec\tanamesa\obj\Debug\tanamesa.TrustInfo.xml
 C:\Users\guibf\www\fatec\tanamesa\obj\Debug\tanamesa.exe.manifest
 C:\Users\guibf\www\fatec\tanamesa\obj\Debug\tanamesa.application
+C:\Users\guibf\www\fatec\tanamesa\obj\Debug\tanamesa.maisInformacoesFuncionario.resources
