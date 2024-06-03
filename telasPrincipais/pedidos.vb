@@ -41,14 +41,15 @@ Public Class pedidos
         gerenciadorPedidos.carregarProgresso()
         gerenciadorPedidos.carregarPedidos(False)
         cmb_progs.SelectedIndex = 0
-        gerenciadorPedidos.SubscribePedidos(AddressOf gerenciadorPedidos.carregarProgresso)
     End Sub
 
     Private Sub cmb_progs_SelectedIndexChanged(sender As Object, e As EventArgs) Handles cmb_progs.SelectedIndexChanged
         If cmb_progs.Text = "Pedidos Não Entregues" Then
             gerenciadorPedidos.carregarPedidos(False)
+            gerenciadorPedidos.carregarProgresso(False)
         Else
             gerenciadorPedidos.carregarPedidos(True)
+            gerenciadorPedidos.carregarProgresso(True)
         End If
     End Sub
 End Class
@@ -88,11 +89,13 @@ Public Class criarPedidos
             End If
         Next
     End Sub
-    Sub carregarProgresso()
+    Public Sub carregarProgresso(Optional estadoPedido As Boolean = False)
         abreConexao()
         Try
+            Dim ultimoControl As Control = Nothing
+
             pedidos.flp_progressoPedidos.Controls.Clear()
-            sql = "SELECT numero_pedido, horario_pedido, entregue, horario_entrega FROM tb_pedidos ORDER BY numero_pedido DESC"
+            sql = "SELECT numero_pedido, horario_pedido, entregue, horario_entrega FROM tb_pedidos WHERE entregue = " & estadoPedido & " ORDER BY numero_pedido ASC"
             rs = db.Execute(sql)
             Do While rs.EOF = False
                 Dim timer As New Timer With {
@@ -150,7 +153,11 @@ Public Class criarPedidos
                 pedidos.flp_progressoPedidos.Controls.Add(pnl_pedidoProgresso)
                 AddHandler timer.Tick, AddressOf timerTick
                 rs.MoveNext()
+                ultimoControl = pnl_pedidoProgresso
             Loop
+            If Not ultimoControl Is Nothing Then
+                ultimoControl.Margin = New Padding(ultimoControl.Margin.Left, ultimoControl.Margin.Top, 300, ultimoControl.Margin.Bottom)
+            End If
         Catch ex As Exception
             telaErro.setTexto("Erro ao carregar progresso dos pedidos!")
             MessageBox.Show(String.Format("carregar progresso pedidos: {0}", ex.Message))
@@ -161,8 +168,10 @@ Public Class criarPedidos
     Sub carregarPedidos(Optional estadoPedido As Boolean = False)
         abreConexao()
         Try
+            Dim ultimoControl As Control = Nothing
+
             pedidos.flp_pedidos.Controls.Clear()
-            sql = "SELECT tb_pedidos.*, tb_mesas.mesa, tb_mesas.cliente FROM tb_pedidos LEFT JOIN tb_mesas ON tb_pedidos.numero_mesa = tb_mesas.mesa  WHERE tb_pedidos.entregue = " & estadoPedido & " ORDER BY numero_pedido DESC "
+            sql = "SELECT tb_pedidos.*, tb_mesas.mesa, tb_mesas.cliente FROM tb_pedidos LEFT JOIN tb_mesas ON tb_pedidos.numero_mesa = tb_mesas.mesa  WHERE tb_pedidos.entregue = " & estadoPedido & " ORDER BY numero_pedido ASC "
             rs = db.Execute(sql)
             Do While rs.EOF = False
                 Dim pnl_pedido As New Guna2ShadowPanel With {
@@ -205,7 +214,7 @@ Public Class criarPedidos
                     .Name = "lbl_numeroPedido",
                     .Text = $"#{rs.Fields(0).Value}",
                     .Font = New Font("Julius Sans One", 25),
-                    .Location = New Point(144, 13),
+                    .Location = New Point(130, 13),
                     .Parent = pnl_info
                 }
 
@@ -274,7 +283,11 @@ Public Class criarPedidos
                 pedidos.flp_pedidos.Controls.Add(pnl_pedido)
                 pnl_pedido.Controls.Add(pnl_info)
                 rs.MoveNext()
+                ultimoControl = pnl_pedido
             Loop
+            If Not ultimoControl Is Nothing Then
+                ultimoControl.Margin = New Padding(ultimoControl.Margin.Left, ultimoControl.Margin.Top, 300, ultimoControl.Margin.Bottom)
+            End If
         Catch ex As Exception
             MessageBox.Show(String.Format("carregar pedidos: {0}", ex.Message))
             telaErro.setTexto("Erro ao carregar os pedidos!")
@@ -358,9 +371,10 @@ Public Class criarPedidos
                                            rs = db.Execute(sql)
                                            sql = "DELETE * FROM tb_itenspedido WHERE numero_pedido = " & pedido.Tag & ""
                                            rs = db.Execute(sql)
-                                           gerenciadorPedidos.carregarPedidos()
-                                           gerenciadorPedidos.NotifyAllPedidos({})
-                                           gerenciadorCardapio.NotifyAllCardapio({})
+                                           pedido.Parent.Parent.Dispose()
+                                           gerenciadorCardapio.carregarCardapio()
+                                           gerenciadorPedidos.carregarProgresso()
+                                           gerenciadorMesa.atualizarInformacoesMesa()
                                            telaConfirmacao.Close()
                                        End Sub)
             Else

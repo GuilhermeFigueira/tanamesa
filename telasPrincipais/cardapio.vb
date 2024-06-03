@@ -45,8 +45,9 @@ Public Class cardapio
         gerenciadorCardapio.calcularPrecoTotal()
         gerenciadorCardapio.definirNumeroPedido()
         carregarMesas(cmb_numeroMesa, "Ocupada", "Ocupada")
-        gerenciadorCardapio.SubscribeCardapio(AddressOf gerenciadorCardapio.carregarCardapio)
         gerenciadorCardapio.SubscribeCardapio(AddressOf gerenciadorCardapio.definirNumeroPedido)
+        gerenciadorCardapio.SubscribeCardapio(AddressOf gerenciadorCardapio.carregarCardapio)
+        cmb_ordenar.SelectedIndex = 0
         'cardapio.carregarPedidos()
     End Sub
 
@@ -62,10 +63,34 @@ Public Class cardapio
         gerenciadorCardapio.efetuarPedido()
     End Sub
 
+    Private Sub cmb_ordenar_SelectedIndexChanged(sender As Object, e As EventArgs) Handles cmb_ordenar.SelectedIndexChanged
+        '
+        If cmb_ordenar.Text = "Mais baratos" Then
+            gerenciadorCardapio.carregarCardapio("preco", "ASC")
+        ElseIf cmb_ordenar.Text = "Mais caros" Then
+            gerenciadorCardapio.carregarCardapio("preco", "DESC")
+        ElseIf cmb_ordenar.Text = "Mais pedidos" Then
+            gerenciadorCardapio.ordenarCardapio("Mais vendido")
+        ElseIf cmb_ordenar.Text = "Menos pedidos" Then
+            gerenciadorCardapio.ordenarCardapio("Menos vendido")
+        End If
 
+    End Sub
 End Class
 
 Public Class criarCardapio
+    Public Class CardapioItem
+        Public Property Panel As Guna2ShadowPanel
+        Public Property VezesPedido As Integer
+
+        Public Sub New(panel As Guna2ShadowPanel, vezesPedido As Integer)
+            Me.Panel = panel
+            Me.VezesPedido = vezesPedido
+        End Sub
+    End Class
+
+    Dim cardapioList As New List(Of CardapioItem)
+
     Public Delegate Sub ObserverFunction(ByVal command As Object)
 
     Private observers As New List(Of Action(Of Object))()
@@ -79,13 +104,14 @@ Public Class criarCardapio
             observerAction.Invoke(command)
         Next
     End Sub
-    Public Sub carregarCardapio()
+    Public Sub carregarCardapio(Optional orderBy As String = "nome", Optional ascDesc As String = "ASC")
         abreConexao()
         Try
-            sql = "SELECT * FROM tb_cardapio ORDER BY nome ASC"
+            sql = "SELECT * FROM tb_cardapio ORDER BY " & orderBy & " " & ascDesc & ""
             rs = db.Execute(sql)
             count = 0
             cardapio.flp_itemsCard.Controls.Clear()
+            cardapioList.Clear()
             Do While rs.EOF = False
                 Dim pnl_prato As New Guna2ShadowPanel() With {
                     .Name = "pnl_prato",
@@ -96,7 +122,8 @@ Public Class criarCardapio
                     .Radius = 10,
                     .ShadowShift = 4,
                     .Padding = New Padding(16, 24, 16, 24),
-                    .ShadowColor = Color.FromArgb(200, 200, 200)
+                    .ShadowColor = Color.FromArgb(200, 200, 200),
+                    .Tag = rs.Fields(0).Value
                 }
                 Dim pbx_fotoPrato As New Guna2PictureBox() With {
                     .Name = "pbx_fotoPrato",
@@ -137,7 +164,7 @@ Public Class criarCardapio
                 }
 
                 Dim lbl_porcentagem As New Guna2HtmlLabel() With {
-                    .Text = "Porcentagem do total: 48%",
+                    .Text = $"Porcentagem do total: {calcularPorcentagemTotal(rs.Fields(0).Value)}%",
                     .Font = New Font("Libre Caslon Display", 12),
                     .Location = New Point(19, 203),
                     .ForeColor = Color.FromArgb(127, 127, 127),
@@ -146,7 +173,7 @@ Public Class criarCardapio
 
                 Dim lbl_preco As New Guna2HtmlLabel() With {
                     .Name = "lbl_preco",
-                    .Text = rs.Fields(3).Value,
+                    .Text = Format(rs.Fields(3).Value, "0.00"),
                     .Font = New Font("Libre Caslon Display", 18),
                     .Location = New Point(19, 245),
                     .ForeColor = Color.Black,
@@ -199,15 +226,36 @@ Public Class criarCardapio
                 AddHandler btn_pedir.Click, AddressOf adicionarPratoAoPedido
                 AddHandler btn_excluir.Click, AddressOf excluirPratoDoCardapio
                 AddHandler btn_editar.Click, AddressOf carregarEdicaoPrato
-
+                cardapioList.Add(New CardapioItem(pnl_prato, calcularVezesPedido(rs.Fields(0).Value)))
                 cardapio.flp_itemsCard.Controls.Add(pnl_prato)
                 count += 1
                 rs.MoveNext()
             Loop
+            ordenarCardapio()
         Catch ex As Exception
             telaErro.setTexto("Erro ao carregar o cardápio!")
             telaErro.Show()
             MessageBox.Show(String.Format("Carregar Cardapio: {0}", ex.Message))
+        End Try
+    End Sub
+
+    Public Sub ordenarCardapio(Optional tipoSort As String = "Mais Vendido")
+        Try
+            If tipoSort = "Mais vendido" Then
+                cardapioList.Sort(Function(a, b) b.VezesPedido.CompareTo(a.VezesPedido))
+            Else
+                cardapioList.Sort(Function(a, b) a.VezesPedido.CompareTo(b.VezesPedido))
+            End If
+
+            While cardapio.flp_itemsCard.Controls.Count > 0
+                cardapio.flp_itemsCard.Controls.RemoveAt(0)
+            End While
+
+            For Each item In cardapioList
+                cardapio.flp_itemsCard.Controls.Add(item.Panel)
+            Next
+        Catch ex As Exception
+
         End Try
     End Sub
     Public Sub adicionarPratoAoPedido(sender As Object, e As EventArgs)
@@ -347,17 +395,63 @@ Public Class criarCardapio
             telaErro.Show()
             'MessageBox.Show(String.Format("Error: {0}", sql))
         End Try
-        NotifyAllCardapio({})
+        carregarCardapio()
     End Sub
-    Public Function calcularVezesPedido(numeroPedido As String)
+    Public Function calcularVezesPedido(numeroItem As String)
+        abreConexao()
         Try
-            sql2 = "SELECT COUNT(*) FROM tb_itenspedido WHERE numero_item = " & numeroPedido & ""
+            Dim total As Integer = 0
+            sql2 = "SELECT COUNT(*) FROM tb_itenspedido LEFT JOIN tb_pedidos ON tb_itenspedido.numero_Pedido = tb_pedidos.numero_pedido WHERE tb_itenspedido.numero_item = " & numeroItem & " AND tb_pedidos.horario_pedido >= DateAdd('d', -7, Now()) AND tb_pedidos.horario_pedido < Now() GROUP BY tb_pedidos.horario_pedido, tb_pedidos.numero_pedido"
             rs2 = db.Execute(sql2)
-            Return rs2.Fields(0).Value
+            If rs2.EOF = False Then
+                Do While rs2.EOF = False
+                    total += rs2.Fields(0).Value
+                    rs2.MoveNext()
+                Loop
+                Return total
+            Else
+                Return 0
+            End If
         Catch ex As Exception
             telaErro.setTexto("Erro ao calcular quantidade de vezes pedido na semana!")
             telaErro.Show()
-            MessageBox.Show(String.Format("Error: {0}", ex.Message))
+        End Try
+    End Function
+
+    Public Function calcularPorcentagemTotal(numeroItem As String)
+        Try
+            Dim total As String = 0
+            Dim vezesPedido As String = 0
+            Dim porcentagem As String = 0
+            sql2 = "SELECT tb_pedidos.horario_pedido, COUNT(tb_itenspedido.cod_item) AS total_items_ordered FROM tb_itenspedido LEFT JOIN tb_pedidos ON tb_itenspedido.numero_Pedido = tb_pedidos.numero_pedido WHERE tb_itenspedido.numero_item = " & numeroItem & " AND tb_pedidos.horario_pedido >= DateAdd('d', -7, Now()) AND tb_pedidos.horario_pedido < Now() GROUP BY tb_pedidos.horario_pedido, tb_pedidos.numero_pedido"
+            rs2 = db.Execute(sql2)
+            If rs2.EOF = False Then
+                Do While rs2.EOF = False
+                    vezesPedido += rs2.Fields(1).Value
+                    rs2.MoveNext()
+                Loop
+                sql2 = "SELECT COUNT(tb_itenspedido.cod_item) AS total_items FROM tb_itenspedido LEFT JOIN tb_pedidos ON tb_itenspedido.numero_Pedido = tb_pedidos.numero_pedido WHERE tb_pedidos.horario_pedido >= DateAdd('d', -7, Now()) AND tb_pedidos.horario_pedido < Now() GROUP BY tb_pedidos.horario_pedido, tb_pedidos.numero_pedido"
+                rs2 = db.Execute(sql2)
+                If rs2.EOF = False Then
+                    Do While rs2.EOF = False
+                        total += rs2.Fields(0).Value
+                        rs2.MoveNext()
+                    Loop
+                    porcentagem = Math.Floor(vezesPedido / total * 100)
+                    If Not IsNumeric(porcentagem) Then
+                        porcentagem = 0
+                    ElseIf total = 0 Then
+                        porcentagem = 0
+                    End If
+                    Return porcentagem
+                End If
+                Return 0
+            End If
+            Return 0
+        Catch ex As Exception
+            telaErro.setTexto("Erro ao calcular porcentagem do total!")
+            MessageBox.Show(String.Format("a: {0}", ex.Message))
+            telaErro.Show()
         End Try
     End Function
     Public Sub carregarEdicaoPrato(sender As Object, e As EventArgs)
@@ -390,7 +484,6 @@ Public Class criarCardapio
             telaErro.Show()
             'MessageBox.Show(String.Format("Error editar item estoque: {0}", ex.Message))
         End Try
-        NotifyAllCardapio({})
     End Sub
     Public Sub excluirPratoDoCardapio(sender As Object, e As EventArgs)
         Dim prato As Control = DirectCast(sender, Control)
@@ -405,9 +498,11 @@ Public Class criarCardapio
                 telaConfirmacao.setSub(Sub()
                                            sql = "DELETE * FROM tb_cardapio where numero_item=" & prato.Tag & ""
                                            rs = db.Execute(sql)
+                                           sql = "DELETE * FROM tb_itenspedido where numero_item=" & prato.Tag & ""
+                                           rs = db.Execute(sql)
                                            gerenciadorEstoque.NotifyAllEstoque({})
+                                           gerenciadorCardapio.carregarCardapio()
                                            telaConfirmacao.Close()
-                                           gerenciadorCardapio.NotifyAllCardapio({})
                                        End Sub)
             Else
                 telaErro.setTexto("Prato inválido!")
@@ -450,7 +545,7 @@ Public Class criarCardapio
             telaErro.setTexto("Erro ao editar item no cardápio!")
             telaErro.Show()
         End Try
-        NotifyAllCardapio({})
+        carregarCardapio()
     End Sub
     Public Sub efetuarPedido()
         abreConexao()
@@ -486,10 +581,9 @@ Public Class criarCardapio
                 telaErro.setTexto("Pedido feito com sucesso!")
                 telaErro.Show()
                 definirNumeroPedido()
-                cardapio.flp_itemsPedido.Controls.Clear()
                 gerenciadorPedidos.carregarProgresso()
                 gerenciadorPedidos.carregarPedidos(False)
-                gerenciadorCardapio.NotifyAllCardapio({})
+                carregarCardapio()
             Else
                 telaErro.setTexto("Existem campos vazios!")
                 telaErro.Show()

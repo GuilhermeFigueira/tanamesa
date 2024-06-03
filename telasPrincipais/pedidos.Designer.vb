@@ -80,7 +80,6 @@ Partial Class pedidos
         Me.Guna2Panel13 = New Guna.UI2.WinForms.Guna2Panel()
         Me.btn_entregar = New Guna.UI2.WinForms.Guna2Button()
         Me.Guna2HtmlLabel1 = New Guna.UI2.WinForms.Guna2HtmlLabel()
-        Me.cmb_progs = New Guna.UI2.WinForms.Guna2ComboBox()
         Me.Guna2Panel5 = New Guna.UI2.WinForms.Guna2Panel()
         Me.flp_progressoPedidos = New System.Windows.Forms.FlowLayoutPanel()
         Me.Guna2Panel6 = New Guna.UI2.WinForms.Guna2ShadowPanel()
@@ -88,6 +87,7 @@ Partial Class pedidos
         Me.Guna2HtmlLabel9 = New Guna.UI2.WinForms.Guna2HtmlLabel()
         Me.Guna2HtmlLabel6 = New Guna.UI2.WinForms.Guna2HtmlLabel()
         Me.Guna2HtmlLabel2 = New Guna.UI2.WinForms.Guna2HtmlLabel()
+        Me.cmb_progs = New Guna.UI2.WinForms.Guna2ComboBox()
         Me.Guna2DragControl1 = New Guna.UI2.WinForms.Guna2DragControl(Me.components)
         Me.Guna2DragControl2 = New Guna.UI2.WinForms.Guna2DragControl(Me.components)
         Me.Timer1 = New System.Windows.Forms.Timer(Me.components)
@@ -472,7 +472,6 @@ Partial Class pedidos
         '
         Me.Panel1.Controls.Add(Me.flp_pedidos)
         Me.Panel1.Controls.Add(Me.Guna2HtmlLabel1)
-        Me.Panel1.Controls.Add(Me.cmb_progs)
         Me.Panel1.Dock = System.Windows.Forms.DockStyle.Fill
         Me.Panel1.Location = New System.Drawing.Point(24, 167)
         Me.Panel1.Name = "Panel1"
@@ -482,6 +481,7 @@ Partial Class pedidos
         'flp_pedidos
         '
         Me.flp_pedidos.AutoScroll = True
+        Me.flp_pedidos.AutoScrollMargin = New System.Drawing.Size(100, 0)
         Me.flp_pedidos.Controls.Add(Me.Guna2Panel9)
         Me.flp_pedidos.Location = New System.Drawing.Point(3, 48)
         Me.flp_pedidos.Name = "flp_pedidos"
@@ -928,32 +928,12 @@ Partial Class pedidos
         Me.Guna2HtmlLabel1.TabIndex = 12
         Me.Guna2HtmlLabel1.Text = "Pedidos"
         '
-        'cmb_progs
-        '
-        Me.cmb_progs.AutoRoundedCorners = True
-        Me.cmb_progs.BackColor = System.Drawing.Color.Transparent
-        Me.cmb_progs.BorderColor = System.Drawing.Color.FromArgb(CType(CType(239, Byte), Integer), CType(CType(239, Byte), Integer), CType(CType(239, Byte), Integer))
-        Me.cmb_progs.BorderRadius = 17
-        Me.cmb_progs.Cursor = System.Windows.Forms.Cursors.Hand
-        Me.cmb_progs.DrawMode = System.Windows.Forms.DrawMode.OwnerDrawFixed
-        Me.cmb_progs.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList
-        Me.cmb_progs.FocusedColor = System.Drawing.Color.FromArgb(CType(CType(239, Byte), Integer), CType(CType(239, Byte), Integer), CType(CType(239, Byte), Integer))
-        Me.cmb_progs.FocusedState.BorderColor = System.Drawing.Color.FromArgb(CType(CType(239, Byte), Integer), CType(CType(239, Byte), Integer), CType(CType(239, Byte), Integer))
-        Me.cmb_progs.Font = New System.Drawing.Font("Libre Caslon Display", 12.0!)
-        Me.cmb_progs.ForeColor = System.Drawing.Color.FromArgb(CType(CType(68, Byte), Integer), CType(CType(88, Byte), Integer), CType(CType(112, Byte), Integer))
-        Me.cmb_progs.HoverState.BorderColor = System.Drawing.Color.FromArgb(CType(CType(239, Byte), Integer), CType(CType(239, Byte), Integer), CType(CType(239, Byte), Integer))
-        Me.cmb_progs.ItemHeight = 30
-        Me.cmb_progs.Items.AddRange(New Object() {"Pedidos Não Entregues", "Pedidos Entregues"})
-        Me.cmb_progs.Location = New System.Drawing.Point(710, 6)
-        Me.cmb_progs.Name = "cmb_progs"
-        Me.cmb_progs.Size = New System.Drawing.Size(219, 36)
-        Me.cmb_progs.TabIndex = 11
-        '
         'Guna2Panel5
         '
         Me.Guna2Panel5.BorderColor = System.Drawing.Color.White
         Me.Guna2Panel5.Controls.Add(Me.flp_progressoPedidos)
         Me.Guna2Panel5.Controls.Add(Me.Guna2HtmlLabel2)
+        Me.Guna2Panel5.Controls.Add(Me.cmb_progs)
         Me.Guna2Panel5.Dock = System.Windows.Forms.DockStyle.Top
         Me.Guna2Panel5.Location = New System.Drawing.Point(24, 24)
         Me.Guna2Panel5.Name = "Guna2Panel5"
@@ -963,10 +943,11 @@ Partial Class pedidos
         'flp_progressoPedidos
         '
         Me.flp_progressoPedidos.AutoScroll = True
+        Me.flp_progressoPedidos.AutoScrollMargin = New System.Drawing.Size(100, 0)
         Me.flp_progressoPedidos.Controls.Add(Me.Guna2Panel6)
         Me.flp_progressoPedidos.Location = New System.Drawing.Point(3, 36)
         Me.flp_progressoPedidos.Name = "flp_progressoPedidos"
-        Me.flp_progressoPedidos.Padding = New System.Windows.Forms.Padding(16)
+        Me.flp_progressoPedidos.Padding = New System.Windows.Forms.Padding(16, 16, 100, 16)
         Me.flp_progressoPedidos.RightToLeft = System.Windows.Forms.RightToLeft.No
         Me.flp_progressoPedidos.Size = New System.Drawing.Size(929, 107)
         Me.flp_progressoPedidos.TabIndex = 7
@@ -1028,6 +1009,27 @@ Partial Class pedidos
         Me.Guna2HtmlLabel2.Size = New System.Drawing.Size(227, 35)
         Me.Guna2HtmlLabel2.TabIndex = 5
         Me.Guna2HtmlLabel2.Text = "Progresso dos pedidos"
+        '
+        'cmb_progs
+        '
+        Me.cmb_progs.AutoRoundedCorners = True
+        Me.cmb_progs.BackColor = System.Drawing.Color.Transparent
+        Me.cmb_progs.BorderColor = System.Drawing.Color.FromArgb(CType(CType(239, Byte), Integer), CType(CType(239, Byte), Integer), CType(CType(239, Byte), Integer))
+        Me.cmb_progs.BorderRadius = 17
+        Me.cmb_progs.Cursor = System.Windows.Forms.Cursors.Hand
+        Me.cmb_progs.DrawMode = System.Windows.Forms.DrawMode.OwnerDrawFixed
+        Me.cmb_progs.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList
+        Me.cmb_progs.FocusedColor = System.Drawing.Color.FromArgb(CType(CType(239, Byte), Integer), CType(CType(239, Byte), Integer), CType(CType(239, Byte), Integer))
+        Me.cmb_progs.FocusedState.BorderColor = System.Drawing.Color.FromArgb(CType(CType(239, Byte), Integer), CType(CType(239, Byte), Integer), CType(CType(239, Byte), Integer))
+        Me.cmb_progs.Font = New System.Drawing.Font("Libre Caslon Display", 12.0!)
+        Me.cmb_progs.ForeColor = System.Drawing.Color.FromArgb(CType(CType(68, Byte), Integer), CType(CType(88, Byte), Integer), CType(CType(112, Byte), Integer))
+        Me.cmb_progs.HoverState.BorderColor = System.Drawing.Color.FromArgb(CType(CType(239, Byte), Integer), CType(CType(239, Byte), Integer), CType(CType(239, Byte), Integer))
+        Me.cmb_progs.ItemHeight = 30
+        Me.cmb_progs.Items.AddRange(New Object() {"Pedidos Não Entregues", "Pedidos Entregues"})
+        Me.cmb_progs.Location = New System.Drawing.Point(709, 0)
+        Me.cmb_progs.Name = "cmb_progs"
+        Me.cmb_progs.Size = New System.Drawing.Size(219, 36)
+        Me.cmb_progs.TabIndex = 11
         '
         'Guna2DragControl1
         '

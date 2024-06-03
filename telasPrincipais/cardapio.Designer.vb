@@ -658,10 +658,10 @@ Partial Class cardapio
         Me.Guna2Panel7.Controls.Add(Me.cmb_ordenar)
         Me.Guna2Panel7.Controls.Add(Me.Guna2HtmlLabel1)
         Me.Guna2Panel7.FillColor = System.Drawing.Color.White
-        Me.Guna2Panel7.Location = New System.Drawing.Point(407, 15)
+        Me.Guna2Panel7.Location = New System.Drawing.Point(380, 15)
         Me.Guna2Panel7.Name = "Guna2Panel7"
         Me.Guna2Panel7.Padding = New System.Windows.Forms.Padding(8)
-        Me.Guna2Panel7.Size = New System.Drawing.Size(223, 49)
+        Me.Guna2Panel7.Size = New System.Drawing.Size(250, 49)
         Me.Guna2Panel7.TabIndex = 7
         '
         'cmb_ordenar
@@ -680,9 +680,10 @@ Partial Class cardapio
         Me.cmb_ordenar.ForeColor = System.Drawing.Color.FromArgb(CType(CType(68, Byte), Integer), CType(CType(88, Byte), Integer), CType(CType(112, Byte), Integer))
         Me.cmb_ordenar.HoverState.BorderColor = System.Drawing.Color.FromArgb(CType(CType(239, Byte), Integer), CType(CType(239, Byte), Integer), CType(CType(239, Byte), Integer))
         Me.cmb_ordenar.ItemHeight = 30
+        Me.cmb_ordenar.Items.AddRange(New Object() {"Mais pedidos", "Menos pedidos", "Mais baratos", "Mais caros"})
         Me.cmb_ordenar.Location = New System.Drawing.Point(83, 6)
         Me.cmb_ordenar.Name = "cmb_ordenar"
-        Me.cmb_ordenar.Size = New System.Drawing.Size(121, 36)
+        Me.cmb_ordenar.Size = New System.Drawing.Size(145, 36)
         Me.cmb_ordenar.TabIndex = 5
         Me.cmb_ordenar.TextAlign = System.Windows.Forms.HorizontalAlignment.Right
         '
@@ -883,7 +884,7 @@ Partial Class cardapio
         Me.lbl_numeroPedido.BackColor = System.Drawing.Color.Transparent
         Me.lbl_numeroPedido.Font = New System.Drawing.Font("Libre Caslon Display", 20.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.lbl_numeroPedido.ForeColor = System.Drawing.Color.FromArgb(CType(CType(127, Byte), Integer), CType(CType(127, Byte), Integer), CType(CType(127, Byte), Integer))
-        Me.lbl_numeroPedido.Location = New System.Drawing.Point(258, 221)
+        Me.lbl_numeroPedido.Location = New System.Drawing.Point(224, 221)
         Me.lbl_numeroPedido.Name = "lbl_numeroPedido"
         Me.lbl_numeroPedido.Size = New System.Drawing.Size(19, 35)
         Me.lbl_numeroPedido.TabIndex = 16

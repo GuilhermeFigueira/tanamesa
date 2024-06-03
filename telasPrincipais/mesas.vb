@@ -169,6 +169,7 @@ Public Class criarMesas
             Next ctrl
             mesas.flp_itemsPedido.Controls.Clear()
             mesas.cmb_pedido.Controls.Clear()
+            mesas.cmb_pedido.Items.Clear()
             If statusMesa = "Ocupada" Then
                 mesas.pnl_infoMesa.Visible = True
                 mesas.pnl_infoMesa.Size = New Size(324, 389)
