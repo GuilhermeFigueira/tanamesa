@@ -415,6 +415,7 @@ Public Class criarCardapio
         Catch ex As Exception
             telaErro.setTexto("Erro ao calcular quantidade de vezes pedido na semana!")
             telaErro.Show()
+            Return 0
         End Try
     End Function
 
@@ -450,8 +451,8 @@ Public Class criarCardapio
             Return 0
         Catch ex As Exception
             telaErro.setTexto("Erro ao calcular porcentagem do total!")
-            MessageBox.Show(String.Format("a: {0}", ex.Message))
             telaErro.Show()
+            Return 0
         End Try
     End Function
     Public Sub carregarEdicaoPrato(sender As Object, e As EventArgs)
@@ -567,7 +568,7 @@ Public Class criarCardapio
                 For Each prato As Control In cardapio.flp_itemsPedido.Controls
                     If prato.Tag IsNot Nothing Then
                         Dim pratoId As Integer = prato.Tag
-                        Dim preco As String
+                        Dim preco As String = 0
                         For Each ctrl As Control In prato.Controls
                             Select Case ctrl.Name
                                 Case "lbl_preco"

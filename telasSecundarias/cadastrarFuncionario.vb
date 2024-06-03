@@ -1,7 +1,4 @@
-﻿Imports System.Runtime.CompilerServices
-Imports Guna.UI2.WinForms
-
-Public Class cadastrarFuncionário
+﻿Public Class cadastrarFuncionario
     Private Sub btn_fechar_Click(sender As Object, e As EventArgs) Handles btn_fechar.Click
         Close()
     End Sub
@@ -23,11 +20,12 @@ Public Class cadastrarFuncionário
             Exit Sub
         End Try
     End Sub
-    Public Sub alterarTipoFormFunc(titulo As String, btn As String)
-        lbl_titulo.Text = titulo
-        btn_cadastrar.Text = btn
-    End Sub
+    ' Public Sub alterarTipoFormFunc(titulo As String, btn As String)
+    '     lbl_titulo.Text = titulo
+    '     btn_cadastrar.Text = btn
+    ' End Sub
 
-    Private Sub cadastrarFuncionário_Load(sender As Object, e As EventArgs) Handles Me.Load
+    Private Sub btn_cadastrar_Click(sender As Object, e As EventArgs) Handles btn_cadastrar.Click
+        gerenciadorGerencia.gerenciaCadastrarFuncionario()
     End Sub
 End Class

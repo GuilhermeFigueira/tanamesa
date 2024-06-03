@@ -11,6 +11,8 @@ Module Module1
     Public gerenciadorCardapio As New criarCardapio
     Public gerenciadorMesa As New criarMesas
     Public gerenciadorPedidos As New criarPedidos
+    Public gerenciadorLogin As New criarLogin
+    Public gerenciadorGerencia As New criarGerencia
     Public funcionario As New Usuario()
     Sub abreConexao()
         Try
@@ -125,10 +127,29 @@ Module Module1
     End Sub
 
     Public Class Usuario
-        Public codFuncionario As String
-        Public nome As String
-        Public funcao As String
-        Public foto As String
-        Public admin As Boolean
+        Public Property codFuncionario As String
+        Public Property cpf As String
+        Public Property nome As String
+        Public Property funcao As String
+        Public Property foto As String
+        Public Property admin As Boolean
+
+        Public Sub Initialize(codFuncionario As String, nome As String, cpf As String, funcao As String, foto As String, Optional admin As Boolean = False)
+            Me.codFuncionario = codFuncionario
+            Me.nome = nome
+            Me.cpf = cpf
+            Me.funcao = funcao
+            Me.foto = foto
+            Me.admin = admin
+        End Sub
+
+        Public Sub logout()
+            Me.codFuncionario = Nothing
+            Me.nome = Nothing
+            Me.cpf = Nothing
+            Me.funcao = Nothing
+            Me.foto = Nothing
+            Me.admin = Nothing
+        End Sub
     End Class
 End Module

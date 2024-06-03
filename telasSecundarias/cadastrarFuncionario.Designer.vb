@@ -1,5 +1,5 @@
 ﻿<Global.Microsoft.VisualBasic.CompilerServices.DesignerGenerated()>
-Partial Class cadastrarFuncionário
+Partial Class cadastrarFuncionario
     Inherits System.Windows.Forms.Form
 
     'Descartar substituições de formulário para limpar a lista de componentes.
@@ -23,7 +23,7 @@ Partial Class cadastrarFuncionário
     <System.Diagnostics.DebuggerStepThrough()>
     Private Sub InitializeComponent()
         Me.components = New System.ComponentModel.Container()
-        Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(cadastrarFuncionário))
+        Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(cadastrarFuncionario))
         Me.Guna2BorderlessForm1 = New Guna.UI2.WinForms.Guna2BorderlessForm(Me.components)
         Me.btn_minimizar = New Guna.UI2.WinForms.Guna2ImageButton()
         Me.btn_fechar = New Guna.UI2.WinForms.Guna2ImageButton()
@@ -44,11 +44,13 @@ Partial Class cadastrarFuncionário
         Me.Guna2HtmlLabel10 = New Guna.UI2.WinForms.Guna2HtmlLabel()
         Me.pbx_imagem = New Guna.UI2.WinForms.Guna2PictureBox()
         Me.pnl_info = New Guna.UI2.WinForms.Guna2ShadowPanel()
+        Me.cbx_administrador = New Guna.UI2.WinForms.Guna2CustomCheckBox()
         Me.Guna2HtmlLabel2 = New Guna.UI2.WinForms.Guna2HtmlLabel()
         Me.Guna2HtmlLabel5 = New Guna.UI2.WinForms.Guna2HtmlLabel()
         Me.txt_codFunc = New Guna.UI2.WinForms.Guna2TextBox()
         Me.txt_funcao = New Guna.UI2.WinForms.Guna2TextBox()
         Me.ofd_imagem = New System.Windows.Forms.OpenFileDialog()
+        Me.Guna2HtmlLabel6 = New Guna.UI2.WinForms.Guna2HtmlLabel()
         Me.Guna2ContainerControl1.SuspendLayout()
         Me.pnl_nome.SuspendLayout()
         Me.pnl_titulo.SuspendLayout()
@@ -336,6 +338,8 @@ Partial Class cadastrarFuncionário
         'pnl_info
         '
         Me.pnl_info.BackColor = System.Drawing.Color.Transparent
+        Me.pnl_info.Controls.Add(Me.Guna2HtmlLabel6)
+        Me.pnl_info.Controls.Add(Me.cbx_administrador)
         Me.pnl_info.Controls.Add(Me.Guna2HtmlLabel2)
         Me.pnl_info.Controls.Add(Me.Guna2HtmlLabel5)
         Me.pnl_info.Controls.Add(Me.txt_codFunc)
@@ -349,6 +353,24 @@ Partial Class cadastrarFuncionário
         Me.pnl_info.ShadowShift = 2
         Me.pnl_info.Size = New System.Drawing.Size(597, 112)
         Me.pnl_info.TabIndex = 12
+        '
+        'cbx_administrador
+        '
+        Me.cbx_administrador.Checked = True
+        Me.cbx_administrador.CheckedState.BorderColor = System.Drawing.Color.FromArgb(CType(CType(127, Byte), Integer), CType(CType(127, Byte), Integer), CType(CType(127, Byte), Integer))
+        Me.cbx_administrador.CheckedState.BorderRadius = 2
+        Me.cbx_administrador.CheckedState.BorderThickness = 1
+        Me.cbx_administrador.CheckedState.FillColor = System.Drawing.Color.FromArgb(CType(CType(239, Byte), Integer), CType(CType(239, Byte), Integer), CType(CType(239, Byte), Integer))
+        Me.cbx_administrador.CheckMarkColor = System.Drawing.Color.FromArgb(CType(CType(127, Byte), Integer), CType(CType(127, Byte), Integer), CType(CType(127, Byte), Integer))
+        Me.cbx_administrador.Location = New System.Drawing.Point(505, 52)
+        Me.cbx_administrador.Name = "cbx_administrador"
+        Me.cbx_administrador.Size = New System.Drawing.Size(35, 36)
+        Me.cbx_administrador.TabIndex = 15
+        Me.cbx_administrador.Text = "Guna2CustomCheckBox1"
+        Me.cbx_administrador.UncheckedState.BorderColor = System.Drawing.Color.FromArgb(CType(CType(127, Byte), Integer), CType(CType(127, Byte), Integer), CType(CType(127, Byte), Integer))
+        Me.cbx_administrador.UncheckedState.BorderRadius = 2
+        Me.cbx_administrador.UncheckedState.BorderThickness = 1
+        Me.cbx_administrador.UncheckedState.FillColor = System.Drawing.Color.FromArgb(CType(CType(239, Byte), Integer), CType(CType(239, Byte), Integer), CType(CType(239, Byte), Integer))
         '
         'Guna2HtmlLabel2
         '
@@ -418,14 +440,24 @@ Partial Class cadastrarFuncionário
         Me.txt_funcao.PasswordChar = Global.Microsoft.VisualBasic.ChrW(42)
         Me.txt_funcao.PlaceholderText = ""
         Me.txt_funcao.SelectedText = ""
-        Me.txt_funcao.Size = New System.Drawing.Size(366, 36)
+        Me.txt_funcao.Size = New System.Drawing.Size(225, 36)
         Me.txt_funcao.TabIndex = 5
         '
         'ofd_imagem
         '
         Me.ofd_imagem.FileName = "OpenFileDialog1"
         '
-        'cadastrarFuncionário
+        'Guna2HtmlLabel6
+        '
+        Me.Guna2HtmlLabel6.BackColor = System.Drawing.Color.Transparent
+        Me.Guna2HtmlLabel6.Font = New System.Drawing.Font("Libre Caslon Display", 15.75!)
+        Me.Guna2HtmlLabel6.Location = New System.Drawing.Point(460, 18)
+        Me.Guna2HtmlLabel6.Name = "Guna2HtmlLabel6"
+        Me.Guna2HtmlLabel6.Size = New System.Drawing.Size(124, 27)
+        Me.Guna2HtmlLabel6.TabIndex = 22
+        Me.Guna2HtmlLabel6.Text = "Administrador?"
+        '
+        'cadastrarFuncionario
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
@@ -435,7 +467,7 @@ Partial Class cadastrarFuncionário
         Me.Controls.Add(Me.lbl_titulo)
         Me.Controls.Add(Me.pnl_titulo)
         Me.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None
-        Me.Name = "cadastrarFuncionário"
+        Me.Name = "cadastrarFuncionario"
         Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen
         Me.Text = "Cadastrar Funcionário"
         Me.Guna2ContainerControl1.ResumeLayout(False)
@@ -478,4 +510,6 @@ Partial Class cadastrarFuncionário
     Friend WithEvents Guna2HtmlLabel3 As Guna.UI2.WinForms.Guna2HtmlLabel
     Friend WithEvents txt_cpf As Guna.UI2.WinForms.Guna2TextBox
     Friend WithEvents txt_senha As Guna.UI2.WinForms.Guna2TextBox
+    Friend WithEvents cbx_administrador As Guna.UI2.WinForms.Guna2CustomCheckBox
+    Friend WithEvents Guna2HtmlLabel6 As Guna.UI2.WinForms.Guna2HtmlLabel
 End Class

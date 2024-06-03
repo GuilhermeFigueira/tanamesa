@@ -464,11 +464,11 @@ Partial Class gerencia
         'Guna2HtmlLabel1
         '
         Me.Guna2HtmlLabel1.BackColor = System.Drawing.Color.Transparent
-        Me.Guna2HtmlLabel1.Font = New System.Drawing.Font("Libre Caslon Display", 18.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Guna2HtmlLabel1.Font = New System.Drawing.Font("Libre Caslon Display", 15.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Guna2HtmlLabel1.ForeColor = System.Drawing.Color.FromArgb(CType(CType(48, Byte), Integer), CType(CType(107, Byte), Integer), CType(CType(52, Byte), Integer))
-        Me.Guna2HtmlLabel1.Location = New System.Drawing.Point(71, 40)
+        Me.Guna2HtmlLabel1.Location = New System.Drawing.Point(75, 40)
         Me.Guna2HtmlLabel1.Name = "Guna2HtmlLabel1"
-        Me.Guna2HtmlLabel1.Size = New System.Drawing.Size(114, 31)
+        Me.Guna2HtmlLabel1.Size = New System.Drawing.Size(103, 27)
         Me.Guna2HtmlLabel1.TabIndex = 11
         Me.Guna2HtmlLabel1.Text = "Trabalhando"
         '
@@ -493,13 +493,16 @@ Partial Class gerencia
         '
         'Guna2HtmlLabel8
         '
+        Me.Guna2HtmlLabel8.AutoSize = False
         Me.Guna2HtmlLabel8.BackColor = System.Drawing.Color.Transparent
+        Me.Guna2HtmlLabel8.Dock = System.Windows.Forms.DockStyle.Top
         Me.Guna2HtmlLabel8.Font = New System.Drawing.Font("Libre Caslon Display", 18.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Guna2HtmlLabel8.Location = New System.Drawing.Point(26, 3)
+        Me.Guna2HtmlLabel8.Location = New System.Drawing.Point(0, 0)
         Me.Guna2HtmlLabel8.Name = "Guna2HtmlLabel8"
-        Me.Guna2HtmlLabel8.Size = New System.Drawing.Size(199, 31)
+        Me.Guna2HtmlLabel8.Size = New System.Drawing.Size(256, 31)
         Me.Guna2HtmlLabel8.TabIndex = 10
-        Me.Guna2HtmlLabel8.Text = "Nome do Funcionário"
+        Me.Guna2HtmlLabel8.Text = "guile"
+        Me.Guna2HtmlLabel8.TextAlignment = System.Drawing.ContentAlignment.MiddleCenter
         '
         'Label1
         '

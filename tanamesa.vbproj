@@ -130,10 +130,10 @@
     <Compile Include="telasSecundarias\cadastrarEstoque.vb">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="telasSecundarias\cadastrarFuncionário.Designer.vb">
-      <DependentUpon>cadastrarFuncionário.vb</DependentUpon>
+    <Compile Include="telasSecundarias\cadastrarFuncionario.Designer.vb">
+      <DependentUpon>cadastrarFuncionario.vb</DependentUpon>
     </Compile>
-    <Compile Include="telasSecundarias\cadastrarFuncionário.vb">
+    <Compile Include="telasSecundarias\cadastrarFuncionario.vb">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="telasSecundarias\login.vb">
@@ -228,8 +228,8 @@
     <EmbeddedResource Include="telasSecundarias\cadastrarEstoque.resx">
       <DependentUpon>cadastrarEstoque.vb</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="telasSecundarias\cadastrarFuncionário.resx">
-      <DependentUpon>cadastrarFuncionário.vb</DependentUpon>
+    <EmbeddedResource Include="telasSecundarias\cadastrarFuncionario.resx">
+      <DependentUpon>cadastrarFuncionario.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="telasSecundarias\login.resx">
       <DependentUpon>login.vb</DependentUpon>

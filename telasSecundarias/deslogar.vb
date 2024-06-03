@@ -16,6 +16,7 @@
                 frm.Visible = False
             End If
         Next
+        funcionario.logout()
     End Sub
 
     Private Sub deslogar_Load(sender As Object, e As EventArgs) Handles Me.Load

@@ -150,7 +150,7 @@ Public Class criarMesas
 
         Try
             Dim numeroMesa As String = mesas.cmb_numeroMesa.Text
-            Dim statusMesa As String
+            Dim statusMesa As String = "Livre"
 
             With mesas
                 .txt_nomeCliente.Clear()

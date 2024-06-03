@@ -108,6 +108,7 @@ Partial Class maisInformacoesFuncionario
         'pbx_imgFuncionario
         '
         Me.pbx_imgFuncionario.BorderRadius = 16
+        Me.pbx_imgFuncionario.Cursor = System.Windows.Forms.Cursors.Hand
         Me.pbx_imgFuncionario.ImageRotate = 0!
         Me.pbx_imgFuncionario.Location = New System.Drawing.Point(581, 24)
         Me.pbx_imgFuncionario.Name = "pbx_imgFuncionario"
@@ -320,7 +321,7 @@ Partial Class maisInformacoesFuncionario
         '
         Me.lbl_codFuncionario.BackColor = System.Drawing.Color.Transparent
         Me.lbl_codFuncionario.Font = New System.Drawing.Font("Libre Caslon Display", 18.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.lbl_codFuncionario.Location = New System.Drawing.Point(38, 231)
+        Me.lbl_codFuncionario.Location = New System.Drawing.Point(24, 231)
         Me.lbl_codFuncionario.Name = "lbl_codFuncionario"
         Me.lbl_codFuncionario.Size = New System.Drawing.Size(153, 31)
         Me.lbl_codFuncionario.TabIndex = 38

@@ -13,4 +13,10 @@ Public Class infoUsuario
     Private Sub infoUsuario_Load(sender As Object, e As EventArgs) Handles Me.Load
         Me.TopMost = True
     End Sub
+
+    Private Sub infoUsuario_Shown(sender As Object, e As EventArgs) Handles Me.Shown
+        txt_cpf.Text = funcionario.cpf
+        txt_nome.Text = funcionario.nome
+        txt_funcao.Text = funcionario.funcao
+    End Sub
 End Class
