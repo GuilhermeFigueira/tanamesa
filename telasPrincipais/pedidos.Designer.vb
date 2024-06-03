@@ -49,6 +49,7 @@ Partial Class pedidos
         Me.txt_pesquisaPedidos = New Guna.UI2.WinForms.Guna2TextBox()
         Me.Guna2Panel4 = New Guna.UI2.WinForms.Guna2Panel()
         Me.Panel1 = New System.Windows.Forms.Panel()
+        Me.Label1 = New System.Windows.Forms.Label()
         Me.flp_pedidos = New System.Windows.Forms.FlowLayoutPanel()
         Me.Guna2Panel9 = New Guna.UI2.WinForms.Guna2ShadowPanel()
         Me.FlowLayoutPanel3 = New System.Windows.Forms.FlowLayoutPanel()
@@ -470,6 +471,7 @@ Partial Class pedidos
         '
         'Panel1
         '
+        Me.Panel1.Controls.Add(Me.Label1)
         Me.Panel1.Controls.Add(Me.flp_pedidos)
         Me.Panel1.Controls.Add(Me.Guna2HtmlLabel1)
         Me.Panel1.Dock = System.Windows.Forms.DockStyle.Fill
@@ -477,6 +479,14 @@ Partial Class pedidos
         Me.Panel1.Name = "Panel1"
         Me.Panel1.Size = New System.Drawing.Size(932, 529)
         Me.Panel1.TabIndex = 7
+        '
+        'Label1
+        '
+        Me.Label1.BackColor = System.Drawing.Color.FromArgb(CType(CType(146, Byte), Integer), CType(CType(146, Byte), Integer), CType(CType(146, Byte), Integer))
+        Me.Label1.Location = New System.Drawing.Point(16, 2)
+        Me.Label1.Name = "Label1"
+        Me.Label1.Size = New System.Drawing.Size(900, 1)
+        Me.Label1.TabIndex = 14
         '
         'flp_pedidos
         '
@@ -922,7 +932,7 @@ Partial Class pedidos
         '
         Me.Guna2HtmlLabel1.BackColor = System.Drawing.Color.Transparent
         Me.Guna2HtmlLabel1.Font = New System.Drawing.Font("Libre Caslon Display", 20.0!)
-        Me.Guna2HtmlLabel1.Location = New System.Drawing.Point(3, 6)
+        Me.Guna2HtmlLabel1.Location = New System.Drawing.Point(3, 10)
         Me.Guna2HtmlLabel1.Name = "Guna2HtmlLabel1"
         Me.Guna2HtmlLabel1.Size = New System.Drawing.Size(83, 35)
         Me.Guna2HtmlLabel1.TabIndex = 12
@@ -1161,4 +1171,5 @@ Partial Class pedidos
     Friend WithEvents Guna2Panel13 As Guna.UI2.WinForms.Guna2Panel
     Friend WithEvents txt_pesquisaPedidos As Guna.UI2.WinForms.Guna2TextBox
     Friend WithEvents Timer1 As Timer
+    Friend WithEvents Label1 As Label
 End Class

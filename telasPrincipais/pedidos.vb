@@ -52,6 +52,11 @@ Public Class pedidos
             gerenciadorPedidos.carregarProgresso(True)
         End If
     End Sub
+
+
+    Private Sub flp_progressoPedidos_Paint(sender As Object, e As PaintEventArgs) Handles flp_progressoPedidos.Paint
+
+    End Sub
 End Class
 
 Public Class criarPedidos

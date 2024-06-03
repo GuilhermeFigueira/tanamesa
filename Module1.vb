@@ -11,7 +11,7 @@ Module Module1
     Public gerenciadorCardapio As New criarCardapio
     Public gerenciadorMesa As New criarMesas
     Public gerenciadorPedidos As New criarPedidos
-
+    Public funcionario As New Usuario()
     Sub abreConexao()
         Try
             If db Is Nothing Then
@@ -123,4 +123,12 @@ Module Module1
         End If
 
     End Sub
+
+    Public Class Usuario
+        Public codFuncionario As String
+        Public nome As String
+        Public funcao As String
+        Public foto As String
+        Public admin As Boolean
+    End Class
 End Module

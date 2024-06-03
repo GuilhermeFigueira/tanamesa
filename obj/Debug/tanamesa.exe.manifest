@@ -54,14 +54,14 @@
     </dependentAssembly>
   </dependency>
   <dependency>
-    <dependentAssembly dependencyType="install" allowDelayedBinding="true" codebase="tanamesa.exe" size="1825280">
+    <dependentAssembly dependencyType="install" allowDelayedBinding="true" codebase="tanamesa.exe" size="1825792">
       <assemblyIdentity name="tanamesa" version="1.0.0.0" language="neutral" processorArchitecture="msil" />
       <hash>
         <dsig:Transforms>
           <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
         </dsig:Transforms>
         <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
-        <dsig:DigestValue>aAcBvWjnUL1xmOMg8BedbqF/e/aZG/DiThOMC3KcDYs=</dsig:DigestValue>
+        <dsig:DigestValue>5/jnLCh5xw/1eC9oRYEULmnX1rzzubY3193YSMUDkew=</dsig:DigestValue>
       </hash>
     </dependentAssembly>
   </dependency>
