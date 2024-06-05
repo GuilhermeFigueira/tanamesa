@@ -20,12 +20,12 @@
             Exit Sub
         End Try
     End Sub
-    ' Public Sub alterarTipoFormFunc(titulo As String, btn As String)
-    '     lbl_titulo.Text = titulo
-    '     btn_cadastrar.Text = btn
-    ' End Sub
-
     Private Sub btn_cadastrar_Click(sender As Object, e As EventArgs) Handles btn_cadastrar.Click
         gerenciadorGerencia.gerenciaCadastrarFuncionario()
+    End Sub
+
+    Private Sub cadastrarFuncionario_Shown(sender As Object, e As EventArgs) Handles Me.Shown
+        Me.TopMost = True
+        gerenciadorGerencia.carregarCadastroFuncionario()
     End Sub
 End Class

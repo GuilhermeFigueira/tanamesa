@@ -104,6 +104,7 @@ Partial Class infoUsuario
         Me.pbx_imgFuncionario.Location = New System.Drawing.Point(19, 78)
         Me.pbx_imgFuncionario.Name = "pbx_imgFuncionario"
         Me.pbx_imgFuncionario.Size = New System.Drawing.Size(183, 182)
+        Me.pbx_imgFuncionario.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
         Me.pbx_imgFuncionario.TabIndex = 3
         Me.pbx_imgFuncionario.TabStop = False
         '

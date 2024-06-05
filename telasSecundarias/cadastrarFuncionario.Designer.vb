@@ -44,13 +44,13 @@ Partial Class cadastrarFuncionario
         Me.Guna2HtmlLabel10 = New Guna.UI2.WinForms.Guna2HtmlLabel()
         Me.pbx_imagem = New Guna.UI2.WinForms.Guna2PictureBox()
         Me.pnl_info = New Guna.UI2.WinForms.Guna2ShadowPanel()
+        Me.Guna2HtmlLabel6 = New Guna.UI2.WinForms.Guna2HtmlLabel()
         Me.cbx_administrador = New Guna.UI2.WinForms.Guna2CustomCheckBox()
         Me.Guna2HtmlLabel2 = New Guna.UI2.WinForms.Guna2HtmlLabel()
         Me.Guna2HtmlLabel5 = New Guna.UI2.WinForms.Guna2HtmlLabel()
         Me.txt_codFunc = New Guna.UI2.WinForms.Guna2TextBox()
         Me.txt_funcao = New Guna.UI2.WinForms.Guna2TextBox()
         Me.ofd_imagem = New System.Windows.Forms.OpenFileDialog()
-        Me.Guna2HtmlLabel6 = New Guna.UI2.WinForms.Guna2HtmlLabel()
         Me.Guna2ContainerControl1.SuspendLayout()
         Me.pnl_nome.SuspendLayout()
         Me.pnl_titulo.SuspendLayout()
@@ -354,9 +354,18 @@ Partial Class cadastrarFuncionario
         Me.pnl_info.Size = New System.Drawing.Size(597, 112)
         Me.pnl_info.TabIndex = 12
         '
+        'Guna2HtmlLabel6
+        '
+        Me.Guna2HtmlLabel6.BackColor = System.Drawing.Color.Transparent
+        Me.Guna2HtmlLabel6.Font = New System.Drawing.Font("Libre Caslon Display", 15.75!)
+        Me.Guna2HtmlLabel6.Location = New System.Drawing.Point(460, 18)
+        Me.Guna2HtmlLabel6.Name = "Guna2HtmlLabel6"
+        Me.Guna2HtmlLabel6.Size = New System.Drawing.Size(124, 27)
+        Me.Guna2HtmlLabel6.TabIndex = 22
+        Me.Guna2HtmlLabel6.Text = "Administrador?"
+        '
         'cbx_administrador
         '
-        Me.cbx_administrador.Checked = True
         Me.cbx_administrador.CheckedState.BorderColor = System.Drawing.Color.FromArgb(CType(CType(127, Byte), Integer), CType(CType(127, Byte), Integer), CType(CType(127, Byte), Integer))
         Me.cbx_administrador.CheckedState.BorderRadius = 2
         Me.cbx_administrador.CheckedState.BorderThickness = 1
@@ -437,7 +446,7 @@ Partial Class cadastrarFuncionario
         Me.txt_funcao.Location = New System.Drawing.Point(218, 52)
         Me.txt_funcao.Margin = New System.Windows.Forms.Padding(3, 4, 3, 4)
         Me.txt_funcao.Name = "txt_funcao"
-        Me.txt_funcao.PasswordChar = Global.Microsoft.VisualBasic.ChrW(42)
+        Me.txt_funcao.PasswordChar = Global.Microsoft.VisualBasic.ChrW(0)
         Me.txt_funcao.PlaceholderText = ""
         Me.txt_funcao.SelectedText = ""
         Me.txt_funcao.Size = New System.Drawing.Size(225, 36)
@@ -446,16 +455,6 @@ Partial Class cadastrarFuncionario
         'ofd_imagem
         '
         Me.ofd_imagem.FileName = "OpenFileDialog1"
-        '
-        'Guna2HtmlLabel6
-        '
-        Me.Guna2HtmlLabel6.BackColor = System.Drawing.Color.Transparent
-        Me.Guna2HtmlLabel6.Font = New System.Drawing.Font("Libre Caslon Display", 15.75!)
-        Me.Guna2HtmlLabel6.Location = New System.Drawing.Point(460, 18)
-        Me.Guna2HtmlLabel6.Name = "Guna2HtmlLabel6"
-        Me.Guna2HtmlLabel6.Size = New System.Drawing.Size(124, 27)
-        Me.Guna2HtmlLabel6.TabIndex = 22
-        Me.Guna2HtmlLabel6.Text = "Administrador?"
         '
         'cadastrarFuncionario
         '

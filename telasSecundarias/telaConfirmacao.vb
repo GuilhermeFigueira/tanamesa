@@ -21,7 +21,6 @@ Public Class telaConfirmacao
 
     Private Sub btn_sim_Click(sender As Object, e As EventArgs) Handles btn_sim.Click
         simSub?.Invoke()
-        fechaConexao()
     End Sub
 
     Private Sub btn_nao_Click(sender As Object, e As EventArgs) Handles btn_nao.Click

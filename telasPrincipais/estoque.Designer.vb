@@ -48,6 +48,7 @@ Partial Class estoque
         Me.btn_cardapio = New Guna.UI2.WinForms.Guna2Button()
         Me.Guna2ContainerControl1 = New Guna.UI2.WinForms.Guna2ContainerControl()
         Me.pnl_title = New Guna.UI2.WinForms.Guna2ShadowPanel()
+        Me.btn_checarValidade = New Guna.UI2.WinForms.Guna2Button()
         Me.Guna2HtmlLabel7 = New Guna.UI2.WinForms.Guna2HtmlLabel()
         Me.Guna2Panel4 = New Guna.UI2.WinForms.Guna2Panel()
         Me.pnl_info = New Guna.UI2.WinForms.Guna2ShadowPanel()
@@ -370,6 +371,7 @@ Partial Class estoque
         'pnl_title
         '
         Me.pnl_title.BackColor = System.Drawing.Color.Transparent
+        Me.pnl_title.Controls.Add(Me.btn_checarValidade)
         Me.pnl_title.Controls.Add(Me.Guna2HtmlLabel7)
         Me.pnl_title.Dock = System.Windows.Forms.DockStyle.Top
         Me.pnl_title.FillColor = System.Drawing.Color.White
@@ -380,6 +382,27 @@ Partial Class estoque
         Me.pnl_title.ShadowShift = 0
         Me.pnl_title.Size = New System.Drawing.Size(980, 80)
         Me.pnl_title.TabIndex = 32
+        '
+        'btn_checarValidade
+        '
+        Me.btn_checarValidade.AutoRoundedCorners = True
+        Me.btn_checarValidade.BackColor = System.Drawing.Color.Transparent
+        Me.btn_checarValidade.BorderRadius = 17
+        Me.btn_checarValidade.Cursor = System.Windows.Forms.Cursors.Hand
+        Me.btn_checarValidade.DisabledState.BorderColor = System.Drawing.Color.DarkGray
+        Me.btn_checarValidade.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray
+        Me.btn_checarValidade.DisabledState.FillColor = System.Drawing.Color.FromArgb(CType(CType(169, Byte), Integer), CType(CType(169, Byte), Integer), CType(CType(169, Byte), Integer))
+        Me.btn_checarValidade.DisabledState.ForeColor = System.Drawing.Color.FromArgb(CType(CType(141, Byte), Integer), CType(CType(141, Byte), Integer), CType(CType(141, Byte), Integer))
+        Me.btn_checarValidade.FillColor = System.Drawing.Color.FromArgb(CType(CType(46, Byte), Integer), CType(CType(31, Byte), Integer), CType(CType(39, Byte), Integer))
+        Me.btn_checarValidade.Font = New System.Drawing.Font("Libre Caslon Display", 15.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.btn_checarValidade.ForeColor = System.Drawing.Color.White
+        Me.btn_checarValidade.Image = CType(resources.GetObject("btn_checarValidade.Image"), System.Drawing.Image)
+        Me.btn_checarValidade.ImageSize = New System.Drawing.Size(28, 28)
+        Me.btn_checarValidade.Location = New System.Drawing.Point(745, 22)
+        Me.btn_checarValidade.Name = "btn_checarValidade"
+        Me.btn_checarValidade.Size = New System.Drawing.Size(219, 36)
+        Me.btn_checarValidade.TabIndex = 37
+        Me.btn_checarValidade.Text = "Checar Validade"
         '
         'Guna2HtmlLabel7
         '
@@ -792,4 +815,5 @@ Partial Class estoque
     Friend WithEvents dataValidade As DataGridViewTextBoxColumn
     Friend WithEvents editar As DataGridViewImageColumn
     Friend WithEvents excluir As DataGridViewImageColumn
+    Friend WithEvents btn_checarValidade As Guna.UI2.WinForms.Guna2Button
 End Class

@@ -3,6 +3,7 @@
 Imports Guna.UI2.WinForms
 
 Public Class cardapio
+    Private carregado As Boolean = False
     Private Sub btn_fechar_Click(sender As Object, e As EventArgs) Handles btn_fechar.Click
         sair()
     End Sub
@@ -48,7 +49,7 @@ Public Class cardapio
         gerenciadorCardapio.SubscribeCardapio(AddressOf gerenciadorCardapio.definirNumeroPedido)
         gerenciadorCardapio.SubscribeCardapio(AddressOf gerenciadorCardapio.carregarCardapio)
         cmb_ordenar.SelectedIndex = 0
-        'cardapio.carregarPedidos()
+        carregado = True
     End Sub
 
 
@@ -75,6 +76,19 @@ Public Class cardapio
             gerenciadorCardapio.ordenarCardapio("Menos vendido")
         End If
 
+    End Sub
+
+    Private Sub cardapio_Shown(sender As Object, e As EventArgs) Handles Me.Shown
+        If funcionario.admin = True Then
+            btn_addProd.Visible = True
+            btn_gerencia.Visible = True
+        Else
+            btn_gerencia.Visible = False
+            btn_addProd.Visible = False
+        End If
+    End Sub
+    Private Sub txt_pesquisaCardapio_TextChanged(sender As Object, e As EventArgs) Handles txt_pesquisaCardapio.TextChanged
+        If carregado Then gerenciadorCardapio.carregarCardapio(,, txt_pesquisaCardapio.Text)
     End Sub
 End Class
 
@@ -104,10 +118,10 @@ Public Class criarCardapio
             observerAction.Invoke(command)
         Next
     End Sub
-    Public Sub carregarCardapio(Optional orderBy As String = "nome", Optional ascDesc As String = "ASC")
+    Public Sub carregarCardapio(Optional orderBy As String = "nome", Optional ascDesc As String = "ASC", Optional pesquisa As String = "")
         abreConexao()
         Try
-            sql = "SELECT * FROM tb_cardapio ORDER BY " & orderBy & " " & ascDesc & ""
+            sql = "SELECT * FROM tb_cardapio WHERE nome LIKE '" & pesquisa & "%' ORDER BY " & orderBy & " " & ascDesc & ""
             rs = db.Execute(sql)
             count = 0
             cardapio.flp_itemsCard.Controls.Clear()
@@ -204,7 +218,8 @@ Public Class criarCardapio
                     .Cursor = Cursors.Hand,
                     .Parent = pnl_prato,
                     .Image = Image.FromFile(Application.StartupPath & "\imgs\pencil-line.png"),
-                    .Tag = rs.Fields(0).Value
+                    .Tag = rs.Fields(0).Value,
+                    .Visible = False
                 }
 
                 Dim btn_excluir As New Guna2ImageButton() With {
@@ -216,7 +231,8 @@ Public Class criarCardapio
                     .Cursor = Cursors.Hand,
                     .Parent = pnl_prato,
                     .Image = Image.FromFile(Application.StartupPath & "\imgs\trash.png"),
-                    .Tag = rs.Fields(0).Value
+                    .Tag = rs.Fields(0).Value,
+                    .Visible = False
                 }
                 btn_editar.HoverState.ImageSize = New Size(24, 24)
                 btn_editar.PressedState.ImageSize = New Size(28, 28)
@@ -229,6 +245,14 @@ Public Class criarCardapio
                 cardapioList.Add(New CardapioItem(pnl_prato, calcularVezesPedido(rs.Fields(0).Value)))
                 cardapio.flp_itemsCard.Controls.Add(pnl_prato)
                 count += 1
+
+                If funcionario.admin = True Then
+                    btn_excluir.Visible = True
+                    btn_editar.Visible = True
+                Else
+                    btn_excluir.Visible = False
+                    btn_editar.Visible = False
+                End If
                 rs.MoveNext()
             Loop
             ordenarCardapio()
@@ -555,7 +579,7 @@ Public Class criarCardapio
             Dim numeroMesa As String = cardapio.cmb_numeroMesa.Text
             Dim horarioPedido As DateTime = Now
             Dim valorTotal As Single = cardapio.lbl_total.Text
-            Dim codigoFuncionario As Integer = 1
+            Dim codigoFuncionario As Integer = funcionario.codFuncionario
             Dim numeroPedido As Integer = cardapio.lbl_numeroPedido.Text.Substring(1)
             itensList.Add(numeroMesa)
             itensList.Add(horarioPedido)
@@ -565,26 +589,30 @@ Public Class criarCardapio
             If verificarVazio(itensList) = False Then
                 sql = "INSERT INTO tb_pedidos (numero_pedido, numero_mesa, horario_pedido, valor_total, cod_funcionario) VALUES('" & numeroPedido & "', '" & numeroMesa & "', '" & horarioPedido & "', '" & valorTotal & "', '" & codigoFuncionario & "')"
                 rs = db.Execute(sql)
-                For Each prato As Control In cardapio.flp_itemsPedido.Controls
-                    If prato.Tag IsNot Nothing Then
-                        Dim pratoId As Integer = prato.Tag
-                        Dim preco As String = 0
-                        For Each ctrl As Control In prato.Controls
-                            Select Case ctrl.Name
-                                Case "lbl_preco"
-                                    preco = ctrl.Text
-                            End Select
-                        Next
-                        sql = "INSERT INTO tb_itensPedido (numero_pedido, numero_item, preco) VALUES ('" & numeroPedido & "', '" & pratoId & "', '" & preco & "')"
-                        rs = db.Execute(sql)
-                    End If
-                Next
-                telaErro.setTexto("Pedido feito com sucesso!")
+                If cardapio.flp_itemsPedido.Controls.Count > 1 Then
+                    For Each prato As Control In cardapio.flp_itemsPedido.Controls
+                        If prato.Tag IsNot Nothing Then
+                            Dim pratoId As Integer = prato.Tag
+                            Dim preco As String = 0
+                            For Each ctrl As Control In prato.Controls
+                                Select Case ctrl.Name
+                                    Case "lbl_preco"
+                                        preco = ctrl.Text
+                                End Select
+                            Next
+                            sql = "INSERT INTO tb_itensPedido (numero_pedido, numero_item, preco) VALUES ('" & numeroPedido & "', '" & pratoId & "', '" & preco & "')"
+                            rs = db.Execute(sql)
+                        End If
+                    Next
+                    telaErro.setTexto("Pedido feito com sucesso!")
+                    telaErro.Show()
+                    definirNumeroPedido()
+                    gerenciadorPedidos.carregarProgresso()
+                    gerenciadorPedidos.carregarPedidos(False)
+                    carregarCardapio()
+                End If
+                telaErro.setTexto("Não há itens no pedido!")
                 telaErro.Show()
-                definirNumeroPedido()
-                gerenciadorPedidos.carregarProgresso()
-                gerenciadorPedidos.carregarPedidos(False)
-                carregarCardapio()
             Else
                 telaErro.setTexto("Existem campos vazios!")
                 telaErro.Show()

@@ -71,6 +71,17 @@ Public Class estoque
         If carregado Then gerenciadorEstoque.pesquisarEstoque(txt_pesquisa.Text)
     End Sub
 
+    Private Sub estoque_Shown(sender As Object, e As EventArgs) Handles Me.Shown
+        If funcionario.admin = True Then
+            btn_gerencia.Visible = True
+        Else
+            btn_gerencia.Visible = False
+        End If
+    End Sub
+
+    Private Sub btn_checarValidade_Click(sender As Object, e As EventArgs) Handles btn_checarValidade.Click
+
+    End Sub
 End Class
 Public Class criarEstoque
     Public Delegate Sub ObserverFunction(ByVal command As Object)
@@ -135,26 +146,30 @@ Public Class criarEstoque
         itensList.Add(dataCompra)
         itensList.Add(dataValidade)
         Try
-            If verificarVazio(itensList) = False Then
-                'sql = "SELECT * FROM tb_estoque WHERE nome ='" & nomeItem & "'"
-                ' rs = db.Execute(sql)
-                'If rs.EOF = True Then
-                sql = "INSERT INTO tb_estoque (foto, nome, categoria, em_estoque, unidade, valor_pago, data_compra, data_validade) VALUES ('" & caminhoImagem & "', '" & nomeItem & "', '" & categoriaItem & "', '" & qtdComprada & "', '" & unidadeItem & "', '" & valorPagoUnidade & "', '" & dataCompra & "', '" & dataValidade & "')"
+            If dataValidade < DateTime.Today.Date Then
+                If verificarVazio(itensList) = False Then
+                    'sql = "SELECT * FROM tb_estoque WHERE nome ='" & nomeItem & "'"
+                    ' rs = db.Execute(sql)
+                    'If rs.EOF = True Then
+                    sql = "INSERT INTO tb_estoque (foto, nome, categoria, em_estoque, unidade, valor_pago, data_compra, data_validade) VALUES ('" & caminhoImagem & "', '" & nomeItem & "', '" & categoriaItem & "', '" & qtdComprada & "', '" & unidadeItem & "', '" & valorPagoUnidade & "', '" & dataCompra & "', '" & dataValidade & "')"
                     rs = db.Execute(sql)
                     telaErro.setTexto($"{nomeItem} foi cadastrado com sucesso!")
                     telaErro.Show()
-                'Else
-                ' telaErro.setTexto($"{nomeItem} já está cadastrado no estoque!")
-                'telaErro.Show()
-                'End If
+                    'Else
+                    ' telaErro.setTexto($"{nomeItem} já está cadastrado no estoque!")
+                    'telaErro.Show()
+                    'End If
+                Else
+                    telaErro.setTexto("Existem campos vazios!")
+                    telaErro.Show()
+                End If
             Else
-                telaErro.setTexto("Existem campos vazios!")
+                telaErro.setTexto("Data de validade inválida!")
                 telaErro.Show()
             End If
         Catch ex As Exception
             telaErro.setTexto("Erro ao cadastrar item no estoque!")
             telaErro.Show()
-            'MessageBox.Show(String.Format("Error: {0}", sql))
         End Try
         NotifyAllEstoque({})
     End Sub

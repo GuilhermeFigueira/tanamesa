@@ -59,6 +59,15 @@ Public Class mesas
     Private Sub cmb_pedido_SelectedIndexChanged(sender As Object, e As EventArgs) Handles cmb_pedido.SelectedIndexChanged
         gerenciadorMesa.atualizarPedidoMesa(cmb_pedido.Text)
     End Sub
+
+    Private Sub mesas_Shown(sender As Object, e As EventArgs) Handles Me.Shown
+        If funcionario.admin = True Then
+            btn_gerencia.Visible = True
+        Else
+
+            btn_gerencia.Visible = False
+        End If
+    End Sub
 End Class
 
 Public Class criarMesas

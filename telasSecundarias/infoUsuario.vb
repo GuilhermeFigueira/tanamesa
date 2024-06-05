@@ -1,4 +1,5 @@
-﻿Imports System.Runtime.CompilerServices
+﻿Imports System.IO
+Imports System.Runtime.CompilerServices
 Imports Guna.UI2.WinForms
 
 Public Class infoUsuario
@@ -18,5 +19,8 @@ Public Class infoUsuario
         txt_cpf.Text = funcionario.cpf
         txt_nome.Text = funcionario.nome
         txt_funcao.Text = funcionario.funcao
+        If funcionario.foto <> Nothing Then
+            pbx_imgFuncionario.Load(Path.Combine(Application.StartupPath, "imgFuncionarios", funcionario.foto))
+        End If
     End Sub
 End Class

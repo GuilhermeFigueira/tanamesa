@@ -104,7 +104,7 @@ Partial Class login
         Me.txt_senha.Location = New System.Drawing.Point(383, 234)
         Me.txt_senha.Margin = New System.Windows.Forms.Padding(9, 10, 9, 10)
         Me.txt_senha.Name = "txt_senha"
-        Me.txt_senha.PasswordChar = Global.Microsoft.VisualBasic.ChrW(0)
+        Me.txt_senha.PasswordChar = Global.Microsoft.VisualBasic.ChrW(42)
         Me.txt_senha.PlaceholderText = ""
         Me.txt_senha.SelectedText = ""
         Me.txt_senha.Size = New System.Drawing.Size(534, 60)

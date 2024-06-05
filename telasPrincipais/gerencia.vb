@@ -1,8 +1,8 @@
 ﻿Imports System.Drawing.Printing
 Imports System.IO
 Imports System.Runtime.CompilerServices
+Imports System.Text.RegularExpressions
 Imports System.Web.UI.Design
-
 Imports Guna.UI2.WinForms
 
 Public Class gerencia
@@ -46,14 +46,19 @@ Public Class gerencia
         gerenciadorGerencia.carregarFuncionarios()
     End Sub
 
+    Private Sub btn_addProd_Click(sender As Object, e As EventArgs) Handles btn_addProd.Click
+        cadastrarFuncionario.Show()
+    End Sub
 End Class
 
 Public Class criarGerencia
+
     Public Sub carregarFuncionarios()
         abreConexao()
         Try
             sql = "SELECT * FROM tb_funcionarios"
             rs = db.Execute(sql)
+            gerencia.flp_itemsCard.Controls.Clear()
             Do While rs.EOF = False
                 Dim pnl_funcionario As New Guna2ShadowPanel With {
                     .Name = "pnl_prato",
@@ -70,11 +75,11 @@ Public Class criarGerencia
                     .Name = "pbx_fotoFuncionario",
                     .BorderRadius = 12,
                     .Size = New Size(163, 130),
+                    .Image = Image.FromFile(Path.Combine(Application.StartupPath, "imgFuncionarios", rs.Fields(5).Value)),
                     .Parent = pnl_funcionario,
-                    .SizeMode = PictureBoxSizeMode.StretchImage,
-                .Dock = DockStyle.Top
+                    .Location = New Point(58, 15),
+                    .SizeMode = PictureBoxSizeMode.StretchImage
                 }
-                '.Image = Image.FromFile(Path.Combine(Application.StartupPath, "imgFuncionarios", rs.Fields(5).Value)),
                 Dim lbl_divisor As New Label With {
                     .Size = New Size(251, 1),
                     .Location = New Point(16, 157),
@@ -102,8 +107,11 @@ Public Class criarGerencia
                 Dim lbl_statusFuncionario As New Guna2HtmlLabel() With {
                     .Name = "lbl_nomeFuncionario",
                     .Font = New Font("Libre Caslon Display", 16),
-                    .Location = New Point(75, 40),
-                    .Parent = pnl_info
+                    .Location = New Point(3, 40),
+                    .Parent = pnl_info,
+                    .AutoSize = False,
+                    .Size = New Size(253, 27),
+                    .TextAlignment = ContentAlignment.BottomCenter
                 }
 
                 Dim btn_maisInfo As New Guna2Button() With {
@@ -121,6 +129,13 @@ Public Class criarGerencia
                 }
                 AddHandler btn_maisInfo.Click, AddressOf carregarMaisInfoFuncionario
                 gerencia.flp_itemsCard.Controls.Add(pnl_funcionario)
+                If rs.Fields(7).Value = True Then
+                    lbl_statusFuncionario.Text = "Trabalhando"
+                    lbl_statusFuncionario.ForeColor = Color.FromArgb(48, 107, 52)
+                Else
+                    lbl_statusFuncionario.Text = "Ausente"
+                    lbl_statusFuncionario.ForeColor = Color.FromArgb(255, 67, 101)
+                End If
                 rs.MoveNext()
             Loop
         Catch ex As Exception
@@ -144,21 +159,31 @@ Public Class criarGerencia
             itensList.Add(senha)
             itensList.Add(funcao)
             itensList.Add(adm)
-
-            If verificarVazio(itensList) = False Then
-                sql = "SELECT * FROM tb_funcionarios WHERE cpf = '" & cpf & "'"
-                rs = db.Execute(sql)
-                If rs.EOF = True Then
-                    sql = "INSERT INTO tb_funcionarios (CPF, SENHA, NOME, FUNCAO, FOTO, ADMIN) VALUES('" & cpf & "', '" & senha & "', '" & nome & "', '" & funcao & "', '" & caminhoImagem & "', '" & adm & "')"
+            If ValidarCPF(cpf) = True Then
+                If verificarVazio(itensList) = False Then
+                    sql = "SELECT * FROM tb_funcionarios WHERE cpf = '" & cpf & "'"
                     rs = db.Execute(sql)
-                    telaErro.setTexto($"{nome} foi cadastrado com sucesso!")
-                    telaErro.Show()
+                    If rs.EOF = True Then
+                        sql = "INSERT INTO tb_funcionarios (CPF, SENHA, NOME, FUNCAO, FOTO, ADMIN) VALUES('" & cpf & "', '" & senha & "', '" & nome & "', '" & funcao & "', '" & caminhoImagem & "', " & adm & ")"
+                        rs = db.Execute(sql)
+                        telaErro.setTexto($"{nome} foi cadastrado com sucesso!")
+                        telaErro.Show()
+                        carregarFuncionarios()
+                    Else
+                        telaErro.setTexto($"O CPF {cpf} já está cadastrado!")
+                        telaErro.Show()
+                    End If
                 Else
-                    telaErro.setTexto($"O CPF {cpf} já está cadastrado!")
+                    telaErro.setTexto("Existem campos vazios!")
                     telaErro.Show()
                 End If
+            Else
+                telaErro.setTexto("CPF inválido!")
+                telaErro.Show()
             End If
+
         Catch ex As Exception
+            MessageBox.Show(String.Format("Efetuar pedido: {0}", ex.Message))
             telaErro.setTexto("Erro ao cadastrar funcionário!")
             telaErro.Show()
         End Try
@@ -179,7 +204,7 @@ Public Class criarGerencia
                     .lbl_codFuncionario.Text = $"Funcionário #{Format(rs.Fields(0).Value, "00")}"
                     .lbl_codFuncionario.Tag = rs.Fields(0).Value
                     'MessageBox.Show(String.Format("Error editar item estoque: {0}", ex.Message))
-                    If File.Exists(Path.Combine(Application.StartupPath, "imgProdutos", rs.Fields(1).Value)) Then
+                    If File.Exists(Path.Combine(Application.StartupPath, "imgFuncionarios", rs.Fields(5).Value)) Then
                         .pbx_imgFuncionario.Load(Path.Combine(Application.StartupPath, "imgFuncionarios", rs.Fields(5).Value))
                         caminhoImagem = rs.Fields(5).Value
                     End If
@@ -193,55 +218,50 @@ Public Class criarGerencia
         End Try
     End Sub
 
-    Public Sub editarItemNoEstoque(itemId)
+    Public Sub editarFuncionario(codFuncionario As String)
         abreConexao()
         Dim itensList As New List(Of String)
-        Dim nomeItem As String = cadastrarEstoque.txt_nome.Text
-        Dim categoriaItem As String = cadastrarEstoque.cmb_categoria.Text
-        Dim unidadeItem As String = cadastrarEstoque.cmb_unidade.Text
-        Dim emEstoque As String = cadastrarEstoque.txt_qtd.Text
-        Dim valorPagoUnidade As String = cadastrarEstoque.txt_vlrUnidade.Text
-        Dim dataCompra As String = cadastrarEstoque.dtp_dataCompra.Value.Date
-        Dim dataValidade As String = cadastrarEstoque.dtp_dataValidade.Value.Date
-        itensList.Add(nomeItem)
-        itensList.Add(categoriaItem)
-        itensList.Add(unidadeItem)
-        itensList.Add(emEstoque)
-        itensList.Add(valorPagoUnidade)
-        itensList.Add(dataCompra)
-        itensList.Add(dataValidade)
+        Dim nome As String = maisInformacoesFuncionario.txt_nome.Text
+        Dim cpf As String = maisInformacoesFuncionario.txt_cpf.Text
+        Dim senha As String = maisInformacoesFuncionario.txt_senha.Text
+        Dim funcao As String = maisInformacoesFuncionario.txt_funcao.Text
+        itensList.Add(nome)
+        itensList.Add(cpf)
+        itensList.Add(senha)
+        itensList.Add(funcao)
         Try
             If verificarVazio(itensList) = False Then
-                sql = "UPDATE tb_estoque SET foto='" & caminhoImagem & "', nome ='" & nomeItem & "', categoria='" & categoriaItem & "', em_estoque='" & emEstoque & "', unidade='" & unidadeItem & "', valor_pago='" & valorPagoUnidade & "', data_compra='" & dataCompra & "', data_validade='" & dataValidade & "' WHERE id_item=" & itemId & ""
+                sql = "UPDATE tb_funcionarios SET foto='" & caminhoImagem & "', nome ='" & nome & "', senha ='" & senha & "', funcao='" & funcao & "' WHERE cod_funcionario=" & codFuncionario & " and cpf = '" & cpf & "'"
                 rs = db.Execute(sql)
-                telaErro.setTexto($"{nomeItem} foi editado com sucesso!")
+                telaErro.setTexto($"{nome} foi editado com sucesso!")
                 telaErro.Show()
+                carregarFuncionarios()
             Else
                 telaErro.setTexto("Existem campos vazios!")
                 telaErro.Show()
             End If
         Catch ex As Exception
-            telaErro.setTexto("Erro ao editar item no estoque!")
+            telaErro.setTexto("Erro ao editar informações do funcionário!")
             telaErro.Show()
-            MessageBox.Show(String.Format("Error: {0}", sql))
         End Try
     End Sub
 
-    Public Sub excluirFuncionario(codFuncionario As String)
+    Public Sub excluirFuncionario(codFuncionario)
         abreConexao()
         Try
             sql = "SELECT * FROM tb_funcionarios WHERE cod_funcionario =" & codFuncionario & ""
             rs = db.Execute(sql)
             If rs.EOF = False Then
                 If funcionario.codFuncionario <> rs.Fields(0).Value Then
-                    sql = "DELETE * FROM tb_funcionarios WHERE cod_funcionario = " & codFuncionario & ""
-                    rs = db.Execute(sql)
-                    telaConfirmacao.setTexto($"Deseja realmente excluir o funcionario {rs.Fields(3).Value}")
+                    telaConfirmacao.setTexto($"Deseja realmente excluir o funcionario {rs.Fields(3).Value}?")
                     telaConfirmacao.setSub(Sub()
                                                sql = "DELETE * FROM tb_funcionarios WHERE cod_funcionario = " & codFuncionario & ""
                                                rs = db.Execute(sql)
+                                               gerenciadorGerencia.carregarFuncionarios()
+                                               maisInformacoesFuncionario.Close()
                                                telaConfirmacao.Close()
                                            End Sub)
+                    telaConfirmacao.Show()
                 Else
                     telaErro.setTexto("Não é possível excluir o próprio usuário!")
                     telaErro.Show()
@@ -257,4 +277,58 @@ Public Class criarGerencia
 
         End Try
     End Sub
+
+    Public Sub carregarCadastroFuncionario()
+        abreConexao()
+        Try
+            Dim codFuncionario As Integer
+            sql = "SELECT TOP 1 * FROM tb_funcionarios ORDER BY cod_funcionario DESC"
+            rs = db.Execute(sql)
+            If rs.EOF = False Then
+                codFuncionario = rs.Fields(0).Value + 1
+            Else
+                codFuncionario = 1
+            End If
+            cadastrarFuncionario.txt_codFunc.Text = codFuncionario
+        Catch ex As Exception
+            telaErro.setTexto("Erro ao definir o código do funcionario!")
+            telaErro.Show()
+        End Try
+    End Sub
+
+    Public Function ValidarCPF(cpf As String) As Boolean
+        Dim regex As New Regex("^\d{11}$")
+        If Not regex.IsMatch(cpf) Then Return False
+
+        Dim numeros() As Char = cpf.ToCharArray()
+        Dim somaTotal As Integer = 0
+
+        ' Primeiro dígito verificador
+        For i As Integer = 0 To 8 Step 2
+            somaTotal += CInt(numeros(i).ToString())
+        Next
+
+        somaTotal *= 10
+        somaTotal = somaTotal Mod 11 ' Correção aqui
+        If somaTotal < 2 Then somaTotal = 0 Else somaTotal -= 1
+
+        If CInt(numeros(9).ToString()) <> somaTotal Then Return False
+
+        ' Segundo dígito verificador
+        For i As Integer = 0 To 9 Step 2
+            somaTotal = 0
+            For j As Integer = 0 To 8 Step 2
+                somaTotal += CInt(numeros(j).ToString())
+            Next
+            somaTotal += CInt(numeros(i).ToString())
+            somaTotal *= 10
+            somaTotal = somaTotal Mod 11 ' E também aqui
+            If somaTotal < 2 Then somaTotal = 0 Else somaTotal -= 1
+
+            If CInt(numeros(10).ToString()) <> somaTotal Then Return False
+        Next
+
+        Return True
+    End Function
+
 End Class

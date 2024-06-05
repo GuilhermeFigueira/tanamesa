@@ -39,7 +39,14 @@ Module Module1
     End Sub
 
     Sub sair()
-        telaConfirmacao.setSub(Sub() Application.Exit())
+        telaConfirmacao.setSub(Sub()
+                                   abreConexao()
+                                   sql = "UPDATE tb_funcionarios SET trabalhando = false WHERE cpf = '" & funcionario.cpf & "'"
+                                   rs = db.Execute(sql)
+                                   funcionario.logout()
+                                   fechaConexao()
+                                   Application.Exit()
+                               End Sub)
         telaConfirmacao.setTexto("Deseja realmente sair?")
         telaConfirmacao.Show()
     End Sub
@@ -134,7 +141,7 @@ Module Module1
         Public Property foto As String
         Public Property admin As Boolean
 
-        Public Sub Initialize(codFuncionario As String, nome As String, cpf As String, funcao As String, foto As String, Optional admin As Boolean = False)
+        Public Sub Initialize(codFuncionario As String, nome As String, cpf As String, funcao As String, foto As String, admin As Boolean)
             Me.codFuncionario = codFuncionario
             Me.nome = nome
             Me.cpf = cpf

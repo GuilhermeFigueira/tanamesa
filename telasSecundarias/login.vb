@@ -31,7 +31,9 @@ Public Class criarLogin
                 sql = "SELECT * FROM tb_funcionarios WHERE cpf = '" & login.txt_cpf.Text & "' AND senha = '" & login.txt_senha.Text & "' "
                 rs = db.Execute(sql)
                 If rs.EOF = False Then
-                    funcionario.Initialize(rs.Fields(0).Value, rs.Fields(1).Value, rs.Fields(3).Value, rs.Fields(4).Value, rs.Fields(5).Value, rs.Fields(6).Value)
+                    funcionario.Initialize(rs.Fields(0).Value, rs.Fields(3).Value, rs.Fields(1).Value, rs.Fields(4).Value, rs.Fields(5).Value, rs.Fields(6).Value)
+                    sql = "UPDATE tb_funcionarios SET trabalhando = true WHERE cpf = '" & login.txt_cpf.Text & "' AND senha = '" & login.txt_senha.Text & "' "
+                    rs = db.Execute(sql)
                     cardapio.Show()
                     limparForm(login)
                     login.Hide()

@@ -38,14 +38,11 @@ Public Class maisInformacoesFuncionario
     End Sub
 
     Private Sub btn_salvar_Click(sender As Object, e As EventArgs) Handles btn_salvar.Click
-        If btn_salvar.Text = "Editar Produto" Then
-            'gerenciadorEstoque.editarItemNoEstoque(btn_cadastrar.Tag)
-        Else
-            'gerenciadorEstoque.cadastrarItemNoEstoque()
-        End If
+        gerenciadorGerencia.editarFuncionario(lbl_codFuncionario.Tag)
     End Sub
 
     Private Sub btn_excluirFuncionario_Click(sender As Object, e As EventArgs) Handles btn_excluirFuncionario.Click
         gerenciadorGerencia.excluirFuncionario(lbl_codFuncionario.Tag)
     End Sub
+
 End Class

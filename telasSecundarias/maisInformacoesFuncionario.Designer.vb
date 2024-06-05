@@ -107,12 +107,18 @@ Partial Class maisInformacoesFuncionario
         '
         'pbx_imgFuncionario
         '
+        Me.pbx_imgFuncionario.BackColor = System.Drawing.Color.Transparent
         Me.pbx_imgFuncionario.BorderRadius = 16
         Me.pbx_imgFuncionario.Cursor = System.Windows.Forms.Cursors.Hand
         Me.pbx_imgFuncionario.ImageRotate = 0!
         Me.pbx_imgFuncionario.Location = New System.Drawing.Point(581, 24)
         Me.pbx_imgFuncionario.Name = "pbx_imgFuncionario"
+        Me.pbx_imgFuncionario.ShadowDecoration.BorderRadius = 2
+        Me.pbx_imgFuncionario.ShadowDecoration.Depth = 2
+        Me.pbx_imgFuncionario.ShadowDecoration.Enabled = True
+        Me.pbx_imgFuncionario.ShadowDecoration.Shadow = New System.Windows.Forms.Padding(2)
         Me.pbx_imgFuncionario.Size = New System.Drawing.Size(183, 192)
+        Me.pbx_imgFuncionario.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
         Me.pbx_imgFuncionario.TabIndex = 3
         Me.pbx_imgFuncionario.TabStop = False
         '

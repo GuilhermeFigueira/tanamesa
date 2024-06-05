@@ -46,7 +46,7 @@ Partial Class cardapio
         Me.pnl_title = New Guna.UI2.WinForms.Guna2ShadowPanel()
         Me.Guna2Panel5 = New Guna.UI2.WinForms.Guna2Panel()
         Me.btn_addProd = New Guna.UI2.WinForms.Guna2Button()
-        Me.Guna2TextBox2 = New Guna.UI2.WinForms.Guna2TextBox()
+        Me.txt_pesquisaCardapio = New Guna.UI2.WinForms.Guna2TextBox()
         Me.Guna2Panel1 = New Guna.UI2.WinForms.Guna2Panel()
         Me.Guna2HtmlLabel7 = New Guna.UI2.WinForms.Guna2HtmlLabel()
         Me.Guna2Panel4 = New Guna.UI2.WinForms.Guna2Panel()
@@ -412,7 +412,7 @@ Partial Class cardapio
         'Guna2Panel5
         '
         Me.Guna2Panel5.Controls.Add(Me.btn_addProd)
-        Me.Guna2Panel5.Controls.Add(Me.Guna2TextBox2)
+        Me.Guna2Panel5.Controls.Add(Me.txt_pesquisaCardapio)
         Me.Guna2Panel5.Location = New System.Drawing.Point(240, 23)
         Me.Guna2Panel5.Margin = New System.Windows.Forms.Padding(0)
         Me.Guna2Panel5.Name = "Guna2Panel5"
@@ -441,34 +441,34 @@ Partial Class cardapio
         Me.btn_addProd.TabIndex = 6
         Me.btn_addProd.Text = "Adicionar Produto"
         '
-        'Guna2TextBox2
+        'txt_pesquisaCardapio
         '
-        Me.Guna2TextBox2.AutoRoundedCorners = True
-        Me.Guna2TextBox2.BackColor = System.Drawing.Color.Transparent
-        Me.Guna2TextBox2.BorderColor = System.Drawing.Color.FromArgb(CType(CType(239, Byte), Integer), CType(CType(239, Byte), Integer), CType(CType(239, Byte), Integer))
-        Me.Guna2TextBox2.BorderRadius = 18
-        Me.Guna2TextBox2.Cursor = System.Windows.Forms.Cursors.IBeam
-        Me.Guna2TextBox2.DefaultText = ""
-        Me.Guna2TextBox2.DisabledState.BorderColor = System.Drawing.Color.FromArgb(CType(CType(208, Byte), Integer), CType(CType(208, Byte), Integer), CType(CType(208, Byte), Integer))
-        Me.Guna2TextBox2.DisabledState.FillColor = System.Drawing.Color.FromArgb(CType(CType(226, Byte), Integer), CType(CType(226, Byte), Integer), CType(CType(226, Byte), Integer))
-        Me.Guna2TextBox2.DisabledState.ForeColor = System.Drawing.Color.FromArgb(CType(CType(138, Byte), Integer), CType(CType(138, Byte), Integer), CType(CType(138, Byte), Integer))
-        Me.Guna2TextBox2.DisabledState.PlaceholderForeColor = System.Drawing.Color.FromArgb(CType(CType(138, Byte), Integer), CType(CType(138, Byte), Integer), CType(CType(138, Byte), Integer))
-        Me.Guna2TextBox2.Dock = System.Windows.Forms.DockStyle.Right
-        Me.Guna2TextBox2.FillColor = System.Drawing.Color.FromArgb(CType(CType(239, Byte), Integer), CType(CType(239, Byte), Integer), CType(CType(239, Byte), Integer))
-        Me.Guna2TextBox2.FocusedState.BorderColor = System.Drawing.Color.FromArgb(CType(CType(250, Byte), Integer), CType(CType(250, Byte), Integer), CType(CType(250, Byte), Integer))
-        Me.Guna2TextBox2.Font = New System.Drawing.Font("Libre Caslon Display", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Guna2TextBox2.ForeColor = System.Drawing.Color.Black
-        Me.Guna2TextBox2.HoverState.BorderColor = System.Drawing.Color.FromArgb(CType(CType(250, Byte), Integer), CType(CType(250, Byte), Integer), CType(CType(250, Byte), Integer))
-        Me.Guna2TextBox2.IconLeft = CType(resources.GetObject("Guna2TextBox2.IconLeft"), System.Drawing.Image)
-        Me.Guna2TextBox2.Location = New System.Drawing.Point(279, 0)
-        Me.Guna2TextBox2.Margin = New System.Windows.Forms.Padding(3, 4, 3, 4)
-        Me.Guna2TextBox2.Name = "Guna2TextBox2"
-        Me.Guna2TextBox2.Padding = New System.Windows.Forms.Padding(15, 0, 15, 0)
-        Me.Guna2TextBox2.PasswordChar = Global.Microsoft.VisualBasic.ChrW(0)
-        Me.Guna2TextBox2.PlaceholderText = "Pesquise itens do cardápio"
-        Me.Guna2TextBox2.SelectedText = ""
-        Me.Guna2TextBox2.Size = New System.Drawing.Size(413, 38)
-        Me.Guna2TextBox2.TabIndex = 1
+        Me.txt_pesquisaCardapio.AutoRoundedCorners = True
+        Me.txt_pesquisaCardapio.BackColor = System.Drawing.Color.Transparent
+        Me.txt_pesquisaCardapio.BorderColor = System.Drawing.Color.FromArgb(CType(CType(239, Byte), Integer), CType(CType(239, Byte), Integer), CType(CType(239, Byte), Integer))
+        Me.txt_pesquisaCardapio.BorderRadius = 18
+        Me.txt_pesquisaCardapio.Cursor = System.Windows.Forms.Cursors.IBeam
+        Me.txt_pesquisaCardapio.DefaultText = ""
+        Me.txt_pesquisaCardapio.DisabledState.BorderColor = System.Drawing.Color.FromArgb(CType(CType(208, Byte), Integer), CType(CType(208, Byte), Integer), CType(CType(208, Byte), Integer))
+        Me.txt_pesquisaCardapio.DisabledState.FillColor = System.Drawing.Color.FromArgb(CType(CType(226, Byte), Integer), CType(CType(226, Byte), Integer), CType(CType(226, Byte), Integer))
+        Me.txt_pesquisaCardapio.DisabledState.ForeColor = System.Drawing.Color.FromArgb(CType(CType(138, Byte), Integer), CType(CType(138, Byte), Integer), CType(CType(138, Byte), Integer))
+        Me.txt_pesquisaCardapio.DisabledState.PlaceholderForeColor = System.Drawing.Color.FromArgb(CType(CType(138, Byte), Integer), CType(CType(138, Byte), Integer), CType(CType(138, Byte), Integer))
+        Me.txt_pesquisaCardapio.Dock = System.Windows.Forms.DockStyle.Right
+        Me.txt_pesquisaCardapio.FillColor = System.Drawing.Color.FromArgb(CType(CType(239, Byte), Integer), CType(CType(239, Byte), Integer), CType(CType(239, Byte), Integer))
+        Me.txt_pesquisaCardapio.FocusedState.BorderColor = System.Drawing.Color.FromArgb(CType(CType(250, Byte), Integer), CType(CType(250, Byte), Integer), CType(CType(250, Byte), Integer))
+        Me.txt_pesquisaCardapio.Font = New System.Drawing.Font("Libre Caslon Display", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.txt_pesquisaCardapio.ForeColor = System.Drawing.Color.Black
+        Me.txt_pesquisaCardapio.HoverState.BorderColor = System.Drawing.Color.FromArgb(CType(CType(250, Byte), Integer), CType(CType(250, Byte), Integer), CType(CType(250, Byte), Integer))
+        Me.txt_pesquisaCardapio.IconLeft = CType(resources.GetObject("txt_pesquisaCardapio.IconLeft"), System.Drawing.Image)
+        Me.txt_pesquisaCardapio.Location = New System.Drawing.Point(279, 0)
+        Me.txt_pesquisaCardapio.Margin = New System.Windows.Forms.Padding(3, 4, 3, 4)
+        Me.txt_pesquisaCardapio.Name = "txt_pesquisaCardapio"
+        Me.txt_pesquisaCardapio.Padding = New System.Windows.Forms.Padding(15, 0, 15, 0)
+        Me.txt_pesquisaCardapio.PasswordChar = Global.Microsoft.VisualBasic.ChrW(0)
+        Me.txt_pesquisaCardapio.PlaceholderText = "Pesquise itens do cardápio"
+        Me.txt_pesquisaCardapio.SelectedText = ""
+        Me.txt_pesquisaCardapio.Size = New System.Drawing.Size(413, 38)
+        Me.txt_pesquisaCardapio.TabIndex = 1
         '
         'Guna2Panel1
         '
@@ -1140,7 +1140,7 @@ Partial Class cardapio
     Friend WithEvents Guna2HtmlLabel27 As Guna.UI2.WinForms.Guna2HtmlLabel
     Friend WithEvents Guna2HtmlLabel26 As Guna.UI2.WinForms.Guna2HtmlLabel
     Friend WithEvents btn_ As Guna.UI2.WinForms.Guna2Button
-    Friend WithEvents Guna2TextBox2 As Guna.UI2.WinForms.Guna2TextBox
+    Friend WithEvents txt_pesquisaCardapio As Guna.UI2.WinForms.Guna2TextBox
     Friend WithEvents Guna2Panel5 As Guna.UI2.WinForms.Guna2Panel
     Friend WithEvents btn_addProd As Guna.UI2.WinForms.Guna2Button
     Friend WithEvents Guna2ImageButton1 As Guna.UI2.WinForms.Guna2ImageButton

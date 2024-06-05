@@ -63,6 +63,7 @@ Partial Class gerencia
         Me.Guna2HtmlLabel27 = New Guna.UI2.WinForms.Guna2HtmlLabel()
         Me.Guna2HtmlLabel26 = New Guna.UI2.WinForms.Guna2HtmlLabel()
         Me.Guna2HtmlLabel2 = New Guna.UI2.WinForms.Guna2HtmlLabel()
+        Me.btn_addProd = New Guna.UI2.WinForms.Guna2Button()
         Me.pnl_controls.SuspendLayout()
         Me.pnl_logo.SuspendLayout()
         Me.Guna2Panel3.SuspendLayout()
@@ -362,6 +363,7 @@ Partial Class gerencia
         'pnl_title
         '
         Me.pnl_title.BackColor = System.Drawing.Color.Transparent
+        Me.pnl_title.Controls.Add(Me.btn_addProd)
         Me.pnl_title.Controls.Add(Me.Guna2HtmlLabel7)
         Me.pnl_title.Dock = System.Windows.Forms.DockStyle.Top
         Me.pnl_title.FillColor = System.Drawing.Color.White
@@ -449,6 +451,7 @@ Partial Class gerencia
         Me.Guna2Panel8.ShadowShift = 4
         Me.Guna2Panel8.Size = New System.Drawing.Size(280, 300)
         Me.Guna2Panel8.TabIndex = 0
+        Me.Guna2Panel8.Visible = False
         '
         'Guna2Panel1
         '
@@ -463,14 +466,19 @@ Partial Class gerencia
         '
         'Guna2HtmlLabel1
         '
+        Me.Guna2HtmlLabel1.Anchor = CType((((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Bottom) _
+            Or System.Windows.Forms.AnchorStyles.Left) _
+            Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
+        Me.Guna2HtmlLabel1.AutoSize = False
         Me.Guna2HtmlLabel1.BackColor = System.Drawing.Color.Transparent
         Me.Guna2HtmlLabel1.Font = New System.Drawing.Font("Libre Caslon Display", 15.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Guna2HtmlLabel1.ForeColor = System.Drawing.Color.FromArgb(CType(CType(48, Byte), Integer), CType(CType(107, Byte), Integer), CType(CType(52, Byte), Integer))
-        Me.Guna2HtmlLabel1.Location = New System.Drawing.Point(75, 40)
+        Me.Guna2HtmlLabel1.Location = New System.Drawing.Point(3, 40)
         Me.Guna2HtmlLabel1.Name = "Guna2HtmlLabel1"
-        Me.Guna2HtmlLabel1.Size = New System.Drawing.Size(103, 27)
+        Me.Guna2HtmlLabel1.Size = New System.Drawing.Size(253, 27)
         Me.Guna2HtmlLabel1.TabIndex = 11
         Me.Guna2HtmlLabel1.Text = "Trabalhando"
+        Me.Guna2HtmlLabel1.TextAlignment = System.Drawing.ContentAlignment.BottomCenter
         '
         'btn_
         '
@@ -590,6 +598,27 @@ Partial Class gerencia
         Me.Guna2HtmlLabel2.TabIndex = 5
         Me.Guna2HtmlLabel2.Text = "Explorar itens do cardápio"
         '
+        'btn_addProd
+        '
+        Me.btn_addProd.AutoRoundedCorners = True
+        Me.btn_addProd.BackColor = System.Drawing.Color.Transparent
+        Me.btn_addProd.BorderRadius = 24
+        Me.btn_addProd.Cursor = System.Windows.Forms.Cursors.Hand
+        Me.btn_addProd.DisabledState.BorderColor = System.Drawing.Color.DarkGray
+        Me.btn_addProd.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray
+        Me.btn_addProd.DisabledState.FillColor = System.Drawing.Color.FromArgb(CType(CType(169, Byte), Integer), CType(CType(169, Byte), Integer), CType(CType(169, Byte), Integer))
+        Me.btn_addProd.DisabledState.ForeColor = System.Drawing.Color.FromArgb(CType(CType(141, Byte), Integer), CType(CType(141, Byte), Integer), CType(CType(141, Byte), Integer))
+        Me.btn_addProd.FillColor = System.Drawing.Color.FromArgb(CType(CType(46, Byte), Integer), CType(CType(31, Byte), Integer), CType(CType(39, Byte), Integer))
+        Me.btn_addProd.Font = New System.Drawing.Font("Libre Caslon Display", 15.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.btn_addProd.ForeColor = System.Drawing.Color.White
+        Me.btn_addProd.Image = CType(resources.GetObject("btn_addProd.Image"), System.Drawing.Image)
+        Me.btn_addProd.ImageSize = New System.Drawing.Size(28, 28)
+        Me.btn_addProd.Location = New System.Drawing.Point(729, 15)
+        Me.btn_addProd.Name = "btn_addProd"
+        Me.btn_addProd.Size = New System.Drawing.Size(219, 51)
+        Me.btn_addProd.TabIndex = 34
+        Me.btn_addProd.Text = "Adicionar Produto"
+        '
         'gerencia
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
@@ -619,7 +648,6 @@ Partial Class gerencia
         Me.flp_itemsCard.ResumeLayout(False)
         Me.Guna2Panel8.ResumeLayout(False)
         Me.Guna2Panel1.ResumeLayout(False)
-        Me.Guna2Panel1.PerformLayout()
         CType(Me.Guna2PictureBox2, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)
 
@@ -666,4 +694,5 @@ Partial Class gerencia
     Friend WithEvents Guna2HtmlLabel8 As Guna.UI2.WinForms.Guna2HtmlLabel
     Friend WithEvents Guna2HtmlLabel1 As Guna.UI2.WinForms.Guna2HtmlLabel
     Friend WithEvents Guna2HtmlLabel6 As Guna.UI2.WinForms.Guna2HtmlLabel
+    Friend WithEvents btn_addProd As Guna.UI2.WinForms.Guna2Button
 End Class
