@@ -1,8 +1,5 @@
-﻿Imports System.Drawing.Printing
-Imports System.IO
-Imports System.Runtime.CompilerServices
+﻿Imports System.IO
 Imports System.Text.RegularExpressions
-Imports System.Web.UI.Design
 Imports Guna.UI2.WinForms
 
 Public Class gerencia
@@ -48,6 +45,10 @@ Public Class gerencia
 
     Private Sub btn_addProd_Click(sender As Object, e As EventArgs) Handles btn_addProd.Click
         cadastrarFuncionario.Show()
+    End Sub
+
+    Private Sub gerencia_Shown(sender As Object, e As EventArgs) Handles Me.Shown
+        carregarFuncionario(btn_info, Guna2CirclePictureBox1)
     End Sub
 End Class
 
@@ -159,8 +160,8 @@ Public Class criarGerencia
             itensList.Add(senha)
             itensList.Add(funcao)
             itensList.Add(adm)
-            If ValidarCPF(cpf) = True Then
-                If verificarVazio(itensList) = False Then
+            'If ValidarCPF(cpf) = True Then
+            If verificarVazio(itensList) = False Then
                     sql = "SELECT * FROM tb_funcionarios WHERE cpf = '" & cpf & "'"
                     rs = db.Execute(sql)
                     If rs.EOF = True Then
@@ -177,10 +178,10 @@ Public Class criarGerencia
                     telaErro.setTexto("Existem campos vazios!")
                     telaErro.Show()
                 End If
-            Else
-                telaErro.setTexto("CPF inválido!")
-                telaErro.Show()
-            End If
+            ' Else
+            'telaErro.setTexto("CPF inválido!")
+            'telaErro.Show()
+            'End If
 
         Catch ex As Exception
             MessageBox.Show(String.Format("Efetuar pedido: {0}", ex.Message))
@@ -203,7 +204,6 @@ Public Class criarGerencia
                     .txt_funcao.Text = rs.Fields(4).Value
                     .lbl_codFuncionario.Text = $"Funcionário #{Format(rs.Fields(0).Value, "00")}"
                     .lbl_codFuncionario.Tag = rs.Fields(0).Value
-                    'MessageBox.Show(String.Format("Error editar item estoque: {0}", ex.Message))
                     If File.Exists(Path.Combine(Application.StartupPath, "imgFuncionarios", rs.Fields(5).Value)) Then
                         .pbx_imgFuncionario.Load(Path.Combine(Application.StartupPath, "imgFuncionarios", rs.Fields(5).Value))
                         caminhoImagem = rs.Fields(5).Value
@@ -214,7 +214,6 @@ Public Class criarGerencia
         Catch ex As Exception
             telaErro.setTexto("Erro ao carregar dados!")
             telaErro.Show()
-            'MessageBox.Show(String.Format("Error editar item estoque: {0}", ex.Message))
         End Try
     End Sub
 
@@ -273,8 +272,6 @@ Public Class criarGerencia
         Catch ex As Exception
             telaErro.setTexto("Erro ao excluir funcionário!")
             telaErro.Show()
-            MessageBox.Show(String.Format("Error: {0}", ex.Message))
-
         End Try
     End Sub
 
@@ -296,39 +293,38 @@ Public Class criarGerencia
         End Try
     End Sub
 
-    Public Function ValidarCPF(cpf As String) As Boolean
-        Dim regex As New Regex("^\d{11}$")
-        If Not regex.IsMatch(cpf) Then Return False
-
-        Dim numeros() As Char = cpf.ToCharArray()
-        Dim somaTotal As Integer = 0
-
-        ' Primeiro dígito verificador
-        For i As Integer = 0 To 8 Step 2
-            somaTotal += CInt(numeros(i).ToString())
-        Next
-
-        somaTotal *= 10
-        somaTotal = somaTotal Mod 11 ' Correção aqui
-        If somaTotal < 2 Then somaTotal = 0 Else somaTotal -= 1
-
-        If CInt(numeros(9).ToString()) <> somaTotal Then Return False
-
-        ' Segundo dígito verificador
-        For i As Integer = 0 To 9 Step 2
-            somaTotal = 0
-            For j As Integer = 0 To 8 Step 2
-                somaTotal += CInt(numeros(j).ToString())
-            Next
-            somaTotal += CInt(numeros(i).ToString())
-            somaTotal *= 10
-            somaTotal = somaTotal Mod 11 ' E também aqui
-            If somaTotal < 2 Then somaTotal = 0 Else somaTotal -= 1
-
-            If CInt(numeros(10).ToString()) <> somaTotal Then Return False
-        Next
-
-        Return True
-    End Function
+    ' Public Function ValidarCPF(cpf As String) As Boolean
+    '     Dim regex As New Regex("^\d{11}$")
+    '     If Not regex.IsMatch(cpf) Then Return False
+    '
+    '     Dim numeros() As Char = cpf.ToCharArray()
+    '     Dim somaTotal As Integer = 0
+    '
+    '     ' Primeiro dígito verificador
+    '     For i As Integer = 0 To 8 Step 2
+    '         somaTotal += CInt(numeros(i).ToString())
+    '     Next
+    '
+    '     somaTotal *= 10
+    '     somaTotal = somaTotal Mod 11 ' Correção aqui
+    '     If somaTotal < 2 Then somaTotal = 0 Else somaTotal -= 1
+    '
+    '     If CInt(numeros(9).ToString()) <> somaTotal Then Return False
+    '
+    '     ' Segundo dígito verificador
+    '     For i As Integer = 0 To 9 Step 2
+    '         somaTotal = 0
+    '         For j As Integer = 0 To 8 Step 2
+    '             somaTotal += CInt(numeros(j).ToString())
+    '         Next
+    '         somaTotal += CInt(numeros(i).ToString())
+    '         somaTotal *= 10
+    '         somaTotal = somaTotal Mod 11 ' E também aqui
+    '         If somaTotal < 2 Then somaTotal = 0 Else somaTotal -= 1
+    '         If CInt(numeros(10).ToString()) <> somaTotal Then Return False
+    '     Next
+    '
+    '     Return True
+    ' End Function
 
 End Class

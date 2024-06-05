@@ -1,5 +1,4 @@
 ﻿Imports System.IO
-
 Imports Guna.UI2.WinForms
 
 Public Class cardapio
@@ -51,8 +50,6 @@ Public Class cardapio
         cmb_ordenar.SelectedIndex = 0
         carregado = True
     End Sub
-
-
     Private Sub cmb_numeroMesa_SelectedValueChanged(sender As Object, e As EventArgs) Handles cmb_numeroMesa.SelectedValueChanged
         gerenciadorCardapio.carregarInformacoesMesa()
     End Sub
@@ -86,6 +83,7 @@ Public Class cardapio
             btn_gerencia.Visible = False
             btn_addProd.Visible = False
         End If
+        carregarFuncionario(btn_info, Guna2CirclePictureBox1)
     End Sub
     Private Sub txt_pesquisaCardapio_TextChanged(sender As Object, e As EventArgs) Handles txt_pesquisaCardapio.TextChanged
         If carregado Then gerenciadorCardapio.carregarCardapio(,, txt_pesquisaCardapio.Text)
@@ -259,7 +257,6 @@ Public Class criarCardapio
         Catch ex As Exception
             telaErro.setTexto("Erro ao carregar o cardápio!")
             telaErro.Show()
-            MessageBox.Show(String.Format("Carregar Cardapio: {0}", ex.Message))
         End Try
     End Sub
 
@@ -417,7 +414,6 @@ Public Class criarCardapio
         Catch ex As Exception
             telaErro.setTexto("Erro ao cadastrar prato no cardápio!")
             telaErro.Show()
-            'MessageBox.Show(String.Format("Error: {0}", sql))
         End Try
         carregarCardapio()
     End Sub
@@ -507,7 +503,6 @@ Public Class criarCardapio
         Catch ex As Exception
             telaErro.setTexto("Erro ao carregar dados!")
             telaErro.Show()
-            'MessageBox.Show(String.Format("Error editar item estoque: {0}", ex.Message))
         End Try
     End Sub
     Public Sub excluirPratoDoCardapio(sender As Object, e As EventArgs)
@@ -525,8 +520,8 @@ Public Class criarCardapio
                                            rs = db.Execute(sql)
                                            sql = "DELETE * FROM tb_itenspedido where numero_item=" & prato.Tag & ""
                                            rs = db.Execute(sql)
-                                           gerenciadorEstoque.NotifyAllEstoque({})
                                            gerenciadorCardapio.carregarCardapio()
+                                           gerenciadorPedidos.carregarPedidos()
                                            telaConfirmacao.Close()
                                        End Sub)
             Else
@@ -536,7 +531,6 @@ Public Class criarCardapio
         Catch ex As Exception
             telaErro.setTexto("Erro ao excluir prato!")
             telaErro.Show()
-            MessageBox.Show(String.Format("Error: {0}", ex.Message))
         End Try
     End Sub
 
@@ -620,7 +614,6 @@ Public Class criarCardapio
         Catch ex As Exception
             telaErro.setTexto("Erro ao efetuar pedido!")
             telaErro.Show()
-            MessageBox.Show(String.Format("Efetuar pedido: {0}", ex.Message))
         End Try
     End Sub
     Public Sub definirNumeroPedido()
@@ -649,8 +642,6 @@ Public Class criarCardapio
         Catch ex As Exception
             telaErro.setTexto("Erro ao carregar informações da mesa!")
             telaErro.Show()
-            MessageBox.Show(String.Format("carrega informacao mesa: {0}", ex.Message))
-
         End Try
     End Sub
 End Class

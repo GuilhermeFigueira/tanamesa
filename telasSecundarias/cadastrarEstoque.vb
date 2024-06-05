@@ -1,7 +1,4 @@
-﻿Imports System.Runtime.CompilerServices
-Imports System.Security.Cryptography
-Imports Guna.UI2.WinForms
-Imports System.IO
+﻿Imports System.IO
 Public Class cadastrarEstoque
     Dim titulo As String
     Dim btn As String
@@ -12,8 +9,6 @@ Public Class cadastrarEstoque
     Private Sub btn_minimizar_Click(sender As Object, e As EventArgs) Handles btn_minimizar.Click
         Me.WindowState = FormWindowState.Minimized
     End Sub
-
-
     Public Sub alterarTipoFormEstoque(tituloString As String, btnString As String)
         titulo = tituloString
         btn = btnString
@@ -72,5 +67,4 @@ Public Class cadastrarEstoque
             Exit Sub
         End Try
     End Sub
-
 End Class

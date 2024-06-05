@@ -1,6 +1,5 @@
 ﻿Imports Guna.UI2.WinForms
 Imports System.Text
-
 Public Class pedidos
     Dim carregado As Boolean = False
 
@@ -63,6 +62,7 @@ Public Class pedidos
         Else
             btn_gerencia.Visible = False
         End If
+        carregarFuncionario(btn_info, Guna2CirclePictureBox1)
     End Sub
     Private Sub txt_pesquisaPedidos_TextChanged(sender As Object, e As EventArgs) Handles txt_pesquisaPedidos.TextChanged
         If carregado Then
@@ -186,8 +186,6 @@ Public Class criarPedidos
             End If
         Catch ex As Exception
             telaErro.setTexto("Erro ao carregar progresso dos pedidos!")
-            MessageBox.Show(String.Format("carregar progresso pedidos: {0}", ex.Message))
-
             telaErro.Show()
         End Try
     End Sub
@@ -226,7 +224,7 @@ Public Class criarPedidos
                 Dim lbl_funcionarioPediu As New Guna2HtmlLabel With {
                     .Name = "lbl_funcionarioPediu",
                     .Text = $"Funcionario: #{Format(CInt(rs.Fields(4).Value.ToString), "00")}",
-                    .Font = New Font("Julius Sans One", 7),
+                    .Font = New Font("Julius Sans One", 9),
                     .ForeColor = Color.FromArgb(46, 31, 39),
                     .Parent = pnl_funcionarioPediu,
                     .Dock = DockStyle.Fill,
@@ -249,22 +247,14 @@ Public Class criarPedidos
                     .Parent = pnl_geral
                 }
 
-                Dim lbl_nomeCliente As New Guna2HtmlLabel With {
-                    .Name = "lbl_nomeCliente",
+                Dim lbl_numeroMesa As New Guna2HtmlLabel With {
+                    .Name = "lbl_numeroMesa",
                     .Text = $"Mesa {rs.Fields(1).Value}",
-                    .Font = New Font("Libre Caslon Display", 14),
-                    .Location = New Point(2, 5),
+                    .Font = New Font("Libre Caslon Display", 20),
+                    .Location = New Point(2, 13),
                     .Parent = pnl_info
                 }
 
-                Dim lbl_numeroMesa As New Guna2HtmlLabel With {
-                    .Name = "lbl_numeroMesa",
-                    .Text = rs.Fields(8).Value,
-                    .Font = New Font("Libre Caslon Display", 12),
-                    .Location = New Point(2, 30),
-                    .Parent = pnl_info
-                }
-                'Copiar aqui
                 Dim lbl_numeroPedido As New Guna2HtmlLabel With {
                     .Name = "lbl_numeroPedido",
                     .Text = $"#{Format(rs.Fields(0).Value, "000")}",
@@ -349,7 +339,6 @@ Public Class criarPedidos
                 ultimoControl.Margin = New Padding(ultimoControl.Margin.Left, ultimoControl.Margin.Top, 300, ultimoControl.Margin.Bottom)
             End If
         Catch ex As Exception
-            MessageBox.Show(String.Format("carregar pedidos: {0}", ex.Message))
             telaErro.setTexto("Erro ao carregar os pedidos!")
             telaErro.Show()
         End Try
@@ -431,10 +420,11 @@ Public Class criarPedidos
                                            rs = db.Execute(sql)
                                            sql = "DELETE * FROM tb_itenspedido WHERE numero_pedido = " & pedido.Tag & ""
                                            rs = db.Execute(sql)
-                                           pedido.Parent.Parent.Dispose()
+                                           pedido.Parent.Parent.Parent.Dispose()
                                            gerenciadorCardapio.carregarCardapio()
                                            gerenciadorPedidos.carregarProgresso()
                                            gerenciadorMesa.atualizarInformacoesMesa()
+                                           gerenciadorCardapio.definirNumeroPedido()
                                            telaConfirmacao.Close()
                                        End Sub)
             Else
@@ -444,7 +434,6 @@ Public Class criarPedidos
         Catch ex As Exception
             telaErro.setTexto("Erro ao excluir pedido!")
             telaErro.Show()
-            MessageBox.Show(String.Format("Error: {0}", ex.Message))
         End Try
     End Sub
     Public Sub enviarPedido(sender As Object, e As EventArgs)
@@ -467,8 +456,6 @@ Public Class criarPedidos
         Catch ex As Exception
             telaErro.setTexto("Erro ao enviar pedido!")
             telaErro.Show()
-            MessageBox.Show(String.Format("Error: {0}", ex.Message))
-
         End Try
     End Sub
 
@@ -479,8 +466,7 @@ Public Class criarPedidos
             sql = "DELETE * FROM tb_itensPedido WHERE cod_item = " & itemPedido.Tag & ""
             rs = db.Execute(sql)
             itemPedido.Parent.Dispose()
-            gerenciadorPedidos.NotifyAllPedidos({})
-            gerenciadorCardapio.NotifyAllCardapio({})
+            gerenciadorCardapio.carregarCardapio()
         Catch ex As Exception
             telaErro.setTexto("Erro ao excluir item do pedido!")
             telaErro.Show()

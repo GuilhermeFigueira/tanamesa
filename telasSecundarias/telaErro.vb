@@ -1,7 +1,4 @@
-﻿Imports System.Runtime.CompilerServices
-Imports Guna.UI2.WinForms
-
-Public Class telaErro
+﻿Public Class telaErro
     Public Sub setTexto(texto As String)
         lbl_mensagem.Text = texto
     End Sub

@@ -264,6 +264,7 @@ Partial Class cardapio
         Me.Guna2CirclePictureBox1.Name = "Guna2CirclePictureBox1"
         Me.Guna2CirclePictureBox1.ShadowDecoration.Mode = Guna.UI2.WinForms.Enums.ShadowMode.Circle
         Me.Guna2CirclePictureBox1.Size = New System.Drawing.Size(50, 50)
+        Me.Guna2CirclePictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
         Me.Guna2CirclePictureBox1.TabIndex = 32
         Me.Guna2CirclePictureBox1.TabStop = False
         '
@@ -631,7 +632,6 @@ Partial Class cardapio
         Me.Guna2PictureBox2.BorderRadius = 12
         Me.Guna2PictureBox2.Dock = System.Windows.Forms.DockStyle.Top
         Me.Guna2PictureBox2.FillColor = System.Drawing.Color.Transparent
-        Me.Guna2PictureBox2.Image = CType(resources.GetObject("Guna2PictureBox2.Image"), System.Drawing.Image)
         Me.Guna2PictureBox2.ImageRotate = 0!
         Me.Guna2PictureBox2.Location = New System.Drawing.Point(16, 24)
         Me.Guna2PictureBox2.Name = "Guna2PictureBox2"
@@ -870,7 +870,6 @@ Partial Class cardapio
         Me.Guna2PictureBox3.AutoRoundedCorners = True
         Me.Guna2PictureBox3.BackColor = System.Drawing.Color.Transparent
         Me.Guna2PictureBox3.BorderRadius = 27
-        Me.Guna2PictureBox3.Image = CType(resources.GetObject("Guna2PictureBox3.Image"), System.Drawing.Image)
         Me.Guna2PictureBox3.ImageRotate = 0!
         Me.Guna2PictureBox3.Location = New System.Drawing.Point(8, 12)
         Me.Guna2PictureBox3.Name = "Guna2PictureBox3"
@@ -1044,6 +1043,7 @@ Partial Class cardapio
         Me.Controls.Add(Me.Guna2ContainerControl1)
         Me.Controls.Add(Me.pnl_controls)
         Me.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None
+        Me.Icon = CType(resources.GetObject("$this.Icon"), System.Drawing.Icon)
         Me.Name = "cardapio"
         Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen
         Me.Text = "Tá na Mesa - Cardápio"

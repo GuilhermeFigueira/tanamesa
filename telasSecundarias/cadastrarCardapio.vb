@@ -1,8 +1,4 @@
-﻿Imports System.Runtime.CompilerServices
-Imports Guna.UI2.WinForms
-Imports System.IO
-
-
+﻿Imports System.IO
 Public Class cadastrarCardapio
     Dim titulo As String
     Dim btn As String
@@ -38,9 +34,6 @@ Public Class cadastrarCardapio
             Exit Sub
         End Try
     End Sub
-
-
-
     Private Sub cadastrarCardapio_Load(sender As Object, e As EventArgs) Handles Me.Load
         Me.TopMost = True
         abreConexao()

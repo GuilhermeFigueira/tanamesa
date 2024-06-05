@@ -1,7 +1,4 @@
-﻿Imports System.Runtime.CompilerServices
-Imports Guna.UI2.WinForms
-
-Public Class telaConfirmacao
+﻿Public Class telaConfirmacao
     Delegate Sub DelegatedSub()
 
     Dim simSub As DelegatedSub

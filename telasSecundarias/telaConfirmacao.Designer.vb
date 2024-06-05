@@ -149,6 +149,7 @@ Partial Class telaConfirmacao
         Me.Controls.Add(Me.Guna2ContainerControl1)
         Me.Controls.Add(Me.lbl_mensagem)
         Me.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None
+        Me.Icon = CType(resources.GetObject("$this.Icon"), System.Drawing.Icon)
         Me.Name = "telaConfirmacao"
         Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen
         Me.Text = "Tá na Mesa - Confirmar Ação"

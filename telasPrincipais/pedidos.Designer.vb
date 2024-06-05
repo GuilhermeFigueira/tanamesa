@@ -49,8 +49,10 @@ Partial Class pedidos
         Me.txt_pesquisaPedidos = New Guna.UI2.WinForms.Guna2TextBox()
         Me.Guna2Panel4 = New Guna.UI2.WinForms.Guna2Panel()
         Me.Panel1 = New System.Windows.Forms.Panel()
-        Me.Label1 = New System.Windows.Forms.Label()
-        Me.flp_pedidos = New System.Windows.Forms.FlowLayoutPanel()
+        Me.Guna2Panel6 = New Guna.UI2.WinForms.Guna2ShadowPanel()
+        Me.Guna2HtmlLabel8 = New Guna.UI2.WinForms.Guna2HtmlLabel()
+        Me.Guna2HtmlLabel9 = New Guna.UI2.WinForms.Guna2HtmlLabel()
+        Me.Guna2HtmlLabel6 = New Guna.UI2.WinForms.Guna2HtmlLabel()
         Me.Guna2Panel9 = New Guna.UI2.WinForms.Guna2ShadowPanel()
         Me.FlowLayoutPanel3 = New System.Windows.Forms.FlowLayoutPanel()
         Me.Guna2Panel14 = New Guna.UI2.WinForms.Guna2Panel()
@@ -80,13 +82,11 @@ Partial Class pedidos
         Me.Guna2HtmlLabel16 = New Guna.UI2.WinForms.Guna2HtmlLabel()
         Me.Guna2Panel13 = New Guna.UI2.WinForms.Guna2Panel()
         Me.btn_entregar = New Guna.UI2.WinForms.Guna2Button()
+        Me.Label1 = New System.Windows.Forms.Label()
+        Me.flp_pedidos = New System.Windows.Forms.FlowLayoutPanel()
         Me.Guna2HtmlLabel1 = New Guna.UI2.WinForms.Guna2HtmlLabel()
         Me.Guna2Panel5 = New Guna.UI2.WinForms.Guna2Panel()
         Me.flp_progressoPedidos = New System.Windows.Forms.FlowLayoutPanel()
-        Me.Guna2Panel6 = New Guna.UI2.WinForms.Guna2ShadowPanel()
-        Me.Guna2HtmlLabel8 = New Guna.UI2.WinForms.Guna2HtmlLabel()
-        Me.Guna2HtmlLabel9 = New Guna.UI2.WinForms.Guna2HtmlLabel()
-        Me.Guna2HtmlLabel6 = New Guna.UI2.WinForms.Guna2HtmlLabel()
         Me.Guna2HtmlLabel2 = New Guna.UI2.WinForms.Guna2HtmlLabel()
         Me.cmb_progs = New Guna.UI2.WinForms.Guna2ComboBox()
         Me.Guna2DragControl1 = New Guna.UI2.WinForms.Guna2DragControl(Me.components)
@@ -101,7 +101,7 @@ Partial Class pedidos
         Me.pnl_title.SuspendLayout()
         Me.Guna2Panel4.SuspendLayout()
         Me.Panel1.SuspendLayout()
-        Me.flp_pedidos.SuspendLayout()
+        Me.Guna2Panel6.SuspendLayout()
         Me.Guna2Panel9.SuspendLayout()
         Me.FlowLayoutPanel3.SuspendLayout()
         Me.Guna2Panel14.SuspendLayout()
@@ -112,8 +112,6 @@ Partial Class pedidos
         Me.Guna2Panel7.SuspendLayout()
         Me.Guna2Panel13.SuspendLayout()
         Me.Guna2Panel5.SuspendLayout()
-        Me.flp_progressoPedidos.SuspendLayout()
-        Me.Guna2Panel6.SuspendLayout()
         Me.SuspendLayout()
         '
         'Guna2BorderlessForm1
@@ -268,6 +266,7 @@ Partial Class pedidos
         Me.Guna2CirclePictureBox1.Name = "Guna2CirclePictureBox1"
         Me.Guna2CirclePictureBox1.ShadowDecoration.Mode = Guna.UI2.WinForms.Enums.ShadowMode.Circle
         Me.Guna2CirclePictureBox1.Size = New System.Drawing.Size(50, 50)
+        Me.Guna2CirclePictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
         Me.Guna2CirclePictureBox1.TabIndex = 32
         Me.Guna2CirclePictureBox1.TabStop = False
         '
@@ -471,6 +470,8 @@ Partial Class pedidos
         '
         'Panel1
         '
+        Me.Panel1.Controls.Add(Me.Guna2Panel6)
+        Me.Panel1.Controls.Add(Me.Guna2Panel9)
         Me.Panel1.Controls.Add(Me.Label1)
         Me.Panel1.Controls.Add(Me.flp_pedidos)
         Me.Panel1.Controls.Add(Me.Guna2HtmlLabel1)
@@ -480,25 +481,52 @@ Partial Class pedidos
         Me.Panel1.Size = New System.Drawing.Size(932, 529)
         Me.Panel1.TabIndex = 7
         '
-        'Label1
+        'Guna2Panel6
         '
-        Me.Label1.BackColor = System.Drawing.Color.FromArgb(CType(CType(146, Byte), Integer), CType(CType(146, Byte), Integer), CType(CType(146, Byte), Integer))
-        Me.Label1.Location = New System.Drawing.Point(16, 2)
-        Me.Label1.Name = "Label1"
-        Me.Label1.Size = New System.Drawing.Size(900, 1)
-        Me.Label1.TabIndex = 14
+        Me.Guna2Panel6.BackColor = System.Drawing.Color.Transparent
+        Me.Guna2Panel6.Controls.Add(Me.Guna2HtmlLabel8)
+        Me.Guna2Panel6.Controls.Add(Me.Guna2HtmlLabel9)
+        Me.Guna2Panel6.Controls.Add(Me.Guna2HtmlLabel6)
+        Me.Guna2Panel6.FillColor = System.Drawing.Color.FromArgb(CType(CType(244, Byte), Integer), CType(CType(187, Byte), Integer), CType(CType(108, Byte), Integer))
+        Me.Guna2Panel6.Location = New System.Drawing.Point(343, 450)
+        Me.Guna2Panel6.Name = "Guna2Panel6"
+        Me.Guna2Panel6.Radius = 6
+        Me.Guna2Panel6.ShadowColor = System.Drawing.Color.FromArgb(CType(CType(200, Byte), Integer), CType(CType(200, Byte), Integer), CType(CType(200, Byte), Integer))
+        Me.Guna2Panel6.ShadowShift = 2
+        Me.Guna2Panel6.ShadowStyle = Guna.UI2.WinForms.Guna2ShadowPanel.ShadowMode.ForwardDiagonal
+        Me.Guna2Panel6.Size = New System.Drawing.Size(254, 70)
+        Me.Guna2Panel6.TabIndex = 6
+        Me.Guna2Panel6.Visible = False
         '
-        'flp_pedidos
+        'Guna2HtmlLabel8
         '
-        Me.flp_pedidos.AutoScroll = True
-        Me.flp_pedidos.AutoScrollMargin = New System.Drawing.Size(100, 0)
-        Me.flp_pedidos.Controls.Add(Me.Guna2Panel9)
-        Me.flp_pedidos.Location = New System.Drawing.Point(3, 48)
-        Me.flp_pedidos.Name = "flp_pedidos"
-        Me.flp_pedidos.Padding = New System.Windows.Forms.Padding(16)
-        Me.flp_pedidos.Size = New System.Drawing.Size(925, 374)
-        Me.flp_pedidos.TabIndex = 13
-        Me.flp_pedidos.WrapContents = False
+        Me.Guna2HtmlLabel8.BackColor = System.Drawing.Color.Transparent
+        Me.Guna2HtmlLabel8.Font = New System.Drawing.Font("Libre Caslon Display", 15.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Guna2HtmlLabel8.Location = New System.Drawing.Point(95, 6)
+        Me.Guna2HtmlLabel8.Name = "Guna2HtmlLabel8"
+        Me.Guna2HtmlLabel8.Size = New System.Drawing.Size(120, 27)
+        Me.Guna2HtmlLabel8.TabIndex = 5
+        Me.Guna2HtmlLabel8.Text = "Em andamento"
+        '
+        'Guna2HtmlLabel9
+        '
+        Me.Guna2HtmlLabel9.BackColor = System.Drawing.Color.Transparent
+        Me.Guna2HtmlLabel9.Font = New System.Drawing.Font("Libre Caslon Display", 10.0!)
+        Me.Guna2HtmlLabel9.Location = New System.Drawing.Point(95, 39)
+        Me.Guna2HtmlLabel9.Name = "Guna2HtmlLabel9"
+        Me.Guna2HtmlLabel9.Size = New System.Drawing.Size(125, 18)
+        Me.Guna2HtmlLabel9.TabIndex = 7
+        Me.Guna2HtmlLabel9.Text = "Tempo decorrido: 08:50"
+        '
+        'Guna2HtmlLabel6
+        '
+        Me.Guna2HtmlLabel6.BackColor = System.Drawing.Color.Transparent
+        Me.Guna2HtmlLabel6.Font = New System.Drawing.Font("Julius Sans One", 25.0!)
+        Me.Guna2HtmlLabel6.Location = New System.Drawing.Point(30, 16)
+        Me.Guna2HtmlLabel6.Name = "Guna2HtmlLabel6"
+        Me.Guna2HtmlLabel6.Size = New System.Drawing.Size(54, 38)
+        Me.Guna2HtmlLabel6.TabIndex = 4
+        Me.Guna2HtmlLabel6.Text = "#12"
         '
         'Guna2Panel9
         '
@@ -507,7 +535,7 @@ Partial Class pedidos
         Me.Guna2Panel9.Controls.Add(Me.Guna2Panel7)
         Me.Guna2Panel9.Controls.Add(Me.Guna2Panel13)
         Me.Guna2Panel9.FillColor = System.Drawing.Color.White
-        Me.Guna2Panel9.Location = New System.Drawing.Point(19, 19)
+        Me.Guna2Panel9.Location = New System.Drawing.Point(42, 438)
         Me.Guna2Panel9.Name = "Guna2Panel9"
         Me.Guna2Panel9.Padding = New System.Windows.Forms.Padding(16)
         Me.Guna2Panel9.Radius = 6
@@ -928,6 +956,25 @@ Partial Class pedidos
         Me.btn_entregar.TabIndex = 9
         Me.btn_entregar.Text = "Entregar pedido"
         '
+        'Label1
+        '
+        Me.Label1.BackColor = System.Drawing.Color.FromArgb(CType(CType(146, Byte), Integer), CType(CType(146, Byte), Integer), CType(CType(146, Byte), Integer))
+        Me.Label1.Location = New System.Drawing.Point(16, 2)
+        Me.Label1.Name = "Label1"
+        Me.Label1.Size = New System.Drawing.Size(900, 1)
+        Me.Label1.TabIndex = 14
+        '
+        'flp_pedidos
+        '
+        Me.flp_pedidos.AutoScroll = True
+        Me.flp_pedidos.AutoScrollMargin = New System.Drawing.Size(100, 0)
+        Me.flp_pedidos.Location = New System.Drawing.Point(3, 48)
+        Me.flp_pedidos.Name = "flp_pedidos"
+        Me.flp_pedidos.Padding = New System.Windows.Forms.Padding(16)
+        Me.flp_pedidos.Size = New System.Drawing.Size(925, 374)
+        Me.flp_pedidos.TabIndex = 13
+        Me.flp_pedidos.WrapContents = False
+        '
         'Guna2HtmlLabel1
         '
         Me.Guna2HtmlLabel1.BackColor = System.Drawing.Color.Transparent
@@ -954,7 +1001,6 @@ Partial Class pedidos
         '
         Me.flp_progressoPedidos.AutoScroll = True
         Me.flp_progressoPedidos.AutoScrollMargin = New System.Drawing.Size(100, 0)
-        Me.flp_progressoPedidos.Controls.Add(Me.Guna2Panel6)
         Me.flp_progressoPedidos.Location = New System.Drawing.Point(3, 36)
         Me.flp_progressoPedidos.Name = "flp_progressoPedidos"
         Me.flp_progressoPedidos.Padding = New System.Windows.Forms.Padding(16, 16, 100, 16)
@@ -962,53 +1008,6 @@ Partial Class pedidos
         Me.flp_progressoPedidos.Size = New System.Drawing.Size(929, 107)
         Me.flp_progressoPedidos.TabIndex = 7
         Me.flp_progressoPedidos.WrapContents = False
-        '
-        'Guna2Panel6
-        '
-        Me.Guna2Panel6.BackColor = System.Drawing.Color.Transparent
-        Me.Guna2Panel6.Controls.Add(Me.Guna2HtmlLabel8)
-        Me.Guna2Panel6.Controls.Add(Me.Guna2HtmlLabel9)
-        Me.Guna2Panel6.Controls.Add(Me.Guna2HtmlLabel6)
-        Me.Guna2Panel6.FillColor = System.Drawing.Color.FromArgb(CType(CType(244, Byte), Integer), CType(CType(187, Byte), Integer), CType(CType(108, Byte), Integer))
-        Me.Guna2Panel6.Location = New System.Drawing.Point(19, 19)
-        Me.Guna2Panel6.Name = "Guna2Panel6"
-        Me.Guna2Panel6.Radius = 6
-        Me.Guna2Panel6.ShadowColor = System.Drawing.Color.FromArgb(CType(CType(200, Byte), Integer), CType(CType(200, Byte), Integer), CType(CType(200, Byte), Integer))
-        Me.Guna2Panel6.ShadowShift = 2
-        Me.Guna2Panel6.ShadowStyle = Guna.UI2.WinForms.Guna2ShadowPanel.ShadowMode.ForwardDiagonal
-        Me.Guna2Panel6.Size = New System.Drawing.Size(254, 70)
-        Me.Guna2Panel6.TabIndex = 6
-        Me.Guna2Panel6.Visible = False
-        '
-        'Guna2HtmlLabel8
-        '
-        Me.Guna2HtmlLabel8.BackColor = System.Drawing.Color.Transparent
-        Me.Guna2HtmlLabel8.Font = New System.Drawing.Font("Libre Caslon Display", 15.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Guna2HtmlLabel8.Location = New System.Drawing.Point(95, 6)
-        Me.Guna2HtmlLabel8.Name = "Guna2HtmlLabel8"
-        Me.Guna2HtmlLabel8.Size = New System.Drawing.Size(120, 27)
-        Me.Guna2HtmlLabel8.TabIndex = 5
-        Me.Guna2HtmlLabel8.Text = "Em andamento"
-        '
-        'Guna2HtmlLabel9
-        '
-        Me.Guna2HtmlLabel9.BackColor = System.Drawing.Color.Transparent
-        Me.Guna2HtmlLabel9.Font = New System.Drawing.Font("Libre Caslon Display", 10.0!)
-        Me.Guna2HtmlLabel9.Location = New System.Drawing.Point(95, 39)
-        Me.Guna2HtmlLabel9.Name = "Guna2HtmlLabel9"
-        Me.Guna2HtmlLabel9.Size = New System.Drawing.Size(125, 18)
-        Me.Guna2HtmlLabel9.TabIndex = 7
-        Me.Guna2HtmlLabel9.Text = "Tempo decorrido: 08:50"
-        '
-        'Guna2HtmlLabel6
-        '
-        Me.Guna2HtmlLabel6.BackColor = System.Drawing.Color.Transparent
-        Me.Guna2HtmlLabel6.Font = New System.Drawing.Font("Julius Sans One", 25.0!)
-        Me.Guna2HtmlLabel6.Location = New System.Drawing.Point(30, 16)
-        Me.Guna2HtmlLabel6.Name = "Guna2HtmlLabel6"
-        Me.Guna2HtmlLabel6.Size = New System.Drawing.Size(54, 38)
-        Me.Guna2HtmlLabel6.TabIndex = 4
-        Me.Guna2HtmlLabel6.Text = "#12"
         '
         'Guna2HtmlLabel2
         '
@@ -1064,6 +1063,7 @@ Partial Class pedidos
         Me.Controls.Add(Me.Guna2ContainerControl1)
         Me.Controls.Add(Me.pnl_controls)
         Me.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None
+        Me.Icon = CType(resources.GetObject("$this.Icon"), System.Drawing.Icon)
         Me.Name = "pedidos"
         Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen
         Me.Text = "Tá na Mesa - Pedidos"
@@ -1079,7 +1079,8 @@ Partial Class pedidos
         Me.Guna2Panel4.ResumeLayout(False)
         Me.Panel1.ResumeLayout(False)
         Me.Panel1.PerformLayout()
-        Me.flp_pedidos.ResumeLayout(False)
+        Me.Guna2Panel6.ResumeLayout(False)
+        Me.Guna2Panel6.PerformLayout()
         Me.Guna2Panel9.ResumeLayout(False)
         Me.FlowLayoutPanel3.ResumeLayout(False)
         Me.Guna2Panel14.ResumeLayout(False)
@@ -1097,9 +1098,6 @@ Partial Class pedidos
         Me.Guna2Panel13.ResumeLayout(False)
         Me.Guna2Panel5.ResumeLayout(False)
         Me.Guna2Panel5.PerformLayout()
-        Me.flp_progressoPedidos.ResumeLayout(False)
-        Me.Guna2Panel6.ResumeLayout(False)
-        Me.Guna2Panel6.PerformLayout()
         Me.ResumeLayout(False)
 
     End Sub

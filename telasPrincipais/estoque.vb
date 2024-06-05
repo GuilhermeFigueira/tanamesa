@@ -77,6 +77,7 @@ Public Class estoque
         Else
             btn_gerencia.Visible = False
         End If
+        carregarFuncionario(btn_info, Guna2CirclePictureBox1)
     End Sub
 
     Private Sub btn_checarValidade_Click(sender As Object, e As EventArgs) Handles btn_checarValidade.Click
@@ -124,7 +125,6 @@ Public Class criarEstoque
         Catch ex As Exception
             telaErro.setTexto("Erro ao carregar dados carrega!")
             telaErro.Show()
-            MessageBox.Show(String.Format("Error editar item estoque: {0}", ex.Message))
         End Try
     End Sub
 
@@ -146,19 +146,12 @@ Public Class criarEstoque
         itensList.Add(dataCompra)
         itensList.Add(dataValidade)
         Try
-            If dataValidade < DateTime.Today.Date Then
+            If cadastrarEstoque.dtp_dataValidade.Value.Date > DateTime.Today.Date Then
                 If verificarVazio(itensList) = False Then
-                    'sql = "SELECT * FROM tb_estoque WHERE nome ='" & nomeItem & "'"
-                    ' rs = db.Execute(sql)
-                    'If rs.EOF = True Then
                     sql = "INSERT INTO tb_estoque (foto, nome, categoria, em_estoque, unidade, valor_pago, data_compra, data_validade) VALUES ('" & caminhoImagem & "', '" & nomeItem & "', '" & categoriaItem & "', '" & qtdComprada & "', '" & unidadeItem & "', '" & valorPagoUnidade & "', '" & dataCompra & "', '" & dataValidade & "')"
                     rs = db.Execute(sql)
                     telaErro.setTexto($"{nomeItem} foi cadastrado com sucesso!")
                     telaErro.Show()
-                    'Else
-                    ' telaErro.setTexto($"{nomeItem} já está cadastrado no estoque!")
-                    'telaErro.Show()
-                    'End If
                 Else
                     telaErro.setTexto("Existem campos vazios!")
                     telaErro.Show()
@@ -202,7 +195,6 @@ Public Class criarEstoque
         Catch ex As Exception
             telaErro.setTexto("Erro ao carregar dados!")
             telaErro.Show()
-            'MessageBox.Show(String.Format("Error editar item estoque: {0}", ex.Message))
         End Try
         NotifyAllEstoque({})
     End Sub
@@ -224,19 +216,23 @@ Public Class criarEstoque
         itensList.Add(dataCompra)
         itensList.Add(dataValidade)
         Try
-            If verificarVazio(itensList) = False Then
-                sql = "UPDATE tb_estoque SET foto='" & caminhoImagem & "', nome ='" & nomeItem & "', categoria='" & categoriaItem & "', em_estoque='" & emEstoque & "', unidade='" & unidadeItem & "', valor_pago='" & valorPagoUnidade & "', data_compra='" & dataCompra & "', data_validade='" & dataValidade & "' WHERE id_item=" & itemId & ""
-                rs = db.Execute(sql)
-                telaErro.setTexto($"{nomeItem} foi editado com sucesso!")
-                telaErro.Show()
+            If cadastrarEstoque.dtp_dataValidade.Value.Date > DateTime.Today.Date Then
+                If verificarVazio(itensList) = False Then
+                    sql = "UPDATE tb_estoque SET foto='" & caminhoImagem & "', nome ='" & nomeItem & "', categoria='" & categoriaItem & "', em_estoque='" & emEstoque & "', unidade='" & unidadeItem & "', valor_pago='" & valorPagoUnidade & "', data_compra='" & dataCompra & "', data_validade='" & dataValidade & "' WHERE id_item=" & itemId & ""
+                    rs = db.Execute(sql)
+                    telaErro.setTexto($"{nomeItem} foi editado com sucesso!")
+                    telaErro.Show()
+                Else
+                    telaErro.setTexto("Existem campos vazios!")
+                    telaErro.Show()
+                End If
             Else
-                telaErro.setTexto("Existem campos vazios!")
+                telaErro.setTexto("Data de validade inválida!")
                 telaErro.Show()
             End If
         Catch ex As Exception
             telaErro.setTexto("Erro ao editar item no estoque!")
             telaErro.Show()
-            MessageBox.Show(String.Format("Error: {0}", sql))
         End Try
         NotifyAllEstoque({})
     End Sub
@@ -262,8 +258,6 @@ Public Class criarEstoque
         Catch ex As Exception
             telaErro.setTexto("Erro ao excluir produto!")
             telaErro.Show()
-            MessageBox.Show(String.Format("Error: {0}", ex.Message))
-
         End Try
     End Sub
 
@@ -292,7 +286,6 @@ Public Class criarEstoque
                 Loop
             End With
         Catch ex As Exception
-            MessageBox.Show(String.Format("pesquisarEstoque: {0}", ex.Message))
             telaErro.setTexto("Erro ao carregar dados pesquisa!")
             telaErro.Show()
         End Try

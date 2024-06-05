@@ -466,6 +466,7 @@ Partial Class cadastrarFuncionario
         Me.Controls.Add(Me.lbl_titulo)
         Me.Controls.Add(Me.pnl_titulo)
         Me.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None
+        Me.Icon = CType(resources.GetObject("$this.Icon"), System.Drawing.Icon)
         Me.Name = "cadastrarFuncionario"
         Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen
         Me.Text = "Cadastrar Funcionário"

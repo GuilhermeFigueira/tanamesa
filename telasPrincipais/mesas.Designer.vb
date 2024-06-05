@@ -246,6 +246,7 @@ Partial Class mesas
         Me.Guna2CirclePictureBox1.Name = "Guna2CirclePictureBox1"
         Me.Guna2CirclePictureBox1.ShadowDecoration.Mode = Guna.UI2.WinForms.Enums.ShadowMode.Circle
         Me.Guna2CirclePictureBox1.Size = New System.Drawing.Size(50, 50)
+        Me.Guna2CirclePictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
         Me.Guna2CirclePictureBox1.TabIndex = 32
         Me.Guna2CirclePictureBox1.TabStop = False
         '
@@ -589,7 +590,7 @@ Partial Class mesas
         Me.lbl_horario.BackColor = System.Drawing.Color.Transparent
         Me.lbl_horario.Font = New System.Drawing.Font("Libre Caslon Display", 16.0!)
         Me.lbl_horario.ForeColor = System.Drawing.Color.FromArgb(CType(CType(46, Byte), Integer), CType(CType(31, Byte), Integer), CType(CType(39, Byte), Integer))
-        Me.lbl_horario.Location = New System.Drawing.Point(244, 314)
+        Me.lbl_horario.Location = New System.Drawing.Point(225, 314)
         Me.lbl_horario.Name = "lbl_horario"
         Me.lbl_horario.Size = New System.Drawing.Size(56, 27)
         Me.lbl_horario.TabIndex = 25
@@ -610,7 +611,7 @@ Partial Class mesas
         Me.lbl_total.BackColor = System.Drawing.Color.Transparent
         Me.lbl_total.Font = New System.Drawing.Font("Libre Caslon Display", 16.0!)
         Me.lbl_total.ForeColor = System.Drawing.Color.FromArgb(CType(CType(48, Byte), Integer), CType(CType(107, Byte), Integer), CType(CType(52, Byte), Integer))
-        Me.lbl_total.Location = New System.Drawing.Point(244, 351)
+        Me.lbl_total.Location = New System.Drawing.Point(225, 351)
         Me.lbl_total.Name = "lbl_total"
         Me.lbl_total.Size = New System.Drawing.Size(51, 27)
         Me.lbl_total.TabIndex = 21
@@ -799,6 +800,7 @@ Partial Class mesas
         Me.Controls.Add(Me.Guna2ContainerControl1)
         Me.Controls.Add(Me.pnl_controls)
         Me.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None
+        Me.Icon = CType(resources.GetObject("$this.Icon"), System.Drawing.Icon)
         Me.Name = "mesas"
         Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen
         Me.Text = "Tá na Mesa - Mesas"

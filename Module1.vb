@@ -1,5 +1,7 @@
 ﻿Imports System.Globalization
 Imports System.Data.SqlClient
+Imports Guna.UI2.WinForms
+Imports System.IO
 Module Module1
     Public db As ADODB.Connection
     Public rs, rs2 As New ADODB.Recordset
@@ -78,7 +80,12 @@ Module Module1
         End Try
         'fechaConexao()
     End Sub
-    Public Sub carregarCategorias(tabela As String, cmb As Guna.UI2.WinForms.Guna2ComboBox)
+
+    Public Sub carregarFuncionario(btn As Guna2Button, pbx As Guna2CirclePictureBox)
+        btn.Text = funcionario.nome
+        pbx.Load(Path.Combine(Application.StartupPath, "imgFuncionarios", funcionario.foto))
+    End Sub
+    Public Sub carregarCategorias(tabela As String, cmb As Guna2ComboBox)
         abreConexao()
         Try
             sql = "SELECT * FROM tb_categorias WHERE pertence = '" & tabela & "'"

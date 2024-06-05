@@ -1,5 +1,4 @@
-﻿Imports System.IO
-Imports Guna.UI2.WinForms
+﻿Imports Guna.UI2.WinForms
 
 Public Class mesas
     Dim gerenciarMesas As New criarMesas
@@ -64,9 +63,9 @@ Public Class mesas
         If funcionario.admin = True Then
             btn_gerencia.Visible = True
         Else
-
             btn_gerencia.Visible = False
         End If
+        carregarFuncionario(btn_info, Guna2CirclePictureBox1)
     End Sub
 End Class
 
@@ -212,7 +211,6 @@ Public Class criarMesas
         Catch ex As Exception
             telaErro.setTexto("Erro ao atualizar informações da mesa!")
             telaErro.Show()
-            MessageBox.Show(String.Format("Error: {0}", ex.Message))
 
         End Try
     End Sub
@@ -288,8 +286,6 @@ Public Class criarMesas
         Catch ex As Exception
             telaErro.setTexto("Erro ao carregar pedidos da mesa!")
             telaErro.Show()
-            MessageBox.Show(String.Format("Error: {0}", ex.Message))
-
         End Try
     End Sub
 

@@ -44,6 +44,7 @@ Partial Class gerencia
         Me.btn_cardapio = New Guna.UI2.WinForms.Guna2Button()
         Me.Guna2ContainerControl1 = New Guna.UI2.WinForms.Guna2ContainerControl()
         Me.pnl_title = New Guna.UI2.WinForms.Guna2ShadowPanel()
+        Me.btn_addProd = New Guna.UI2.WinForms.Guna2Button()
         Me.Guna2HtmlLabel7 = New Guna.UI2.WinForms.Guna2HtmlLabel()
         Me.Guna2Panel4 = New Guna.UI2.WinForms.Guna2Panel()
         Me.pnl_info = New Guna.UI2.WinForms.Guna2ShadowPanel()
@@ -63,7 +64,6 @@ Partial Class gerencia
         Me.Guna2HtmlLabel27 = New Guna.UI2.WinForms.Guna2HtmlLabel()
         Me.Guna2HtmlLabel26 = New Guna.UI2.WinForms.Guna2HtmlLabel()
         Me.Guna2HtmlLabel2 = New Guna.UI2.WinForms.Guna2HtmlLabel()
-        Me.btn_addProd = New Guna.UI2.WinForms.Guna2Button()
         Me.pnl_controls.SuspendLayout()
         Me.pnl_logo.SuspendLayout()
         Me.Guna2Panel3.SuspendLayout()
@@ -231,6 +231,7 @@ Partial Class gerencia
         Me.Guna2CirclePictureBox1.Name = "Guna2CirclePictureBox1"
         Me.Guna2CirclePictureBox1.ShadowDecoration.Mode = Guna.UI2.WinForms.Enums.ShadowMode.Circle
         Me.Guna2CirclePictureBox1.Size = New System.Drawing.Size(50, 50)
+        Me.Guna2CirclePictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
         Me.Guna2CirclePictureBox1.TabIndex = 32
         Me.Guna2CirclePictureBox1.TabStop = False
         '
@@ -374,6 +375,27 @@ Partial Class gerencia
         Me.pnl_title.ShadowShift = 0
         Me.pnl_title.Size = New System.Drawing.Size(980, 80)
         Me.pnl_title.TabIndex = 32
+        '
+        'btn_addProd
+        '
+        Me.btn_addProd.AutoRoundedCorners = True
+        Me.btn_addProd.BackColor = System.Drawing.Color.Transparent
+        Me.btn_addProd.BorderRadius = 24
+        Me.btn_addProd.Cursor = System.Windows.Forms.Cursors.Hand
+        Me.btn_addProd.DisabledState.BorderColor = System.Drawing.Color.DarkGray
+        Me.btn_addProd.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray
+        Me.btn_addProd.DisabledState.FillColor = System.Drawing.Color.FromArgb(CType(CType(169, Byte), Integer), CType(CType(169, Byte), Integer), CType(CType(169, Byte), Integer))
+        Me.btn_addProd.DisabledState.ForeColor = System.Drawing.Color.FromArgb(CType(CType(141, Byte), Integer), CType(CType(141, Byte), Integer), CType(CType(141, Byte), Integer))
+        Me.btn_addProd.FillColor = System.Drawing.Color.FromArgb(CType(CType(46, Byte), Integer), CType(CType(31, Byte), Integer), CType(CType(39, Byte), Integer))
+        Me.btn_addProd.Font = New System.Drawing.Font("Libre Caslon Display", 15.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.btn_addProd.ForeColor = System.Drawing.Color.White
+        Me.btn_addProd.Image = CType(resources.GetObject("btn_addProd.Image"), System.Drawing.Image)
+        Me.btn_addProd.ImageSize = New System.Drawing.Size(28, 28)
+        Me.btn_addProd.Location = New System.Drawing.Point(729, 15)
+        Me.btn_addProd.Name = "btn_addProd"
+        Me.btn_addProd.Size = New System.Drawing.Size(219, 51)
+        Me.btn_addProd.TabIndex = 34
+        Me.btn_addProd.Text = "Adicionar Funcionário"
         '
         'Guna2HtmlLabel7
         '
@@ -598,27 +620,6 @@ Partial Class gerencia
         Me.Guna2HtmlLabel2.TabIndex = 5
         Me.Guna2HtmlLabel2.Text = "Explorar itens do cardápio"
         '
-        'btn_addProd
-        '
-        Me.btn_addProd.AutoRoundedCorners = True
-        Me.btn_addProd.BackColor = System.Drawing.Color.Transparent
-        Me.btn_addProd.BorderRadius = 24
-        Me.btn_addProd.Cursor = System.Windows.Forms.Cursors.Hand
-        Me.btn_addProd.DisabledState.BorderColor = System.Drawing.Color.DarkGray
-        Me.btn_addProd.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray
-        Me.btn_addProd.DisabledState.FillColor = System.Drawing.Color.FromArgb(CType(CType(169, Byte), Integer), CType(CType(169, Byte), Integer), CType(CType(169, Byte), Integer))
-        Me.btn_addProd.DisabledState.ForeColor = System.Drawing.Color.FromArgb(CType(CType(141, Byte), Integer), CType(CType(141, Byte), Integer), CType(CType(141, Byte), Integer))
-        Me.btn_addProd.FillColor = System.Drawing.Color.FromArgb(CType(CType(46, Byte), Integer), CType(CType(31, Byte), Integer), CType(CType(39, Byte), Integer))
-        Me.btn_addProd.Font = New System.Drawing.Font("Libre Caslon Display", 15.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.btn_addProd.ForeColor = System.Drawing.Color.White
-        Me.btn_addProd.Image = CType(resources.GetObject("btn_addProd.Image"), System.Drawing.Image)
-        Me.btn_addProd.ImageSize = New System.Drawing.Size(28, 28)
-        Me.btn_addProd.Location = New System.Drawing.Point(729, 15)
-        Me.btn_addProd.Name = "btn_addProd"
-        Me.btn_addProd.Size = New System.Drawing.Size(219, 51)
-        Me.btn_addProd.TabIndex = 34
-        Me.btn_addProd.Text = "Adicionar Produto"
-        '
         'gerencia
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
@@ -630,6 +631,7 @@ Partial Class gerencia
         Me.Controls.Add(Me.Guna2ContainerControl1)
         Me.Controls.Add(Me.pnl_controls)
         Me.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None
+        Me.Icon = CType(resources.GetObject("$this.Icon"), System.Drawing.Icon)
         Me.Name = "gerencia"
         Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen
         Me.Text = "Tá na Mesa - Gerência"
