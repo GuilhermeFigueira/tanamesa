@@ -618,11 +618,12 @@ Partial Class cardapio
         '
         'Guna2HtmlLabel12
         '
+        Me.Guna2HtmlLabel12.AutoSize = False
         Me.Guna2HtmlLabel12.BackColor = System.Drawing.Color.Transparent
         Me.Guna2HtmlLabel12.Font = New System.Drawing.Font("Libre Caslon Display", 18.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Guna2HtmlLabel12.Location = New System.Drawing.Point(19, 138)
         Me.Guna2HtmlLabel12.Name = "Guna2HtmlLabel12"
-        Me.Guna2HtmlLabel12.Size = New System.Drawing.Size(140, 31)
+        Me.Guna2HtmlLabel12.Size = New System.Drawing.Size(177, 31)
         Me.Guna2HtmlLabel12.TabIndex = 11
         Me.Guna2HtmlLabel12.Text = "Nome do Prato"
         '

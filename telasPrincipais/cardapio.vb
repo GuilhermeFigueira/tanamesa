@@ -49,6 +49,25 @@ Public Class cardapio
         gerenciadorCardapio.SubscribeCardapio(AddressOf gerenciadorCardapio.carregarCardapio)
         cmb_ordenar.SelectedIndex = 0
         carregado = True
+        carregarCategorias("cardapio", cmb_ordenar)
+        If funcionario.admin = True Then
+            btn_addProd.Visible = True
+            btn_gerencia.Visible = True
+        Else
+            btn_gerencia.Visible = False
+            btn_addProd.Visible = False
+        End If
+    End Sub
+
+    Public Sub verificarFuncionario()
+        If funcionario.admin = True Then
+            btn_addProd.Visible = True
+            btn_gerencia.Visible = True
+        Else
+            btn_gerencia.Visible = False
+            btn_addProd.Visible = False
+        End If
+        gerenciadorCardapio.carregarCardapio()
     End Sub
     Private Sub cmb_numeroMesa_SelectedValueChanged(sender As Object, e As EventArgs) Handles cmb_numeroMesa.SelectedValueChanged
         gerenciadorCardapio.carregarInformacoesMesa()
@@ -163,6 +182,8 @@ Public Class criarCardapio
                     .Text = rs.Fields(1).Value,
                     .Font = New Font("Libre Caslon Display", 18),
                     .Location = New Point(19, 143),
+                    .AutoSize = False,
+                    .Size = New Size(177, 31),
                     .ForeColor = Color.Black,
                     .Parent = pnl_prato
                 }
@@ -556,6 +577,7 @@ Public Class criarCardapio
                 rs = db.Execute(sql)
                 telaErro.setTexto($"{nomePrato} foi editado com sucesso!")
                 telaErro.Show()
+                gerenciadorCardapio.carregarCardapio()
             Else
                 telaErro.setTexto("Existem campos vazios!")
                 telaErro.Show()

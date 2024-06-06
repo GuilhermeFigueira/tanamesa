@@ -41,6 +41,11 @@ Public Class gerencia
 
     Private Sub gerencia_Load(sender As Object, e As EventArgs) Handles Me.Load
         gerenciadorGerencia.carregarFuncionarios()
+        If funcionario.admin = True Then
+            btn_gerencia.Visible = True
+        Else
+            btn_addProd.Visible = False
+        End If
     End Sub
 
     Private Sub btn_addProd_Click(sender As Object, e As EventArgs) Handles btn_addProd.Click
@@ -48,7 +53,18 @@ Public Class gerencia
     End Sub
 
     Private Sub gerencia_Shown(sender As Object, e As EventArgs) Handles Me.Shown
-        carregarFuncionario(btn_info, Guna2CirclePictureBox1)
+        If funcionario.admin = True Then
+            btn_gerencia.Visible = True
+        Else
+            btn_addProd.Visible = False
+        End If
+    End Sub
+    Public Sub verificarFuncionario()
+        If funcionario.admin = True Then
+            btn_gerencia.Visible = True
+        Else
+            btn_addProd.Visible = False
+        End If
     End Sub
 End Class
 

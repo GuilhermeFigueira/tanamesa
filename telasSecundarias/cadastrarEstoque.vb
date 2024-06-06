@@ -20,9 +20,9 @@ Public Class cadastrarEstoque
         carregarUnidades(cmb_unidade)
     End Sub
     Public Sub cadastrarEstoque_Shown(sender As Object, e As EventArgs) Handles Me.Shown
-        dtp_dataCompra.Value = Date.Now
-        dtp_dataValidade.Value = Date.Now
         If btn = "" And titulo = "" Then
+            dtp_dataCompra.Value = Date.Now
+            dtp_dataValidade.Value = Date.Now
             lbl_titulo.Text = "Salvar Produto no Estoque"
             btn_cadastrar.Text = "Adicionar Produto"
             limparForm(Me)

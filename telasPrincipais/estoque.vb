@@ -50,6 +50,20 @@ Public Class estoque
         gerenciadorEstoque.carregarEstoque()
         gerenciadorEstoque.Subscribe(AddressOf gerenciadorEstoque.carregarEstoque)
         carregado = True
+        If funcionario.admin = True Then
+            btn_gerencia.Visible = True
+        Else
+            btn_gerencia.Visible = False
+        End If
+        carregarFuncionario(btn_info, Guna2CirclePictureBox1)
+    End Sub
+    Public Sub verificarFuncionario()
+        If funcionario.admin = True Then
+            btn_gerencia.Visible = True
+        Else
+            btn_gerencia.Visible = False
+        End If
+        carregarFuncionario(btn_info, Guna2CirclePictureBox1)
     End Sub
 
     Private Sub dgv_estoque_CellContentClick(sender As Object, e As DataGridViewCellEventArgs) Handles dgv_estoque.CellContentClick
@@ -80,7 +94,7 @@ Public Class estoque
         carregarFuncionario(btn_info, Guna2CirclePictureBox1)
     End Sub
 
-    Private Sub btn_checarValidade_Click(sender As Object, e As EventArgs) Handles btn_checarValidade.Click
+    Private Sub btn_checarValidade_Click(sender As Object, e As EventArgs)
 
     End Sub
 End Class

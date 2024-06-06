@@ -45,6 +45,12 @@ Public Class mesas
     Private Sub mesas_Load(sender As Object, e As EventArgs) Handles MyBase.Load
         gerenciarMesas.carregarTodasMesas()
         carregarMesas(cmb_numeroMesa, "Ocupada", "Livre")
+        If funcionario.admin = True Then
+            btn_gerencia.Visible = True
+        Else
+            btn_gerencia.Visible = False
+        End If
+        carregarFuncionario(btn_info, Guna2CirclePictureBox1)
     End Sub
 
     Private Sub btn_abrirMesa_Click(sender As Object, e As EventArgs) Handles btn_abrirMesa.Click
@@ -65,7 +71,22 @@ Public Class mesas
         Else
             btn_gerencia.Visible = False
         End If
-        carregarFuncionario(btn_info, Guna2CirclePictureBox1)
+    End Sub
+
+    Private Sub mesas_Enter(sender As Object, e As EventArgs) Handles Me.Enter
+        If funcionario.admin = True Then
+            btn_gerencia.Visible = True
+        Else
+            btn_gerencia.Visible = False
+        End If
+    End Sub
+
+    Public Sub verificarFuncionario()
+        If funcionario.admin = True Then
+            btn_gerencia.Visible = True
+        Else
+            btn_gerencia.Visible = False
+        End If
     End Sub
 End Class
 
@@ -238,7 +259,7 @@ Public Class criarMesas
         End Try
     End Sub
 
-    Public Sub atualizarPedidoMesa(numeroPedido As Integer)
+    Public Sub atualizarPedidoMesa(numeroPedido As String)
         abreConexao()
 
         Try

@@ -44,6 +44,12 @@ Public Class pedidos
         gerenciadorPedidos.carregarPedidos(False)
         cmb_progs.SelectedIndex = 0
         carregado = True
+        If funcionario.admin = True Then
+            btn_gerencia.Visible = True
+        Else
+            btn_gerencia.Visible = False
+        End If
+        carregarFuncionario(btn_info, Guna2CirclePictureBox1)
     End Sub
 
     Private Sub cmb_progs_SelectedIndexChanged(sender As Object, e As EventArgs) Handles cmb_progs.SelectedIndexChanged
@@ -68,6 +74,13 @@ Public Class pedidos
         If carregado Then
             gerenciadorPedidos.carregarPedidos(, txt_pesquisaPedidos.Text)
             gerenciadorPedidos.carregarProgresso(, txt_pesquisaPedidos.Text)
+        End If
+    End Sub
+    Public Sub verificarFuncionario()
+        If funcionario.admin = True Then
+            btn_gerencia.Visible = True
+        Else
+            btn_gerencia.Visible = False
         End If
     End Sub
 End Class

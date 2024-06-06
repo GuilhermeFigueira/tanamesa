@@ -10,6 +10,9 @@
     End Sub
     Private Sub btn_sim_Click(sender As Object, e As EventArgs) Handles btn_sim.Click
         abreConexao()
+        sql = "UPDATE tb_funcionarios SET trabalhando = false WHERE cpf = '" & funcionario.cpf & "'"
+        rs = db.Execute(sql)
+        funcionario.logout()
         login.Show()
         Dim frm As Form
         For Each frm In Application.OpenForms
@@ -17,9 +20,6 @@
                 frm.Visible = False
             End If
         Next
-        sql = "UPDATE tb_funcionarios SET trabalhando = false WHERE cpf = '" & funcionario.cpf & "'"
-        rs = db.Execute(sql)
-        funcionario.logout()
     End Sub
 
     Private Sub deslogar_Load(sender As Object, e As EventArgs) Handles Me.Load
