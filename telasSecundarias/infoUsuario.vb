@@ -14,11 +14,22 @@ Public Class infoUsuario
     End Sub
 
     Private Sub infoUsuario_Shown(sender As Object, e As EventArgs) Handles Me.Shown
-        txt_cpf.Text = funcionario.cpf
-        txt_nome.Text = funcionario.nome
-        txt_funcao.Text = funcionario.funcao
-        If funcionario.foto <> Nothing Then
-            pbx_imgFuncionario.Load(Path.Combine(Application.StartupPath, "imgFuncionarios", funcionario.foto))
-        End If
+
+    End Sub
+
+    Private Sub Guna2TextBox1_TextChanged(sender As Object, e As EventArgs) Handles Guna2TextBox1.TextChanged
+
+    End Sub
+
+    Private Sub Guna2HtmlLabel4_Click(sender As Object, e As EventArgs) Handles Guna2HtmlLabel4.Click
+
+    End Sub
+
+    Private Sub Guna2TextBox2_TextChanged(sender As Object, e As EventArgs) Handles Guna2TextBox2.TextChanged
+
+    End Sub
+
+    Private Sub Guna2HtmlLabel5_Click(sender As Object, e As EventArgs) Handles Guna2HtmlLabel5.Click
+
     End Sub
 End Class

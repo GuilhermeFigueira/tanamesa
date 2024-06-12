@@ -105,7 +105,6 @@ C:\Users\guibf\www\fatec\tanamesa\obj\Debug\tanamesa.estoque.resources
 D:\FATEC\Tanamesa\tanamesa\obj\Debug\tanamesa.estoque.resources
 D:\FATEC\Tanamesa\tanamesa\obj\Debug\tanamesa.cadastrarEstoque.resources
 D:\FATEC\Tanamesa\tanamesa\obj\Debug\tanamesa.telaConfirmacao.resources
-D:\FATEC\Tanamesa\tanamesa\obj\Debug\tanamesa.cadastrarFuncionário.resources
 D:\FATEC\Tanamesa\tanamesa\obj\Debug\tanamesa.telaErro.resources
 D:\FATEC\Tanamesa\tanamesa\obj\Debug\tanamesa.gerencia.resources
 C:\Users\guibf\www\fatec\tanamesa\obj\Debug\tanamesa.cadastrarEstoque.resources
@@ -197,3 +196,4 @@ D:\FATEC\Tanamesa\tanamesa\obj\Debug\tanamesa.TrustInfo.xml
 D:\FATEC\Tanamesa\tanamesa\obj\Debug\tanamesa.exe.manifest
 D:\FATEC\Tanamesa\tanamesa\obj\Debug\tanamesa.application
 C:\Users\guibf\www\fatec\tanamesa\obj\Debug\tanamesa.cadastrarFuncionario.resources
+D:\FATEC\Tanamesa\tanamesa\obj\Debug\tanamesa.cadastrarFuncionario.resources

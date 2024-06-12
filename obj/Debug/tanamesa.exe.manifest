@@ -54,24 +54,24 @@
     </dependentAssembly>
   </dependency>
   <dependency>
-    <dependentAssembly dependencyType="install" allowDelayedBinding="true" codebase="tanamesa.exe" size="799232">
+    <dependentAssembly dependencyType="install" allowDelayedBinding="true" codebase="tanamesa.exe" size="800256">
       <assemblyIdentity name="tanamesa" version="1.0.0.0" language="neutral" processorArchitecture="msil" />
       <hash>
         <dsig:Transforms>
           <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
         </dsig:Transforms>
         <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
-        <dsig:DigestValue>++pB3wJV22v6rDgtwpcvnvAiNyP/i8jm6C6cFNQRJDs=</dsig:DigestValue>
+        <dsig:DigestValue>GzgQ7h6cJoom+7oNPkIAJjhTKm2z3jqNUL6kNPPO5a0=</dsig:DigestValue>
       </hash>
     </dependentAssembly>
   </dependency>
-  <file name="tanamesa.exe.config" size="183">
+  <file name="tanamesa.exe.config" size="188">
     <hash>
       <dsig:Transforms>
         <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
       </dsig:Transforms>
       <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
-      <dsig:DigestValue>QOY68v3LU5ZGnc11qPpG1Ds4qD3cZf6tZI5U8cNiIi4=</dsig:DigestValue>
+      <dsig:DigestValue>VDy5/VrQni+RSOb/6uEMWMc6bGQEaa2e2UdeWG+KK1I=</dsig:DigestValue>
     </hash>
   </file>
   <compatibility xmlns="urn:schemas-microsoft-com:compatibility.v1">
